@@ -394,7 +394,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ContractId\":{\"entity\":\"Contract.cdm.json/Contract\",\"name\":\"ContractId\"},\"ContractDescription\":{\"entity\":\"Contract.cdm.json/Contract\",\"name\":\"ContractDescription\"},\"ContractLegalReviewDate\":{\"entity\":\"Contract.cdm.json/Contract\",\"name\":\"ContractLegalReviewDate\"},\"ContractSignedDate\":{\"entity\":\"Contract.cdm.json/Contract\",\"name\":\"ContractSignedDate\"},\"ContractEffectiveStartDate\":{\"entity\":\"Contract.cdm.json/Contract\",\"name\":\"ContractEffectiveStartDate\"},\"ContractEffectiveEndDate\":{\"entity\":\"Contract.cdm.json/Contract\",\"name\":\"ContractEffectiveEndDate\"},\"ContractPeriodMonths\":{\"entity\":\"Contract.cdm.json/Contract\",\"name\":\"ContractPeriodMonths\"},\"AutomaticRenewalIndicator\":{\"entity\":\"Contract.cdm.json/Contract\",\"name\":\"AutomaticRenewalIndicator\"},\"AutomaticRenewalNotificationPeriod\":{\"entity\":\"Contract.cdm.json/Contract\",\"name\":\"AutomaticRenewalNotificationPeriod\"},\"PrepaidContractIndicator\":{\"entity\":\"Contract.cdm.json/Contract\",\"name\":\"PrepaidContractIndicator\"},\"BankruptcyCondition\":{\"entity\":\"Contract.cdm.json/Contract\",\"name\":\"BankruptcyCondition\"},\"RevocationOfOfferBySellerCondition\":{\"entity\":\"Contract.cdm.json/Contract\",\"name\":\"RevocationOfOfferBySellerCondition\"},\"TermsOfOfferConditions\":{\"entity\":\"Contract.cdm.json/Contract\",\"name\":\"TermsOfOfferConditions\"},\"RelapseOfReasonableTimeCondition\":{\"entity\":\"Contract.cdm.json/Contract\",\"name\":\"RelapseOfReasonableTimeCondition\"},\"RejectionOfOfferByBuyerCondition\":{\"entity\":\"Contract.cdm.json/Contract\",\"name\":\"RejectionOfOfferByBuyerCondition\"},\"ContractTypeId\":{\"entity\":\"Contract.cdm.json/Contract\",\"name\":\"ContractTypeId\"},\"ContractCategoryId\":{\"entity\":\"Contract.cdm.json/Contract\",\"name\":\"ContractCategoryId\"},\"IsoCurrencyCode\":{\"entity\":\"Contract.cdm.json/Contract\",\"name\":\"IsoCurrencyCode\"},\"IsoLanguageId\":{\"entity\":\"Contract.cdm.json/Contract\",\"name\":\"IsoLanguageId\"},\"CustomerAccountId\":{\"entity\":\"Contract.cdm.json/Contract\",\"name\":\"CustomerAccountId\"}}}"
 			},
 			"Compressed": false,
@@ -405,8 +405,7 @@
 			"Description": "A written agreement between two or more parties specifying the terms and conditions under which business obligations will be performed.",
 			"DisplayFolderInfo": "{\"name\":\"Contract\",\"colorCode\":\"#E3008C\"}",
 			"PrimaryKeys": "ContractId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

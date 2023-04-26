@@ -130,7 +130,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ContractId\":{\"entity\":\"BillOfSale.cdm.json/BillOfSale\",\"name\":\"ContractId\"},\"DateOfSale\":{\"entity\":\"BillOfSale.cdm.json/BillOfSale\",\"name\":\"DateOfSale\"},\"PropertyDescription\":{\"entity\":\"BillOfSale.cdm.json/BillOfSale\",\"name\":\"PropertyDescription\"},\"EffectiveTransferDate\":{\"entity\":\"BillOfSale.cdm.json/BillOfSale\",\"name\":\"EffectiveTransferDate\"},\"BillOfSaleSection\":{\"entity\":\"BillOfSale.cdm.json/BillOfSale\",\"name\":\"BillOfSaleSection\"}}}"
 			},
 			"Compressed": false,
@@ -141,8 +141,7 @@
 			"Description": "An agreement to sell a product or item to another party.",
 			"DisplayFolderInfo": "{\"name\":\"Contract\",\"colorCode\":\"#E3008C\"}",
 			"PrimaryKeys": "ContractId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,
