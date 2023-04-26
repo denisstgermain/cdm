@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kkpmuwqhhd",
+	"properties": {
+		"Name": "relationship-kkpmuwqhhd",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MiningProductType",
+		"ToTableName": "MiningProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductTypeId",
+				"ToColumnName": "ProductTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MiningProductType.cdm.json/MiningProductType\",\"toEntity\":\"MiningProduct.cdm.json/MiningProduct\",\"joinPairs\":[{\"fromAttribute\":\"ProductTypeId\",\"toAttribute\":\"ProductTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

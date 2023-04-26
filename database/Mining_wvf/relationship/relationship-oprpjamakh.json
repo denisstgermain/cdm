@@ -1,0 +1,26 @@
+{
+	"name": "relationship-oprpjamakh",
+	"properties": {
+		"Name": "relationship-oprpjamakh",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MineActivity",
+		"ToTableName": "MineActivityEnvironmentalEmission",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MineActivityId",
+				"ToColumnName": "MineActivityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MineActivity.cdm.json/MineActivity\",\"toEntity\":\"MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission\",\"joinPairs\":[{\"fromAttribute\":\"MineActivityId\",\"toAttribute\":\"MineActivityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

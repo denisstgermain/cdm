@@ -1,0 +1,168 @@
+{
+	"name": "MiningProcessingActivityTransferRelatedAsset",
+	"properties": {
+		"Name": "MiningProcessingActivityTransferRelatedAsset",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "The asset(s) related to the ore processing transfer.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OreProcessingActivityId",
+					"Description": "The unique identifier of a ore processing activity.",
+					"BaseAttributeReference": {
+						"Entity": "MiningProcessingActivityTransferRelatedAsset.cdm.json/MiningProcessingActivityTransferRelatedAsset",
+						"Name": "OreProcessingActivityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "MiningProcessingActivityTransferRelatedAsset.cdm.json/MiningProcessingActivityTransferRelatedAsset",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TransferAssetRelationshipTypeId",
+					"Description": "The unique identifier of a transfer - asset relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "MiningProcessingActivityTransferRelatedAsset.cdm.json/MiningProcessingActivityTransferRelatedAsset",
+						"Name": "TransferAssetRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TransferStartTimestamp",
+					"Description": "The transfer start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "MiningProcessingActivityTransferRelatedAsset.cdm.json/MiningProcessingActivityTransferRelatedAsset",
+						"Name": "TransferStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TransferEndTimestamp",
+					"Description": "The transfer end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "MiningProcessingActivityTransferRelatedAsset.cdm.json/MiningProcessingActivityTransferRelatedAsset",
+						"Name": "TransferEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OreProcessingActivityTransferAssetRelationshipNote",
+					"Description": "A note, comment or additional information regarding the Ore Processing Activity Transfer - Asset relationship.",
+					"BaseAttributeReference": {
+						"Entity": "MiningProcessingActivityTransferRelatedAsset.cdm.json/MiningProcessingActivityTransferRelatedAsset",
+						"Name": "OreProcessingActivityTransferAssetRelationshipNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MiningProcessingActivityTransferRelatedAsset",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MiningProcessingActivityTransferRelatedAsset",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OreProcessingActivityId\":{\"entity\":\"MiningProcessingActivityTransferRelatedAsset.cdm.json/MiningProcessingActivityTransferRelatedAsset\",\"name\":\"OreProcessingActivityId\"},\"AssetId\":{\"entity\":\"MiningProcessingActivityTransferRelatedAsset.cdm.json/MiningProcessingActivityTransferRelatedAsset\",\"name\":\"AssetId\"},\"TransferAssetRelationshipTypeId\":{\"entity\":\"MiningProcessingActivityTransferRelatedAsset.cdm.json/MiningProcessingActivityTransferRelatedAsset\",\"name\":\"TransferAssetRelationshipTypeId\"},\"TransferStartTimestamp\":{\"entity\":\"MiningProcessingActivityTransferRelatedAsset.cdm.json/MiningProcessingActivityTransferRelatedAsset\",\"name\":\"TransferStartTimestamp\"},\"TransferEndTimestamp\":{\"entity\":\"MiningProcessingActivityTransferRelatedAsset.cdm.json/MiningProcessingActivityTransferRelatedAsset\",\"name\":\"TransferEndTimestamp\"},\"OreProcessingActivityTransferAssetRelationshipNote\":{\"entity\":\"MiningProcessingActivityTransferRelatedAsset.cdm.json/MiningProcessingActivityTransferRelatedAsset\",\"name\":\"OreProcessingActivityTransferAssetRelationshipNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MiningProcessingActivityTransferRelatedAsset\",\"path\":\"MiningProcessingActivityTransferRelatedAsset.cdm.json/MiningProcessingActivityTransferRelatedAsset\"},\"description\":\"The asset(s) related to the ore processing transfer.\",\"primaryKey\":[\"OreProcessingActivityId\",\"AssetId\",\"TransferAssetRelationshipTypeId\",\"TransferStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MiningProcessingActivityTransferRelatedAsset.cdm.json/MiningProcessingActivityTransferRelatedAsset\",\"name\":\"OreProcessingActivityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a ore processing activity.\",\"isNullable\":false,\"name\":\"OreProcessingActivityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MiningProcessingActivityTransferRelatedAsset.cdm.json/MiningProcessingActivityTransferRelatedAsset\",\"name\":\"AssetId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Asset.\",\"isNullable\":false,\"name\":\"AssetId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MiningProcessingActivityTransferRelatedAsset.cdm.json/MiningProcessingActivityTransferRelatedAsset\",\"name\":\"TransferAssetRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a transfer - asset relationship type.\",\"isNullable\":false,\"name\":\"TransferAssetRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MiningProcessingActivityTransferRelatedAsset.cdm.json/MiningProcessingActivityTransferRelatedAsset\",\"name\":\"TransferStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The transfer start timestamp.\",\"isNullable\":false,\"name\":\"TransferStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MiningProcessingActivityTransferRelatedAsset.cdm.json/MiningProcessingActivityTransferRelatedAsset\",\"name\":\"TransferEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The transfer end timestamp.\",\"isNullable\":true,\"name\":\"TransferEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MiningProcessingActivityTransferRelatedAsset.cdm.json/MiningProcessingActivityTransferRelatedAsset\",\"name\":\"OreProcessingActivityTransferAssetRelationshipNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the Ore Processing Activity Transfer - Asset relationship.\",\"isNullable\":true,\"name\":\"OreProcessingActivityTransferAssetRelationshipNote\"}]}}}",
+			"Description": "The asset(s) related to the ore processing transfer.",
+			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "OreProcessingActivityId,AssetId,TransferAssetRelationshipTypeId,TransferStartTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

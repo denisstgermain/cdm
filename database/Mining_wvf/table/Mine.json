@@ -1,0 +1,632 @@
+{
+	"name": "Mine",
+	"properties": {
+		"Name": "Mine",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "A mine from which resources are extracted.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MineId",
+					"Description": "The unique identifier of a mine.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineName",
+					"Description": "The name of the mine.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineDescription",
+					"Description": "The description of a mine.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineFirstOperationalDate",
+					"Description": "The first operational date of the mine.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineFirstOperationalDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineLastOperationalDate",
+					"Description": "The last operational date of the mine.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineLastOperationalDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineGeologyStatement",
+					"Description": "A statement describing the geology of the mine.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineGeologyStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineMetallurgyStatement",
+					"Description": "A statement describing the metallurgy of the mine.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineMetallurgyStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineProcessingStatement",
+					"Description": "A statement describing the mine processing of the mine.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineProcessingStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineTransportStatement",
+					"Description": "A statement describing the mine transportation of the mine.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineTransportStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineResourceStorageStatement",
+					"Description": "A statement describing the mine resource storage of the mine.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineResourceStorageStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WasteStorageStatement",
+					"Description": "A statement describing the mine waste storage of the mine.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "WasteStorageStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineLatitude",
+					"Description": "The latitude of the mine.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineLatitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 10,
+						"Scale": 7,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineLongitude",
+					"Description": "The longitude of the mine.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineLongitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 10,
+						"Scale": 7,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineEstimatedProvenTons",
+					"Description": "The estimated proven tons of resource at the mine.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineEstimatedProvenTons"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineEstimatedReserveTons",
+					"Description": "The estimated reserve tons of resource at the mine.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineEstimatedReserveTons"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EstimatedMineLifeYears",
+					"Description": "The estimated mine life in years.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "EstimatedMineLifeYears"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineNote",
+					"Description": "A note, comment or additional information regarding the mine.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineFirstExplorationDate",
+					"Description": "The date of the first mine exploration.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineFirstExplorationDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineFirstFeasibilityStudyDate",
+					"Description": "The date of the first mine feasibility study.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineFirstFeasibilityStudyDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineDevelopmentDate",
+					"Description": "The date of mine development.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineDevelopmentDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MinePermitsAppliedDate",
+					"Description": "The date mine permits were applied for.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MinePermitsAppliedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MinePermitsReceivedDate",
+					"Description": "The date mine permits were received.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MinePermitsReceivedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineFirstProductionDate",
+					"Description": "The date of mine first production.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineFirstProductionDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineLastProductDate",
+					"Description": "The date of mine last production.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineLastProductDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineReclamationStartDate",
+					"Description": "The date that mine reclamation started.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineReclamationStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineReclamationEndDate",
+					"Description": "The date that mine reclamation ended.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineReclamationEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineClosureDate",
+					"Description": "The date that the mine closed.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineClosureDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeographicAreaId",
+					"Description": "The unique identifier of a Geographic Area.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "GeographicAreaId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PropertyId",
+					"Description": "The unique identifier of a property.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "PropertyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineTypeId",
+					"Description": "The unique identifier of a mine type.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "MineTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FacilityId",
+					"Description": "The unique identifier of a Facility.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "FacilityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "Mine.cdm.json/Mine",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/Mine",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/Mine",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineId\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineId\"},\"MineName\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineName\"},\"MineDescription\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineDescription\"},\"MineFirstOperationalDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineFirstOperationalDate\"},\"MineLastOperationalDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineLastOperationalDate\"},\"MineGeologyStatement\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineGeologyStatement\"},\"MineMetallurgyStatement\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineMetallurgyStatement\"},\"MineProcessingStatement\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineProcessingStatement\"},\"MineTransportStatement\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineTransportStatement\"},\"MineResourceStorageStatement\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineResourceStorageStatement\"},\"WasteStorageStatement\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"WasteStorageStatement\"},\"MineLatitude\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineLatitude\"},\"MineLongitude\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineLongitude\"},\"MineEstimatedProvenTons\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineEstimatedProvenTons\"},\"MineEstimatedReserveTons\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineEstimatedReserveTons\"},\"EstimatedMineLifeYears\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"EstimatedMineLifeYears\"},\"MineNote\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineNote\"},\"MineFirstExplorationDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineFirstExplorationDate\"},\"MineFirstFeasibilityStudyDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineFirstFeasibilityStudyDate\"},\"MineDevelopmentDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineDevelopmentDate\"},\"MinePermitsAppliedDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MinePermitsAppliedDate\"},\"MinePermitsReceivedDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MinePermitsReceivedDate\"},\"MineFirstProductionDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineFirstProductionDate\"},\"MineLastProductDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineLastProductDate\"},\"MineReclamationStartDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineReclamationStartDate\"},\"MineReclamationEndDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineReclamationEndDate\"},\"MineClosureDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineClosureDate\"},\"GeographicAreaId\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"GeographicAreaId\"},\"PropertyId\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"PropertyId\"},\"MineTypeId\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineTypeId\"},\"FacilityId\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"FacilityId\"},\"LocationId\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"LocationId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Mine\",\"path\":\"Mine.cdm.json/Mine\"},\"description\":\"A mine from which resources are extracted.\",\"primaryKey\":[\"MineId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine.\",\"isNullable\":false,\"name\":\"MineId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of the mine.\",\"isNullable\":true,\"name\":\"MineName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of a mine.\",\"isNullable\":true,\"name\":\"MineDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineFirstOperationalDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The first operational date of the mine.\",\"isNullable\":true,\"name\":\"MineFirstOperationalDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineLastOperationalDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The last operational date of the mine.\",\"isNullable\":true,\"name\":\"MineLastOperationalDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineGeologyStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement describing the geology of the mine.\",\"isNullable\":true,\"name\":\"MineGeologyStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineMetallurgyStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement describing the metallurgy of the mine.\",\"isNullable\":true,\"name\":\"MineMetallurgyStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineProcessingStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement describing the mine processing of the mine.\",\"isNullable\":true,\"name\":\"MineProcessingStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineTransportStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement describing the mine transportation of the mine.\",\"isNullable\":true,\"name\":\"MineTransportStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineResourceStorageStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement describing the mine resource storage of the mine.\",\"isNullable\":true,\"name\":\"MineResourceStorageStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"WasteStorageStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement describing the mine waste storage of the mine.\",\"isNullable\":true,\"name\":\"WasteStorageStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineLatitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":10,\"description\":\"The latitude of the mine.\",\"isNullable\":true,\"scale\":7,\"name\":\"MineLatitude\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineLongitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":10,\"description\":\"The longitude of the mine.\",\"isNullable\":true,\"scale\":7,\"name\":\"MineLongitude\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineEstimatedProvenTons\"},\"dataType\":\"integer\",\"description\":\"The estimated proven tons of resource at the mine.\",\"isNullable\":true,\"name\":\"MineEstimatedProvenTons\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineEstimatedReserveTons\"},\"dataType\":\"integer\",\"description\":\"The estimated reserve tons of resource at the mine.\",\"isNullable\":true,\"name\":\"MineEstimatedReserveTons\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"EstimatedMineLifeYears\"},\"dataType\":\"integer\",\"description\":\"The estimated mine life in years.\",\"isNullable\":true,\"name\":\"EstimatedMineLifeYears\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the mine.\",\"isNullable\":true,\"name\":\"MineNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineFirstExplorationDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date of the first mine exploration.\",\"isNullable\":true,\"name\":\"MineFirstExplorationDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineFirstFeasibilityStudyDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date of the first mine feasibility study.\",\"isNullable\":true,\"name\":\"MineFirstFeasibilityStudyDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineDevelopmentDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date of mine development.\",\"isNullable\":true,\"name\":\"MineDevelopmentDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MinePermitsAppliedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date mine permits were applied for.\",\"isNullable\":true,\"name\":\"MinePermitsAppliedDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MinePermitsReceivedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date mine permits were received.\",\"isNullable\":true,\"name\":\"MinePermitsReceivedDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineFirstProductionDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date of mine first production.\",\"isNullable\":true,\"name\":\"MineFirstProductionDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineLastProductDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date of mine last production.\",\"isNullable\":true,\"name\":\"MineLastProductDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineReclamationStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that mine reclamation started.\",\"isNullable\":true,\"name\":\"MineReclamationStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineReclamationEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that mine reclamation ended.\",\"isNullable\":true,\"name\":\"MineReclamationEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineClosureDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the mine closed.\",\"isNullable\":true,\"name\":\"MineClosureDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"GeographicAreaId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Geographic Area.\",\"isNullable\":true,\"name\":\"GeographicAreaId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"PropertyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a property.\",\"isNullable\":true,\"name\":\"PropertyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine type.\",\"isNullable\":true,\"name\":\"MineTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"FacilityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Facility.\",\"isNullable\":true,\"name\":\"FacilityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"}]}}}",
+			"Description": "A mine from which resources are extracted.",
+			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "MineId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

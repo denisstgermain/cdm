@@ -1,0 +1,185 @@
+{
+	"name": "MineActivityEnvironmentalEmission",
+	"properties": {
+		"Name": "MineActivityEnvironmentalEmission",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "The mining activity environmental emissions for the associated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MineActivityId",
+					"Description": "The unique identifier of a mine activity.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission",
+						"Name": "MineActivityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EnvironmentalEmissionTypeId",
+					"Description": "The unique identifier of an environmental emission type.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission",
+						"Name": "EnvironmentalEmissionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EmissionsUnits",
+					"Description": "The quantity/ emission units emitted.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission",
+						"Name": "EmissionsUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineActivityEnvironmentalEmissionNote",
+					"Description": "A note, comment or additional information regarding the mine activity environmental emission.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission",
+						"Name": "MineActivityEnvironmentalEmissionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MineActivityEnvironmentalEmission",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MineActivityEnvironmentalEmission",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineActivityId\":{\"entity\":\"MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission\",\"name\":\"MineActivityId\"},\"EnvironmentalEmissionTypeId\":{\"entity\":\"MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission\",\"name\":\"EnvironmentalEmissionTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission\",\"name\":\"PeriodEndTimestamp\"},\"EmissionsUnits\":{\"entity\":\"MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission\",\"name\":\"EmissionsUnits\"},\"UnitOfMeasureId\":{\"entity\":\"MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission\",\"name\":\"UnitOfMeasureId\"},\"MineActivityEnvironmentalEmissionNote\":{\"entity\":\"MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission\",\"name\":\"MineActivityEnvironmentalEmissionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MineActivityEnvironmentalEmission\",\"path\":\"MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission\"},\"description\":\"The mining activity environmental emissions for the associated period.\",\"primaryKey\":[\"MineActivityId\",\"EnvironmentalEmissionTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission\",\"name\":\"MineActivityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine activity.\",\"isNullable\":false,\"name\":\"MineActivityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission\",\"name\":\"EnvironmentalEmissionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an environmental emission type.\",\"isNullable\":false,\"name\":\"EnvironmentalEmissionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission\",\"name\":\"EmissionsUnits\"},\"dataType\":\"integer\",\"description\":\"The quantity/ emission units emitted.\",\"isNullable\":true,\"name\":\"EmissionsUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivityEnvironmentalEmission.cdm.json/MineActivityEnvironmentalEmission\",\"name\":\"MineActivityEnvironmentalEmissionNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the mine activity environmental emission.\",\"isNullable\":true,\"name\":\"MineActivityEnvironmentalEmissionNote\"}]}}}",
+			"Description": "The mining activity environmental emissions for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "MineActivityId,EnvironmentalEmissionTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}
