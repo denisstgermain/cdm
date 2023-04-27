@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kexoozjnow",
+	"properties": {
+		"Name": "relationship-kexoozjnow",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MaintenanceTask",
+		"ToTableName": "MaintenanceTaskRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetMaintenanceId",
+				"ToColumnName": "AssetMaintenanceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"toEntity\":\"MaintenanceTaskRelatedParty.cdm.json/MaintenanceTaskRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"AssetMaintenanceId\",\"toAttribute\":\"AssetMaintenanceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

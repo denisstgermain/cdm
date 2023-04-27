@@ -1,0 +1,327 @@
+{
+	"name": "MaintenanceTask",
+	"properties": {
+		"Name": "MaintenanceTask",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "The tasks performed during maintenance.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MaintenanceTaskId",
+					"Description": "The unique identifier of a Maintenance Task.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTask.cdm.json/MaintenanceTask",
+						"Name": "MaintenanceTaskId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AssetMaintenanceId",
+					"Description": "The unique identifier of an Asset Maintenance.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTask.cdm.json/MaintenanceTask",
+						"Name": "AssetMaintenanceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MaintenanceTaskTypeId",
+					"Description": "The unique identifier of a Maintenance Task Type.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTask.cdm.json/MaintenanceTask",
+						"Name": "MaintenanceTaskTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MaintenanceTaskPlannedStartTimestamp",
+					"Description": "The planned start timestamp of the maintenance task.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTask.cdm.json/MaintenanceTask",
+						"Name": "MaintenanceTaskPlannedStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MaintenanceTaskPlannedEndTimestamp",
+					"Description": "The planned end timestamp of the maintenance task.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTask.cdm.json/MaintenanceTask",
+						"Name": "MaintenanceTaskPlannedEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MaintenanceTaskActualStartTimestamp",
+					"Description": "The actual start timestamp of the maintenance task.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTask.cdm.json/MaintenanceTask",
+						"Name": "MaintenanceTaskActualStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MaintenanceTaskActualEndTimestamp",
+					"Description": "The actual end timestamp of the maintenance task.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTask.cdm.json/MaintenanceTask",
+						"Name": "MaintenanceTaskActualEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MaintenanceTaskEstimatedTotalCost",
+					"Description": "The estimated cost of the Asset Maintenance Operation.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTask.cdm.json/MaintenanceTask",
+						"Name": "MaintenanceTaskEstimatedTotalCost"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MaintenanceTaskActualTotalCost",
+					"Description": "The actual cost of the Asset Maintenance Operation.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTask.cdm.json/MaintenanceTask",
+						"Name": "MaintenanceTaskActualTotalCost"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MaintenanceTaskNote",
+					"Description": "Notes, comments or additional information regarding the Maintenance Operation performed.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTask.cdm.json/MaintenanceTask",
+						"Name": "MaintenanceTaskNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MaintenanceTypeId",
+					"Description": "The unique identifier of a Maintenance Type.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTask.cdm.json/MaintenanceTask",
+						"Name": "MaintenanceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MaintenanceTaskStatusId",
+					"Description": "The unique identifier of a Maintenance Task Status.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTask.cdm.json/MaintenanceTask",
+						"Name": "MaintenanceTaskStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WorkOrderId",
+					"Description": "The unique identifier of a Work Order.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTask.cdm.json/MaintenanceTask",
+						"Name": "WorkOrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ProjectId",
+					"Description": "The unique identifier of a Project.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTask.cdm.json/MaintenanceTask",
+						"Name": "ProjectId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TaskId",
+					"Description": "The unique identifier of a Task.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTask.cdm.json/MaintenanceTask",
+						"Name": "TaskId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MaintenanceTask",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MaintenanceTask",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceTaskId\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskId\"},\"AssetMaintenanceId\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"AssetMaintenanceId\"},\"MaintenanceTaskTypeId\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskTypeId\"},\"MaintenanceTaskPlannedStartTimestamp\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskPlannedStartTimestamp\"},\"MaintenanceTaskPlannedEndTimestamp\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskPlannedEndTimestamp\"},\"MaintenanceTaskActualStartTimestamp\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskActualStartTimestamp\"},\"MaintenanceTaskActualEndTimestamp\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskActualEndTimestamp\"},\"MaintenanceTaskEstimatedTotalCost\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskEstimatedTotalCost\"},\"MaintenanceTaskActualTotalCost\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskActualTotalCost\"},\"MaintenanceTaskNote\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskNote\"},\"MaintenanceTypeId\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTypeId\"},\"MaintenanceTaskStatusId\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskStatusId\"},\"WorkOrderId\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"WorkOrderId\"},\"ProjectId\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"ProjectId\"},\"TaskId\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"TaskId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MaintenanceTask\",\"path\":\"MaintenanceTask.cdm.json/MaintenanceTask\"},\"description\":\"The tasks performed during maintenance.\",\"primaryKey\":[\"MaintenanceTaskId\",\"AssetMaintenanceId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Maintenance Task.\",\"isNullable\":false,\"name\":\"MaintenanceTaskId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"AssetMaintenanceId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Asset Maintenance.\",\"isNullable\":false,\"name\":\"AssetMaintenanceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Maintenance Task Type.\",\"isNullable\":true,\"name\":\"MaintenanceTaskTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskPlannedStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The planned start timestamp of the maintenance task.\",\"isNullable\":true,\"name\":\"MaintenanceTaskPlannedStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskPlannedEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The planned end timestamp of the maintenance task.\",\"isNullable\":true,\"name\":\"MaintenanceTaskPlannedEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskActualStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The actual start timestamp of the maintenance task.\",\"isNullable\":true,\"name\":\"MaintenanceTaskActualStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskActualEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The actual end timestamp of the maintenance task.\",\"isNullable\":true,\"name\":\"MaintenanceTaskActualEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskEstimatedTotalCost\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The estimated cost of the Asset Maintenance Operation.\",\"isNullable\":true,\"scale\":2,\"name\":\"MaintenanceTaskEstimatedTotalCost\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskActualTotalCost\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The actual cost of the Asset Maintenance Operation.\",\"isNullable\":true,\"scale\":2,\"name\":\"MaintenanceTaskActualTotalCost\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"Notes, comments or additional information regarding the Maintenance Operation performed.\",\"isNullable\":true,\"name\":\"MaintenanceTaskNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Maintenance Type.\",\"isNullable\":true,\"name\":\"MaintenanceTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Maintenance Task Status.\",\"isNullable\":true,\"name\":\"MaintenanceTaskStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"WorkOrderId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Work Order.\",\"isNullable\":false,\"name\":\"WorkOrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"ProjectId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Project.\",\"isNullable\":true,\"name\":\"ProjectId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"TaskId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Task.\",\"isNullable\":true,\"name\":\"TaskId\"}]}}}",
+			"Description": "The tasks performed during maintenance.",
+			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "MaintenanceTaskId,AssetMaintenanceId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

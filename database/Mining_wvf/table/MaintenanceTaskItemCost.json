@@ -1,0 +1,220 @@
+{
+	"name": "MaintenanceTaskItemCost",
+	"properties": {
+		"Name": "MaintenanceTaskItemCost",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "The costs associated with a maintenance task item.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MaintenanceTaskId",
+					"Description": "The unique identifier of a Maintenance Task.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost",
+						"Name": "MaintenanceTaskId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "BomLevelNumber",
+					"Description": "The number of a BOM Level.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost",
+						"Name": "BomLevelNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "CostTypeId",
+					"Description": "The unique identifier of a Cost Type.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost",
+						"Name": "CostTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AssetMaintenanceId",
+					"Description": "The unique identifier of an Asset Maintenance.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost",
+						"Name": "AssetMaintenanceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 40,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "CostAmount",
+					"Description": "The cost of the associated maintenance task item.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost",
+						"Name": "CostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.\n\nEx:\nCurrency Code = AED\nCurrency Name = Dirham\nCountry Name = United Arab Emirates",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MaintenanceTaskItemCost",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MaintenanceTaskItemCost",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceTaskId\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"MaintenanceTaskId\"},\"AssetId\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"AssetId\"},\"BomLevelNumber\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"BomLevelNumber\"},\"CostTypeId\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"CostTypeId\"},\"AssetMaintenanceId\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"AssetMaintenanceId\"},\"ItemSku\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"ItemSku\"},\"CostAmount\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"CostAmount\"},\"IsoCurrencyCode\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"IsoCurrencyCode\"},\"PartyId\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"PartyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MaintenanceTaskItemCost\",\"path\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\"},\"description\":\"The costs associated with a maintenance task item.\",\"primaryKey\":[\"MaintenanceTaskId\",\"AssetId\",\"BomLevelNumber\",\"CostTypeId\",\"AssetMaintenanceId\",\"ItemSku\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"MaintenanceTaskId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Maintenance Task.\",\"isNullable\":false,\"name\":\"MaintenanceTaskId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"AssetId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Asset.\",\"isNullable\":false,\"name\":\"AssetId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"BomLevelNumber\"},\"dataType\":\"integer\",\"description\":\"The number of a BOM Level.\",\"isNullable\":false,\"name\":\"BomLevelNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"CostTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Cost Type.\",\"isNullable\":false,\"name\":\"CostTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"AssetMaintenanceId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Asset Maintenance.\",\"isNullable\":false,\"name\":\"AssetMaintenanceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":40,\"description\":\"The Stock Keeping Unit identifier, which is typically used for inventory-related activities.\",\"isNullable\":false,\"name\":\"ItemSku\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"CostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The cost of the associated maintenance task item.\",\"isNullable\":true,\"scale\":2,\"name\":\"CostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The ISO 4217 currency code.\\n\\nEx:\\nCurrency Code = AED\\nCurrency Name = Dirham\\nCountry Name = United Arab Emirates\",\"isNullable\":true,\"name\":\"IsoCurrencyCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"PartyId\"}]}}}",
+			"Description": "The costs associated with a maintenance task item.",
+			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "MaintenanceTaskId,AssetId,BomLevelNumber,CostTypeId,AssetMaintenanceId,ItemSku",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

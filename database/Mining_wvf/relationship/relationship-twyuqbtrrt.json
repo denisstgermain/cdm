@@ -1,0 +1,26 @@
+{
+	"name": "relationship-twyuqbtrrt",
+	"properties": {
+		"Name": "relationship-twyuqbtrrt",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MineStatusType",
+		"ToTableName": "MineStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MineStatusTypeId",
+				"ToColumnName": "MineStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MineStatusType.cdm.json/MineStatusType\",\"toEntity\":\"MineStatus.cdm.json/MineStatus\",\"joinPairs\":[{\"fromAttribute\":\"MineStatusTypeId\",\"toAttribute\":\"MineStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

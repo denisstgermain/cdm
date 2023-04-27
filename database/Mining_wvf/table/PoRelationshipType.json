@@ -1,0 +1,116 @@
+{
+	"name": "PoRelationshipType",
+	"properties": {
+		"Name": "PoRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "The nature of the relationship between two or more PO's.\n\nEx:\n- Amended PO",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PoRelationshipTypeId",
+					"Description": "The unique identifier of a PO Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "PoRelationshipType.cdm.json/PoRelationshipType",
+						"Name": "PoRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PoRelationshipTypeName",
+					"Description": "The name of a PO Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "PoRelationshipType.cdm.json/PoRelationshipType",
+						"Name": "PoRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PoRelationshipTypeDescription",
+					"Description": "The description of a PO Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "PoRelationshipType.cdm.json/PoRelationshipType",
+						"Name": "PoRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/PoRelationshipType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/PoRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PoRelationshipTypeId\":{\"entity\":\"PoRelationshipType.cdm.json/PoRelationshipType\",\"name\":\"PoRelationshipTypeId\"},\"PoRelationshipTypeName\":{\"entity\":\"PoRelationshipType.cdm.json/PoRelationshipType\",\"name\":\"PoRelationshipTypeName\"},\"PoRelationshipTypeDescription\":{\"entity\":\"PoRelationshipType.cdm.json/PoRelationshipType\",\"name\":\"PoRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PoRelationshipType\",\"path\":\"PoRelationshipType.cdm.json/PoRelationshipType\"},\"description\":\"The nature of the relationship between two or more PO's.\\n\\nEx:\\n- Amended PO\",\"primaryKey\":[\"PoRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PoRelationshipType.cdm.json/PoRelationshipType\",\"name\":\"PoRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a PO Relationship Type.\",\"isNullable\":false,\"name\":\"PoRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PoRelationshipType.cdm.json/PoRelationshipType\",\"name\":\"PoRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of a PO Relationship Type.\",\"isNullable\":true,\"name\":\"PoRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PoRelationshipType.cdm.json/PoRelationshipType\",\"name\":\"PoRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of a PO Relationship Type.\",\"isNullable\":true,\"name\":\"PoRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between two or more PO's.\n\nEx:\n- Amended PO",
+			"DisplayFolderInfo": "{\"name\":\"Purchasing\",\"colorCode\":\"#5F538F\"}",
+			"PrimaryKeys": "PoRelationshipTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

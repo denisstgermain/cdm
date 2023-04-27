@@ -1,0 +1,219 @@
+{
+	"name": "MaintenanceTaskItem",
+	"properties": {
+		"Name": "MaintenanceTaskItem",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "The specific component upon which a maintenance task is performed.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MaintenanceTaskId",
+					"Description": "The unique identifier of a Maintenance Task.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskItem.cdm.json/MaintenanceTaskItem",
+						"Name": "MaintenanceTaskId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AssetMaintenanceId",
+					"Description": "The unique identifier of an Asset Maintenance.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskItem.cdm.json/MaintenanceTaskItem",
+						"Name": "AssetMaintenanceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskItem.cdm.json/MaintenanceTaskItem",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "BomLevelNumber",
+					"Description": "The number of a BOM Level.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskItem.cdm.json/MaintenanceTaskItem",
+						"Name": "BomLevelNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskItem.cdm.json/MaintenanceTaskItem",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 40,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SerialNumber",
+					"Description": "The serial number of the associated maintenance task item.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskItem.cdm.json/MaintenanceTaskItem",
+						"Name": "SerialNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SequenceNumber",
+					"Description": "The sequence that the associated maintenance task item is used during the associated maintenance task.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskItem.cdm.json/MaintenanceTaskItem",
+						"Name": "SequenceNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ComponentOperationTypeId",
+					"Description": "The unique identifier of a Component Operation Type.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskItem.cdm.json/MaintenanceTaskItem",
+						"Name": "ComponentOperationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ManagementTaskItemOperationNote",
+					"Description": "A note, comment or additional information regarding the management task item operation.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskItem.cdm.json/MaintenanceTaskItem",
+						"Name": "ManagementTaskItemOperationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MaintenanceTaskItem",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MaintenanceTaskItem",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceTaskId\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"MaintenanceTaskId\"},\"AssetMaintenanceId\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"AssetMaintenanceId\"},\"AssetId\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"AssetId\"},\"BomLevelNumber\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"BomLevelNumber\"},\"ItemSku\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"ItemSku\"},\"SerialNumber\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"SerialNumber\"},\"SequenceNumber\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"SequenceNumber\"},\"ComponentOperationTypeId\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"ComponentOperationTypeId\"},\"ManagementTaskItemOperationNote\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"ManagementTaskItemOperationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MaintenanceTaskItem\",\"path\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\"},\"description\":\"The specific component upon which a maintenance task is performed.\",\"primaryKey\":[\"MaintenanceTaskId\",\"AssetMaintenanceId\",\"AssetId\",\"BomLevelNumber\",\"ItemSku\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"MaintenanceTaskId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Maintenance Task.\",\"isNullable\":false,\"name\":\"MaintenanceTaskId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"AssetMaintenanceId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Asset Maintenance.\",\"isNullable\":false,\"name\":\"AssetMaintenanceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"AssetId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Asset.\",\"isNullable\":false,\"name\":\"AssetId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"BomLevelNumber\"},\"dataType\":\"integer\",\"description\":\"The number of a BOM Level.\",\"isNullable\":false,\"name\":\"BomLevelNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":40,\"description\":\"The Stock Keeping Unit identifier, which is typically used for inventory-related activities.\",\"isNullable\":false,\"name\":\"ItemSku\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"SerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30,\"description\":\"The serial number of the associated maintenance task item.\",\"isNullable\":true,\"name\":\"SerialNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"SequenceNumber\"},\"dataType\":\"integer\",\"description\":\"The sequence that the associated maintenance task item is used during the associated maintenance task.\",\"isNullable\":true,\"name\":\"SequenceNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"ComponentOperationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Operation Type.\",\"isNullable\":false,\"name\":\"ComponentOperationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"ManagementTaskItemOperationNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the management task item operation.\",\"isNullable\":true,\"name\":\"ManagementTaskItemOperationNote\"}]}}}",
+			"Description": "The specific component upon which a maintenance task is performed.",
+			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "MaintenanceTaskId,AssetMaintenanceId,AssetId,BomLevelNumber,ItemSku",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

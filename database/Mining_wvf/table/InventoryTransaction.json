@@ -1,0 +1,305 @@
+{
+	"name": "InventoryTransaction",
+	"properties": {
+		"Name": "InventoryTransaction",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "A specific Inventory Transaction that is applied to or carried out at a specific Inventory Location(s) upon the Items in those locations.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TransactionId",
+					"Description": "The unique identifier of a Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "InventoryTransaction.cdm.json/InventoryTransaction",
+						"Name": "TransactionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TransactionRequestedTimestamp",
+					"Description": "The timestamp that the Item Inventory Location Transaction was requested.",
+					"BaseAttributeReference": {
+						"Entity": "InventoryTransaction.cdm.json/InventoryTransaction",
+						"Name": "TransactionRequestedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TransactionPlannedTimestamp",
+					"Description": "The timestamp that the Item Inventory Location Transaction was planned.",
+					"BaseAttributeReference": {
+						"Entity": "InventoryTransaction.cdm.json/InventoryTransaction",
+						"Name": "TransactionPlannedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TransactionInitiatedTimestamp",
+					"Description": "The timestamp that the Item Inventory Location Transaction was initiated.",
+					"BaseAttributeReference": {
+						"Entity": "InventoryTransaction.cdm.json/InventoryTransaction",
+						"Name": "TransactionInitiatedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TransactionCompletedTimestamp",
+					"Description": "The timestamp that the Item Inventory Location Transaction was completed.",
+					"BaseAttributeReference": {
+						"Entity": "InventoryTransaction.cdm.json/InventoryTransaction",
+						"Name": "TransactionCompletedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TransitTime",
+					"Description": "The time taken to move goods physically between different locations in a supply chain or laterally to another facility.",
+					"BaseAttributeReference": {
+						"Entity": "InventoryTransaction.cdm.json/InventoryTransaction",
+						"Name": "TransitTime"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FromWarehouseId",
+					"Description": "The unique identifier of a Warehouse.",
+					"BaseAttributeReference": {
+						"Entity": "InventoryTransaction.cdm.json/InventoryTransaction",
+						"Name": "FromWarehouseId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FromInventoryLocationId",
+					"Description": "The unique identifier of a location.",
+					"BaseAttributeReference": {
+						"Entity": "InventoryTransaction.cdm.json/InventoryTransaction",
+						"Name": "FromInventoryLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ToWarehouseId",
+					"Description": "The unique identifier of a Warehouse.",
+					"BaseAttributeReference": {
+						"Entity": "InventoryTransaction.cdm.json/InventoryTransaction",
+						"Name": "ToWarehouseId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ToInventoryLocationId",
+					"Description": "The unique identifier of a location.",
+					"BaseAttributeReference": {
+						"Entity": "InventoryTransaction.cdm.json/InventoryTransaction",
+						"Name": "ToInventoryLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "StagingLocationRequiredIndicator",
+					"Description": "An indicator that indicates that staging for the associated transaction at the inventory location is required.",
+					"BaseAttributeReference": {
+						"Entity": "InventoryTransaction.cdm.json/InventoryTransaction",
+						"Name": "StagingLocationRequiredIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "InventoryTransactionClassId",
+					"Description": "The unique identifier of the Inventory Transaction Class.",
+					"BaseAttributeReference": {
+						"Entity": "InventoryTransaction.cdm.json/InventoryTransaction",
+						"Name": "InventoryTransactionClassId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "InventoryTransactionTypeId",
+					"Description": "The unique identifier of an Inventory Transaction Type.",
+					"BaseAttributeReference": {
+						"Entity": "InventoryTransaction.cdm.json/InventoryTransaction",
+						"Name": "InventoryTransactionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "InventoryTransactionStatusId",
+					"Description": "The unique identifier of an Inventory Transaction Status.",
+					"BaseAttributeReference": {
+						"Entity": "InventoryTransaction.cdm.json/InventoryTransaction",
+						"Name": "InventoryTransactionStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/InventoryTransaction",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/InventoryTransaction",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TransactionId\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"TransactionId\"},\"TransactionRequestedTimestamp\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"TransactionRequestedTimestamp\"},\"TransactionPlannedTimestamp\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"TransactionPlannedTimestamp\"},\"TransactionInitiatedTimestamp\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"TransactionInitiatedTimestamp\"},\"TransactionCompletedTimestamp\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"TransactionCompletedTimestamp\"},\"TransitTime\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"TransitTime\"},\"FromWarehouseId\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"FromWarehouseId\"},\"FromInventoryLocationId\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"FromInventoryLocationId\"},\"ToWarehouseId\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"ToWarehouseId\"},\"ToInventoryLocationId\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"ToInventoryLocationId\"},\"StagingLocationRequiredIndicator\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"StagingLocationRequiredIndicator\"},\"InventoryTransactionClassId\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"InventoryTransactionClassId\"},\"InventoryTransactionTypeId\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"InventoryTransactionTypeId\"},\"InventoryTransactionStatusId\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"InventoryTransactionStatusId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InventoryTransaction\",\"path\":\"InventoryTransaction.cdm.json/InventoryTransaction\"},\"description\":\"A specific Inventory Transaction that is applied to or carried out at a specific Inventory Location(s) upon the Items in those locations.\",\"primaryKey\":[\"TransactionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"TransactionId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Transaction.\",\"isNullable\":false,\"name\":\"TransactionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"TransactionRequestedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the Item Inventory Location Transaction was requested.\",\"isNullable\":true,\"name\":\"TransactionRequestedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"TransactionPlannedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the Item Inventory Location Transaction was planned.\",\"isNullable\":true,\"name\":\"TransactionPlannedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"TransactionInitiatedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the Item Inventory Location Transaction was initiated.\",\"isNullable\":true,\"name\":\"TransactionInitiatedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"TransactionCompletedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the Item Inventory Location Transaction was completed.\",\"isNullable\":true,\"name\":\"TransactionCompletedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"TransitTime\"},\"dataType\":\"integer\",\"description\":\"The time taken to move goods physically between different locations in a supply chain or laterally to another facility.\",\"isNullable\":true,\"name\":\"TransitTime\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"FromWarehouseId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Warehouse.\",\"isNullable\":true,\"name\":\"FromWarehouseId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"FromInventoryLocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a location.\",\"isNullable\":true,\"name\":\"FromInventoryLocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"ToWarehouseId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Warehouse.\",\"isNullable\":true,\"name\":\"ToWarehouseId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"ToInventoryLocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a location.\",\"isNullable\":true,\"name\":\"ToInventoryLocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"StagingLocationRequiredIndicator\"},\"dataType\":\"boolean\",\"description\":\"An indicator that indicates that staging for the associated transaction at the inventory location is required.\",\"isNullable\":true,\"name\":\"StagingLocationRequiredIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"InventoryTransactionClassId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the Inventory Transaction Class.\",\"isNullable\":true,\"name\":\"InventoryTransactionClassId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"InventoryTransactionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Inventory Transaction Type.\",\"isNullable\":true,\"name\":\"InventoryTransactionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"InventoryTransactionStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Inventory Transaction Status.\",\"isNullable\":true,\"name\":\"InventoryTransactionStatusId\"}]}}}",
+			"Description": "A specific Inventory Transaction that is applied to or carried out at a specific Inventory Location(s) upon the Items in those locations.",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "TransactionId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

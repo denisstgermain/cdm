@@ -1,0 +1,237 @@
+{
+	"name": "Bin",
+	"properties": {
+		"Name": "Bin",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "A storage device designed to hold small, discrete parts.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "WarehouseId",
+					"Description": "The unique identifier of a Warehouse.",
+					"BaseAttributeReference": {
+						"Entity": "Bin.cdm.json/Bin",
+						"Name": "WarehouseId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "BinId",
+					"Description": "The unique identifier of a Bin.",
+					"BaseAttributeReference": {
+						"Entity": "Bin.cdm.json/Bin",
+						"Name": "BinId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ShelfId",
+					"Description": "The unique identifier of a Shelf.",
+					"BaseAttributeReference": {
+						"Entity": "Bin.cdm.json/Bin",
+						"Name": "ShelfId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "BinLocationXCoordinate",
+					"Description": "The bin x-coordinate on a grid of the warehouse.",
+					"BaseAttributeReference": {
+						"Entity": "Bin.cdm.json/Bin",
+						"Name": "BinLocationXCoordinate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "BinLocationYCoordinate",
+					"Description": "The bin y-coordinate on a grid of the warehouse.",
+					"BaseAttributeReference": {
+						"Entity": "Bin.cdm.json/Bin",
+						"Name": "BinLocationYCoordinate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "BinLocationZCoordinate",
+					"Description": "The bin z-coordinate on a grid of the warehouse.",
+					"BaseAttributeReference": {
+						"Entity": "Bin.cdm.json/Bin",
+						"Name": "BinLocationZCoordinate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LocationGpsLongitudePosition",
+					"Description": "The location GPS position expressed in longitude.\n\nEx:\nGPS Coordinates (Ex= 39 deg 58.589 min) - seconds are converted to decimal format.",
+					"BaseAttributeReference": {
+						"Entity": "Bin.cdm.json/Bin",
+						"Name": "LocationGpsLongitudePosition"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 10,
+						"Scale": 7,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LocationGpsLatitudePosition",
+					"Description": "The location GPS position expressed in latitude.\n\nEx:\nGPS Coordinates (Ex= 39 deg 58.589 min) - seconds are converted to decimal format.",
+					"BaseAttributeReference": {
+						"Entity": "Bin.cdm.json/Bin",
+						"Name": "LocationGpsLatitudePosition"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 10,
+						"Scale": 7,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "StorageLocationStatusId",
+					"Description": "The unique identifier of a Storage Location.",
+					"BaseAttributeReference": {
+						"Entity": "Bin.cdm.json/Bin",
+						"Name": "StorageLocationStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SecurityLevelId",
+					"Description": "The unique identifier of the Item Security Level.",
+					"BaseAttributeReference": {
+						"Entity": "Bin.cdm.json/Bin",
+						"Name": "SecurityLevelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/Bin",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/Bin",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WarehouseId\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"WarehouseId\"},\"BinId\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"BinId\"},\"ShelfId\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"ShelfId\"},\"BinLocationXCoordinate\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"BinLocationXCoordinate\"},\"BinLocationYCoordinate\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"BinLocationYCoordinate\"},\"BinLocationZCoordinate\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"BinLocationZCoordinate\"},\"LocationGpsLongitudePosition\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"LocationGpsLongitudePosition\"},\"LocationGpsLatitudePosition\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"LocationGpsLatitudePosition\"},\"StorageLocationStatusId\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"StorageLocationStatusId\"},\"SecurityLevelId\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"SecurityLevelId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Bin\",\"path\":\"Bin.cdm.json/Bin\"},\"description\":\"A storage device designed to hold small, discrete parts.\",\"primaryKey\":[\"WarehouseId\",\"BinId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"WarehouseId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Warehouse.\",\"isNullable\":false,\"name\":\"WarehouseId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"BinId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Bin.\",\"isNullable\":false,\"name\":\"BinId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"ShelfId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shelf.\",\"isNullable\":false,\"name\":\"ShelfId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"BinLocationXCoordinate\"},\"dataType\":\"integer\",\"description\":\"The bin x-coordinate on a grid of the warehouse.\",\"isNullable\":true,\"name\":\"BinLocationXCoordinate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"BinLocationYCoordinate\"},\"dataType\":\"integer\",\"description\":\"The bin y-coordinate on a grid of the warehouse.\",\"isNullable\":true,\"name\":\"BinLocationYCoordinate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"BinLocationZCoordinate\"},\"dataType\":\"integer\",\"description\":\"The bin z-coordinate on a grid of the warehouse.\",\"isNullable\":true,\"name\":\"BinLocationZCoordinate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"LocationGpsLongitudePosition\"},\"dataType\":\"decimal\",\"dataTypeLength\":10,\"description\":\"The location GPS position expressed in longitude.\\n\\nEx:\\nGPS Coordinates (Ex= 39 deg 58.589 min) - seconds are converted to decimal format.\",\"isNullable\":false,\"scale\":7,\"name\":\"LocationGpsLongitudePosition\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"LocationGpsLatitudePosition\"},\"dataType\":\"decimal\",\"dataTypeLength\":10,\"description\":\"The location GPS position expressed in latitude.\\n\\nEx:\\nGPS Coordinates (Ex= 39 deg 58.589 min) - seconds are converted to decimal format.\",\"isNullable\":false,\"scale\":7,\"name\":\"LocationGpsLatitudePosition\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"StorageLocationStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Storage Location.\",\"isNullable\":true,\"name\":\"StorageLocationStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"SecurityLevelId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the Item Security Level.\",\"isNullable\":true,\"name\":\"SecurityLevelId\"}]}}}",
+			"Description": "A storage device designed to hold small, discrete parts.",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "WarehouseId,BinId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

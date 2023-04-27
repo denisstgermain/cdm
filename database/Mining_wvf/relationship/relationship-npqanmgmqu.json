@@ -1,0 +1,26 @@
+{
+	"name": "relationship-npqanmgmqu",
+	"properties": {
+		"Name": "relationship-npqanmgmqu",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Facility",
+		"ToTableName": "MineActivity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FacilityId",
+				"ToColumnName": "FacilityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Facility.cdm.json/Facility\",\"toEntity\":\"MineActivity.cdm.json/MineActivity\",\"joinPairs\":[{\"fromAttribute\":\"FacilityId\",\"toAttribute\":\"FacilityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

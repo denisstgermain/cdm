@@ -1,0 +1,115 @@
+{
+	"name": "WorkOrderDocument",
+	"properties": {
+		"Name": "WorkOrderDocument",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "A work order document.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "WorkOrderId",
+					"Description": "The unique identifier of a Work Order.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrderDocument.cdm.json/WorkOrderDocument",
+						"Name": "WorkOrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrderDocument.cdm.json/WorkOrderDocument",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WorkOrderDocumentNote",
+					"Description": "A note, comment or additional information regarding the project related document.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrderDocument.cdm.json/WorkOrderDocument",
+						"Name": "WorkOrderDocumentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/WorkOrderDocument",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/WorkOrderDocument",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WorkOrderId\":{\"entity\":\"WorkOrderDocument.cdm.json/WorkOrderDocument\",\"name\":\"WorkOrderId\"},\"DocumentId\":{\"entity\":\"WorkOrderDocument.cdm.json/WorkOrderDocument\",\"name\":\"DocumentId\"},\"WorkOrderDocumentNote\":{\"entity\":\"WorkOrderDocument.cdm.json/WorkOrderDocument\",\"name\":\"WorkOrderDocumentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"WorkOrderDocument\",\"path\":\"WorkOrderDocument.cdm.json/WorkOrderDocument\"},\"description\":\"A work order document.\",\"primaryKey\":[\"WorkOrderId\",\"DocumentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrderDocument.cdm.json/WorkOrderDocument\",\"name\":\"WorkOrderId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Work Order.\",\"isNullable\":false,\"name\":\"WorkOrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrderDocument.cdm.json/WorkOrderDocument\",\"name\":\"DocumentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Document.\",\"isNullable\":false,\"name\":\"DocumentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrderDocument.cdm.json/WorkOrderDocument\",\"name\":\"WorkOrderDocumentNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the project related document.\",\"isNullable\":true,\"name\":\"WorkOrderDocumentNote\"}]}}}",
+			"Description": "A work order document.",
+			"DisplayFolderInfo": "{\"name\":\"Work Order Management\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "WorkOrderId,DocumentId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

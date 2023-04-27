@@ -1,0 +1,227 @@
+{
+	"name": "RequisitionLineItem",
+	"properties": {
+		"Name": "RequisitionLineItem",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "The specific Item(s) detailed for the associated Requisition.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RequisitionId",
+					"Description": "The unique identifier of a Requisition.",
+					"BaseAttributeReference": {
+						"Entity": "RequisitionLineItem.cdm.json/RequisitionLineItem",
+						"Name": "RequisitionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RequisitionLineItemNumber",
+					"Description": "The unique identifier of the Requisition Line Item.",
+					"BaseAttributeReference": {
+						"Entity": "RequisitionLineItem.cdm.json/RequisitionLineItem",
+						"Name": "RequisitionLineItemNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Quantity",
+					"Description": "The quantity of Items requisitioned.",
+					"BaseAttributeReference": {
+						"Entity": "RequisitionLineItem.cdm.json/RequisitionLineItem",
+						"Name": "Quantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "StandardPerUnitItemPrice",
+					"Description": "The standard Vendor Item Price.",
+					"BaseAttributeReference": {
+						"Entity": "RequisitionLineItem.cdm.json/RequisitionLineItem",
+						"Name": "StandardPerUnitItemPrice"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DiscountPerItemUnitAmount",
+					"Description": "The per unit Item discount provided by the Vendor.",
+					"BaseAttributeReference": {
+						"Entity": "RequisitionLineItem.cdm.json/RequisitionLineItem",
+						"Name": "DiscountPerItemUnitAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RequisitionPerUnitItemPrice",
+					"Description": "The Item per unit price applied to the Requisition.",
+					"BaseAttributeReference": {
+						"Entity": "RequisitionLineItem.cdm.json/RequisitionLineItem",
+						"Name": "RequisitionPerUnitItemPrice"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "QualityStandardMeasure",
+					"Description": "The specific Quality Standard metric assigned to the RFI/RFP/PO etc.\n\nExample:\n\nQuality Standard = PPM (Parts Per Million defective)\nQuality Standard Measure = 100 (100 parts may be defective per million parts)",
+					"BaseAttributeReference": {
+						"Entity": "RequisitionLineItem.cdm.json/RequisitionLineItem",
+						"Name": "QualityStandardMeasure"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "QualityStandardId",
+					"Description": "The unique identifier of the Quality Standard.",
+					"BaseAttributeReference": {
+						"Entity": "RequisitionLineItem.cdm.json/RequisitionLineItem",
+						"Name": "QualityStandardId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "RequisitionLineItem.cdm.json/RequisitionLineItem",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 40,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/RequisitionLineItem",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/RequisitionLineItem",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RequisitionId\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"RequisitionId\"},\"RequisitionLineItemNumber\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"RequisitionLineItemNumber\"},\"Quantity\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"Quantity\"},\"StandardPerUnitItemPrice\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"StandardPerUnitItemPrice\"},\"DiscountPerItemUnitAmount\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"DiscountPerItemUnitAmount\"},\"RequisitionPerUnitItemPrice\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"RequisitionPerUnitItemPrice\"},\"QualityStandardMeasure\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"QualityStandardMeasure\"},\"QualityStandardId\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"QualityStandardId\"},\"ItemSku\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"ItemSku\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RequisitionLineItem\",\"path\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\"},\"description\":\"The specific Item(s) detailed for the associated Requisition.\",\"primaryKey\":[\"RequisitionId\",\"RequisitionLineItemNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"RequisitionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Requisition.\",\"isNullable\":false,\"name\":\"RequisitionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"RequisitionLineItemNumber\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the Requisition Line Item.\",\"isNullable\":false,\"name\":\"RequisitionLineItemNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"Quantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The quantity of Items requisitioned.\",\"isNullable\":true,\"scale\":2,\"name\":\"Quantity\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"StandardPerUnitItemPrice\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The standard Vendor Item Price.\",\"isNullable\":true,\"scale\":2,\"name\":\"StandardPerUnitItemPrice\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"DiscountPerItemUnitAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The per unit Item discount provided by the Vendor.\",\"isNullable\":true,\"scale\":2,\"name\":\"DiscountPerItemUnitAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"RequisitionPerUnitItemPrice\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The Item per unit price applied to the Requisition.\",\"isNullable\":true,\"scale\":2,\"name\":\"RequisitionPerUnitItemPrice\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"QualityStandardMeasure\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The specific Quality Standard metric assigned to the RFI/RFP/PO etc.\\n\\nExample:\\n\\nQuality Standard = PPM (Parts Per Million defective)\\nQuality Standard Measure = 100 (100 parts may be defective per million parts)\",\"isNullable\":true,\"scale\":8,\"name\":\"QualityStandardMeasure\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"QualityStandardId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the Quality Standard.\",\"isNullable\":true,\"name\":\"QualityStandardId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":40,\"description\":\"The Stock Keeping Unit identifier, which is typically used for inventory-related activities.\",\"isNullable\":true,\"name\":\"ItemSku\"}]}}}",
+			"Description": "The specific Item(s) detailed for the associated Requisition.",
+			"DisplayFolderInfo": "{\"name\":\"Purchasing\",\"colorCode\":\"#5F538F\"}",
+			"PrimaryKeys": "RequisitionId,RequisitionLineItemNumber",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

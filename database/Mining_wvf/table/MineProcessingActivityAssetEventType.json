@@ -1,0 +1,116 @@
+{
+	"name": "MineProcessingActivityAssetEventType",
+	"properties": {
+		"Name": "MineProcessingActivityAssetEventType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "A type of mine processing asset event related to the ore processing activity asset.\n\nEx:\n- Output from process via asset (conveyor, pipe, pipeline etc.)\n- Input to process via asset\n- Asset Installation\n- Asset Repair\n- Asset Operation\n- Asset Failure",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MineProcessingActivityAssetEventTypeId",
+					"Description": "The unique identifier of a mine processing activity asset event type.",
+					"BaseAttributeReference": {
+						"Entity": "MineProcessingActivityAssetEventType.cdm.json/MineProcessingActivityAssetEventType",
+						"Name": "MineProcessingActivityAssetEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineProcessingActivityAssetEventTypeName",
+					"Description": "The name of a mine processing activity asset event type.",
+					"BaseAttributeReference": {
+						"Entity": "MineProcessingActivityAssetEventType.cdm.json/MineProcessingActivityAssetEventType",
+						"Name": "MineProcessingActivityAssetEventTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineProcessingActivityAssetEventTypeDescription",
+					"Description": "The description of a mine processing activity asset event type.",
+					"BaseAttributeReference": {
+						"Entity": "MineProcessingActivityAssetEventType.cdm.json/MineProcessingActivityAssetEventType",
+						"Name": "MineProcessingActivityAssetEventTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MineProcessingActivityAssetEventType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MineProcessingActivityAssetEventType",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineProcessingActivityAssetEventTypeId\":{\"entity\":\"MineProcessingActivityAssetEventType.cdm.json/MineProcessingActivityAssetEventType\",\"name\":\"MineProcessingActivityAssetEventTypeId\"},\"MineProcessingActivityAssetEventTypeName\":{\"entity\":\"MineProcessingActivityAssetEventType.cdm.json/MineProcessingActivityAssetEventType\",\"name\":\"MineProcessingActivityAssetEventTypeName\"},\"MineProcessingActivityAssetEventTypeDescription\":{\"entity\":\"MineProcessingActivityAssetEventType.cdm.json/MineProcessingActivityAssetEventType\",\"name\":\"MineProcessingActivityAssetEventTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MineProcessingActivityAssetEventType\",\"path\":\"MineProcessingActivityAssetEventType.cdm.json/MineProcessingActivityAssetEventType\"},\"description\":\"A type of mine processing asset event related to the ore processing activity asset.\\n\\nEx:\\n- Output from process via asset (conveyor, pipe, pipeline etc.)\\n- Input to process via asset\\n- Asset Installation\\n- Asset Repair\\n- Asset Operation\\n- Asset Failure\",\"primaryKey\":[\"MineProcessingActivityAssetEventTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivityAssetEventType.cdm.json/MineProcessingActivityAssetEventType\",\"name\":\"MineProcessingActivityAssetEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine processing activity asset event type.\",\"isNullable\":false,\"name\":\"MineProcessingActivityAssetEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivityAssetEventType.cdm.json/MineProcessingActivityAssetEventType\",\"name\":\"MineProcessingActivityAssetEventTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of a mine processing activity asset event type.\",\"isNullable\":true,\"name\":\"MineProcessingActivityAssetEventTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivityAssetEventType.cdm.json/MineProcessingActivityAssetEventType\",\"name\":\"MineProcessingActivityAssetEventTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of a mine processing activity asset event type.\",\"isNullable\":true,\"name\":\"MineProcessingActivityAssetEventTypeDescription\"}]}}}",
+			"Description": "A type of mine processing asset event related to the ore processing activity asset.\n\nEx:\n- Output from process via asset (conveyor, pipe, pipeline etc.)\n- Input to process via asset\n- Asset Installation\n- Asset Repair\n- Asset Operation\n- Asset Failure",
+			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "MineProcessingActivityAssetEventTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

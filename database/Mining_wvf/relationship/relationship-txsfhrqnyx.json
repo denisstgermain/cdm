@@ -1,0 +1,26 @@
+{
+	"name": "relationship-txsfhrqnyx",
+	"properties": {
+		"Name": "relationship-txsfhrqnyx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Requisition",
+		"ToTableName": "RequisitionLineItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RequisitionId",
+				"ToColumnName": "RequisitionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Requisition.cdm.json/Requisition\",\"toEntity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"joinPairs\":[{\"fromAttribute\":\"RequisitionId\",\"toAttribute\":\"RequisitionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

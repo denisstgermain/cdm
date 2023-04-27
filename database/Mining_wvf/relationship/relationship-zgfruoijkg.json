@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zgfruoijkg",
+	"properties": {
+		"Name": "relationship-zgfruoijkg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MineProcessingActivityAsset",
+		"ToTableName": "MineProcessingActivityAssetEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetId",
+				"ToColumnName": "AssetId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MineProcessingActivityAsset.cdm.json/MineProcessingActivityAsset\",\"toEntity\":\"MineProcessingActivityAssetEvent.cdm.json/MineProcessingActivityAssetEvent\",\"joinPairs\":[{\"fromAttribute\":\"AssetId\",\"toAttribute\":\"AssetId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

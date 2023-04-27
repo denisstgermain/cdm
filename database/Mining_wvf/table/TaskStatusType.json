@@ -1,0 +1,116 @@
+{
+	"name": "TaskStatusType",
+	"properties": {
+		"Name": "TaskStatusType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "A status that may be applied to a task.\n\nEx:\n- Unscheduled\n- Issued for third-party bids\n- Planned\n- Scheduled\n- In Process\n- Completed\n- Late\n- Closed\n- Cancelled\n- Needs Action\n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TaskStatusTypeId",
+					"Description": "The unique identifier of a Task Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "TaskStatusType.cdm.json/TaskStatusType",
+						"Name": "TaskStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TaskStatusTypeName",
+					"Description": "The name of a Task Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "TaskStatusType.cdm.json/TaskStatusType",
+						"Name": "TaskStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TaskStatusTypeDescription",
+					"Description": "The description of a Tax Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "TaskStatusType.cdm.json/TaskStatusType",
+						"Name": "TaskStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/TaskStatusType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/TaskStatusType",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TaskStatusTypeId\":{\"entity\":\"TaskStatusType.cdm.json/TaskStatusType\",\"name\":\"TaskStatusTypeId\"},\"TaskStatusTypeName\":{\"entity\":\"TaskStatusType.cdm.json/TaskStatusType\",\"name\":\"TaskStatusTypeName\"},\"TaskStatusTypeDescription\":{\"entity\":\"TaskStatusType.cdm.json/TaskStatusType\",\"name\":\"TaskStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TaskStatusType\",\"path\":\"TaskStatusType.cdm.json/TaskStatusType\"},\"description\":\"A status that may be applied to a task.\\n\\nEx:\\n- Unscheduled\\n- Issued for third-party bids\\n- Planned\\n- Scheduled\\n- In Process\\n- Completed\\n- Late\\n- Closed\\n- Cancelled\\n- Needs Action\\n- Unknown\",\"primaryKey\":[\"TaskStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TaskStatusType.cdm.json/TaskStatusType\",\"name\":\"TaskStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Task Status Type.\",\"isNullable\":false,\"name\":\"TaskStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TaskStatusType.cdm.json/TaskStatusType\",\"name\":\"TaskStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of a Task Status Type.\",\"isNullable\":true,\"name\":\"TaskStatusTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TaskStatusType.cdm.json/TaskStatusType\",\"name\":\"TaskStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of a Tax Status Type.\",\"isNullable\":true,\"name\":\"TaskStatusTypeDescription\"}]}}}",
+			"Description": "A status that may be applied to a task.\n\nEx:\n- Unscheduled\n- Issued for third-party bids\n- Planned\n- Scheduled\n- In Process\n- Completed\n- Late\n- Closed\n- Cancelled\n- Needs Action\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Work Order Management\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "TaskStatusTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

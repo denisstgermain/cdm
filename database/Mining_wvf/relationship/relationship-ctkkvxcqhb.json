@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ctkkvxcqhb",
+	"properties": {
+		"Name": "relationship-ctkkvxcqhb",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MaintenanceTaskItemCost",
+		"ToTableName": "AssetMaintenanceTaskCostRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BomLevelNumber",
+				"ToColumnName": "BomLevelNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"toEntity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"BomLevelNumber\",\"toAttribute\":\"BomLevelNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

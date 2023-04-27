@@ -1,0 +1,26 @@
+{
+	"name": "relationship-idolxnnaum",
+	"properties": {
+		"Name": "relationship-idolxnnaum",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MaintenanceTaskType",
+		"ToTableName": "MaintenanceTask",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MaintenanceTaskTypeId",
+				"ToColumnName": "MaintenanceTaskTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MaintenanceTaskType.cdm.json/MaintenanceTaskType\",\"toEntity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"joinPairs\":[{\"fromAttribute\":\"MaintenanceTaskTypeId\",\"toAttribute\":\"MaintenanceTaskTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

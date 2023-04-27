@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lsnlhwlwtg",
+	"properties": {
+		"Name": "relationship-lsnlhwlwtg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PurchaseOrder",
+		"ToTableName": "PoChangeOrder",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PoNumber",
+				"ToColumnName": "PoNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PurchaseOrder.cdm.json/PurchaseOrder\",\"toEntity\":\"PoChangeOrder.cdm.json/PoChangeOrder\",\"joinPairs\":[{\"fromAttribute\":\"PoNumber\",\"toAttribute\":\"PoNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

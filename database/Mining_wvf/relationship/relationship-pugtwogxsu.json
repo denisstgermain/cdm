@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pugtwogxsu",
+	"properties": {
+		"Name": "relationship-pugtwogxsu",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PurchaseOrder",
+		"ToTableName": "PurchaseOrderStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PoNumber",
+				"ToColumnName": "PoNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PurchaseOrder.cdm.json/PurchaseOrder\",\"toEntity\":\"PurchaseOrderStatus.cdm.json/PurchaseOrderStatus\",\"joinPairs\":[{\"fromAttribute\":\"PoNumber\",\"toAttribute\":\"PoNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

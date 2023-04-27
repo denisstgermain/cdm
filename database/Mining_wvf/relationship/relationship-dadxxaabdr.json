@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dadxxaabdr",
+	"properties": {
+		"Name": "relationship-dadxxaabdr",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "WarehouseType",
+		"ToTableName": "Warehouse",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "WarehouseTypeId",
+				"ToColumnName": "WarehouseTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"WarehouseType.cdm.json/WarehouseType\",\"toEntity\":\"Warehouse.cdm.json/Warehouse\",\"joinPairs\":[{\"fromAttribute\":\"WarehouseTypeId\",\"toAttribute\":\"WarehouseTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

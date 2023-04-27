@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nemhzhsxof",
+	"properties": {
+		"Name": "relationship-nemhzhsxof",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MineActivity",
+		"ToTableName": "MineActivityAsset",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MineActivityId",
+				"ToColumnName": "MineActivityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MineActivity.cdm.json/MineActivity\",\"toEntity\":\"MineActivityAsset.cdm.json/MineActivityAsset\",\"joinPairs\":[{\"fromAttribute\":\"MineActivityId\",\"toAttribute\":\"MineActivityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

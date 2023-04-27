@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wuzscarivh",
+	"properties": {
+		"Name": "relationship-wuzscarivh",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Requisition",
+		"ToTableName": "RequisitionRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RequisitionId",
+				"ToColumnName": "RequisitionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Requisition.cdm.json/Requisition\",\"toEntity\":\"RequisitionRelatedParty.cdm.json/RequisitionRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"RequisitionId\",\"toAttribute\":\"RequisitionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

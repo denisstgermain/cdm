@@ -1,0 +1,116 @@
+{
+	"name": "WorkOrderPriority",
+	"properties": {
+		"Name": "WorkOrderPriority",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "The priority assigned Work Order.\n\nEx:\n- Critical\n- High\n- Medium\n- Low\n- Unknown\n- N/A",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "WorkOrderPriorityId",
+					"Description": "The unique identifier of the Work Order Priority.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrderPriority.cdm.json/WorkOrderPriority",
+						"Name": "WorkOrderPriorityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WorkOrderPriorityName",
+					"Description": "The name of the Work Order Priority.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrderPriority.cdm.json/WorkOrderPriority",
+						"Name": "WorkOrderPriorityName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WorkOrderPriorityDescription",
+					"Description": "The description of the Work Order Priority.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrderPriority.cdm.json/WorkOrderPriority",
+						"Name": "WorkOrderPriorityDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/WorkOrderPriority",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/WorkOrderPriority",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WorkOrderPriorityId\":{\"entity\":\"WorkOrderPriority.cdm.json/WorkOrderPriority\",\"name\":\"WorkOrderPriorityId\"},\"WorkOrderPriorityName\":{\"entity\":\"WorkOrderPriority.cdm.json/WorkOrderPriority\",\"name\":\"WorkOrderPriorityName\"},\"WorkOrderPriorityDescription\":{\"entity\":\"WorkOrderPriority.cdm.json/WorkOrderPriority\",\"name\":\"WorkOrderPriorityDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"WorkOrderPriority\",\"path\":\"WorkOrderPriority.cdm.json/WorkOrderPriority\"},\"description\":\"The priority assigned Work Order.\\n\\nEx:\\n- Critical\\n- High\\n- Medium\\n- Low\\n- Unknown\\n- N/A\",\"primaryKey\":[\"WorkOrderPriorityId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrderPriority.cdm.json/WorkOrderPriority\",\"name\":\"WorkOrderPriorityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the Work Order Priority.\",\"isNullable\":false,\"name\":\"WorkOrderPriorityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrderPriority.cdm.json/WorkOrderPriority\",\"name\":\"WorkOrderPriorityName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of the Work Order Priority.\",\"isNullable\":true,\"name\":\"WorkOrderPriorityName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrderPriority.cdm.json/WorkOrderPriority\",\"name\":\"WorkOrderPriorityDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of the Work Order Priority.\",\"isNullable\":true,\"name\":\"WorkOrderPriorityDescription\"}]}}}",
+			"Description": "The priority assigned Work Order.\n\nEx:\n- Critical\n- High\n- Medium\n- Low\n- Unknown\n- N/A",
+			"DisplayFolderInfo": "{\"name\":\"Work Order Management\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "WorkOrderPriorityId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

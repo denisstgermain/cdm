@@ -1,0 +1,26 @@
+{
+	"name": "relationship-enblfiaffo",
+	"properties": {
+		"Name": "relationship-enblfiaffo",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PurchaseOrderType",
+		"ToTableName": "PurchaseOrder",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PurchaseOrderTypeId",
+				"ToColumnName": "PurchaseOrderTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PurchaseOrderType.cdm.json/PurchaseOrderType\",\"toEntity\":\"PurchaseOrder.cdm.json/PurchaseOrder\",\"joinPairs\":[{\"fromAttribute\":\"PurchaseOrderTypeId\",\"toAttribute\":\"PurchaseOrderTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xspbbjbpxk",
+	"properties": {
+		"Name": "relationship-xspbbjbpxk",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MaintenanceTaskItem",
+		"ToTableName": "MaintenanceTaskItemCost",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MaintenanceTaskId",
+				"ToColumnName": "MaintenanceTaskId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"toEntity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"joinPairs\":[{\"fromAttribute\":\"MaintenanceTaskId\",\"toAttribute\":\"MaintenanceTaskId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

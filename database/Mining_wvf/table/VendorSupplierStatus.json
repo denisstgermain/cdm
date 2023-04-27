@@ -1,0 +1,151 @@
+{
+	"name": "VendorSupplierStatus",
+	"properties": {
+		"Name": "VendorSupplierStatus",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "The Legal Entity Supplier Status as of the associated date.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "VendorId",
+					"Description": "The unique identifier of a Vendor.",
+					"BaseAttributeReference": {
+						"Entity": "VendorSupplierStatus.cdm.json/VendorSupplierStatus",
+						"Name": "VendorId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SupplierStatusId",
+					"Description": "The unique identifier of a Supplier Status.",
+					"BaseAttributeReference": {
+						"Entity": "VendorSupplierStatus.cdm.json/VendorSupplierStatus",
+						"Name": "SupplierStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the associated Supplier Status is effective or 'as-of'.",
+					"BaseAttributeReference": {
+						"Entity": "VendorSupplierStatus.cdm.json/VendorSupplierStatus",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the associated Supplier Status is effective or 'as-of'.",
+					"BaseAttributeReference": {
+						"Entity": "VendorSupplierStatus.cdm.json/VendorSupplierStatus",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "VendorSupplierStatusNote",
+					"Description": "A note, comment or additional information regarding the Vendor Supplier Status for the associated period.",
+					"BaseAttributeReference": {
+						"Entity": "VendorSupplierStatus.cdm.json/VendorSupplierStatus",
+						"Name": "VendorSupplierStatusNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/VendorSupplierStatus",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/VendorSupplierStatus",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VendorId\":{\"entity\":\"VendorSupplierStatus.cdm.json/VendorSupplierStatus\",\"name\":\"VendorId\"},\"SupplierStatusId\":{\"entity\":\"VendorSupplierStatus.cdm.json/VendorSupplierStatus\",\"name\":\"SupplierStatusId\"},\"PeriodStartDate\":{\"entity\":\"VendorSupplierStatus.cdm.json/VendorSupplierStatus\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"VendorSupplierStatus.cdm.json/VendorSupplierStatus\",\"name\":\"PeriodEndDate\"},\"VendorSupplierStatusNote\":{\"entity\":\"VendorSupplierStatus.cdm.json/VendorSupplierStatus\",\"name\":\"VendorSupplierStatusNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VendorSupplierStatus\",\"path\":\"VendorSupplierStatus.cdm.json/VendorSupplierStatus\"},\"description\":\"The Legal Entity Supplier Status as of the associated date.\",\"primaryKey\":[\"VendorId\",\"SupplierStatusId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VendorSupplierStatus.cdm.json/VendorSupplierStatus\",\"name\":\"VendorId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Vendor.\",\"isNullable\":false,\"name\":\"VendorId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VendorSupplierStatus.cdm.json/VendorSupplierStatus\",\"name\":\"SupplierStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Supplier Status.\",\"isNullable\":false,\"name\":\"SupplierStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VendorSupplierStatus.cdm.json/VendorSupplierStatus\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the associated Supplier Status is effective or 'as-of'.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VendorSupplierStatus.cdm.json/VendorSupplierStatus\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the associated Supplier Status is effective or 'as-of'.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VendorSupplierStatus.cdm.json/VendorSupplierStatus\",\"name\":\"VendorSupplierStatusNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the Vendor Supplier Status for the associated period.\",\"isNullable\":true,\"name\":\"VendorSupplierStatusNote\"}]}}}",
+			"Description": "The Legal Entity Supplier Status as of the associated date.",
+			"DisplayFolderInfo": "{\"name\":\"Vendor\",\"colorCode\":\"#0078D4\"}",
+			"PrimaryKeys": "VendorId,SupplierStatusId,PeriodStartDate",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

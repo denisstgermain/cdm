@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tnwmtzxxbj",
+	"properties": {
+		"Name": "relationship-tnwmtzxxbj",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MaintenanceTaskItemCost",
+		"ToTableName": "AssetMaintenanceTaskCostRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CostTypeId",
+				"ToColumnName": "CostTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"toEntity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"CostTypeId\",\"toAttribute\":\"CostTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

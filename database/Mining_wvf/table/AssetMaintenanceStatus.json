@@ -1,0 +1,133 @@
+{
+	"name": "AssetMaintenanceStatus",
+	"properties": {
+		"Name": "AssetMaintenanceStatus",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "The status of the associated asset maintenance.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AssetMaintenanceId",
+					"Description": "The unique identifier of an Asset Maintenance.",
+					"BaseAttributeReference": {
+						"Entity": "AssetMaintenanceStatus.cdm.json/AssetMaintenanceStatus",
+						"Name": "AssetMaintenanceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AssetMaintenanceTimestamp",
+					"Description": "The timestamp of the asset maintenance status.",
+					"BaseAttributeReference": {
+						"Entity": "AssetMaintenanceStatus.cdm.json/AssetMaintenanceStatus",
+						"Name": "AssetMaintenanceTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MaintenanceStatusId",
+					"Description": "The unique identifier of a Maintenance Operation Status.",
+					"BaseAttributeReference": {
+						"Entity": "AssetMaintenanceStatus.cdm.json/AssetMaintenanceStatus",
+						"Name": "MaintenanceStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AssetMaintenanceStatusNote",
+					"Description": "Notes, comments or additional information regarding the Asset Maintenance Status.",
+					"BaseAttributeReference": {
+						"Entity": "AssetMaintenanceStatus.cdm.json/AssetMaintenanceStatus",
+						"Name": "AssetMaintenanceStatusNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/AssetMaintenanceStatus",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/AssetMaintenanceStatus",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetMaintenanceId\":{\"entity\":\"AssetMaintenanceStatus.cdm.json/AssetMaintenanceStatus\",\"name\":\"AssetMaintenanceId\"},\"AssetMaintenanceTimestamp\":{\"entity\":\"AssetMaintenanceStatus.cdm.json/AssetMaintenanceStatus\",\"name\":\"AssetMaintenanceTimestamp\"},\"MaintenanceStatusId\":{\"entity\":\"AssetMaintenanceStatus.cdm.json/AssetMaintenanceStatus\",\"name\":\"MaintenanceStatusId\"},\"AssetMaintenanceStatusNote\":{\"entity\":\"AssetMaintenanceStatus.cdm.json/AssetMaintenanceStatus\",\"name\":\"AssetMaintenanceStatusNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AssetMaintenanceStatus\",\"path\":\"AssetMaintenanceStatus.cdm.json/AssetMaintenanceStatus\"},\"description\":\"The status of the associated asset maintenance.\",\"primaryKey\":[\"AssetMaintenanceId\",\"AssetMaintenanceTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetMaintenanceStatus.cdm.json/AssetMaintenanceStatus\",\"name\":\"AssetMaintenanceId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Asset Maintenance.\",\"isNullable\":false,\"name\":\"AssetMaintenanceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetMaintenanceStatus.cdm.json/AssetMaintenanceStatus\",\"name\":\"AssetMaintenanceTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp of the asset maintenance status.\",\"isNullable\":false,\"name\":\"AssetMaintenanceTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetMaintenanceStatus.cdm.json/AssetMaintenanceStatus\",\"name\":\"MaintenanceStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Maintenance Operation Status.\",\"isNullable\":false,\"name\":\"MaintenanceStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetMaintenanceStatus.cdm.json/AssetMaintenanceStatus\",\"name\":\"AssetMaintenanceStatusNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"Notes, comments or additional information regarding the Asset Maintenance Status.\",\"isNullable\":true,\"name\":\"AssetMaintenanceStatusNote\"}]}}}",
+			"Description": "The status of the associated asset maintenance.",
+			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "AssetMaintenanceId,AssetMaintenanceTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

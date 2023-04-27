@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tuvutalcgm",
+	"properties": {
+		"Name": "relationship-tuvutalcgm",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MaintenanceTask",
+		"ToTableName": "AssetMaintenanceTaskConsumableItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetMaintenanceId",
+				"ToColumnName": "AssetMaintenanceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"toEntity\":\"AssetMaintenanceTaskConsumableItem.cdm.json/AssetMaintenanceTaskConsumableItem\",\"joinPairs\":[{\"fromAttribute\":\"AssetMaintenanceId\",\"toAttribute\":\"AssetMaintenanceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

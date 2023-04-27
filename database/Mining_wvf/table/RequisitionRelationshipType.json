@@ -1,0 +1,130 @@
+{
+	"name": "RequisitionRelationshipType",
+	"properties": {
+		"Name": "RequisitionRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "The nature of the relationship between two or more Requisitions.\n\nEx:\n- Amended Requisition",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RequisitionRelationshipTypeId",
+					"Description": "The unique identifier of a Requisition Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RequisitionRelationshipType.cdm.json/RequisitionRelationshipType",
+						"Name": "RequisitionRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RequisitionRelationshipTypeName",
+					"Description": "The name of a Requisition Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RequisitionRelationshipType.cdm.json/RequisitionRelationshipType",
+						"Name": "RequisitionRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RequisitionRelationshipTypeDescription",
+					"Description": "The description of a Requisition Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RequisitionRelationshipType.cdm.json/RequisitionRelationshipType",
+						"Name": "RequisitionRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Column",
+					"Description": "Column",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsNullable": false,
+						"IsComplexType": false,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/RequisitionRelationshipType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/RequisitionRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RequisitionRelationshipTypeId\":{\"entity\":\"RequisitionRelationshipType.cdm.json/RequisitionRelationshipType\",\"name\":\"RequisitionRelationshipTypeId\"},\"RequisitionRelationshipTypeName\":{\"entity\":\"RequisitionRelationshipType.cdm.json/RequisitionRelationshipType\",\"name\":\"RequisitionRelationshipTypeName\"},\"RequisitionRelationshipTypeDescription\":{\"entity\":\"RequisitionRelationshipType.cdm.json/RequisitionRelationshipType\",\"name\":\"RequisitionRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"name\":\"RequisitionRelationshipType\",\"description\":\"The nature of the relationship between two or more Requisitions.\\n\\nEx:\\n- Amended Requisition\",\"baseEntityReference\":{\"name\":\"RequisitionRelationshipType\",\"path\":\"RequisitionRelationshipType.cdm.json/RequisitionRelationshipType\"},\"primaryKey\":[\"RequisitionRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RequisitionRelationshipType.cdm.json/RequisitionRelationshipType\",\"name\":\"RequisitionRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Requisition Relationship Type.\",\"isNullable\":false,\"name\":\"RequisitionRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RequisitionRelationshipType.cdm.json/RequisitionRelationshipType\",\"name\":\"RequisitionRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of a Requisition Relationship Type.\",\"isNullable\":true,\"name\":\"RequisitionRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RequisitionRelationshipType.cdm.json/RequisitionRelationshipType\",\"name\":\"RequisitionRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of a Requisition Relationship Type.\",\"isNullable\":true,\"name\":\"RequisitionRelationshipTypeDescription\"},{\"type\":\"New\",\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"Column\",\"isNullable\":false,\"name\":\"Column\"}]}}}",
+			"Description": "The nature of the relationship between two or more Requisitions.\n\nEx:\n- Amended Requisition",
+			"DisplayFolderInfo": "{\"name\":\"Purchasing\",\"colorCode\":\"#5F538F\"}",
+			"PrimaryKeys": "RequisitionRelationshipTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

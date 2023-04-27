@@ -1,0 +1,133 @@
+{
+	"name": "WorkOrderType",
+	"properties": {
+		"Name": "WorkOrderType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "A type of work order based on function, similar objectives etc.\n\nEx:\n- Repair\n- Installation\n- Upgrade\n- Manufacturing\n- Recall\n- Shipping\n- Job Plan\n- Template",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "WorkOrderTypeId",
+					"Description": "The unique identifier of a Work Order Type.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrderType.cdm.json/WorkOrderType",
+						"Name": "WorkOrderTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WorkOrderTypeName",
+					"Description": "The name of a Work Order Type.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrderType.cdm.json/WorkOrderType",
+						"Name": "WorkOrderTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WorkOrderTypeDescription",
+					"Description": "The description of a Work Order Type.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrderType.cdm.json/WorkOrderType",
+						"Name": "WorkOrderTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "CapitalizationIndicator",
+					"Description": "Indicates whether the activities, items or assets of the work order should be capitalized.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrderType.cdm.json/WorkOrderType",
+						"Name": "CapitalizationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/WorkOrderType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/WorkOrderType",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WorkOrderTypeId\":{\"entity\":\"WorkOrderType.cdm.json/WorkOrderType\",\"name\":\"WorkOrderTypeId\"},\"WorkOrderTypeName\":{\"entity\":\"WorkOrderType.cdm.json/WorkOrderType\",\"name\":\"WorkOrderTypeName\"},\"WorkOrderTypeDescription\":{\"entity\":\"WorkOrderType.cdm.json/WorkOrderType\",\"name\":\"WorkOrderTypeDescription\"},\"CapitalizationIndicator\":{\"entity\":\"WorkOrderType.cdm.json/WorkOrderType\",\"name\":\"CapitalizationIndicator\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"WorkOrderType\",\"path\":\"WorkOrderType.cdm.json/WorkOrderType\"},\"description\":\"A type of work order based on function, similar objectives etc.\\n\\nEx:\\n- Repair\\n- Installation\\n- Upgrade\\n- Manufacturing\\n- Recall\\n- Shipping\\n- Job Plan\\n- Template\",\"primaryKey\":[\"WorkOrderTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrderType.cdm.json/WorkOrderType\",\"name\":\"WorkOrderTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Work Order Type.\",\"isNullable\":false,\"name\":\"WorkOrderTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrderType.cdm.json/WorkOrderType\",\"name\":\"WorkOrderTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of a Work Order Type.\",\"isNullable\":true,\"name\":\"WorkOrderTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrderType.cdm.json/WorkOrderType\",\"name\":\"WorkOrderTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of a Work Order Type.\",\"isNullable\":true,\"name\":\"WorkOrderTypeDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrderType.cdm.json/WorkOrderType\",\"name\":\"CapitalizationIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the activities, items or assets of the work order should be capitalized.\",\"isNullable\":true,\"name\":\"CapitalizationIndicator\"}]}}}",
+			"Description": "A type of work order based on function, similar objectives etc.\n\nEx:\n- Repair\n- Installation\n- Upgrade\n- Manufacturing\n- Recall\n- Shipping\n- Job Plan\n- Template",
+			"DisplayFolderInfo": "{\"name\":\"Work Order Management\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "WorkOrderTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ohwhvsvjkj",
+	"properties": {
+		"Name": "relationship-ohwhvsvjkj",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "WorkOrderPriority",
+		"ToTableName": "WorkOrder",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "WorkOrderPriorityId",
+				"ToColumnName": "WorkOrderPriorityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"WorkOrderPriority.cdm.json/WorkOrderPriority\",\"toEntity\":\"WorkOrder.cdm.json/WorkOrder\",\"joinPairs\":[{\"fromAttribute\":\"WorkOrderPriorityId\",\"toAttribute\":\"WorkOrderPriorityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bmkyltnfph",
+	"properties": {
+		"Name": "relationship-bmkyltnfph",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MineType",
+		"ToTableName": "Mine",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MineTypeId",
+				"ToColumnName": "MineTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MineType.cdm.json/MineType\",\"toEntity\":\"Mine.cdm.json/Mine\",\"joinPairs\":[{\"fromAttribute\":\"MineTypeId\",\"toAttribute\":\"MineTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

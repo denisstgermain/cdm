@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ajfgxukyqd",
+	"properties": {
+		"Name": "relationship-ajfgxukyqd",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "WorkOrder",
+		"ToTableName": "WorkOrderStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "WorkOrderId",
+				"ToColumnName": "WorkOrderId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"WorkOrder.cdm.json/WorkOrder\",\"toEntity\":\"WorkOrderStatus.cdm.json/WorkOrderStatus\",\"joinPairs\":[{\"fromAttribute\":\"WorkOrderId\",\"toAttribute\":\"WorkOrderId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

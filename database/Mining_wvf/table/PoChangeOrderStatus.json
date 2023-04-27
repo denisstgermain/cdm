@@ -1,0 +1,133 @@
+{
+	"name": "PoChangeOrderStatus",
+	"properties": {
+		"Name": "PoChangeOrderStatus",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "The status of the associated PO Change Order.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PoChangeOrderId",
+					"Description": "The unique identifier of a Purchase Order Change Order.",
+					"BaseAttributeReference": {
+						"Entity": "PoChangeOrderStatus.cdm.json/PoChangeOrderStatus",
+						"Name": "PoChangeOrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PoChangeOrderStatusStartTimestamp",
+					"Description": "The start timestamp of the PO change order status.",
+					"BaseAttributeReference": {
+						"Entity": "PoChangeOrderStatus.cdm.json/PoChangeOrderStatus",
+						"Name": "PoChangeOrderStatusStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PoChangeOrderStatusEndTimestamp",
+					"Description": "The end timestamp of the PO change order status.",
+					"BaseAttributeReference": {
+						"Entity": "PoChangeOrderStatus.cdm.json/PoChangeOrderStatus",
+						"Name": "PoChangeOrderStatusEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PoChangeOrderStatusTypeId",
+					"Description": "The unique identifier of the PO Change Order Status.",
+					"BaseAttributeReference": {
+						"Entity": "PoChangeOrderStatus.cdm.json/PoChangeOrderStatus",
+						"Name": "PoChangeOrderStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/PoChangeOrderStatus",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/PoChangeOrderStatus",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PoChangeOrderId\":{\"entity\":\"PoChangeOrderStatus.cdm.json/PoChangeOrderStatus\",\"name\":\"PoChangeOrderId\"},\"PoChangeOrderStatusStartTimestamp\":{\"entity\":\"PoChangeOrderStatus.cdm.json/PoChangeOrderStatus\",\"name\":\"PoChangeOrderStatusStartTimestamp\"},\"PoChangeOrderStatusEndTimestamp\":{\"entity\":\"PoChangeOrderStatus.cdm.json/PoChangeOrderStatus\",\"name\":\"PoChangeOrderStatusEndTimestamp\"},\"PoChangeOrderStatusTypeId\":{\"entity\":\"PoChangeOrderStatus.cdm.json/PoChangeOrderStatus\",\"name\":\"PoChangeOrderStatusTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PoChangeOrderStatus\",\"path\":\"PoChangeOrderStatus.cdm.json/PoChangeOrderStatus\"},\"description\":\"The status of the associated PO Change Order.\",\"primaryKey\":[\"PoChangeOrderId\",\"PoChangeOrderStatusStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PoChangeOrderStatus.cdm.json/PoChangeOrderStatus\",\"name\":\"PoChangeOrderId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Purchase Order Change Order.\",\"isNullable\":false,\"name\":\"PoChangeOrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PoChangeOrderStatus.cdm.json/PoChangeOrderStatus\",\"name\":\"PoChangeOrderStatusStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The start timestamp of the PO change order status.\",\"isNullable\":false,\"name\":\"PoChangeOrderStatusStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PoChangeOrderStatus.cdm.json/PoChangeOrderStatus\",\"name\":\"PoChangeOrderStatusEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The end timestamp of the PO change order status.\",\"isNullable\":true,\"name\":\"PoChangeOrderStatusEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PoChangeOrderStatus.cdm.json/PoChangeOrderStatus\",\"name\":\"PoChangeOrderStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the PO Change Order Status.\",\"isNullable\":true,\"name\":\"PoChangeOrderStatusTypeId\"}]}}}",
+			"Description": "The status of the associated PO Change Order.",
+			"DisplayFolderInfo": "{\"name\":\"Purchasing\",\"colorCode\":\"#5F538F\"}",
+			"PrimaryKeys": "PoChangeOrderId,PoChangeOrderStatusStartTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

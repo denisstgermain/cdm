@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jvxfkjegll",
+	"properties": {
+		"Name": "relationship-jvxfkjegll",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MineActivity",
+		"ToTableName": "Detonation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MineActivityId",
+				"ToColumnName": "MineActivityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MineActivity.cdm.json/MineActivity\",\"toEntity\":\"Detonation.cdm.json/Detonation\",\"joinPairs\":[{\"fromAttribute\":\"MineActivityId\",\"toAttribute\":\"MineActivityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

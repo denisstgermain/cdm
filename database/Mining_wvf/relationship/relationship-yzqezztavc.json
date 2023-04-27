@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yzqezztavc",
+	"properties": {
+		"Name": "relationship-yzqezztavc",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Facility",
+		"ToTableName": "Mine",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FacilityId",
+				"ToColumnName": "FacilityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Facility.cdm.json/Facility\",\"toEntity\":\"Mine.cdm.json/Mine\",\"joinPairs\":[{\"fromAttribute\":\"FacilityId\",\"toAttribute\":\"FacilityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

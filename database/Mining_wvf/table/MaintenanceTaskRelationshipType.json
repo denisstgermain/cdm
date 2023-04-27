@@ -1,0 +1,116 @@
+{
+	"name": "MaintenanceTaskRelationshipType",
+	"properties": {
+		"Name": "MaintenanceTaskRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "The type of relationship that exists between two maintenance tasks.\n\nEx:\n- is performed before\n- is performed after\n- is performed at the same time\n- must be complete before task begins",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MaintenanceTaskRelationshipTypeId",
+					"Description": "The unique identifier of a Maintenance Task Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskRelationshipType.cdm.json/MaintenanceTaskRelationshipType",
+						"Name": "MaintenanceTaskRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MaintenanceTaskRelationshipTypeName",
+					"Description": "The name of a Maintenance Task Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskRelationshipType.cdm.json/MaintenanceTaskRelationshipType",
+						"Name": "MaintenanceTaskRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MaintenanceTaskRelationshipTypeDescription",
+					"Description": "The description of a Maintenance Task Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskRelationshipType.cdm.json/MaintenanceTaskRelationshipType",
+						"Name": "MaintenanceTaskRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MaintenanceTaskRelationshipType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MaintenanceTaskRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceTaskRelationshipTypeId\":{\"entity\":\"MaintenanceTaskRelationshipType.cdm.json/MaintenanceTaskRelationshipType\",\"name\":\"MaintenanceTaskRelationshipTypeId\"},\"MaintenanceTaskRelationshipTypeName\":{\"entity\":\"MaintenanceTaskRelationshipType.cdm.json/MaintenanceTaskRelationshipType\",\"name\":\"MaintenanceTaskRelationshipTypeName\"},\"MaintenanceTaskRelationshipTypeDescription\":{\"entity\":\"MaintenanceTaskRelationshipType.cdm.json/MaintenanceTaskRelationshipType\",\"name\":\"MaintenanceTaskRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MaintenanceTaskRelationshipType\",\"path\":\"MaintenanceTaskRelationshipType.cdm.json/MaintenanceTaskRelationshipType\"},\"description\":\"The type of relationship that exists between two maintenance tasks.\\n\\nEx:\\n- is performed before\\n- is performed after\\n- is performed at the same time\\n- must be complete before task begins\",\"primaryKey\":[\"MaintenanceTaskRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskRelationshipType.cdm.json/MaintenanceTaskRelationshipType\",\"name\":\"MaintenanceTaskRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Maintenance Task Relationship Type.\",\"isNullable\":false,\"name\":\"MaintenanceTaskRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskRelationshipType.cdm.json/MaintenanceTaskRelationshipType\",\"name\":\"MaintenanceTaskRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of a Maintenance Task Relationship Type.\",\"isNullable\":true,\"name\":\"MaintenanceTaskRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskRelationshipType.cdm.json/MaintenanceTaskRelationshipType\",\"name\":\"MaintenanceTaskRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of a Maintenance Task Relationship Type.\",\"isNullable\":true,\"name\":\"MaintenanceTaskRelationshipTypeDescription\"}]}}}",
+			"Description": "The type of relationship that exists between two maintenance tasks.\n\nEx:\n- is performed before\n- is performed after\n- is performed at the same time\n- must be complete before task begins",
+			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "MaintenanceTaskRelationshipTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

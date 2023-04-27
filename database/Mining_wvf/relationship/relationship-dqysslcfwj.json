@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dqysslcfwj",
+	"properties": {
+		"Name": "relationship-dqysslcfwj",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Device",
+		"ToTableName": "DeviceEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DeviceId",
+				"ToColumnName": "DeviceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Device.cdm.json/Device\",\"toEntity\":\"DeviceEvent.cdm.json/DeviceEvent\",\"joinPairs\":[{\"fromAttribute\":\"DeviceId\",\"toAttribute\":\"DeviceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

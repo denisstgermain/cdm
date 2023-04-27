@@ -1,0 +1,116 @@
+{
+	"name": "MaintenanceTaskType",
+	"properties": {
+		"Name": "MaintenanceTaskType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "A classification of maintenance tasks based on common characteristics or utilization.\n\nEx:\n- upgrade\n- retrofit\n- regularly scheduled maintenance",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MaintenanceTaskTypeId",
+					"Description": "The unique identifier of a Maintenance Task Type.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskType.cdm.json/MaintenanceTaskType",
+						"Name": "MaintenanceTaskTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MaintenanceTaskTypeName",
+					"Description": "The name of a Maintenance Task Type.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskType.cdm.json/MaintenanceTaskType",
+						"Name": "MaintenanceTaskTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MaintenanceTaskTypeDescription",
+					"Description": "The description of a Maintenance Task Type.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceTaskType.cdm.json/MaintenanceTaskType",
+						"Name": "MaintenanceTaskTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MaintenanceTaskType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MaintenanceTaskType",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceTaskTypeId\":{\"entity\":\"MaintenanceTaskType.cdm.json/MaintenanceTaskType\",\"name\":\"MaintenanceTaskTypeId\"},\"MaintenanceTaskTypeName\":{\"entity\":\"MaintenanceTaskType.cdm.json/MaintenanceTaskType\",\"name\":\"MaintenanceTaskTypeName\"},\"MaintenanceTaskTypeDescription\":{\"entity\":\"MaintenanceTaskType.cdm.json/MaintenanceTaskType\",\"name\":\"MaintenanceTaskTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MaintenanceTaskType\",\"path\":\"MaintenanceTaskType.cdm.json/MaintenanceTaskType\"},\"description\":\"A classification of maintenance tasks based on common characteristics or utilization.\\n\\nEx:\\n- upgrade\\n- retrofit\\n- regularly scheduled maintenance\",\"primaryKey\":[\"MaintenanceTaskTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskType.cdm.json/MaintenanceTaskType\",\"name\":\"MaintenanceTaskTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Maintenance Task Type.\",\"isNullable\":false,\"name\":\"MaintenanceTaskTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskType.cdm.json/MaintenanceTaskType\",\"name\":\"MaintenanceTaskTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of a Maintenance Task Type.\",\"isNullable\":true,\"name\":\"MaintenanceTaskTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceTaskType.cdm.json/MaintenanceTaskType\",\"name\":\"MaintenanceTaskTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of a Maintenance Task Type.\",\"isNullable\":true,\"name\":\"MaintenanceTaskTypeDescription\"}]}}}",
+			"Description": "A classification of maintenance tasks based on common characteristics or utilization.\n\nEx:\n- upgrade\n- retrofit\n- regularly scheduled maintenance",
+			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "MaintenanceTaskTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

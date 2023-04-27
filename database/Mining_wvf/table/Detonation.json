@@ -1,0 +1,515 @@
+{
+	"name": "Detonation",
+	"properties": {
+		"Name": "Detonation",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "The detonation of explosive material in conjunction with a mining activity.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DetonationId",
+					"Description": "The unique identifier of a detonation.",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "DetonationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DetonationLocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "DetonationLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineActivityId",
+					"Description": "The unique identifier of a mine activity.",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "MineActivityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "BlastInitiationTimestamp",
+					"Description": "The timestamp of initiation, which is the act of causing an explosive material to detonate or deflagrate.",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "BlastInitiationTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LoadingEndTimestamp",
+					"Description": "The end timestamp of loading, which is the placing explosive material in a blasthole or against the material to be blasted.",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "LoadingEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LoadingStartTimestamp",
+					"Description": "The start timestamp of loading, which is the placing explosive material in a blasthole or against the material to be blasted.",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "LoadingStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "BlastingTechniqueId",
+					"Description": "The unique identifier of a blasting technique.",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "BlastingTechniqueId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "InitiatorId",
+					"Description": "The unique identifier of an Initiator",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "InitiatorId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DetonationDepthMeters",
+					"Description": "The depth at which the detonation occurs.",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "DetonationDepthMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "HoleLoadingMethodId",
+					"Description": "The unique identifier of a hole loading method.",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "HoleLoadingMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "BlastingCircuitTypeId",
+					"Description": "The unique identifier of a blasting circuit type.",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "BlastingCircuitTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DetonationStatusId",
+					"Description": "The unique identifier of a detonation status.",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "DetonationStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LoadingFactorRatioNumber",
+					"Description": "The weight of explosive per foot in a borehole.",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "LoadingFactorRatioNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DelayIntervalSeconds",
+					"Description": "The nominal time between the detonations of delay detonators of adjacent periods in a delay series; the nominal time between successive detonations in a blast.",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "DelayIntervalSeconds"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DelayTimeSeconds",
+					"Description": "The lapse of time between the application of a firing signal and the detonation of the base charge of a delay detonator",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "DelayTimeSeconds"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DetonatingVelocityFtSecond",
+					"Description": "The velocity at which detonation progresses through an explosive in feet/second.",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "DetonatingVelocityFtSecond"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ExplosiveLoadingFactor",
+					"Description": "The amount of explosive used per unit of rock.",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "ExplosiveLoadingFactor"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "BlastAreaSchema",
+					"Description": "A schema depicting the area of a blast within the influence of flying rock missiles, gases, and concussion.",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "BlastAreaSchema"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LoadingFactor",
+					"Description": "The weight of explosive per foot in a borehole. (Can be determined by .34 x Borehole diameter squared X density of explosives product).",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "LoadingFactor"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PowderFactor",
+					"Description": "The ratio of weight of explosive to tons or cubic yards of material blasted.",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "PowderFactor"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DetonationAirblastDecibels",
+					"Description": "Airborne shock wave resulting from the detonation of explosives.",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "DetonationAirblastDecibels"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DetonatingPressureGpa",
+					"Description": "The pressure created in the reaction zone of a detonating explosive measured ion GPA (gigapascals).",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "DetonatingPressureGpa"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DetonationGroundVibrationPpv",
+					"Description": "Ground movement caused by the stress waves emanating from a blast measured in Peak Particle Velocity.",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "DetonationGroundVibrationPpv"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MisfireIndicator",
+					"Description": "Indicates a detonation misfire, which is a blast that fails to detonate completely after an attempt at initiation.",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "MisfireIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PrematureFiringIndicator",
+					"Description": "Indicates a detonation premature firing, which is the detonation of an explosive charge before the intended time.",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "PrematureFiringIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MiningActivityDetonationNote",
+					"Description": "A note, comment or additional information regarding the mining activity detonation.",
+					"BaseAttributeReference": {
+						"Entity": "Detonation.cdm.json/Detonation",
+						"Name": "MiningActivityDetonationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/Detonation",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/Detonation",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DetonationId\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonationId\"},\"DetonationLocationId\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonationLocationId\"},\"MineActivityId\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"MineActivityId\"},\"BlastInitiationTimestamp\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"BlastInitiationTimestamp\"},\"LoadingEndTimestamp\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"LoadingEndTimestamp\"},\"LoadingStartTimestamp\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"LoadingStartTimestamp\"},\"BlastingTechniqueId\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"BlastingTechniqueId\"},\"InitiatorId\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"InitiatorId\"},\"DetonationDepthMeters\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonationDepthMeters\"},\"HoleLoadingMethodId\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"HoleLoadingMethodId\"},\"BlastingCircuitTypeId\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"BlastingCircuitTypeId\"},\"DetonationStatusId\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonationStatusId\"},\"LoadingFactorRatioNumber\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"LoadingFactorRatioNumber\"},\"DelayIntervalSeconds\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DelayIntervalSeconds\"},\"DelayTimeSeconds\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DelayTimeSeconds\"},\"DetonatingVelocityFtSecond\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonatingVelocityFtSecond\"},\"ExplosiveLoadingFactor\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"ExplosiveLoadingFactor\"},\"BlastAreaSchema\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"BlastAreaSchema\"},\"LoadingFactor\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"LoadingFactor\"},\"PowderFactor\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"PowderFactor\"},\"DetonationAirblastDecibels\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonationAirblastDecibels\"},\"DetonatingPressureGpa\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonatingPressureGpa\"},\"DetonationGroundVibrationPpv\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonationGroundVibrationPpv\"},\"MisfireIndicator\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"MisfireIndicator\"},\"PrematureFiringIndicator\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"PrematureFiringIndicator\"},\"MiningActivityDetonationNote\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"MiningActivityDetonationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Detonation\",\"path\":\"Detonation.cdm.json/Detonation\"},\"description\":\"The detonation of explosive material in conjunction with a mining activity.\",\"primaryKey\":[\"DetonationId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a detonation.\",\"isNullable\":false,\"name\":\"DetonationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonationLocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"DetonationLocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"MineActivityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine activity.\",\"isNullable\":true,\"name\":\"MineActivityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"BlastInitiationTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp of initiation, which is the act of causing an explosive material to detonate or deflagrate.\",\"isNullable\":true,\"name\":\"BlastInitiationTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"LoadingEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The end timestamp of loading, which is the placing explosive material in a blasthole or against the material to be blasted.\",\"isNullable\":true,\"name\":\"LoadingEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"LoadingStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The start timestamp of loading, which is the placing explosive material in a blasthole or against the material to be blasted.\",\"isNullable\":true,\"name\":\"LoadingStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"BlastingTechniqueId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a blasting technique.\",\"isNullable\":true,\"name\":\"BlastingTechniqueId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"InitiatorId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Initiator\",\"isNullable\":true,\"name\":\"InitiatorId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonationDepthMeters\"},\"dataType\":\"integer\",\"description\":\"The depth at which the detonation occurs.\",\"isNullable\":true,\"name\":\"DetonationDepthMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"HoleLoadingMethodId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a hole loading method.\",\"isNullable\":true,\"name\":\"HoleLoadingMethodId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"BlastingCircuitTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a blasting circuit type.\",\"isNullable\":true,\"name\":\"BlastingCircuitTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonationStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a detonation status.\",\"isNullable\":true,\"name\":\"DetonationStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"LoadingFactorRatioNumber\"},\"dataType\":\"integer\",\"description\":\"The weight of explosive per foot in a borehole.\",\"isNullable\":true,\"name\":\"LoadingFactorRatioNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DelayIntervalSeconds\"},\"dataType\":\"integer\",\"description\":\"The nominal time between the detonations of delay detonators of adjacent periods in a delay series; the nominal time between successive detonations in a blast.\",\"isNullable\":true,\"name\":\"DelayIntervalSeconds\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DelayTimeSeconds\"},\"dataType\":\"integer\",\"description\":\"The lapse of time between the application of a firing signal and the detonation of the base charge of a delay detonator\",\"isNullable\":true,\"name\":\"DelayTimeSeconds\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonatingVelocityFtSecond\"},\"dataType\":\"integer\",\"description\":\"The velocity at which detonation progresses through an explosive in feet/second.\",\"isNullable\":true,\"name\":\"DetonatingVelocityFtSecond\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"ExplosiveLoadingFactor\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of explosive used per unit of rock.\",\"isNullable\":true,\"scale\":8,\"name\":\"ExplosiveLoadingFactor\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"BlastAreaSchema\"},\"dataType\":\"binary\",\"description\":\"A schema depicting the area of a blast within the influence of flying rock missiles, gases, and concussion.\",\"isNullable\":true,\"name\":\"BlastAreaSchema\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"LoadingFactor\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The weight of explosive per foot in a borehole. (Can be determined by .34 x Borehole diameter squared X density of explosives product).\",\"isNullable\":true,\"scale\":8,\"name\":\"LoadingFactor\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"PowderFactor\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The ratio of weight of explosive to tons or cubic yards of material blasted.\",\"isNullable\":true,\"scale\":8,\"name\":\"PowderFactor\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonationAirblastDecibels\"},\"dataType\":\"integer\",\"description\":\"Airborne shock wave resulting from the detonation of explosives.\",\"isNullable\":true,\"name\":\"DetonationAirblastDecibels\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonatingPressureGpa\"},\"dataType\":\"integer\",\"description\":\"The pressure created in the reaction zone of a detonating explosive measured ion GPA (gigapascals).\",\"isNullable\":true,\"name\":\"DetonatingPressureGpa\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonationGroundVibrationPpv\"},\"dataType\":\"integer\",\"description\":\"Ground movement caused by the stress waves emanating from a blast measured in Peak Particle Velocity.\",\"isNullable\":true,\"name\":\"DetonationGroundVibrationPpv\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"MisfireIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates a detonation misfire, which is a blast that fails to detonate completely after an attempt at initiation.\",\"isNullable\":true,\"name\":\"MisfireIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"PrematureFiringIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates a detonation premature firing, which is the detonation of an explosive charge before the intended time.\",\"isNullable\":true,\"name\":\"PrematureFiringIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"MiningActivityDetonationNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the mining activity detonation.\",\"isNullable\":true,\"name\":\"MiningActivityDetonationNote\"}]}}}",
+			"Description": "The detonation of explosive material in conjunction with a mining activity.",
+			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "DetonationId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

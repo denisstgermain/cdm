@@ -1,0 +1,26 @@
+{
+	"name": "relationship-asqximyqye",
+	"properties": {
+		"Name": "relationship-asqximyqye",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MineCostType",
+		"ToTableName": "MineCost",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CostTypeId",
+				"ToColumnName": "CostTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MineCostType.cdm.json/MineCostType\",\"toEntity\":\"MineCost.cdm.json/MineCost\",\"joinPairs\":[{\"fromAttribute\":\"CostTypeId\",\"toAttribute\":\"CostTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

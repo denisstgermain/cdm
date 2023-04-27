@@ -1,0 +1,151 @@
+{
+	"name": "TaskDate",
+	"properties": {
+		"Name": "TaskDate",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "A date associated with the Task.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TaskId",
+					"Description": "The unique identifier of a Task.",
+					"BaseAttributeReference": {
+						"Entity": "TaskDate.cdm.json/TaskDate",
+						"Name": "TaskId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TaskDateTypeId",
+					"Description": "The unique identifier of a Task Date Type.",
+					"BaseAttributeReference": {
+						"Entity": "TaskDate.cdm.json/TaskDate",
+						"Name": "TaskDateTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TaskDateProvidedTimestamp",
+					"Description": "The timestamp of when the Task Date Type for the Task was provided.",
+					"BaseAttributeReference": {
+						"Entity": "TaskDate.cdm.json/TaskDate",
+						"Name": "TaskDateProvidedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TaskDateTimestamp",
+					"Description": "The timestamp of the Task Date Type for the Task.",
+					"BaseAttributeReference": {
+						"Entity": "TaskDate.cdm.json/TaskDate",
+						"Name": "TaskDateTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TaskDateNote",
+					"Description": "A note, comment or additional information regarding the related Task Date.",
+					"BaseAttributeReference": {
+						"Entity": "TaskDate.cdm.json/TaskDate",
+						"Name": "TaskDateNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/TaskDate",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/TaskDate",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TaskId\":{\"entity\":\"TaskDate.cdm.json/TaskDate\",\"name\":\"TaskId\"},\"TaskDateTypeId\":{\"entity\":\"TaskDate.cdm.json/TaskDate\",\"name\":\"TaskDateTypeId\"},\"TaskDateProvidedTimestamp\":{\"entity\":\"TaskDate.cdm.json/TaskDate\",\"name\":\"TaskDateProvidedTimestamp\"},\"TaskDateTimestamp\":{\"entity\":\"TaskDate.cdm.json/TaskDate\",\"name\":\"TaskDateTimestamp\"},\"TaskDateNote\":{\"entity\":\"TaskDate.cdm.json/TaskDate\",\"name\":\"TaskDateNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TaskDate\",\"path\":\"TaskDate.cdm.json/TaskDate\"},\"description\":\"A date associated with the Task.\",\"primaryKey\":[\"TaskId\",\"TaskDateTypeId\",\"TaskDateProvidedTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TaskDate.cdm.json/TaskDate\",\"name\":\"TaskId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Task.\",\"isNullable\":false,\"name\":\"TaskId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TaskDate.cdm.json/TaskDate\",\"name\":\"TaskDateTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Task Date Type.\",\"isNullable\":false,\"name\":\"TaskDateTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TaskDate.cdm.json/TaskDate\",\"name\":\"TaskDateProvidedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp of when the Task Date Type for the Task was provided.\",\"isNullable\":false,\"name\":\"TaskDateProvidedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TaskDate.cdm.json/TaskDate\",\"name\":\"TaskDateTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp of the Task Date Type for the Task.\",\"isNullable\":true,\"name\":\"TaskDateTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TaskDate.cdm.json/TaskDate\",\"name\":\"TaskDateNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the related Task Date.\",\"isNullable\":true,\"name\":\"TaskDateNote\"}]}}}",
+			"Description": "A date associated with the Task.",
+			"DisplayFolderInfo": "{\"name\":\"Work Order Management\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "TaskId,TaskDateTypeId,TaskDateProvidedTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

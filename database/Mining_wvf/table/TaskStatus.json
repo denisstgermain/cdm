@@ -1,0 +1,170 @@
+{
+	"name": "TaskStatus",
+	"properties": {
+		"Name": "TaskStatus",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "The status of the task as of a point in time.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TaskId",
+					"Description": "The unique identifier of a Task.",
+					"BaseAttributeReference": {
+						"Entity": "TaskStatus.cdm.json/TaskStatus",
+						"Name": "TaskId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of the associated tax status.",
+					"BaseAttributeReference": {
+						"Entity": "TaskStatus.cdm.json/TaskStatus",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of the associated tax status.",
+					"BaseAttributeReference": {
+						"Entity": "TaskStatus.cdm.json/TaskStatus",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TaskPercentComplete",
+					"Description": "The percentage of the Task that has been completed as of the evaluation timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "TaskStatus.cdm.json/TaskStatus",
+						"Name": "TaskPercentComplete"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TaskStatusTypeId",
+					"Description": "The unique identifier of a Task Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "TaskStatus.cdm.json/TaskStatus",
+						"Name": "TaskStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TaskStatusNote",
+					"Description": "A note, comment or additional information regarding the related Task Status.",
+					"BaseAttributeReference": {
+						"Entity": "TaskStatus.cdm.json/TaskStatus",
+						"Name": "TaskStatusNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/TaskStatus",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/TaskStatus",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TaskId\":{\"entity\":\"TaskStatus.cdm.json/TaskStatus\",\"name\":\"TaskId\"},\"PeriodStartTimestamp\":{\"entity\":\"TaskStatus.cdm.json/TaskStatus\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"TaskStatus.cdm.json/TaskStatus\",\"name\":\"PeriodEndTimestamp\"},\"TaskPercentComplete\":{\"entity\":\"TaskStatus.cdm.json/TaskStatus\",\"name\":\"TaskPercentComplete\"},\"TaskStatusTypeId\":{\"entity\":\"TaskStatus.cdm.json/TaskStatus\",\"name\":\"TaskStatusTypeId\"},\"TaskStatusNote\":{\"entity\":\"TaskStatus.cdm.json/TaskStatus\",\"name\":\"TaskStatusNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TaskStatus\",\"path\":\"TaskStatus.cdm.json/TaskStatus\"},\"description\":\"The status of the task as of a point in time.\",\"primaryKey\":[\"TaskId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TaskStatus.cdm.json/TaskStatus\",\"name\":\"TaskId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Task.\",\"isNullable\":false,\"name\":\"TaskId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TaskStatus.cdm.json/TaskStatus\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of the associated tax status.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TaskStatus.cdm.json/TaskStatus\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of the associated tax status.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TaskStatus.cdm.json/TaskStatus\",\"name\":\"TaskPercentComplete\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The percentage of the Task that has been completed as of the evaluation timestamp.\",\"isNullable\":true,\"scale\":8,\"name\":\"TaskPercentComplete\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TaskStatus.cdm.json/TaskStatus\",\"name\":\"TaskStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Task Status Type.\",\"isNullable\":true,\"name\":\"TaskStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TaskStatus.cdm.json/TaskStatus\",\"name\":\"TaskStatusNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the related Task Status.\",\"isNullable\":true,\"name\":\"TaskStatusNote\"}]}}}",
+			"Description": "The status of the task as of a point in time.",
+			"DisplayFolderInfo": "{\"name\":\"Work Order Management\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "TaskId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

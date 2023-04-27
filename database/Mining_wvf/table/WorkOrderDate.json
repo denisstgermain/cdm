@@ -1,0 +1,151 @@
+{
+	"name": "WorkOrderDate",
+	"properties": {
+		"Name": "WorkOrderDate",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "A date associated with the Work Order.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "WorkOrderId",
+					"Description": "The unique identifier of a Work Order.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrderDate.cdm.json/WorkOrderDate",
+						"Name": "WorkOrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WorkOrderDateTypeId",
+					"Description": "The unique identifier of a Work Order Date Type.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrderDate.cdm.json/WorkOrderDate",
+						"Name": "WorkOrderDateTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WorkOrderDateProvidedTimestamp",
+					"Description": "The timestamp of when the Work Order Date Type for the Work Order was provided.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrderDate.cdm.json/WorkOrderDate",
+						"Name": "WorkOrderDateProvidedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WorkOrderDateTimestamp",
+					"Description": "The timestamp of the Work Order Date Type for the Work Order.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrderDate.cdm.json/WorkOrderDate",
+						"Name": "WorkOrderDateTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WorkOrderDateNote",
+					"Description": "A note, comment or additional information regarding the related Work Order Date.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrderDate.cdm.json/WorkOrderDate",
+						"Name": "WorkOrderDateNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/WorkOrderDate",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/WorkOrderDate",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WorkOrderId\":{\"entity\":\"WorkOrderDate.cdm.json/WorkOrderDate\",\"name\":\"WorkOrderId\"},\"WorkOrderDateTypeId\":{\"entity\":\"WorkOrderDate.cdm.json/WorkOrderDate\",\"name\":\"WorkOrderDateTypeId\"},\"WorkOrderDateProvidedTimestamp\":{\"entity\":\"WorkOrderDate.cdm.json/WorkOrderDate\",\"name\":\"WorkOrderDateProvidedTimestamp\"},\"WorkOrderDateTimestamp\":{\"entity\":\"WorkOrderDate.cdm.json/WorkOrderDate\",\"name\":\"WorkOrderDateTimestamp\"},\"WorkOrderDateNote\":{\"entity\":\"WorkOrderDate.cdm.json/WorkOrderDate\",\"name\":\"WorkOrderDateNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"WorkOrderDate\",\"path\":\"WorkOrderDate.cdm.json/WorkOrderDate\"},\"description\":\"A date associated with the Work Order.\",\"primaryKey\":[\"WorkOrderId\",\"WorkOrderDateTypeId\",\"WorkOrderDateProvidedTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrderDate.cdm.json/WorkOrderDate\",\"name\":\"WorkOrderId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Work Order.\",\"isNullable\":false,\"name\":\"WorkOrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrderDate.cdm.json/WorkOrderDate\",\"name\":\"WorkOrderDateTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Work Order Date Type.\",\"isNullable\":false,\"name\":\"WorkOrderDateTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrderDate.cdm.json/WorkOrderDate\",\"name\":\"WorkOrderDateProvidedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp of when the Work Order Date Type for the Work Order was provided.\",\"isNullable\":false,\"name\":\"WorkOrderDateProvidedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrderDate.cdm.json/WorkOrderDate\",\"name\":\"WorkOrderDateTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp of the Work Order Date Type for the Work Order.\",\"isNullable\":true,\"name\":\"WorkOrderDateTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrderDate.cdm.json/WorkOrderDate\",\"name\":\"WorkOrderDateNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the related Work Order Date.\",\"isNullable\":true,\"name\":\"WorkOrderDateNote\"}]}}}",
+			"Description": "A date associated with the Work Order.",
+			"DisplayFolderInfo": "{\"name\":\"Work Order Management\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "WorkOrderId,WorkOrderDateTypeId,WorkOrderDateProvidedTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

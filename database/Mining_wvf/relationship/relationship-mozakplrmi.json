@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mozakplrmi",
+	"properties": {
+		"Name": "relationship-mozakplrmi",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "WorkOrder",
+		"ToTableName": "WorkOrderDate",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "WorkOrderId",
+				"ToColumnName": "WorkOrderId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"WorkOrder.cdm.json/WorkOrder\",\"toEntity\":\"WorkOrderDate.cdm.json/WorkOrderDate\",\"joinPairs\":[{\"fromAttribute\":\"WorkOrderId\",\"toAttribute\":\"WorkOrderId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,150 @@
+{
+	"name": "MaintenanceOperationCostRelatedParty",
+	"properties": {
+		"Name": "MaintenanceOperationCostRelatedParty",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "The parties related to the maintenance operation cost.\n\nEx:\n- Maintenance operation cost charged by\n- Maintenance operation cost approved by\n- Maintenance operation cost incurred by\n- Maintenance operation cost charged to",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AssetMaintenanceId",
+					"Description": "The unique identifier of an Asset Maintenance.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceOperationCostRelatedParty.cdm.json/MaintenanceOperationCostRelatedParty",
+						"Name": "AssetMaintenanceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "CostTypeId",
+					"Description": "The unique identifier of a Cost Type.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceOperationCostRelatedParty.cdm.json/MaintenanceOperationCostRelatedParty",
+						"Name": "CostTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RoleId",
+					"Description": "The unique identifier of a Role.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceOperationCostRelatedParty.cdm.json/MaintenanceOperationCostRelatedParty",
+						"Name": "RoleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "CostTimestamp",
+					"Description": "The timestamp when the maintenance operation cost was incurred.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceOperationCostRelatedParty.cdm.json/MaintenanceOperationCostRelatedParty",
+						"Name": "CostTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MaintenanceOperationCostRelationshipNote",
+					"Description": "A note, comment or additional information regarding the maintenance operation cost relationship.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceOperationCostRelatedParty.cdm.json/MaintenanceOperationCostRelatedParty",
+						"Name": "MaintenanceOperationCostRelationshipNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MaintenanceOperationCostRelatedParty",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MaintenanceOperationCostRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetMaintenanceId\":{\"entity\":\"MaintenanceOperationCostRelatedParty.cdm.json/MaintenanceOperationCostRelatedParty\",\"name\":\"AssetMaintenanceId\"},\"CostTypeId\":{\"entity\":\"MaintenanceOperationCostRelatedParty.cdm.json/MaintenanceOperationCostRelatedParty\",\"name\":\"CostTypeId\"},\"RoleId\":{\"entity\":\"MaintenanceOperationCostRelatedParty.cdm.json/MaintenanceOperationCostRelatedParty\",\"name\":\"RoleId\"},\"CostTimestamp\":{\"entity\":\"MaintenanceOperationCostRelatedParty.cdm.json/MaintenanceOperationCostRelatedParty\",\"name\":\"CostTimestamp\"},\"MaintenanceOperationCostRelationshipNote\":{\"entity\":\"MaintenanceOperationCostRelatedParty.cdm.json/MaintenanceOperationCostRelatedParty\",\"name\":\"MaintenanceOperationCostRelationshipNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MaintenanceOperationCostRelatedParty\",\"path\":\"MaintenanceOperationCostRelatedParty.cdm.json/MaintenanceOperationCostRelatedParty\"},\"description\":\"The parties related to the maintenance operation cost.\\n\\nEx:\\n- Maintenance operation cost charged by\\n- Maintenance operation cost approved by\\n- Maintenance operation cost incurred by\\n- Maintenance operation cost charged to\",\"primaryKey\":[\"AssetMaintenanceId\",\"CostTypeId\",\"RoleId\",\"CostTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceOperationCostRelatedParty.cdm.json/MaintenanceOperationCostRelatedParty\",\"name\":\"AssetMaintenanceId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Asset Maintenance.\",\"isNullable\":false,\"name\":\"AssetMaintenanceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceOperationCostRelatedParty.cdm.json/MaintenanceOperationCostRelatedParty\",\"name\":\"CostTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Cost Type.\",\"isNullable\":false,\"name\":\"CostTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceOperationCostRelatedParty.cdm.json/MaintenanceOperationCostRelatedParty\",\"name\":\"RoleId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Role.\",\"isNullable\":false,\"name\":\"RoleId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceOperationCostRelatedParty.cdm.json/MaintenanceOperationCostRelatedParty\",\"name\":\"CostTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp when the maintenance operation cost was incurred.\",\"isNullable\":false,\"name\":\"CostTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceOperationCostRelatedParty.cdm.json/MaintenanceOperationCostRelatedParty\",\"name\":\"MaintenanceOperationCostRelationshipNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the maintenance operation cost relationship.\",\"isNullable\":true,\"name\":\"MaintenanceOperationCostRelationshipNote\"}]}}}",
+			"Description": "The parties related to the maintenance operation cost.\n\nEx:\n- Maintenance operation cost charged by\n- Maintenance operation cost approved by\n- Maintenance operation cost incurred by\n- Maintenance operation cost charged to",
+			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "AssetMaintenanceId,CostTypeId,RoleId,CostTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

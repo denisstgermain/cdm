@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hvwmuiwtas",
+	"properties": {
+		"Name": "relationship-hvwmuiwtas",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "WasteStorageArea",
+		"ToTableName": "WasteStorageAreaWaste",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "WasteStorageAreaId",
+				"ToColumnName": "WasteStorageAreaId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"WasteStorageArea.cdm.json/WasteStorageArea\",\"toEntity\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\",\"joinPairs\":[{\"fromAttribute\":\"WasteStorageAreaId\",\"toAttribute\":\"WasteStorageAreaId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

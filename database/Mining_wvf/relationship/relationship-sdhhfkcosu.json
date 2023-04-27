@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sdhhfkcosu",
+	"properties": {
+		"Name": "relationship-sdhhfkcosu",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Mine",
+		"ToTableName": "DrillHole",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MineId",
+				"ToColumnName": "MineId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Mine.cdm.json/Mine\",\"toEntity\":\"DrillHole.cdm.json/DrillHole\",\"joinPairs\":[{\"fromAttribute\":\"MineId\",\"toAttribute\":\"MineId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pukhixgure",
+	"properties": {
+		"Name": "relationship-pukhixgure",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MaintenanceStatus",
+		"ToTableName": "AssetMaintenanceStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MaintenanceStatusId",
+				"ToColumnName": "MaintenanceStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MaintenanceStatus.cdm.json/MaintenanceStatus\",\"toEntity\":\"AssetMaintenanceStatus.cdm.json/AssetMaintenanceStatus\",\"joinPairs\":[{\"fromAttribute\":\"MaintenanceStatusId\",\"toAttribute\":\"MaintenanceStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

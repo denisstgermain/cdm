@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cgcxeezemi",
+	"properties": {
+		"Name": "relationship-cgcxeezemi",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InventoryTransactionType",
+		"ToTableName": "InventoryTransaction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InventoryTransactionTypeId",
+				"ToColumnName": "InventoryTransactionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InventoryTransactionType.cdm.json/InventoryTransactionType\",\"toEntity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"joinPairs\":[{\"fromAttribute\":\"InventoryTransactionTypeId\",\"toAttribute\":\"InventoryTransactionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

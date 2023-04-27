@@ -1,0 +1,238 @@
+{
+	"name": "Stockpile",
+	"properties": {
+		"Name": "Stockpile",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "A storage area or location containing a reserve or stored quantity of resource that is accrued and maintained for future use.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "StockpileId",
+					"Description": "The unique identifier of a stockpile.",
+					"BaseAttributeReference": {
+						"Entity": "Stockpile.cdm.json/Stockpile",
+						"Name": "StockpileId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "StockpileName",
+					"Description": "The name of the stockpile.",
+					"BaseAttributeReference": {
+						"Entity": "Stockpile.cdm.json/Stockpile",
+						"Name": "StockpileName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "StockpileDescription",
+					"Description": "The description of the stockpile.",
+					"BaseAttributeReference": {
+						"Entity": "Stockpile.cdm.json/Stockpile",
+						"Name": "StockpileDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeographicAreaId",
+					"Description": "The unique identifier of a Geographic Area.",
+					"BaseAttributeReference": {
+						"Entity": "Stockpile.cdm.json/Stockpile",
+						"Name": "GeographicAreaId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "Stockpile.cdm.json/Stockpile",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "StockpileMaximumStorageCapacityUnits",
+					"Description": "The maximum storage capacity units that may be stored at the stockpile.",
+					"BaseAttributeReference": {
+						"Entity": "Stockpile.cdm.json/Stockpile",
+						"Name": "StockpileMaximumStorageCapacityUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MaximumStorageCapacityUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Stockpile.cdm.json/Stockpile",
+						"Name": "MaximumStorageCapacityUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "StockpileOpenedDate",
+					"Description": "The date that the stockpile was opened.",
+					"BaseAttributeReference": {
+						"Entity": "Stockpile.cdm.json/Stockpile",
+						"Name": "StockpileOpenedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "StockpileClosureDate",
+					"Description": "The date that the stockpile was closed.",
+					"BaseAttributeReference": {
+						"Entity": "Stockpile.cdm.json/Stockpile",
+						"Name": "StockpileClosureDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "StockpileNote",
+					"Description": "A note, comment or additional information regarding the stockpile.",
+					"BaseAttributeReference": {
+						"Entity": "Stockpile.cdm.json/Stockpile",
+						"Name": "StockpileNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/Stockpile",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/Stockpile",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StockpileId\":{\"entity\":\"Stockpile.cdm.json/Stockpile\",\"name\":\"StockpileId\"},\"StockpileName\":{\"entity\":\"Stockpile.cdm.json/Stockpile\",\"name\":\"StockpileName\"},\"StockpileDescription\":{\"entity\":\"Stockpile.cdm.json/Stockpile\",\"name\":\"StockpileDescription\"},\"GeographicAreaId\":{\"entity\":\"Stockpile.cdm.json/Stockpile\",\"name\":\"GeographicAreaId\"},\"LocationId\":{\"entity\":\"Stockpile.cdm.json/Stockpile\",\"name\":\"LocationId\"},\"StockpileMaximumStorageCapacityUnits\":{\"entity\":\"Stockpile.cdm.json/Stockpile\",\"name\":\"StockpileMaximumStorageCapacityUnits\"},\"MaximumStorageCapacityUomId\":{\"entity\":\"Stockpile.cdm.json/Stockpile\",\"name\":\"MaximumStorageCapacityUomId\"},\"StockpileOpenedDate\":{\"entity\":\"Stockpile.cdm.json/Stockpile\",\"name\":\"StockpileOpenedDate\"},\"StockpileClosureDate\":{\"entity\":\"Stockpile.cdm.json/Stockpile\",\"name\":\"StockpileClosureDate\"},\"StockpileNote\":{\"entity\":\"Stockpile.cdm.json/Stockpile\",\"name\":\"StockpileNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Stockpile\",\"path\":\"Stockpile.cdm.json/Stockpile\"},\"description\":\"A storage area or location containing a reserve or stored quantity of resource that is accrued and maintained for future use.\",\"primaryKey\":[\"StockpileId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Stockpile.cdm.json/Stockpile\",\"name\":\"StockpileId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a stockpile.\",\"isNullable\":false,\"name\":\"StockpileId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Stockpile.cdm.json/Stockpile\",\"name\":\"StockpileName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of the stockpile.\",\"isNullable\":true,\"name\":\"StockpileName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Stockpile.cdm.json/Stockpile\",\"name\":\"StockpileDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of the stockpile.\",\"isNullable\":true,\"name\":\"StockpileDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Stockpile.cdm.json/Stockpile\",\"name\":\"GeographicAreaId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Geographic Area.\",\"isNullable\":true,\"name\":\"GeographicAreaId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Stockpile.cdm.json/Stockpile\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Stockpile.cdm.json/Stockpile\",\"name\":\"StockpileMaximumStorageCapacityUnits\"},\"dataType\":\"integer\",\"description\":\"The maximum storage capacity units that may be stored at the stockpile.\",\"isNullable\":true,\"name\":\"StockpileMaximumStorageCapacityUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Stockpile.cdm.json/Stockpile\",\"name\":\"MaximumStorageCapacityUomId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"MaximumStorageCapacityUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Stockpile.cdm.json/Stockpile\",\"name\":\"StockpileOpenedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the stockpile was opened.\",\"isNullable\":true,\"name\":\"StockpileOpenedDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Stockpile.cdm.json/Stockpile\",\"name\":\"StockpileClosureDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the stockpile was closed.\",\"isNullable\":true,\"name\":\"StockpileClosureDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Stockpile.cdm.json/Stockpile\",\"name\":\"StockpileNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the stockpile.\",\"isNullable\":true,\"name\":\"StockpileNote\"}]}}}",
+			"Description": "A storage area or location containing a reserve or stored quantity of resource that is accrued and maintained for future use.",
+			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "StockpileId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-shlwnzauhi",
+	"properties": {
+		"Name": "relationship-shlwnzauhi",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Task",
+		"ToTableName": "WorkOrderTask",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TaskId",
+				"ToColumnName": "TaskId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Task.cdm.json/Task\",\"toEntity\":\"WorkOrderTask.cdm.json/WorkOrderTask\",\"joinPairs\":[{\"fromAttribute\":\"TaskId\",\"toAttribute\":\"TaskId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

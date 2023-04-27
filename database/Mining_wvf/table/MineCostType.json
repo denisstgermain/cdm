@@ -1,0 +1,133 @@
+{
+	"name": "MineCostType",
+	"properties": {
+		"Name": "MineCostType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "A cost associated with a mine, activity, procedure, asset etc.\n\nEx:\n- Lease operating costs\n- Production\n- Production tax\n- Oil and gas depreciation\n- Depletion\n- Amortization\n- Trucking\n- Handling\n- Railway Transport\n- Labor\n- Contracted Labor\n- Equipment\n- Material\n- Port Handling\n- Concentrate transport and handling\n- General and administration\n- Transportation\n- Lease Operating \n- Operating \n- Finding\n- Operating\n- Maintenance\n\nwhere:\n\nOperating Costs - The sum of lease operating costs, production taxes, G&A expenses, and oil and gas depreciation, depletion, and amortization.\n\nFinding Costs - The capital costs associated with finding and developing oil and gas reserves.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CostTypeId",
+					"Description": "The unique identifier of a cost type.",
+					"BaseAttributeReference": {
+						"Entity": "MineCostType.cdm.json/MineCostType",
+						"Name": "CostTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "CostTypeName",
+					"Description": "The name of a cost type.",
+					"BaseAttributeReference": {
+						"Entity": "MineCostType.cdm.json/MineCostType",
+						"Name": "CostTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "CostTypeDescription",
+					"Description": "The description of a cost type.",
+					"BaseAttributeReference": {
+						"Entity": "MineCostType.cdm.json/MineCostType",
+						"Name": "CostTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "CostCategoryId",
+					"Description": "The unique identifier of a Cost Category.",
+					"BaseAttributeReference": {
+						"Entity": "MineCostType.cdm.json/MineCostType",
+						"Name": "CostCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MineCostType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MineCostType",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CostTypeId\":{\"entity\":\"MineCostType.cdm.json/MineCostType\",\"name\":\"CostTypeId\"},\"CostTypeName\":{\"entity\":\"MineCostType.cdm.json/MineCostType\",\"name\":\"CostTypeName\"},\"CostTypeDescription\":{\"entity\":\"MineCostType.cdm.json/MineCostType\",\"name\":\"CostTypeDescription\"},\"CostCategoryId\":{\"entity\":\"MineCostType.cdm.json/MineCostType\",\"name\":\"CostCategoryId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MineCostType\",\"path\":\"MineCostType.cdm.json/MineCostType\"},\"description\":\"A cost associated with a mine, activity, procedure, asset etc.\\n\\nEx:\\n- Lease operating costs\\n- Production\\n- Production tax\\n- Oil and gas depreciation\\n- Depletion\\n- Amortization\\n- Trucking\\n- Handling\\n- Railway Transport\\n- Labor\\n- Contracted Labor\\n- Equipment\\n- Material\\n- Port Handling\\n- Concentrate transport and handling\\n- General and administration\\n- Transportation\\n- Lease Operating \\n- Operating \\n- Finding\\n- Operating\\n- Maintenance\\n\\nwhere:\\n\\nOperating Costs - The sum of lease operating costs, production taxes, G&A expenses, and oil and gas depreciation, depletion, and amortization.\\n\\nFinding Costs - The capital costs associated with finding and developing oil and gas reserves.\",\"primaryKey\":[\"CostTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineCostType.cdm.json/MineCostType\",\"name\":\"CostTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a cost type.\",\"isNullable\":false,\"name\":\"CostTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineCostType.cdm.json/MineCostType\",\"name\":\"CostTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of a cost type.\",\"isNullable\":true,\"name\":\"CostTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineCostType.cdm.json/MineCostType\",\"name\":\"CostTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of a cost type.\",\"isNullable\":true,\"name\":\"CostTypeDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineCostType.cdm.json/MineCostType\",\"name\":\"CostCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Cost Category.\",\"isNullable\":true,\"name\":\"CostCategoryId\"}]}}}",
+			"Description": "A cost associated with a mine, activity, procedure, asset etc.\n\nEx:\n- Lease operating costs\n- Production\n- Production tax\n- Oil and gas depreciation\n- Depletion\n- Amortization\n- Trucking\n- Handling\n- Railway Transport\n- Labor\n- Contracted Labor\n- Equipment\n- Material\n- Port Handling\n- Concentrate transport and handling\n- General and administration\n- Transportation\n- Lease Operating \n- Operating \n- Finding\n- Operating\n- Maintenance\n\nwhere:\n\nOperating Costs - The sum of lease operating costs, production taxes, G&A expenses, and oil and gas depreciation, depletion, and amortization.\n\nFinding Costs - The capital costs associated with finding and developing oil and gas reserves.",
+			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "CostTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lppmbqjhca",
+	"properties": {
+		"Name": "relationship-lppmbqjhca",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Detonation",
+		"ToTableName": "DetonationEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DetonationId",
+				"ToColumnName": "DetonationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Detonation.cdm.json/Detonation\",\"toEntity\":\"DetonationEvent.cdm.json/DetonationEvent\",\"joinPairs\":[{\"fromAttribute\":\"DetonationId\",\"toAttribute\":\"DetonationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

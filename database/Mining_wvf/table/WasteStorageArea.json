@@ -1,0 +1,186 @@
+{
+	"name": "WasteStorageArea",
+	"properties": {
+		"Name": "WasteStorageArea",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "A storage area where waste, overburden etc. can be stored.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "WasteStorageAreaId",
+					"Description": "The unique identifier of a waste storage area.",
+					"BaseAttributeReference": {
+						"Entity": "WasteStorageArea.cdm.json/WasteStorageArea",
+						"Name": "WasteStorageAreaId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WasteStorageAreaName",
+					"Description": "The name of the waste storage area.",
+					"BaseAttributeReference": {
+						"Entity": "WasteStorageArea.cdm.json/WasteStorageArea",
+						"Name": "WasteStorageAreaName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "WasteStorageArea.cdm.json/WasteStorageArea",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeographicAreaId",
+					"Description": "The unique identifier of a Geographic Area.",
+					"BaseAttributeReference": {
+						"Entity": "WasteStorageArea.cdm.json/WasteStorageArea",
+						"Name": "GeographicAreaId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WasteStorageAreaFirstOperationalDate",
+					"Description": "The first operational date of the waste storage area.",
+					"BaseAttributeReference": {
+						"Entity": "WasteStorageArea.cdm.json/WasteStorageArea",
+						"Name": "WasteStorageAreaFirstOperationalDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WasteStorageAreaLastOperationalDate",
+					"Description": "The last operational date of the waste storage area.",
+					"BaseAttributeReference": {
+						"Entity": "WasteStorageArea.cdm.json/WasteStorageArea",
+						"Name": "WasteStorageAreaLastOperationalDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WasteStorageAreaNote",
+					"Description": "A note, comment or additional information regarding the waste storage area.",
+					"BaseAttributeReference": {
+						"Entity": "WasteStorageArea.cdm.json/WasteStorageArea",
+						"Name": "WasteStorageAreaNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/WasteStorageArea",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/WasteStorageArea",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WasteStorageAreaId\":{\"entity\":\"WasteStorageArea.cdm.json/WasteStorageArea\",\"name\":\"WasteStorageAreaId\"},\"WasteStorageAreaName\":{\"entity\":\"WasteStorageArea.cdm.json/WasteStorageArea\",\"name\":\"WasteStorageAreaName\"},\"LocationId\":{\"entity\":\"WasteStorageArea.cdm.json/WasteStorageArea\",\"name\":\"LocationId\"},\"GeographicAreaId\":{\"entity\":\"WasteStorageArea.cdm.json/WasteStorageArea\",\"name\":\"GeographicAreaId\"},\"WasteStorageAreaFirstOperationalDate\":{\"entity\":\"WasteStorageArea.cdm.json/WasteStorageArea\",\"name\":\"WasteStorageAreaFirstOperationalDate\"},\"WasteStorageAreaLastOperationalDate\":{\"entity\":\"WasteStorageArea.cdm.json/WasteStorageArea\",\"name\":\"WasteStorageAreaLastOperationalDate\"},\"WasteStorageAreaNote\":{\"entity\":\"WasteStorageArea.cdm.json/WasteStorageArea\",\"name\":\"WasteStorageAreaNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"WasteStorageArea\",\"path\":\"WasteStorageArea.cdm.json/WasteStorageArea\"},\"description\":\"A storage area where waste, overburden etc. can be stored.\",\"primaryKey\":[\"WasteStorageAreaId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WasteStorageArea.cdm.json/WasteStorageArea\",\"name\":\"WasteStorageAreaId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a waste storage area.\",\"isNullable\":false,\"name\":\"WasteStorageAreaId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WasteStorageArea.cdm.json/WasteStorageArea\",\"name\":\"WasteStorageAreaName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of the waste storage area.\",\"isNullable\":true,\"name\":\"WasteStorageAreaName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WasteStorageArea.cdm.json/WasteStorageArea\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WasteStorageArea.cdm.json/WasteStorageArea\",\"name\":\"GeographicAreaId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Geographic Area.\",\"isNullable\":true,\"name\":\"GeographicAreaId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WasteStorageArea.cdm.json/WasteStorageArea\",\"name\":\"WasteStorageAreaFirstOperationalDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The first operational date of the waste storage area.\",\"isNullable\":true,\"name\":\"WasteStorageAreaFirstOperationalDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WasteStorageArea.cdm.json/WasteStorageArea\",\"name\":\"WasteStorageAreaLastOperationalDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The last operational date of the waste storage area.\",\"isNullable\":true,\"name\":\"WasteStorageAreaLastOperationalDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WasteStorageArea.cdm.json/WasteStorageArea\",\"name\":\"WasteStorageAreaNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the waste storage area.\",\"isNullable\":true,\"name\":\"WasteStorageAreaNote\"}]}}}",
+			"Description": "A storage area where waste, overburden etc. can be stored.",
+			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "WasteStorageAreaId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-grbfhkwxsl",
+	"properties": {
+		"Name": "relationship-grbfhkwxsl",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PoChangeOrder",
+		"ToTableName": "PoChangeOrderStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PoChangeOrderId",
+				"ToColumnName": "PoChangeOrderId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PoChangeOrder.cdm.json/PoChangeOrder\",\"toEntity\":\"PoChangeOrderStatus.cdm.json/PoChangeOrderStatus\",\"joinPairs\":[{\"fromAttribute\":\"PoChangeOrderId\",\"toAttribute\":\"PoChangeOrderId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

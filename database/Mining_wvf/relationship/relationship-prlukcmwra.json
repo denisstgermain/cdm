@@ -1,0 +1,26 @@
+{
+	"name": "relationship-prlukcmwra",
+	"properties": {
+		"Name": "relationship-prlukcmwra",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Stockpile",
+		"ToTableName": "StockpileCapacity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "StockpileId",
+				"ToColumnName": "StockpileId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Stockpile.cdm.json/Stockpile\",\"toEntity\":\"StockpileCapacity.cdm.json/StockpileCapacity\",\"joinPairs\":[{\"fromAttribute\":\"StockpileId\",\"toAttribute\":\"StockpileId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

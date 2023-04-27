@@ -1,0 +1,185 @@
+{
+	"name": "WasteStorageAreaWaste",
+	"properties": {
+		"Name": "WasteStorageAreaWaste",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "Waste stored at the waste storage area during the associated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "WasteStorageAreaId",
+					"Description": "The unique identifier of a waste storage area.",
+					"BaseAttributeReference": {
+						"Entity": "WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste",
+						"Name": "WasteStorageAreaId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WasteSubstanceTypeId",
+					"Description": "The unique identifier of a waste substance type.",
+					"BaseAttributeReference": {
+						"Entity": "WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste",
+						"Name": "WasteSubstanceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WasteQuantityUnits",
+					"Description": "The waste units.",
+					"BaseAttributeReference": {
+						"Entity": "WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste",
+						"Name": "WasteQuantityUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WasteStorageAreaWasteNote",
+					"Description": "A note, ,comment or additional information regarding the waste storage area waste.",
+					"BaseAttributeReference": {
+						"Entity": "WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste",
+						"Name": "WasteStorageAreaWasteNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/WasteStorageAreaWaste",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/WasteStorageAreaWaste",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WasteStorageAreaId\":{\"entity\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\",\"name\":\"WasteStorageAreaId\"},\"WasteSubstanceTypeId\":{\"entity\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\",\"name\":\"WasteSubstanceTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\",\"name\":\"PeriodEndTimestamp\"},\"WasteQuantityUnits\":{\"entity\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\",\"name\":\"WasteQuantityUnits\"},\"UnitOfMeasureId\":{\"entity\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\",\"name\":\"UnitOfMeasureId\"},\"WasteStorageAreaWasteNote\":{\"entity\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\",\"name\":\"WasteStorageAreaWasteNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"WasteStorageAreaWaste\",\"path\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\"},\"description\":\"Waste stored at the waste storage area during the associated period.\",\"primaryKey\":[\"WasteStorageAreaId\",\"WasteSubstanceTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\",\"name\":\"WasteStorageAreaId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a waste storage area.\",\"isNullable\":false,\"name\":\"WasteStorageAreaId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\",\"name\":\"WasteSubstanceTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a waste substance type.\",\"isNullable\":false,\"name\":\"WasteSubstanceTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\",\"name\":\"WasteQuantityUnits\"},\"dataType\":\"integer\",\"description\":\"The waste units.\",\"isNullable\":true,\"name\":\"WasteQuantityUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\",\"name\":\"WasteStorageAreaWasteNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, ,comment or additional information regarding the waste storage area waste.\",\"isNullable\":true,\"name\":\"WasteStorageAreaWasteNote\"}]}}}",
+			"Description": "Waste stored at the waste storage area during the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "WasteStorageAreaId,WasteSubstanceTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

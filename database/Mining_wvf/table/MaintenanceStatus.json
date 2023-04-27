@@ -1,0 +1,116 @@
+{
+	"name": "MaintenanceStatus",
+	"properties": {
+		"Name": "MaintenanceStatus",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "The status of the associated maintenance operation. \n\nEx:\n- Planned\n- In Progress\n- Completed",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MaintenanceStatusId",
+					"Description": "The unique identifier of a Maintenance Status.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceStatus.cdm.json/MaintenanceStatus",
+						"Name": "MaintenanceStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MaintenanceStatusName",
+					"Description": "The name of a Maintenance Status.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceStatus.cdm.json/MaintenanceStatus",
+						"Name": "MaintenanceStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MaintenanceStatusDescription",
+					"Description": "The description of a Maintenance Status.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceStatus.cdm.json/MaintenanceStatus",
+						"Name": "MaintenanceStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MaintenanceStatus",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MaintenanceStatus",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceStatusId\":{\"entity\":\"MaintenanceStatus.cdm.json/MaintenanceStatus\",\"name\":\"MaintenanceStatusId\"},\"MaintenanceStatusName\":{\"entity\":\"MaintenanceStatus.cdm.json/MaintenanceStatus\",\"name\":\"MaintenanceStatusName\"},\"MaintenanceStatusDescription\":{\"entity\":\"MaintenanceStatus.cdm.json/MaintenanceStatus\",\"name\":\"MaintenanceStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MaintenanceStatus\",\"path\":\"MaintenanceStatus.cdm.json/MaintenanceStatus\"},\"description\":\"The status of the associated maintenance operation. \\n\\nEx:\\n- Planned\\n- In Progress\\n- Completed\",\"primaryKey\":[\"MaintenanceStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceStatus.cdm.json/MaintenanceStatus\",\"name\":\"MaintenanceStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Maintenance Status.\",\"isNullable\":false,\"name\":\"MaintenanceStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceStatus.cdm.json/MaintenanceStatus\",\"name\":\"MaintenanceStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of a Maintenance Status.\",\"isNullable\":true,\"name\":\"MaintenanceStatusName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceStatus.cdm.json/MaintenanceStatus\",\"name\":\"MaintenanceStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of a Maintenance Status.\",\"isNullable\":true,\"name\":\"MaintenanceStatusDescription\"}]}}}",
+			"Description": "The status of the associated maintenance operation. \n\nEx:\n- Planned\n- In Progress\n- Completed",
+			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "MaintenanceStatusId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

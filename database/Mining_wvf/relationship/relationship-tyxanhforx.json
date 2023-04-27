@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tyxanhforx",
+	"properties": {
+		"Name": "relationship-tyxanhforx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MaintenanceTask",
+		"ToTableName": "MaintenanceTaskCost",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetMaintenanceId",
+				"ToColumnName": "AssetMaintenanceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"toEntity\":\"MaintenanceTaskCost.cdm.json/MaintenanceTaskCost\",\"joinPairs\":[{\"fromAttribute\":\"AssetMaintenanceId\",\"toAttribute\":\"AssetMaintenanceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

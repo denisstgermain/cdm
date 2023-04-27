@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sjieifzojk",
+	"properties": {
+		"Name": "relationship-sjieifzojk",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Task",
+		"ToTableName": "TaskDate",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TaskId",
+				"ToColumnName": "TaskId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Task.cdm.json/Task\",\"toEntity\":\"TaskDate.cdm.json/TaskDate\",\"joinPairs\":[{\"fromAttribute\":\"TaskId\",\"toAttribute\":\"TaskId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

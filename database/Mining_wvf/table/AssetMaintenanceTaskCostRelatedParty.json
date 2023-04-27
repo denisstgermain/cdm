@@ -1,0 +1,201 @@
+{
+	"name": "AssetMaintenanceTaskCostRelatedParty",
+	"properties": {
+		"Name": "AssetMaintenanceTaskCostRelatedParty",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "The parties related to the asset maintenance.\n\nEx:\n- Maintenance performed by\n- Maintenance approved by\n- Maintenance inspected by",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MaintenanceTaskId",
+					"Description": "The unique identifier of a Maintenance Task.",
+					"BaseAttributeReference": {
+						"Entity": "AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty",
+						"Name": "MaintenanceTaskId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AssetMaintenanceId",
+					"Description": "The unique identifier of an Asset Maintenance.",
+					"BaseAttributeReference": {
+						"Entity": "AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty",
+						"Name": "AssetMaintenanceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "BomLevelNumber",
+					"Description": "The number of a BOM Level.",
+					"BaseAttributeReference": {
+						"Entity": "AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty",
+						"Name": "BomLevelNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 40,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "CostTypeId",
+					"Description": "The unique identifier of a Cost Type.",
+					"BaseAttributeReference": {
+						"Entity": "AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty",
+						"Name": "CostTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RoleId",
+					"Description": "The unique identifier of a Role.",
+					"BaseAttributeReference": {
+						"Entity": "AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty",
+						"Name": "RoleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AssetMaintenanceTaskCostRelationshipNote",
+					"Description": "A note, comment or additional information regarding the asset maintenance task cost relationship.",
+					"BaseAttributeReference": {
+						"Entity": "AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty",
+						"Name": "AssetMaintenanceTaskCostRelationshipNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/AssetMaintenanceTaskCostRelatedParty",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/AssetMaintenanceTaskCostRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceTaskId\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"MaintenanceTaskId\"},\"AssetMaintenanceId\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"AssetMaintenanceId\"},\"AssetId\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"AssetId\"},\"BomLevelNumber\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"BomLevelNumber\"},\"ItemSku\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"ItemSku\"},\"CostTypeId\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"CostTypeId\"},\"RoleId\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"RoleId\"},\"AssetMaintenanceTaskCostRelationshipNote\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"AssetMaintenanceTaskCostRelationshipNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AssetMaintenanceTaskCostRelatedParty\",\"path\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\"},\"description\":\"The parties related to the asset maintenance.\\n\\nEx:\\n- Maintenance performed by\\n- Maintenance approved by\\n- Maintenance inspected by\",\"primaryKey\":[\"MaintenanceTaskId\",\"AssetMaintenanceId\",\"AssetId\",\"BomLevelNumber\",\"ItemSku\",\"CostTypeId\",\"RoleId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"MaintenanceTaskId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Maintenance Task.\",\"isNullable\":false,\"name\":\"MaintenanceTaskId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"AssetMaintenanceId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Asset Maintenance.\",\"isNullable\":false,\"name\":\"AssetMaintenanceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"AssetId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Asset.\",\"isNullable\":false,\"name\":\"AssetId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"BomLevelNumber\"},\"dataType\":\"integer\",\"description\":\"The number of a BOM Level.\",\"isNullable\":false,\"name\":\"BomLevelNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":40,\"description\":\"The Stock Keeping Unit identifier, which is typically used for inventory-related activities.\",\"isNullable\":false,\"name\":\"ItemSku\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"CostTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Cost Type.\",\"isNullable\":false,\"name\":\"CostTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"RoleId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Role.\",\"isNullable\":false,\"name\":\"RoleId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"AssetMaintenanceTaskCostRelationshipNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the asset maintenance task cost relationship.\",\"isNullable\":true,\"name\":\"AssetMaintenanceTaskCostRelationshipNote\"}]}}}",
+			"Description": "The parties related to the asset maintenance.\n\nEx:\n- Maintenance performed by\n- Maintenance approved by\n- Maintenance inspected by",
+			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "MaintenanceTaskId,AssetMaintenanceId,AssetId,BomLevelNumber,ItemSku,CostTypeId,RoleId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

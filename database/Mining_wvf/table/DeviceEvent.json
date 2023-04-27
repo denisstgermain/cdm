@@ -1,0 +1,151 @@
+{
+	"name": "DeviceEvent",
+	"properties": {
+		"Name": "DeviceEvent",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "An event type that is recorded for an device to provide a 'history' of that device using common-defined events.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DeviceId",
+					"Description": "The unique identifier of a Device.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceEvent.cdm.json/DeviceEvent",
+						"Name": "DeviceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DeviceEventTypeId",
+					"Description": "The unique identifier of a Device Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceEvent.cdm.json/DeviceEvent",
+						"Name": "DeviceEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DeviceEventPeriodStartTimestamp",
+					"Description": "The period start timestamp of the device event.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceEvent.cdm.json/DeviceEvent",
+						"Name": "DeviceEventPeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DeviceEventPeriodEndTimestamp",
+					"Description": "The period end timestamp of the device event.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceEvent.cdm.json/DeviceEvent",
+						"Name": "DeviceEventPeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DeviceEventNote",
+					"Description": "Notes, comments or additional information regarding the Device Event.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceEvent.cdm.json/DeviceEvent",
+						"Name": "DeviceEventNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/DeviceEvent",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/DeviceEvent",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DeviceId\":{\"entity\":\"DeviceEvent.cdm.json/DeviceEvent\",\"name\":\"DeviceId\"},\"DeviceEventTypeId\":{\"entity\":\"DeviceEvent.cdm.json/DeviceEvent\",\"name\":\"DeviceEventTypeId\"},\"DeviceEventPeriodStartTimestamp\":{\"entity\":\"DeviceEvent.cdm.json/DeviceEvent\",\"name\":\"DeviceEventPeriodStartTimestamp\"},\"DeviceEventPeriodEndTimestamp\":{\"entity\":\"DeviceEvent.cdm.json/DeviceEvent\",\"name\":\"DeviceEventPeriodEndTimestamp\"},\"DeviceEventNote\":{\"entity\":\"DeviceEvent.cdm.json/DeviceEvent\",\"name\":\"DeviceEventNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DeviceEvent\",\"path\":\"DeviceEvent.cdm.json/DeviceEvent\"},\"description\":\"An event type that is recorded for an device to provide a 'history' of that device using common-defined events.\",\"primaryKey\":[\"DeviceId\",\"DeviceEventTypeId\",\"DeviceEventPeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceEvent.cdm.json/DeviceEvent\",\"name\":\"DeviceId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Device.\",\"isNullable\":false,\"name\":\"DeviceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceEvent.cdm.json/DeviceEvent\",\"name\":\"DeviceEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Device Event Type.\",\"isNullable\":false,\"name\":\"DeviceEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceEvent.cdm.json/DeviceEvent\",\"name\":\"DeviceEventPeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of the device event.\",\"isNullable\":false,\"name\":\"DeviceEventPeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceEvent.cdm.json/DeviceEvent\",\"name\":\"DeviceEventPeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of the device event.\",\"isNullable\":true,\"name\":\"DeviceEventPeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceEvent.cdm.json/DeviceEvent\",\"name\":\"DeviceEventNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"Notes, comments or additional information regarding the Device Event.\",\"isNullable\":true,\"name\":\"DeviceEventNote\"}]}}}",
+			"Description": "An event type that is recorded for an device to provide a 'history' of that device using common-defined events.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#F04EB2\"}",
+			"PrimaryKeys": "DeviceId,DeviceEventTypeId,DeviceEventPeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,326 @@
+{
+	"name": "WorkOrder",
+	"properties": {
+		"Name": "WorkOrder",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "An order to perform one or Work Activity(s) in conjunction with a Service Request.\n\nWork Order Activities are activities that require additional personnel, planning, supporting material and effort.\n\nA Service Request differs from a Work Order in that: a Work Order has the following characteristics that a Service Request does not:\n\n- May require additional personnel with specific skills\n- May require supporting consumables or inventory items\n- May require one or more manual or technical work order activities\n- May require one or more assets or property & equipment\n- May involve work order activity costs that are charged to various related parties, organizations etc.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "WorkOrderId",
+					"Description": "The unique identifier of a Work Order.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrder.cdm.json/WorkOrder",
+						"Name": "WorkOrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WorkOrderDescription",
+					"Description": "A description of the Work Order.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrder.cdm.json/WorkOrder",
+						"Name": "WorkOrderDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WorkOrderSubmittedTimestamp",
+					"Description": "The timestamp that the Work Order was submitted to manufacturing.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrder.cdm.json/WorkOrder",
+						"Name": "WorkOrderSubmittedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WorkOrderReceivedTimestamp",
+					"Description": "The timestamp that the work order was received.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrder.cdm.json/WorkOrder",
+						"Name": "WorkOrderReceivedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WorkOrderScheduledTimestamp",
+					"Description": "The timestamp that the work order was scheduled.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrder.cdm.json/WorkOrder",
+						"Name": "WorkOrderScheduledTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WorkOrderDispatchedTimestamp",
+					"Description": "The timestamp that the work order was dispatched.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrder.cdm.json/WorkOrder",
+						"Name": "WorkOrderDispatchedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WorkOrderCompletedTimestamp",
+					"Description": "The timestamp that the Work Order was completed.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrder.cdm.json/WorkOrder",
+						"Name": "WorkOrderCompletedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WorkOrderClosedTimestamp",
+					"Description": "The timestamp that the work order was closed.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrder.cdm.json/WorkOrder",
+						"Name": "WorkOrderClosedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrder.cdm.json/WorkOrder",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ServiceRequestId",
+					"Description": "The unique identifier of a Service Request.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrder.cdm.json/WorkOrder",
+						"Name": "ServiceRequestId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "IssueId",
+					"Description": "The unique identifier of an Issue.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrder.cdm.json/WorkOrder",
+						"Name": "IssueId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WorkOrderTypeId",
+					"Description": "The unique identifier of a Work Order Type.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrder.cdm.json/WorkOrder",
+						"Name": "WorkOrderTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WorkOrderPriorityId",
+					"Description": "The unique identifier of the Work Order Priority.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrder.cdm.json/WorkOrder",
+						"Name": "WorkOrderPriorityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ResponsibilityCenterId",
+					"Description": "The unique identifier of a Responsibility Center.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrder.cdm.json/WorkOrder",
+						"Name": "ResponsibilityCenterId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WorkOrderGlAccountNumber",
+					"Description": "The GL Account Number assigned to a Work Order.",
+					"BaseAttributeReference": {
+						"Entity": "WorkOrder.cdm.json/WorkOrder",
+						"Name": "WorkOrderGlAccountNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/WorkOrder",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/WorkOrder",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WorkOrderId\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderId\"},\"WorkOrderDescription\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderDescription\"},\"WorkOrderSubmittedTimestamp\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderSubmittedTimestamp\"},\"WorkOrderReceivedTimestamp\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderReceivedTimestamp\"},\"WorkOrderScheduledTimestamp\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderScheduledTimestamp\"},\"WorkOrderDispatchedTimestamp\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderDispatchedTimestamp\"},\"WorkOrderCompletedTimestamp\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderCompletedTimestamp\"},\"WorkOrderClosedTimestamp\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderClosedTimestamp\"},\"LocationId\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"LocationId\"},\"ServiceRequestId\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"ServiceRequestId\"},\"IssueId\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"IssueId\"},\"WorkOrderTypeId\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderTypeId\"},\"WorkOrderPriorityId\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderPriorityId\"},\"ResponsibilityCenterId\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"ResponsibilityCenterId\"},\"WorkOrderGlAccountNumber\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderGlAccountNumber\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"WorkOrder\",\"path\":\"WorkOrder.cdm.json/WorkOrder\"},\"description\":\"An order to perform one or Work Activity(s) in conjunction with a Service Request.\\n\\nWork Order Activities are activities that require additional personnel, planning, supporting material and effort.\\n\\nA Service Request differs from a Work Order in that: a Work Order has the following characteristics that a Service Request does not:\\n\\n- May require additional personnel with specific skills\\n- May require supporting consumables or inventory items\\n- May require one or more manual or technical work order activities\\n- May require one or more assets or property & equipment\\n- May involve work order activity costs that are charged to various related parties, organizations etc.\",\"primaryKey\":[\"WorkOrderId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Work Order.\",\"isNullable\":false,\"name\":\"WorkOrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A description of the Work Order.\",\"isNullable\":true,\"name\":\"WorkOrderDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderSubmittedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the Work Order was submitted to manufacturing.\",\"isNullable\":true,\"name\":\"WorkOrderSubmittedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderReceivedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the work order was received.\",\"isNullable\":true,\"name\":\"WorkOrderReceivedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderScheduledTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the work order was scheduled.\",\"isNullable\":true,\"name\":\"WorkOrderScheduledTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderDispatchedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the work order was dispatched.\",\"isNullable\":true,\"name\":\"WorkOrderDispatchedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderCompletedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the Work Order was completed.\",\"isNullable\":true,\"name\":\"WorkOrderCompletedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderClosedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the work order was closed.\",\"isNullable\":true,\"name\":\"WorkOrderClosedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"ServiceRequestId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Service Request.\",\"isNullable\":true,\"name\":\"ServiceRequestId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"IssueId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Issue.\",\"isNullable\":true,\"name\":\"IssueId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Work Order Type.\",\"isNullable\":true,\"name\":\"WorkOrderTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderPriorityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the Work Order Priority.\",\"isNullable\":true,\"name\":\"WorkOrderPriorityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"ResponsibilityCenterId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Responsibility Center.\",\"isNullable\":true,\"name\":\"ResponsibilityCenterId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderGlAccountNumber\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"The GL Account Number assigned to a Work Order.\",\"isNullable\":true,\"name\":\"WorkOrderGlAccountNumber\"}]}}}",
+			"Description": "An order to perform one or Work Activity(s) in conjunction with a Service Request.\n\nWork Order Activities are activities that require additional personnel, planning, supporting material and effort.\n\nA Service Request differs from a Work Order in that: a Work Order has the following characteristics that a Service Request does not:\n\n- May require additional personnel with specific skills\n- May require supporting consumables or inventory items\n- May require one or more manual or technical work order activities\n- May require one or more assets or property & equipment\n- May involve work order activity costs that are charged to various related parties, organizations etc.",
+			"DisplayFolderInfo": "{\"name\":\"Work Order Management\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "WorkOrderId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

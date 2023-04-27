@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sswetyriqh",
+	"properties": {
+		"Name": "relationship-sswetyriqh",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Item",
+		"ToTableName": "AssetMaintenanceTaskConsumableItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ItemSku",
+				"ToColumnName": "ItemSku"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Item.cdm.json/Item\",\"toEntity\":\"AssetMaintenanceTaskConsumableItem.cdm.json/AssetMaintenanceTaskConsumableItem\",\"joinPairs\":[{\"fromAttribute\":\"ItemSku\",\"toAttribute\":\"ItemSku\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

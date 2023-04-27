@@ -1,0 +1,26 @@
+{
+	"name": "relationship-iylccuhqgj",
+	"properties": {
+		"Name": "relationship-iylccuhqgj",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MaintenanceType",
+		"ToTableName": "MaintenanceTask",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MaintenanceTypeId",
+				"ToColumnName": "MaintenanceTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MaintenanceType.cdm.json/MaintenanceType\",\"toEntity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"joinPairs\":[{\"fromAttribute\":\"MaintenanceTypeId\",\"toAttribute\":\"MaintenanceTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

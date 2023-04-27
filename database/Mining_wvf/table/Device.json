@@ -1,0 +1,870 @@
+{
+	"name": "Device",
+	"properties": {
+		"Name": "Device",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "An electronic device that is attached to a network, meter, another device, home appliance etc. that provides control or information.\n\nA device may be analog or digital. \n\nIs a hardware unit that performs one more functions,\n\nMay have software functionality.\n\nMay report results to another device or asset.\n\nMay be an asset or an item.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DeviceId",
+					"Description": "The unique identifier of a Device.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DeviceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DeviceName",
+					"Description": "The name of a Device.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DeviceName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DeviceDescription",
+					"Description": "The description of a Device.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DeviceDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ModelNumber",
+					"Description": "The model of the Device.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "ModelNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ManufacturerSerialNumber",
+					"Description": "The manufacturer's serial number of the Asset.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "ManufacturerSerialNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrganizationAssignedSerialNumber",
+					"Description": "The serial number assigned to the Asset by the organization holding it.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "OrganizationAssignedSerialNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GlobalIndividualAssetIdentifier",
+					"Description": "The Global Individual Asset Identifier (GIAI) is a simple tool used to identify an asset by type, uniquely where required. The GIAI is part of the GS1 system of standards.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "GlobalIndividualAssetIdentifier"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GlobalReturnableAssetIdentifier",
+					"Description": "The Global Returnable Asset Identifier (GRAI) was developed by GS1 to be used to identify assets by type. It can also be used to uniquely identify assets by including the serial number. \n\nThe GRAI is used to identify Returnable Transport Items (RTI) such as pallets, roll container, crates. The GRAI identifies the type of returnable asset.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "GlobalReturnableAssetIdentifier"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 29,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EconomicLifeMonths",
+					"Description": "The estimated period expressed in months that a fixed asset will provide benefits to the business organization.\n\nThis is usually less than the physical life of an asset because an asset continues to have physical life despite obsolescence.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "EconomicLifeMonths"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DepreciableLifeMonths",
+					"Description": "The economic or physical life of a fixed asset expressed in months.\n\nAll fixed assets except land are depreciated over the number of years of expected use.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DepreciableLifeMonths"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PhysicalLifeMonths",
+					"Description": "The length of time that the fixed asset should be operational expressed in months.\n\nThis is different from the economic or depreciation life of the asset, which have to do with the accounting value to the business and not the actual length of time that the fixed asset may operate or be capable of operation.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "PhysicalLifeMonths"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ServiceLifeMonths",
+					"Description": "The time that an asset will provide benefits to the business organization expressed in months.\n\nThe depreciation expense determination requires an estimated number of years of usefulness.\n\nThe service life may be less than its physical life due to obsolescence.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "ServiceLifeMonths"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PowerSourceTypeId",
+					"Description": "The unique identifier of a power source type.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "PowerSourceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DeviceTypeId",
+					"Description": "The unique identifier of a Device Type.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DeviceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WarrantyId",
+					"Description": "The unique identifier of a Warranty.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "WarrantyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "BarCodeStandardId",
+					"Description": "The unique identifier of a Bar Code Standard.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "BarCodeStandardId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "BarCode",
+					"Description": "The bar code.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "BarCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RfidTagId",
+					"Description": "The unique identifier of a RFID Tag.\n\nThe transmitter/receiver pair or transceiver plus the information storage mechanism attached to the object is referred to as the tag, transponder, electronic label, code plate and various other terms. \n\nAlthough transponder is technically the most accurate, the most common term and the one preferred by the Automatic Identification Manufacturers is tag.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "RfidTagId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 40,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PowerPhaseTypeId",
+					"Description": "The unique identifier of a power phase type.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "PowerPhaseTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DeviceCommunicationToComputerTypeId",
+					"Description": "The unique identifier of a Device Communication To Computer Type.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DeviceCommunicationToComputerTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DeviceDataLoggingTypeId",
+					"Description": "The unique identifier of a device data logging type.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DeviceDataLoggingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DeviceCommunicationToDisplayTypeId",
+					"Description": "The unique identifier of a Device Communication To Display Type.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DeviceCommunicationToDisplayTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EndpointDeviceIndicator",
+					"Description": "Endpoint Device: An Internet-capable device on a TCP/IP network.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "EndpointDeviceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LowPowerDeviceIndicator",
+					"Description": "Low-Power Devices: Electronics that have been designed to use less electric power than traditional devices. These are necessary to the future\nsuccess of IoT because, as sensors become more advanced, devices need to be able to operate for longer periods of time without relying on manual maintenance or loss of data.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "LowPowerDeviceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WearableDeviceIndicator",
+					"Description": "Wearables: Connected devices that can be equipped with different types of sensors and are worn on a person's body. They are meant to monitor, collect, and quantify data about a person's life and environment, and allow them to interface with that data.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "WearableDeviceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "IngestibleDeviceIndicator",
+					"Description": "Indicates whether the device is ingestible.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "IngestibleDeviceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SmartDeviceIndicator",
+					"Description": "Smart devices are interactive electronic gadgets that understand simple commands sent by users and help in daily activities. Some of the most commonly used smart devices are smartphones, tablets, phablets, smartwatches, smart glasses and other personal electronics. While many smart devices are small, portable personal electronics, they are in fact defined by their ability to connect to a network to share and interact remotely. Many TV sets and refrigerators are also therefore considered smart devices.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "SmartDeviceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ActuatorDeviceIndicator",
+					"Description": "An actuator is a device that makes something move or operate. It receives a source of energy and uses it to move something.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "ActuatorDeviceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EnergyCostDisplayIndicator",
+					"Description": "Indicates that the energy cost is displayed upon the device.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "EnergyCostDisplayIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SinglePointMonitorDeviceIndicator",
+					"Description": "Indicates that the device is a single-point monitor.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "SinglePointMonitorDeviceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MultiPointDeviceMonitorIndicator",
+					"Description": "Indicates that the device is a multi-point monitor.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "MultiPointDeviceMonitorIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DisplaysCurrentEnergyConsumptionKwIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DisplaysCurrentEnergyConsumptionKwIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DisplaysCurrentEnergyCostPerHourIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DisplaysCurrentEnergyCostPerHourIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DisplaysEnergyConsumedToDailyKwhIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DisplaysEnergyConsumedToDailyKwhIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DisplayEnergyConsumedThisBillingCycleKwhIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DisplayEnergyConsumedThisBillingCycleKwhIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DisplaysEnergyCostThisBillingCycleAmountIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DisplaysEnergyCostThisBillingCycleAmountIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DisplayProjectedEnergyUseForCurrentBillingCycleKwhIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DisplayProjectedEnergyUseForCurrentBillingCycleKwhIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DisplaysCurrentTimestampIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DisplaysCurrentTimestampIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "HasTimerIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "HasTimerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "HasAlarmsIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "HasAlarmsIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "HasHistoricalDataIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "HasHistoricalDataIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DisplayTariffIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DisplayTariffIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DisplayCurrentVoltageIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DisplayCurrentVoltageIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DisplaysMinimumVoltageThisBillingCycleIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DisplaysMinimumVoltageThisBillingCycleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DisplaysMaximumVoltageThisBillingCycleIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DisplaysMaximumVoltageThisBillingCycleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/Device",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/Device",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DeviceId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceId\"},\"DeviceName\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceName\"},\"DeviceDescription\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceDescription\"},\"ModelNumber\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"ModelNumber\"},\"ManufacturerSerialNumber\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"ManufacturerSerialNumber\"},\"OrganizationAssignedSerialNumber\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"OrganizationAssignedSerialNumber\"},\"GlobalIndividualAssetIdentifier\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"GlobalIndividualAssetIdentifier\"},\"GlobalReturnableAssetIdentifier\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"GlobalReturnableAssetIdentifier\"},\"EconomicLifeMonths\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"EconomicLifeMonths\"},\"DepreciableLifeMonths\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DepreciableLifeMonths\"},\"PhysicalLifeMonths\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"PhysicalLifeMonths\"},\"ServiceLifeMonths\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"ServiceLifeMonths\"},\"PowerSourceTypeId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"PowerSourceTypeId\"},\"DeviceTypeId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceTypeId\"},\"WarrantyId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"WarrantyId\"},\"AssetId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"AssetId\"},\"BarCodeStandardId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"BarCodeStandardId\"},\"BarCode\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"BarCode\"},\"RfidTagId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"RfidTagId\"},\"ItemSku\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"ItemSku\"},\"PowerPhaseTypeId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"PowerPhaseTypeId\"},\"DeviceCommunicationToComputerTypeId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceCommunicationToComputerTypeId\"},\"DeviceDataLoggingTypeId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceDataLoggingTypeId\"},\"DeviceCommunicationToDisplayTypeId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceCommunicationToDisplayTypeId\"},\"EndpointDeviceIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"EndpointDeviceIndicator\"},\"LowPowerDeviceIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"LowPowerDeviceIndicator\"},\"WearableDeviceIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"WearableDeviceIndicator\"},\"IngestibleDeviceIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"IngestibleDeviceIndicator\"},\"SmartDeviceIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"SmartDeviceIndicator\"},\"ActuatorDeviceIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"ActuatorDeviceIndicator\"},\"EnergyCostDisplayIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"EnergyCostDisplayIndicator\"},\"SinglePointMonitorDeviceIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"SinglePointMonitorDeviceIndicator\"},\"MultiPointDeviceMonitorIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"MultiPointDeviceMonitorIndicator\"},\"DisplaysCurrentEnergyConsumptionKwIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysCurrentEnergyConsumptionKwIndicator\"},\"DisplaysCurrentEnergyCostPerHourIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysCurrentEnergyCostPerHourIndicator\"},\"DisplaysEnergyConsumedToDailyKwhIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysEnergyConsumedToDailyKwhIndicator\"},\"DisplayEnergyConsumedThisBillingCycleKwhIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplayEnergyConsumedThisBillingCycleKwhIndicator\"},\"DisplaysEnergyCostThisBillingCycleAmountIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysEnergyCostThisBillingCycleAmountIndicator\"},\"DisplayProjectedEnergyUseForCurrentBillingCycleKwhIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplayProjectedEnergyUseForCurrentBillingCycleKwhIndicator\"},\"DisplaysCurrentTimestampIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysCurrentTimestampIndicator\"},\"HasTimerIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"HasTimerIndicator\"},\"HasAlarmsIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"HasAlarmsIndicator\"},\"HasHistoricalDataIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"HasHistoricalDataIndicator\"},\"DisplayTariffIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplayTariffIndicator\"},\"DisplayCurrentVoltageIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplayCurrentVoltageIndicator\"},\"DisplaysMinimumVoltageThisBillingCycleIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysMinimumVoltageThisBillingCycleIndicator\"},\"DisplaysMaximumVoltageThisBillingCycleIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysMaximumVoltageThisBillingCycleIndicator\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Device\",\"path\":\"Device.cdm.json/Device\"},\"description\":\"An electronic device that is attached to a network, meter, another device, home appliance etc. that provides control or information.\\n\\nA device may be analog or digital. \\n\\nIs a hardware unit that performs one more functions,\\n\\nMay have software functionality.\\n\\nMay report results to another device or asset.\\n\\nMay be an asset or an item.\",\"primaryKey\":[\"DeviceId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Device.\",\"isNullable\":false,\"name\":\"DeviceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of a Device.\",\"isNullable\":true,\"name\":\"DeviceName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of a Device.\",\"isNullable\":true,\"name\":\"DeviceDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"ModelNumber\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The model of the Device.\",\"isNullable\":true,\"name\":\"ModelNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"ManufacturerSerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30,\"description\":\"The manufacturer's serial number of the Asset.\",\"isNullable\":true,\"name\":\"ManufacturerSerialNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"OrganizationAssignedSerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30,\"description\":\"The serial number assigned to the Asset by the organization holding it.\",\"isNullable\":true,\"name\":\"OrganizationAssignedSerialNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"GlobalIndividualAssetIdentifier\"},\"dataType\":\"string\",\"dataTypeLength\":30,\"description\":\"The Global Individual Asset Identifier (GIAI) is a simple tool used to identify an asset by type, uniquely where required. The GIAI is part of the GS1 system of standards.\",\"isNullable\":true,\"name\":\"GlobalIndividualAssetIdentifier\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"GlobalReturnableAssetIdentifier\"},\"dataType\":\"string\",\"dataTypeLength\":29,\"description\":\"The Global Returnable Asset Identifier (GRAI) was developed by GS1 to be used to identify assets by type. It can also be used to uniquely identify assets by including the serial number. \\n\\nThe GRAI is used to identify Returnable Transport Items (RTI) such as pallets, roll container, crates. The GRAI identifies the type of returnable asset.\",\"isNullable\":true,\"name\":\"GlobalReturnableAssetIdentifier\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"EconomicLifeMonths\"},\"dataType\":\"integer\",\"description\":\"The estimated period expressed in months that a fixed asset will provide benefits to the business organization.\\n\\nThis is usually less than the physical life of an asset because an asset continues to have physical life despite obsolescence.\",\"isNullable\":true,\"name\":\"EconomicLifeMonths\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DepreciableLifeMonths\"},\"dataType\":\"integer\",\"description\":\"The economic or physical life of a fixed asset expressed in months.\\n\\nAll fixed assets except land are depreciated over the number of years of expected use.\",\"isNullable\":true,\"name\":\"DepreciableLifeMonths\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"PhysicalLifeMonths\"},\"dataType\":\"integer\",\"description\":\"The length of time that the fixed asset should be operational expressed in months.\\n\\nThis is different from the economic or depreciation life of the asset, which have to do with the accounting value to the business and not the actual length of time that the fixed asset may operate or be capable of operation.\",\"isNullable\":true,\"name\":\"PhysicalLifeMonths\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"ServiceLifeMonths\"},\"dataType\":\"integer\",\"description\":\"The time that an asset will provide benefits to the business organization expressed in months.\\n\\nThe depreciation expense determination requires an estimated number of years of usefulness.\\n\\nThe service life may be less than its physical life due to obsolescence.\",\"isNullable\":true,\"name\":\"ServiceLifeMonths\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"PowerSourceTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a power source type.\",\"isNullable\":true,\"name\":\"PowerSourceTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Device Type.\",\"isNullable\":true,\"name\":\"DeviceTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"WarrantyId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Warranty.\",\"isNullable\":true,\"name\":\"WarrantyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"AssetId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Asset.\",\"isNullable\":true,\"name\":\"AssetId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"BarCodeStandardId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Bar Code Standard.\",\"isNullable\":true,\"name\":\"BarCodeStandardId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"BarCode\"},\"dataType\":\"binary\",\"description\":\"The bar code.\",\"isNullable\":true,\"name\":\"BarCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"RfidTagId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a RFID Tag.\\n\\nThe transmitter/receiver pair or transceiver plus the information storage mechanism attached to the object is referred to as the tag, transponder, electronic label, code plate and various other terms. \\n\\nAlthough transponder is technically the most accurate, the most common term and the one preferred by the Automatic Identification Manufacturers is tag.\",\"isNullable\":true,\"name\":\"RfidTagId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":40,\"description\":\"The Stock Keeping Unit identifier, which is typically used for inventory-related activities.\",\"isNullable\":true,\"name\":\"ItemSku\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"PowerPhaseTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a power phase type.\",\"isNullable\":true,\"name\":\"PowerPhaseTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceCommunicationToComputerTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Device Communication To Computer Type.\",\"isNullable\":true,\"name\":\"DeviceCommunicationToComputerTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceDataLoggingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a device data logging type.\",\"isNullable\":true,\"name\":\"DeviceDataLoggingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceCommunicationToDisplayTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Device Communication To Display Type.\",\"isNullable\":true,\"name\":\"DeviceCommunicationToDisplayTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"EndpointDeviceIndicator\"},\"dataType\":\"boolean\",\"description\":\"Endpoint Device: An Internet-capable device on a TCP/IP network.\",\"isNullable\":true,\"name\":\"EndpointDeviceIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"LowPowerDeviceIndicator\"},\"dataType\":\"boolean\",\"description\":\"Low-Power Devices: Electronics that have been designed to use less electric power than traditional devices. These are necessary to the future\\nsuccess of IoT because, as sensors become more advanced, devices need to be able to operate for longer periods of time without relying on manual maintenance or loss of data.\",\"isNullable\":true,\"name\":\"LowPowerDeviceIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"WearableDeviceIndicator\"},\"dataType\":\"boolean\",\"description\":\"Wearables: Connected devices that can be equipped with different types of sensors and are worn on a person's body. They are meant to monitor, collect, and quantify data about a person's life and environment, and allow them to interface with that data.\",\"isNullable\":true,\"name\":\"WearableDeviceIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"IngestibleDeviceIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the device is ingestible.\",\"isNullable\":true,\"name\":\"IngestibleDeviceIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"SmartDeviceIndicator\"},\"dataType\":\"boolean\",\"description\":\"Smart devices are interactive electronic gadgets that understand simple commands sent by users and help in daily activities. Some of the most commonly used smart devices are smartphones, tablets, phablets, smartwatches, smart glasses and other personal electronics. While many smart devices are small, portable personal electronics, they are in fact defined by their ability to connect to a network to share and interact remotely. Many TV sets and refrigerators are also therefore considered smart devices.\",\"isNullable\":true,\"name\":\"SmartDeviceIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"ActuatorDeviceIndicator\"},\"dataType\":\"boolean\",\"description\":\"An actuator is a device that makes something move or operate. It receives a source of energy and uses it to move something.\",\"isNullable\":true,\"name\":\"ActuatorDeviceIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"EnergyCostDisplayIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the energy cost is displayed upon the device.\",\"isNullable\":true,\"name\":\"EnergyCostDisplayIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"SinglePointMonitorDeviceIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device is a single-point monitor.\",\"isNullable\":true,\"name\":\"SinglePointMonitorDeviceIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"MultiPointDeviceMonitorIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device is a multi-point monitor.\",\"isNullable\":true,\"name\":\"MultiPointDeviceMonitorIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysCurrentEnergyConsumptionKwIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"DisplaysCurrentEnergyConsumptionKwIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysCurrentEnergyCostPerHourIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"DisplaysCurrentEnergyCostPerHourIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysEnergyConsumedToDailyKwhIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"DisplaysEnergyConsumedToDailyKwhIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplayEnergyConsumedThisBillingCycleKwhIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"DisplayEnergyConsumedThisBillingCycleKwhIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysEnergyCostThisBillingCycleAmountIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"DisplaysEnergyCostThisBillingCycleAmountIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplayProjectedEnergyUseForCurrentBillingCycleKwhIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"DisplayProjectedEnergyUseForCurrentBillingCycleKwhIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysCurrentTimestampIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"DisplaysCurrentTimestampIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"HasTimerIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"HasTimerIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"HasAlarmsIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"HasAlarmsIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"HasHistoricalDataIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"HasHistoricalDataIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplayTariffIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"DisplayTariffIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplayCurrentVoltageIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"DisplayCurrentVoltageIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysMinimumVoltageThisBillingCycleIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"DisplaysMinimumVoltageThisBillingCycleIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysMaximumVoltageThisBillingCycleIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"DisplaysMaximumVoltageThisBillingCycleIndicator\"}]}}}",
+			"Description": "An electronic device that is attached to a network, meter, another device, home appliance etc. that provides control or information.\n\nA device may be analog or digital. \n\nIs a hardware unit that performs one more functions,\n\nMay have software functionality.\n\nMay report results to another device or asset.\n\nMay be an asset or an item.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#F04EB2\"}",
+			"PrimaryKeys": "DeviceId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

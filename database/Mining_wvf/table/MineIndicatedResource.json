@@ -1,0 +1,185 @@
+{
+	"name": "MineIndicatedResource",
+	"properties": {
+		"Name": "MineIndicatedResource",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "Mine Indicated resources are the mine iron ore occurrences that have been sampled to a degree that an estimate has been made with reasonable confidence of their contained iron ore grade, tonnage, shape, densities and similar physical characteristics.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MineId",
+					"Description": "The unique identifier of a mine.",
+					"BaseAttributeReference": {
+						"Entity": "MineIndicatedResource.cdm.json/MineIndicatedResource",
+						"Name": "MineId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "MineIndicatedResource.cdm.json/MineIndicatedResource",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "MineIndicatedResource.cdm.json/MineIndicatedResource",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "MineIndicatedResource.cdm.json/MineIndicatedResource",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "IndicatedResourceTypeUnits",
+					"Description": "The indicated resource type units.",
+					"BaseAttributeReference": {
+						"Entity": "MineIndicatedResource.cdm.json/MineIndicatedResource",
+						"Name": "IndicatedResourceTypeUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "MineIndicatedResource.cdm.json/MineIndicatedResource",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineIndicatedResourceNote",
+					"Description": "A note, comment or additional information regarding the mine indicated resource.",
+					"BaseAttributeReference": {
+						"Entity": "MineIndicatedResource.cdm.json/MineIndicatedResource",
+						"Name": "MineIndicatedResourceNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MineIndicatedResource",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/MineIndicatedResource",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineId\":{\"entity\":\"MineIndicatedResource.cdm.json/MineIndicatedResource\",\"name\":\"MineId\"},\"ProductId\":{\"entity\":\"MineIndicatedResource.cdm.json/MineIndicatedResource\",\"name\":\"ProductId\"},\"PeriodStartDate\":{\"entity\":\"MineIndicatedResource.cdm.json/MineIndicatedResource\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"MineIndicatedResource.cdm.json/MineIndicatedResource\",\"name\":\"PeriodEndDate\"},\"IndicatedResourceTypeUnits\":{\"entity\":\"MineIndicatedResource.cdm.json/MineIndicatedResource\",\"name\":\"IndicatedResourceTypeUnits\"},\"UnitOfMeasureId\":{\"entity\":\"MineIndicatedResource.cdm.json/MineIndicatedResource\",\"name\":\"UnitOfMeasureId\"},\"MineIndicatedResourceNote\":{\"entity\":\"MineIndicatedResource.cdm.json/MineIndicatedResource\",\"name\":\"MineIndicatedResourceNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MineIndicatedResource\",\"path\":\"MineIndicatedResource.cdm.json/MineIndicatedResource\"},\"description\":\"Mine Indicated resources are the mine iron ore occurrences that have been sampled to a degree that an estimate has been made with reasonable confidence of their contained iron ore grade, tonnage, shape, densities and similar physical characteristics.\",\"primaryKey\":[\"MineId\",\"ProductId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineIndicatedResource.cdm.json/MineIndicatedResource\",\"name\":\"MineId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine.\",\"isNullable\":false,\"name\":\"MineId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineIndicatedResource.cdm.json/MineIndicatedResource\",\"name\":\"ProductId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Product.\",\"isNullable\":false,\"name\":\"ProductId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineIndicatedResource.cdm.json/MineIndicatedResource\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineIndicatedResource.cdm.json/MineIndicatedResource\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineIndicatedResource.cdm.json/MineIndicatedResource\",\"name\":\"IndicatedResourceTypeUnits\"},\"dataType\":\"integer\",\"description\":\"The indicated resource type units.\",\"isNullable\":true,\"name\":\"IndicatedResourceTypeUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineIndicatedResource.cdm.json/MineIndicatedResource\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":false,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineIndicatedResource.cdm.json/MineIndicatedResource\",\"name\":\"MineIndicatedResourceNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the mine indicated resource.\",\"isNullable\":true,\"name\":\"MineIndicatedResourceNote\"}]}}}",
+			"Description": "Mine Indicated resources are the mine iron ore occurrences that have been sampled to a degree that an estimate has been made with reasonable confidence of their contained iron ore grade, tonnage, shape, densities and similar physical characteristics.",
+			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "MineId,ProductId,PeriodStartDate",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

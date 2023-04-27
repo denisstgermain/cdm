@@ -1,0 +1,26 @@
+{
+	"name": "relationship-amxpqcowdg",
+	"properties": {
+		"Name": "relationship-amxpqcowdg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Mine",
+		"ToTableName": "MineMeasuredResource",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MineId",
+				"ToColumnName": "MineId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Mine.cdm.json/Mine\",\"toEntity\":\"MineMeasuredResource.cdm.json/MineMeasuredResource\",\"joinPairs\":[{\"fromAttribute\":\"MineId\",\"toAttribute\":\"MineId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

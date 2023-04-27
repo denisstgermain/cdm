@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vxogfxbruw",
+	"properties": {
+		"Name": "relationship-vxogfxbruw",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MineAsset",
+		"ToTableName": "MineAssetLocation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MineId",
+				"ToColumnName": "MineId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MineAsset.cdm.json/MineAsset\",\"toEntity\":\"MineAssetLocation.cdm.json/MineAssetLocation\",\"joinPairs\":[{\"fromAttribute\":\"MineId\",\"toAttribute\":\"MineId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

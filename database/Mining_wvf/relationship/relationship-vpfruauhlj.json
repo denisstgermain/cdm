@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vpfruauhlj",
+	"properties": {
+		"Name": "relationship-vpfruauhlj",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Mine",
+		"ToTableName": "MineActivity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MineId",
+				"ToColumnName": "MineId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Mine.cdm.json/Mine\",\"toEntity\":\"MineActivity.cdm.json/MineActivity\",\"joinPairs\":[{\"fromAttribute\":\"MineId\",\"toAttribute\":\"MineId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

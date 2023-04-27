@@ -1,0 +1,116 @@
+{
+	"name": "DeviceEventType",
+	"properties": {
+		"Name": "DeviceEventType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "A type of event that can be recorded for a Device.\n\nEx:\n- Trade-in\n- Installation\n- Repair\n- Replacement\n- Loss\n- Theft\n- Casualty Loss\n- Cannibalization\n- Salvage\n- Production\n- Injected\n- Plugged\n- Abandoned\n- Sale\n- Transfer",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DeviceEventTypeId",
+					"Description": "The unique identifier of a Device Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceEventType.cdm.json/DeviceEventType",
+						"Name": "DeviceEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DeviceEventTypeName",
+					"Description": "The name of a Device Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceEventType.cdm.json/DeviceEventType",
+						"Name": "DeviceEventTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DeviceEventTypeDescription",
+					"Description": "The description of a Device Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceEventType.cdm.json/DeviceEventType",
+						"Name": "DeviceEventTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/DeviceEventType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/DeviceEventType",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DeviceEventTypeId\":{\"entity\":\"DeviceEventType.cdm.json/DeviceEventType\",\"name\":\"DeviceEventTypeId\"},\"DeviceEventTypeName\":{\"entity\":\"DeviceEventType.cdm.json/DeviceEventType\",\"name\":\"DeviceEventTypeName\"},\"DeviceEventTypeDescription\":{\"entity\":\"DeviceEventType.cdm.json/DeviceEventType\",\"name\":\"DeviceEventTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DeviceEventType\",\"path\":\"DeviceEventType.cdm.json/DeviceEventType\"},\"description\":\"A type of event that can be recorded for a Device.\\n\\nEx:\\n- Trade-in\\n- Installation\\n- Repair\\n- Replacement\\n- Loss\\n- Theft\\n- Casualty Loss\\n- Cannibalization\\n- Salvage\\n- Production\\n- Injected\\n- Plugged\\n- Abandoned\\n- Sale\\n- Transfer\",\"primaryKey\":[\"DeviceEventTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceEventType.cdm.json/DeviceEventType\",\"name\":\"DeviceEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Device Event Type.\",\"isNullable\":false,\"name\":\"DeviceEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceEventType.cdm.json/DeviceEventType\",\"name\":\"DeviceEventTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of a Device Event Type.\",\"isNullable\":true,\"name\":\"DeviceEventTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceEventType.cdm.json/DeviceEventType\",\"name\":\"DeviceEventTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of a Device Event Type.\",\"isNullable\":true,\"name\":\"DeviceEventTypeDescription\"}]}}}",
+			"Description": "A type of event that can be recorded for a Device.\n\nEx:\n- Trade-in\n- Installation\n- Repair\n- Replacement\n- Loss\n- Theft\n- Casualty Loss\n- Cannibalization\n- Salvage\n- Production\n- Injected\n- Plugged\n- Abandoned\n- Sale\n- Transfer",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#F04EB2\"}",
+			"PrimaryKeys": "DeviceEventTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

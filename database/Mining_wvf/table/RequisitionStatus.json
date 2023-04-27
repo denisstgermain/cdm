@@ -1,0 +1,116 @@
+{
+	"name": "RequisitionStatus",
+	"properties": {
+		"Name": "RequisitionStatus",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "The status of the Requisition.\n\nEx:\n-  In preparation\n-  Requisition Issued\n-  Preparing PO",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RequisitionStatusId",
+					"Description": "The unique identifier of the Requisition Status.",
+					"BaseAttributeReference": {
+						"Entity": "RequisitionStatus.cdm.json/RequisitionStatus",
+						"Name": "RequisitionStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RequisitionStatusName",
+					"Description": "The name of the Requisition Status.",
+					"BaseAttributeReference": {
+						"Entity": "RequisitionStatus.cdm.json/RequisitionStatus",
+						"Name": "RequisitionStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RequisitionStatusDescription",
+					"Description": "The description of the Requisition Status.",
+					"BaseAttributeReference": {
+						"Entity": "RequisitionStatus.cdm.json/RequisitionStatus",
+						"Name": "RequisitionStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/RequisitionStatus",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/RequisitionStatus",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RequisitionStatusId\":{\"entity\":\"RequisitionStatus.cdm.json/RequisitionStatus\",\"name\":\"RequisitionStatusId\"},\"RequisitionStatusName\":{\"entity\":\"RequisitionStatus.cdm.json/RequisitionStatus\",\"name\":\"RequisitionStatusName\"},\"RequisitionStatusDescription\":{\"entity\":\"RequisitionStatus.cdm.json/RequisitionStatus\",\"name\":\"RequisitionStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RequisitionStatus\",\"path\":\"RequisitionStatus.cdm.json/RequisitionStatus\"},\"description\":\"The status of the Requisition.\\n\\nEx:\\n-  In preparation\\n-  Requisition Issued\\n-  Preparing PO\",\"primaryKey\":[\"RequisitionStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RequisitionStatus.cdm.json/RequisitionStatus\",\"name\":\"RequisitionStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the Requisition Status.\",\"isNullable\":false,\"name\":\"RequisitionStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RequisitionStatus.cdm.json/RequisitionStatus\",\"name\":\"RequisitionStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of the Requisition Status.\",\"isNullable\":true,\"name\":\"RequisitionStatusName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RequisitionStatus.cdm.json/RequisitionStatus\",\"name\":\"RequisitionStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of the Requisition Status.\",\"isNullable\":true,\"name\":\"RequisitionStatusDescription\"}]}}}",
+			"Description": "The status of the Requisition.\n\nEx:\n-  In preparation\n-  Requisition Issued\n-  Preparing PO",
+			"DisplayFolderInfo": "{\"name\":\"Purchasing\",\"colorCode\":\"#5F538F\"}",
+			"PrimaryKeys": "RequisitionStatusId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}
