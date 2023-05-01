@@ -148,7 +148,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineId\":{\"entity\":\"MineCost.cdm.json/MineCost\",\"name\":\"MineId\"},\"CostTypeId\":{\"entity\":\"MineCost.cdm.json/MineCost\",\"name\":\"CostTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"MineCost.cdm.json/MineCost\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"MineCost.cdm.json/MineCost\",\"name\":\"PeriodEndTimestamp\"},\"MineCostAmount\":{\"entity\":\"MineCost.cdm.json/MineCost\",\"name\":\"MineCostAmount\"},\"MineCostNote\":{\"entity\":\"MineCost.cdm.json/MineCost\",\"name\":\"MineCostNote\"}}}"
 			},
 			"Compressed": false,
@@ -159,8 +159,7 @@
 			"Description": "A cost associated with a mine for the period.",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "MineId,CostTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

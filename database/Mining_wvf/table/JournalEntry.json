@@ -162,7 +162,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"JournalId\":{\"entity\":\"JournalEntry.cdm.json/JournalEntry\",\"name\":\"JournalId\"},\"JournalEntryId\":{\"entity\":\"JournalEntry.cdm.json/JournalEntry\",\"name\":\"JournalEntryId\"},\"JournalTimestamp\":{\"entity\":\"JournalEntry.cdm.json/JournalEntry\",\"name\":\"JournalTimestamp\"},\"JournalEntryDescription\":{\"entity\":\"JournalEntry.cdm.json/JournalEntry\",\"name\":\"JournalEntryDescription\"},\"TransactionId\":{\"entity\":\"JournalEntry.cdm.json/JournalEntry\",\"name\":\"TransactionId\"},\"JournalAdjustingEntryTypeId\":{\"entity\":\"JournalEntry.cdm.json/JournalEntry\",\"name\":\"JournalAdjustingEntryTypeId\"},\"ResponsibilityCenterId\":{\"entity\":\"JournalEntry.cdm.json/JournalEntry\",\"name\":\"ResponsibilityCenterId\"}}}"
 			},
 			"Compressed": false,
@@ -173,8 +173,7 @@
 			"Description": "The entry of a transaction into the journal or book of original entry.\n\nAll transactions are first recorded into a journal in chronological order.\n\nThis represents an adequate explanation of what has occurred before the transaction is posted to accounts.\n\nNote:\nThe transaction may be entered into one or more journals such as a general journal and a specialized journal.",
 			"DisplayFolderInfo": "{\"name\":\"Accounting & Financial Reporting\",\"colorCode\":\"#0078D4\"}",
 			"PrimaryKeys": "JournalId,JournalEntryId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

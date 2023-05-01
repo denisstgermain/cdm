@@ -128,7 +128,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetMaintenanceId\":{\"entity\":\"MaintenanceOperationCostRelatedParty.cdm.json/MaintenanceOperationCostRelatedParty\",\"name\":\"AssetMaintenanceId\"},\"CostTypeId\":{\"entity\":\"MaintenanceOperationCostRelatedParty.cdm.json/MaintenanceOperationCostRelatedParty\",\"name\":\"CostTypeId\"},\"RoleId\":{\"entity\":\"MaintenanceOperationCostRelatedParty.cdm.json/MaintenanceOperationCostRelatedParty\",\"name\":\"RoleId\"},\"CostTimestamp\":{\"entity\":\"MaintenanceOperationCostRelatedParty.cdm.json/MaintenanceOperationCostRelatedParty\",\"name\":\"CostTimestamp\"},\"MaintenanceOperationCostRelationshipNote\":{\"entity\":\"MaintenanceOperationCostRelatedParty.cdm.json/MaintenanceOperationCostRelatedParty\",\"name\":\"MaintenanceOperationCostRelationshipNote\"}}}"
 			},
 			"Compressed": false,
@@ -139,8 +139,7 @@
 			"Description": "The parties related to the maintenance operation cost.\n\nEx:\n- Maintenance operation cost charged by\n- Maintenance operation cost approved by\n- Maintenance operation cost incurred by\n- Maintenance operation cost charged to",
 			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
 			"PrimaryKeys": "AssetMaintenanceId,CostTypeId,RoleId,CostTimestamp",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

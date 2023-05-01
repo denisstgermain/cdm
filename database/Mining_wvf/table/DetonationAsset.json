@@ -1,0 +1,151 @@
+{
+	"name": "DetonationAsset",
+	"properties": {
+		"Name": "DetonationAsset",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "The asset(s) associated with the detonation.\n\nEx:\n- Blasting galvanometer\n- Blasting machine\n- Blasting mat\n- Bulk mix delivery equipment\n- Capacitor discharge blasting machine\n- Sequential blasting machine\n\nwhere:\n\nBLASTING ACCESSORIES \nNon-explosive devices and materials used in blasting, such as, but not limited to, cap crimpers, tamping bags, blasting machines, blasting galvanometers, and cartridge punches.\n\nBLASTING GALVANOMETER \nAn electrical resistance instrument designed specifically for testing electric detonators and circuits containing them. It is used to check electrical continuity. Other acceptable instruments for this purpose are Blasting Ohmmeters and Blasters' Multimeters.\n\nBLASTING MACHINE \nAn electrical or electromechanical device which provides electrical energy for the purpose of energizing detonators in an electric blasting circuit. Also used in reference to certain nonelectric systems. (Sometimes called exploder or battery.)\n\nBLASTING MAT \nA mat of woven steel wire, rope, scrap tires, or other suitable material or construction to cover blastholes for the purpose of preventing flying rock missiles.\n\nBULK MIX DELIVERY EQUIPMENT \nEquipment (usually a motor vehicle with or without a mechanical delivery device) that transports explosive materials in bulk form for mixing or loading directly into blastholes, or both.\n\nCAPACITOR- DISCHARGE BLASTING MACHINE\nA blasting machine in which electrical energy, stored on a capacitor, is discharged into a blasting circuit containing electric detonators.\n\nSEQUENTIAL BLASTING MACHINE \nA blasting machine designed to actuate separate series of detonators at accurately timed intervals. Also called SEQUENTIAL TIMER.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DetonationId",
+					"Description": "The unique identifier of a detonation.",
+					"BaseAttributeReference": {
+						"Entity": "DetonationAsset.cdm.json/DetonationAsset",
+						"Name": "DetonationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DetonationAssetRelationshipTypeId",
+					"Description": "The unique identifier of a detonation asset relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "DetonationAsset.cdm.json/DetonationAsset",
+						"Name": "DetonationAssetRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "DetonationAsset.cdm.json/DetonationAsset",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Quantity",
+					"Description": "The quantity of asset.",
+					"BaseAttributeReference": {
+						"Entity": "DetonationAsset.cdm.json/DetonationAsset",
+						"Name": "Quantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DetonationAssetNote",
+					"Description": "A note, comment or additional information regarding the detonation asset.",
+					"BaseAttributeReference": {
+						"Entity": "DetonationAsset.cdm.json/DetonationAsset",
+						"Name": "DetonationAssetNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/DetonationAsset",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/DetonationAsset",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DetonationId\":{\"entity\":\"DetonationAsset.cdm.json/DetonationAsset\",\"name\":\"DetonationId\"},\"DetonationAssetRelationshipTypeId\":{\"entity\":\"DetonationAsset.cdm.json/DetonationAsset\",\"name\":\"DetonationAssetRelationshipTypeId\"},\"AssetId\":{\"entity\":\"DetonationAsset.cdm.json/DetonationAsset\",\"name\":\"AssetId\"},\"Quantity\":{\"entity\":\"DetonationAsset.cdm.json/DetonationAsset\",\"name\":\"Quantity\"},\"DetonationAssetNote\":{\"entity\":\"DetonationAsset.cdm.json/DetonationAsset\",\"name\":\"DetonationAssetNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DetonationAsset\",\"path\":\"DetonationAsset.cdm.json/DetonationAsset\"},\"description\":\"The asset(s) associated with the detonation.\\n\\nEx:\\n- Blasting galvanometer\\n- Blasting machine\\n- Blasting mat\\n- Bulk mix delivery equipment\\n- Capacitor discharge blasting machine\\n- Sequential blasting machine\\n\\nwhere:\\n\\nBLASTING ACCESSORIES \\nNon-explosive devices and materials used in blasting, such as, but not limited to, cap crimpers, tamping bags, blasting machines, blasting galvanometers, and cartridge punches.\\n\\nBLASTING GALVANOMETER \\nAn electrical resistance instrument designed specifically for testing electric detonators and circuits containing them. It is used to check electrical continuity. Other acceptable instruments for this purpose are Blasting Ohmmeters and Blasters' Multimeters.\\n\\nBLASTING MACHINE \\nAn electrical or electromechanical device which provides electrical energy for the purpose of energizing detonators in an electric blasting circuit. Also used in reference to certain nonelectric systems. (Sometimes called exploder or battery.)\\n\\nBLASTING MAT \\nA mat of woven steel wire, rope, scrap tires, or other suitable material or construction to cover blastholes for the purpose of preventing flying rock missiles.\\n\\nBULK MIX DELIVERY EQUIPMENT \\nEquipment (usually a motor vehicle with or without a mechanical delivery device) that transports explosive materials in bulk form for mixing or loading directly into blastholes, or both.\\n\\nCAPACITOR- DISCHARGE BLASTING MACHINE\\nA blasting machine in which electrical energy, stored on a capacitor, is discharged into a blasting circuit containing electric detonators.\\n\\nSEQUENTIAL BLASTING MACHINE \\nA blasting machine designed to actuate separate series of detonators at accurately timed intervals. Also called SEQUENTIAL TIMER.\",\"primaryKey\":[\"DetonationId\",\"DetonationAssetRelationshipTypeId\",\"AssetId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DetonationAsset.cdm.json/DetonationAsset\",\"name\":\"DetonationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a detonation.\",\"isNullable\":false,\"name\":\"DetonationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DetonationAsset.cdm.json/DetonationAsset\",\"name\":\"DetonationAssetRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a detonation asset relationship type.\",\"isNullable\":false,\"name\":\"DetonationAssetRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DetonationAsset.cdm.json/DetonationAsset\",\"name\":\"AssetId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Asset.\",\"isNullable\":false,\"name\":\"AssetId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DetonationAsset.cdm.json/DetonationAsset\",\"name\":\"Quantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The quantity of asset.\",\"isNullable\":true,\"scale\":2,\"name\":\"Quantity\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DetonationAsset.cdm.json/DetonationAsset\",\"name\":\"DetonationAssetNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the detonation asset.\",\"isNullable\":true,\"name\":\"DetonationAssetNote\"}]}}}",
+			"Description": "The asset(s) associated with the detonation.\n\nEx:\n- Blasting galvanometer\n- Blasting machine\n- Blasting mat\n- Bulk mix delivery equipment\n- Capacitor discharge blasting machine\n- Sequential blasting machine\n\nwhere:\n\nBLASTING ACCESSORIES \nNon-explosive devices and materials used in blasting, such as, but not limited to, cap crimpers, tamping bags, blasting machines, blasting galvanometers, and cartridge punches.\n\nBLASTING GALVANOMETER \nAn electrical resistance instrument designed specifically for testing electric detonators and circuits containing them. It is used to check electrical continuity. Other acceptable instruments for this purpose are Blasting Ohmmeters and Blasters' Multimeters.\n\nBLASTING MACHINE \nAn electrical or electromechanical device which provides electrical energy for the purpose of energizing detonators in an electric blasting circuit. Also used in reference to certain nonelectric systems. (Sometimes called exploder or battery.)\n\nBLASTING MAT \nA mat of woven steel wire, rope, scrap tires, or other suitable material or construction to cover blastholes for the purpose of preventing flying rock missiles.\n\nBULK MIX DELIVERY EQUIPMENT \nEquipment (usually a motor vehicle with or without a mechanical delivery device) that transports explosive materials in bulk form for mixing or loading directly into blastholes, or both.\n\nCAPACITOR- DISCHARGE BLASTING MACHINE\nA blasting machine in which electrical energy, stored on a capacitor, is discharged into a blasting circuit containing electric detonators.\n\nSEQUENTIAL BLASTING MACHINE \nA blasting machine designed to actuate separate series of detonators at accurately timed intervals. Also called SEQUENTIAL TIMER.",
+			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "DetonationId,DetonationAssetRelationshipTypeId,AssetId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

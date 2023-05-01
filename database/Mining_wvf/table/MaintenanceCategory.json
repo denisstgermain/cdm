@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceCategoryId\":{\"entity\":\"MaintenanceCategory.cdm.json/MaintenanceCategory\",\"name\":\"MaintenanceCategoryId\"},\"MaintenanceCategoryName\":{\"entity\":\"MaintenanceCategory.cdm.json/MaintenanceCategory\",\"name\":\"MaintenanceCategoryName\"},\"MaintenanceCategoryDescription\":{\"entity\":\"MaintenanceCategory.cdm.json/MaintenanceCategory\",\"name\":\"MaintenanceCategoryDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "A categorization of Maintenance Types based upon common characteristics or functions performed.\n\nEx:\n- Preventative Maintenance\n- Scheduled Repair\n- Upgrade\n- Ordinary Repair\n- Major Repair\n- Line Maintenance\n- Overhaul Maintenance\n\nwhere:\n\nPREVENTATIVE MAINTENANCE\nMaintenance that is performed on a regular basis (based on time interval or usage) with the aim of sustaining or extending its useful life through controlling degradation to an acceptable level. \n\nSCHEDULED REPAIR\nA repair to the Asset in order to make it function properly.  Repairs (Ordinary and Major): Repairs maintain the fixed asset in its original operating condition.\n\nUPGRADE\nA type of maintenance that upgrades the asset or improves its functionality.\n\nORDINARY REPAIR\nOrdinary repairs are expenditures made to maintain assets in operating condition. Preventive maintenance, normal periodic, repairs, replacement of parts, structural components, and other activities such as repainting, and equipment adjustments that are needed to maintain the asset so that is continues to provide normal services should not be capitalized but rather charged to maintenance or repairs account.  Ordinary repairs should likewise be recorded with the appropriate maintenance and/or repair object code.\n\nMAJOR REPAIR\nMajor repairs are relatively large expenditures that benefits more than one operating cycle or periods.    If a major repair, (e.g., an overhaul) occurs that benefits several periods and/or extends that useful like of the asset then the cost of the repair should be handled as an addition, improvement, or replacement.\n\nLINE MAINTENANCE\n\nOVERHAUL MAINTENANCE",
 			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
 			"PrimaryKeys": "MaintenanceCategoryId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

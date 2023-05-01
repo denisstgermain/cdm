@@ -148,7 +148,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceTaskId\":{\"entity\":\"AssetMaintenanceTaskConsumableItem.cdm.json/AssetMaintenanceTaskConsumableItem\",\"name\":\"MaintenanceTaskId\"},\"AssetMaintenanceId\":{\"entity\":\"AssetMaintenanceTaskConsumableItem.cdm.json/AssetMaintenanceTaskConsumableItem\",\"name\":\"AssetMaintenanceId\"},\"ItemSku\":{\"entity\":\"AssetMaintenanceTaskConsumableItem.cdm.json/AssetMaintenanceTaskConsumableItem\",\"name\":\"ItemSku\"},\"PlannedQuantity\":{\"entity\":\"AssetMaintenanceTaskConsumableItem.cdm.json/AssetMaintenanceTaskConsumableItem\",\"name\":\"PlannedQuantity\"},\"ActualQuantity\":{\"entity\":\"AssetMaintenanceTaskConsumableItem.cdm.json/AssetMaintenanceTaskConsumableItem\",\"name\":\"ActualQuantity\"},\"UnitOfMeasureId\":{\"entity\":\"AssetMaintenanceTaskConsumableItem.cdm.json/AssetMaintenanceTaskConsumableItem\",\"name\":\"UnitOfMeasureId\"}}}"
 			},
 			"Compressed": false,
@@ -159,8 +159,7 @@
 			"Description": "The consumable items that are consumed during the asset maintenance task.",
 			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
 			"PrimaryKeys": "MaintenanceTaskId,AssetMaintenanceId,ItemSku",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

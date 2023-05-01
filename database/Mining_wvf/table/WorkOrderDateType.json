@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WorkOrderDateTypeId\":{\"entity\":\"WorkOrderDateType.cdm.json/WorkOrderDateType\",\"name\":\"WorkOrderDateTypeId\"},\"WorkOrderDateTypeName\":{\"entity\":\"WorkOrderDateType.cdm.json/WorkOrderDateType\",\"name\":\"WorkOrderDateTypeName\"},\"WorkOrderDateTypeDescription\":{\"entity\":\"WorkOrderDateType.cdm.json/WorkOrderDateType\",\"name\":\"WorkOrderDateTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "A type of date associated with a work order.\n\nEx:\n- Request Submitted Date/Timestamp\n- Requested Start Date/Timestamp\n- Requested Completion Date/Timestamp\n- Required By Date/Timestamp\n- Earliest Start Date/Timestamp\n- Latest Completion Date/Timestamp\n- Planned Start Date/Timestamp\n- Planned End Date/Timestamp\n- Actual Start Date/Timestamp\n- Actual End Date/Timestamp\n- Cancelled Date/Timestamp",
 			"DisplayFolderInfo": "{\"name\":\"Work Order Management\",\"colorCode\":\"#00188F\"}",
 			"PrimaryKeys": "WorkOrderDateTypeId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

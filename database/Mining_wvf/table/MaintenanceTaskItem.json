@@ -197,7 +197,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceTaskId\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"MaintenanceTaskId\"},\"AssetMaintenanceId\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"AssetMaintenanceId\"},\"AssetId\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"AssetId\"},\"BomLevelNumber\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"BomLevelNumber\"},\"ItemSku\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"ItemSku\"},\"SerialNumber\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"SerialNumber\"},\"SequenceNumber\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"SequenceNumber\"},\"ComponentOperationTypeId\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"ComponentOperationTypeId\"},\"ManagementTaskItemOperationNote\":{\"entity\":\"MaintenanceTaskItem.cdm.json/MaintenanceTaskItem\",\"name\":\"ManagementTaskItemOperationNote\"}}}"
 			},
 			"Compressed": false,
@@ -208,8 +208,7 @@
 			"Description": "The specific component upon which a maintenance task is performed.",
 			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
 			"PrimaryKeys": "MaintenanceTaskId,AssetMaintenanceId,AssetId,BomLevelNumber,ItemSku",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

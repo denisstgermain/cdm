@@ -163,7 +163,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VendorId\":{\"entity\":\"VendorShipmentMethod.cdm.json/VendorShipmentMethod\",\"name\":\"VendorId\"},\"ShipmentMethodId\":{\"entity\":\"VendorShipmentMethod.cdm.json/VendorShipmentMethod\",\"name\":\"ShipmentMethodId\"},\"CarrierId\":{\"entity\":\"VendorShipmentMethod.cdm.json/VendorShipmentMethod\",\"name\":\"CarrierId\"},\"PreferenceId\":{\"entity\":\"VendorShipmentMethod.cdm.json/VendorShipmentMethod\",\"name\":\"PreferenceId\"},\"PeriodStartDate\":{\"entity\":\"VendorShipmentMethod.cdm.json/VendorShipmentMethod\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"VendorShipmentMethod.cdm.json/VendorShipmentMethod\",\"name\":\"PeriodEndDate\"},\"VendorShipmentMethodNote\":{\"entity\":\"VendorShipmentMethod.cdm.json/VendorShipmentMethod\",\"name\":\"VendorShipmentMethodNote\"}}}"
 			},
 			"Compressed": false,
@@ -174,8 +174,7 @@
 			"Description": "The shipment parameters associated with a Vendor for the indicated period defined by:\n\n- Shipment Method\n- Carrier",
 			"DisplayFolderInfo": "{\"name\":\"Vendor\",\"colorCode\":\"#0078D4\"}",
 			"PrimaryKeys": "VendorId,ShipmentMethodId,CarrierId,PreferenceId,PeriodStartDate",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

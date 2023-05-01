@@ -146,7 +146,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RequisitionId\":{\"entity\":\"RequisitionRelatedParty.cdm.json/RequisitionRelatedParty\",\"name\":\"RequisitionId\"},\"PartyId\":{\"entity\":\"RequisitionRelatedParty.cdm.json/RequisitionRelatedParty\",\"name\":\"PartyId\"},\"PurchasingPartyRelationshipTypeId\":{\"entity\":\"RequisitionRelatedParty.cdm.json/RequisitionRelatedParty\",\"name\":\"PurchasingPartyRelationshipTypeId\"},\"PeriodStartDate\":{\"entity\":\"RequisitionRelatedParty.cdm.json/RequisitionRelatedParty\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"RequisitionRelatedParty.cdm.json/RequisitionRelatedParty\",\"name\":\"PeriodEndDate\"},\"RequisitionPartyRelationshipNote\":{\"entity\":\"RequisitionRelatedParty.cdm.json/RequisitionRelatedParty\",\"name\":\"RequisitionPartyRelationshipNote\"}}}"
 			},
 			"Compressed": false,
@@ -157,8 +157,7 @@
 			"Description": "The party(s) have a relationship or responsibility with the Requisition during the associated period.\n\nEx:\n- Requisition Notify Party\n- Responsible Employee\n- Buy Team Member",
 			"DisplayFolderInfo": "{\"name\":\"Purchasing\",\"colorCode\":\"#5F538F\"}",
 			"PrimaryKeys": "RequisitionId,PartyId,PurchasingPartyRelationshipTypeId,PeriodStartDate",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

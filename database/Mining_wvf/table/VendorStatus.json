@@ -129,7 +129,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VendorId\":{\"entity\":\"VendorStatus.cdm.json/VendorStatus\",\"name\":\"VendorId\"},\"VendorStatusTypeId\":{\"entity\":\"VendorStatus.cdm.json/VendorStatus\",\"name\":\"VendorStatusTypeId\"},\"PeriodStartDate\":{\"entity\":\"VendorStatus.cdm.json/VendorStatus\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"VendorStatus.cdm.json/VendorStatus\",\"name\":\"PeriodEndDate\"},\"VendorStatusNote\":{\"entity\":\"VendorStatus.cdm.json/VendorStatus\",\"name\":\"VendorStatusNote\"}}}"
 			},
 			"Compressed": false,
@@ -140,8 +140,7 @@
 			"Description": "The status of the Vendor for the associated period.",
 			"DisplayFolderInfo": "{\"name\":\"Vendor\",\"colorCode\":\"#0078D4\"}",
 			"PrimaryKeys": "VendorId,VendorStatusTypeId,PeriodStartDate",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

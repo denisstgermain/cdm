@@ -129,7 +129,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DeviceId\":{\"entity\":\"DeviceEvent.cdm.json/DeviceEvent\",\"name\":\"DeviceId\"},\"DeviceEventTypeId\":{\"entity\":\"DeviceEvent.cdm.json/DeviceEvent\",\"name\":\"DeviceEventTypeId\"},\"DeviceEventPeriodStartTimestamp\":{\"entity\":\"DeviceEvent.cdm.json/DeviceEvent\",\"name\":\"DeviceEventPeriodStartTimestamp\"},\"DeviceEventPeriodEndTimestamp\":{\"entity\":\"DeviceEvent.cdm.json/DeviceEvent\",\"name\":\"DeviceEventPeriodEndTimestamp\"},\"DeviceEventNote\":{\"entity\":\"DeviceEvent.cdm.json/DeviceEvent\",\"name\":\"DeviceEventNote\"}}}"
 			},
 			"Compressed": false,
@@ -140,8 +140,7 @@
 			"Description": "An event type that is recorded for an device to provide a 'history' of that device using common-defined events.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#F04EB2\"}",
 			"PrimaryKeys": "DeviceId,DeviceEventTypeId,DeviceEventPeriodStartTimestamp",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

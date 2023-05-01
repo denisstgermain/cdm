@@ -265,7 +265,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DrillHoleId\":{\"entity\":\"DrillHole.cdm.json/DrillHole\",\"name\":\"DrillHoleId\"},\"MineId\":{\"entity\":\"DrillHole.cdm.json/DrillHole\",\"name\":\"MineId\"},\"LocationId\":{\"entity\":\"DrillHole.cdm.json/DrillHole\",\"name\":\"LocationId\"},\"DrillHoleStartTimestamp\":{\"entity\":\"DrillHole.cdm.json/DrillHole\",\"name\":\"DrillHoleStartTimestamp\"},\"DrillHoleEndTimestamp\":{\"entity\":\"DrillHole.cdm.json/DrillHole\",\"name\":\"DrillHoleEndTimestamp\"},\"DrillHoleElevationRelativeToSurfaceLocationMeters\":{\"entity\":\"DrillHole.cdm.json/DrillHole\",\"name\":\"DrillHoleElevationRelativeToSurfaceLocationMeters\"},\"DrillingMethodTypeId\":{\"entity\":\"DrillHole.cdm.json/DrillHole\",\"name\":\"DrillingMethodTypeId\"},\"DrillHoleBurdenTons\":{\"entity\":\"DrillHole.cdm.json/DrillHole\",\"name\":\"DrillHoleBurdenTons\"},\"DrillHolePlannedDepthMeters\":{\"entity\":\"DrillHole.cdm.json/DrillHole\",\"name\":\"DrillHolePlannedDepthMeters\"},\"HoleDiameterCm\":{\"entity\":\"DrillHole.cdm.json/DrillHole\",\"name\":\"HoleDiameterCm\"},\"DrillHoleWaterLevelMeters\":{\"entity\":\"DrillHole.cdm.json/DrillHole\",\"name\":\"DrillHoleWaterLevelMeters\"},\"DrillHoleMaximumDepthMeters\":{\"entity\":\"DrillHole.cdm.json/DrillHole\",\"name\":\"DrillHoleMaximumDepthMeters\"},\"DrillHoleNote\":{\"entity\":\"DrillHole.cdm.json/DrillHole\",\"name\":\"DrillHoleNote\"}}}"
 			},
 			"Compressed": false,
@@ -276,8 +276,7 @@
 			"Description": "A  hole or passage made by a drill for exploratory purposes\n\nBOREHOLE A hole drilled in the material to be blasted, for the purpose of containing an explosive charge, also called BLASTHOLE or DRILL HOLE.\n\nDRILL HOLE A hole drilled in the material to be blasted for the purpose of containing an explosive charge, also called BLASTHOLE or BOREHOLE.",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "DrillHoleId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

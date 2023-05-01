@@ -93,7 +93,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineId\":{\"entity\":\"MineIncident.cdm.json/MineIncident\",\"name\":\"MineId\"},\"IncidentId\":{\"entity\":\"MineIncident.cdm.json/MineIncident\",\"name\":\"IncidentId\"},\"MineIncidentNote\":{\"entity\":\"MineIncident.cdm.json/MineIncident\",\"name\":\"MineIncidentNote\"}}}"
 			},
 			"Compressed": false,
@@ -104,8 +104,7 @@
 			"Description": "A mine-related incident.",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "MineId,IncidentId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

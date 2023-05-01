@@ -205,7 +205,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RequisitionId\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"RequisitionId\"},\"RequisitionLineItemNumber\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"RequisitionLineItemNumber\"},\"Quantity\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"Quantity\"},\"StandardPerUnitItemPrice\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"StandardPerUnitItemPrice\"},\"DiscountPerItemUnitAmount\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"DiscountPerItemUnitAmount\"},\"RequisitionPerUnitItemPrice\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"RequisitionPerUnitItemPrice\"},\"QualityStandardMeasure\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"QualityStandardMeasure\"},\"QualityStandardId\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"QualityStandardId\"},\"ItemSku\":{\"entity\":\"RequisitionLineItem.cdm.json/RequisitionLineItem\",\"name\":\"ItemSku\"}}}"
 			},
 			"Compressed": false,
@@ -216,8 +216,7 @@
 			"Description": "The specific Item(s) detailed for the associated Requisition.",
 			"DisplayFolderInfo": "{\"name\":\"Purchasing\",\"colorCode\":\"#5F538F\"}",
 			"PrimaryKeys": "RequisitionId,RequisitionLineItemNumber",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

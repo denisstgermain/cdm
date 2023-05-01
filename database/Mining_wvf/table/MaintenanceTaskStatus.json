@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceTaskStatusId\":{\"entity\":\"MaintenanceTaskStatus.cdm.json/MaintenanceTaskStatus\",\"name\":\"MaintenanceTaskStatusId\"},\"MaintenanceTaskStatusName\":{\"entity\":\"MaintenanceTaskStatus.cdm.json/MaintenanceTaskStatus\",\"name\":\"MaintenanceTaskStatusName\"},\"MaintenanceTaskStatusDescription\":{\"entity\":\"MaintenanceTaskStatus.cdm.json/MaintenanceTaskStatus\",\"name\":\"MaintenanceTaskStatusDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "The status of the associated maintenance task.\n\nEx:\n- Planned\n- In Progress\n- Completed",
 			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
 			"PrimaryKeys": "MaintenanceTaskStatusId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

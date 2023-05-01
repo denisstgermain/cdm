@@ -179,7 +179,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceTaskId\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"MaintenanceTaskId\"},\"AssetMaintenanceId\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"AssetMaintenanceId\"},\"AssetId\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"AssetId\"},\"BomLevelNumber\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"BomLevelNumber\"},\"ItemSku\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"ItemSku\"},\"CostTypeId\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"CostTypeId\"},\"RoleId\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"RoleId\"},\"AssetMaintenanceTaskCostRelationshipNote\":{\"entity\":\"AssetMaintenanceTaskCostRelatedParty.cdm.json/AssetMaintenanceTaskCostRelatedParty\",\"name\":\"AssetMaintenanceTaskCostRelationshipNote\"}}}"
 			},
 			"Compressed": false,
@@ -190,8 +190,7 @@
 			"Description": "The parties related to the asset maintenance.\n\nEx:\n- Maintenance performed by\n- Maintenance approved by\n- Maintenance inspected by",
 			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
 			"PrimaryKeys": "MaintenanceTaskId,AssetMaintenanceId,AssetId,BomLevelNumber,ItemSku,CostTypeId,RoleId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

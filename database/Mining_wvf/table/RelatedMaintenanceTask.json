@@ -1,0 +1,148 @@
+{
+	"name": "RelatedMaintenanceTask",
+	"properties": {
+		"Name": "RelatedMaintenanceTask",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "The relationship between two Maintenance Tasks.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MaintenanceTaskId",
+					"Description": "The unique identifier of a Maintenance Task.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedMaintenanceTask.cdm.json/RelatedMaintenanceTask",
+						"Name": "MaintenanceTaskId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AssetMaintenanceId",
+					"Description": "The unique identifier of an Asset Maintenance.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedMaintenanceTask.cdm.json/RelatedMaintenanceTask",
+						"Name": "AssetMaintenanceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RelatedMaintenanceTaskId",
+					"Description": "The unique identifier of a Maintenance Task.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedMaintenanceTask.cdm.json/RelatedMaintenanceTask",
+						"Name": "RelatedMaintenanceTaskId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RelatedAssetMaintenanceId",
+					"Description": "The unique identifier of an Asset Maintenance.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedMaintenanceTask.cdm.json/RelatedMaintenanceTask",
+						"Name": "RelatedAssetMaintenanceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MaintenanceTaskRelationshipTypeId",
+					"Description": "The unique identifier of a Maintenance Task Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedMaintenanceTask.cdm.json/RelatedMaintenanceTask",
+						"Name": "MaintenanceTaskRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/RelatedMaintenanceTask",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/RelatedMaintenanceTask",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceTaskId\":{\"entity\":\"RelatedMaintenanceTask.cdm.json/RelatedMaintenanceTask\",\"name\":\"MaintenanceTaskId\"},\"AssetMaintenanceId\":{\"entity\":\"RelatedMaintenanceTask.cdm.json/RelatedMaintenanceTask\",\"name\":\"AssetMaintenanceId\"},\"RelatedMaintenanceTaskId\":{\"entity\":\"RelatedMaintenanceTask.cdm.json/RelatedMaintenanceTask\",\"name\":\"RelatedMaintenanceTaskId\"},\"RelatedAssetMaintenanceId\":{\"entity\":\"RelatedMaintenanceTask.cdm.json/RelatedMaintenanceTask\",\"name\":\"RelatedAssetMaintenanceId\"},\"MaintenanceTaskRelationshipTypeId\":{\"entity\":\"RelatedMaintenanceTask.cdm.json/RelatedMaintenanceTask\",\"name\":\"MaintenanceTaskRelationshipTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RelatedMaintenanceTask\",\"path\":\"RelatedMaintenanceTask.cdm.json/RelatedMaintenanceTask\"},\"description\":\"The relationship between two Maintenance Tasks.\",\"primaryKey\":[\"MaintenanceTaskId\",\"AssetMaintenanceId\",\"RelatedMaintenanceTaskId\",\"RelatedAssetMaintenanceId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedMaintenanceTask.cdm.json/RelatedMaintenanceTask\",\"name\":\"MaintenanceTaskId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Maintenance Task.\",\"isNullable\":false,\"name\":\"MaintenanceTaskId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedMaintenanceTask.cdm.json/RelatedMaintenanceTask\",\"name\":\"AssetMaintenanceId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Asset Maintenance.\",\"isNullable\":false,\"name\":\"AssetMaintenanceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedMaintenanceTask.cdm.json/RelatedMaintenanceTask\",\"name\":\"RelatedMaintenanceTaskId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Maintenance Task.\",\"isNullable\":false,\"name\":\"RelatedMaintenanceTaskId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedMaintenanceTask.cdm.json/RelatedMaintenanceTask\",\"name\":\"RelatedAssetMaintenanceId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Asset Maintenance.\",\"isNullable\":false,\"name\":\"RelatedAssetMaintenanceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedMaintenanceTask.cdm.json/RelatedMaintenanceTask\",\"name\":\"MaintenanceTaskRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Maintenance Task Relationship Type.\",\"isNullable\":true,\"name\":\"MaintenanceTaskRelationshipTypeId\"}]}}}",
+			"Description": "The relationship between two Maintenance Tasks.",
+			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
+			"PrimaryKeys": "MaintenanceTaskId,AssetMaintenanceId,RelatedMaintenanceTaskId,RelatedAssetMaintenanceId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

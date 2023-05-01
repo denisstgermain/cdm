@@ -493,7 +493,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DetonationId\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonationId\"},\"DetonationLocationId\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonationLocationId\"},\"MineActivityId\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"MineActivityId\"},\"BlastInitiationTimestamp\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"BlastInitiationTimestamp\"},\"LoadingEndTimestamp\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"LoadingEndTimestamp\"},\"LoadingStartTimestamp\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"LoadingStartTimestamp\"},\"BlastingTechniqueId\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"BlastingTechniqueId\"},\"InitiatorId\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"InitiatorId\"},\"DetonationDepthMeters\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonationDepthMeters\"},\"HoleLoadingMethodId\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"HoleLoadingMethodId\"},\"BlastingCircuitTypeId\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"BlastingCircuitTypeId\"},\"DetonationStatusId\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonationStatusId\"},\"LoadingFactorRatioNumber\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"LoadingFactorRatioNumber\"},\"DelayIntervalSeconds\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DelayIntervalSeconds\"},\"DelayTimeSeconds\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DelayTimeSeconds\"},\"DetonatingVelocityFtSecond\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonatingVelocityFtSecond\"},\"ExplosiveLoadingFactor\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"ExplosiveLoadingFactor\"},\"BlastAreaSchema\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"BlastAreaSchema\"},\"LoadingFactor\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"LoadingFactor\"},\"PowderFactor\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"PowderFactor\"},\"DetonationAirblastDecibels\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonationAirblastDecibels\"},\"DetonatingPressureGpa\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonatingPressureGpa\"},\"DetonationGroundVibrationPpv\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"DetonationGroundVibrationPpv\"},\"MisfireIndicator\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"MisfireIndicator\"},\"PrematureFiringIndicator\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"PrematureFiringIndicator\"},\"MiningActivityDetonationNote\":{\"entity\":\"Detonation.cdm.json/Detonation\",\"name\":\"MiningActivityDetonationNote\"}}}"
 			},
 			"Compressed": false,
@@ -504,8 +504,7 @@
 			"Description": "The detonation of explosive material in conjunction with a mining activity.",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "DetonationId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

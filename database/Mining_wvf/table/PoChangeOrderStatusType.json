@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PoChangeOrderStatusTypeId\":{\"entity\":\"PoChangeOrderStatusType.cdm.json/PoChangeOrderStatusType\",\"name\":\"PoChangeOrderStatusTypeId\"},\"PoChangeOrderStatusTypeName\":{\"entity\":\"PoChangeOrderStatusType.cdm.json/PoChangeOrderStatusType\",\"name\":\"PoChangeOrderStatusTypeName\"},\"PoChangeOrderStatusTypeDescription\":{\"entity\":\"PoChangeOrderStatusType.cdm.json/PoChangeOrderStatusType\",\"name\":\"PoChangeOrderStatusTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "A categorization of purchase order change order status based on common function, application or usage.\n\nEx:\n-  In preparation\n-  Issued\n-  Preparing Order",
 			"DisplayFolderInfo": "{\"name\":\"Purchasing\",\"colorCode\":\"#5F538F\"}",
 			"PrimaryKeys": "PoChangeOrderStatusTypeId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

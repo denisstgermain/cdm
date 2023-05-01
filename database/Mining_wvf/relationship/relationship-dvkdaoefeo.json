@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dvkdaoefeo",
+	"properties": {
+		"Name": "relationship-dvkdaoefeo",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MaintenanceTaskRelationshipType",
+		"ToTableName": "RelatedMaintenanceTask",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MaintenanceTaskRelationshipTypeId",
+				"ToColumnName": "MaintenanceTaskRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MaintenanceTaskRelationshipType.cdm.json/MaintenanceTaskRelationshipType\",\"toEntity\":\"RelatedMaintenanceTask.cdm.json/RelatedMaintenanceTask\",\"joinPairs\":[{\"fromAttribute\":\"MaintenanceTaskRelationshipTypeId\",\"toAttribute\":\"MaintenanceTaskRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -305,7 +305,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceTaskId\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskId\"},\"AssetMaintenanceId\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"AssetMaintenanceId\"},\"MaintenanceTaskTypeId\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskTypeId\"},\"MaintenanceTaskPlannedStartTimestamp\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskPlannedStartTimestamp\"},\"MaintenanceTaskPlannedEndTimestamp\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskPlannedEndTimestamp\"},\"MaintenanceTaskActualStartTimestamp\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskActualStartTimestamp\"},\"MaintenanceTaskActualEndTimestamp\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskActualEndTimestamp\"},\"MaintenanceTaskEstimatedTotalCost\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskEstimatedTotalCost\"},\"MaintenanceTaskActualTotalCost\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskActualTotalCost\"},\"MaintenanceTaskNote\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskNote\"},\"MaintenanceTypeId\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTypeId\"},\"MaintenanceTaskStatusId\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"MaintenanceTaskStatusId\"},\"WorkOrderId\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"WorkOrderId\"},\"ProjectId\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"ProjectId\"},\"TaskId\":{\"entity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"name\":\"TaskId\"}}}"
 			},
 			"Compressed": false,
@@ -316,8 +316,7 @@
 			"Description": "The tasks performed during maintenance.",
 			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
 			"PrimaryKeys": "MaintenanceTaskId,AssetMaintenanceId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -127,7 +127,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"JournalId\":{\"entity\":\"Journal.cdm.json/Journal\",\"name\":\"JournalId\"},\"JournalName\":{\"entity\":\"Journal.cdm.json/Journal\",\"name\":\"JournalName\"},\"LegalEntityId\":{\"entity\":\"Journal.cdm.json/Journal\",\"name\":\"LegalEntityId\"},\"SpecialJournalIndicator\":{\"entity\":\"Journal.cdm.json/Journal\",\"name\":\"SpecialJournalIndicator\"},\"JournalTypeId\":{\"entity\":\"Journal.cdm.json/Journal\",\"name\":\"JournalTypeId\"}}}"
 			},
 			"Compressed": false,
@@ -138,8 +138,7 @@
 			"Description": "The journal or 'day book' is the book of 'original entry' for accounting data.  \n\nData is subsequently transferred or posted to the ledger from the journal as the book of 'subsequent or secondary entry'.\n\nThere are different journals that may be used by a business that can be categorized as either:\n\n1.  The general journal\n2.  Specialized journal(s)\n\nSpecialized journals are used where there is a large number of repetitive transactions or function-specific transactions.\n\nThe entry of a transaction into a journal is the starting point for its record within the financial accounting system.\n\nThe journal entry represents a chronological record of the transaction with the date of the transaction, and explanation of the transaction, the accounts affected and the amounts affected within each account.\n\nThe net amount of any journal entry will be zero so it's application to a specific journal entry is applied as a debit or credit.",
 			"DisplayFolderInfo": "{\"name\":\"Accounting & Financial Reporting\",\"colorCode\":\"#0078D4\"}",
 			"PrimaryKeys": "JournalId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -148,7 +148,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TaskId\":{\"entity\":\"TaskStatus.cdm.json/TaskStatus\",\"name\":\"TaskId\"},\"PeriodStartTimestamp\":{\"entity\":\"TaskStatus.cdm.json/TaskStatus\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"TaskStatus.cdm.json/TaskStatus\",\"name\":\"PeriodEndTimestamp\"},\"TaskPercentComplete\":{\"entity\":\"TaskStatus.cdm.json/TaskStatus\",\"name\":\"TaskPercentComplete\"},\"TaskStatusTypeId\":{\"entity\":\"TaskStatus.cdm.json/TaskStatus\",\"name\":\"TaskStatusTypeId\"},\"TaskStatusNote\":{\"entity\":\"TaskStatus.cdm.json/TaskStatus\",\"name\":\"TaskStatusNote\"}}}"
 			},
 			"Compressed": false,
@@ -159,8 +159,7 @@
 			"Description": "The status of the task as of a point in time.",
 			"DisplayFolderInfo": "{\"name\":\"Work Order Management\",\"colorCode\":\"#00188F\"}",
 			"PrimaryKeys": "TaskId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

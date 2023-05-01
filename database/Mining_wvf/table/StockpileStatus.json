@@ -129,7 +129,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StockpileId\":{\"entity\":\"StockpileStatus.cdm.json/StockpileStatus\",\"name\":\"StockpileId\"},\"PeriodStartTimestamp\":{\"entity\":\"StockpileStatus.cdm.json/StockpileStatus\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"StockpileStatus.cdm.json/StockpileStatus\",\"name\":\"PeriodEndTimestamp\"},\"StockpileStatusTypeId\":{\"entity\":\"StockpileStatus.cdm.json/StockpileStatus\",\"name\":\"StockpileStatusTypeId\"},\"StockpileStatusNote\":{\"entity\":\"StockpileStatus.cdm.json/StockpileStatus\",\"name\":\"StockpileStatusNote\"}}}"
 			},
 			"Compressed": false,
@@ -140,8 +140,7 @@
 			"Description": "The status of the stockpile as of the associated period.",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "StockpileId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

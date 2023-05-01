@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gtdysmdrlp",
+	"properties": {
+		"Name": "relationship-gtdysmdrlp",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MaintenanceTask",
+		"ToTableName": "RelatedMaintenanceTask",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetMaintenanceId",
+				"ToColumnName": "RelatedAssetMaintenanceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"toEntity\":\"RelatedMaintenanceTask.cdm.json/RelatedMaintenanceTask\",\"joinPairs\":[{\"fromAttribute\":\"AssetMaintenanceId\",\"toAttribute\":\"RelatedAssetMaintenanceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

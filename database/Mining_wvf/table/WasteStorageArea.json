@@ -164,7 +164,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WasteStorageAreaId\":{\"entity\":\"WasteStorageArea.cdm.json/WasteStorageArea\",\"name\":\"WasteStorageAreaId\"},\"WasteStorageAreaName\":{\"entity\":\"WasteStorageArea.cdm.json/WasteStorageArea\",\"name\":\"WasteStorageAreaName\"},\"LocationId\":{\"entity\":\"WasteStorageArea.cdm.json/WasteStorageArea\",\"name\":\"LocationId\"},\"GeographicAreaId\":{\"entity\":\"WasteStorageArea.cdm.json/WasteStorageArea\",\"name\":\"GeographicAreaId\"},\"WasteStorageAreaFirstOperationalDate\":{\"entity\":\"WasteStorageArea.cdm.json/WasteStorageArea\",\"name\":\"WasteStorageAreaFirstOperationalDate\"},\"WasteStorageAreaLastOperationalDate\":{\"entity\":\"WasteStorageArea.cdm.json/WasteStorageArea\",\"name\":\"WasteStorageAreaLastOperationalDate\"},\"WasteStorageAreaNote\":{\"entity\":\"WasteStorageArea.cdm.json/WasteStorageArea\",\"name\":\"WasteStorageAreaNote\"}}}"
 			},
 			"Compressed": false,
@@ -175,8 +175,7 @@
 			"Description": "A storage area where waste, overburden etc. can be stored.",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "WasteStorageAreaId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

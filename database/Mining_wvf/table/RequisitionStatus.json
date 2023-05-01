@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RequisitionStatusId\":{\"entity\":\"RequisitionStatus.cdm.json/RequisitionStatus\",\"name\":\"RequisitionStatusId\"},\"RequisitionStatusName\":{\"entity\":\"RequisitionStatus.cdm.json/RequisitionStatus\",\"name\":\"RequisitionStatusName\"},\"RequisitionStatusDescription\":{\"entity\":\"RequisitionStatus.cdm.json/RequisitionStatus\",\"name\":\"RequisitionStatusDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "The status of the Requisition.\n\nEx:\n-  In preparation\n-  Requisition Issued\n-  Preparing PO",
 			"DisplayFolderInfo": "{\"name\":\"Purchasing\",\"colorCode\":\"#5F538F\"}",
 			"PrimaryKeys": "RequisitionStatusId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

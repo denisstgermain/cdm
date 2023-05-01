@@ -129,7 +129,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WorkOrderId\":{\"entity\":\"WorkOrderDate.cdm.json/WorkOrderDate\",\"name\":\"WorkOrderId\"},\"WorkOrderDateTypeId\":{\"entity\":\"WorkOrderDate.cdm.json/WorkOrderDate\",\"name\":\"WorkOrderDateTypeId\"},\"WorkOrderDateProvidedTimestamp\":{\"entity\":\"WorkOrderDate.cdm.json/WorkOrderDate\",\"name\":\"WorkOrderDateProvidedTimestamp\"},\"WorkOrderDateTimestamp\":{\"entity\":\"WorkOrderDate.cdm.json/WorkOrderDate\",\"name\":\"WorkOrderDateTimestamp\"},\"WorkOrderDateNote\":{\"entity\":\"WorkOrderDate.cdm.json/WorkOrderDate\",\"name\":\"WorkOrderDateNote\"}}}"
 			},
 			"Compressed": false,
@@ -140,8 +140,7 @@
 			"Description": "A date associated with the Work Order.",
 			"DisplayFolderInfo": "{\"name\":\"Work Order Management\",\"colorCode\":\"#00188F\"}",
 			"PrimaryKeys": "WorkOrderId,WorkOrderDateTypeId,WorkOrderDateProvidedTimestamp",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

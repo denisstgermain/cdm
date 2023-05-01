@@ -163,7 +163,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineId\":{\"entity\":\"MineMeasuredResource.cdm.json/MineMeasuredResource\",\"name\":\"MineId\"},\"ProductId\":{\"entity\":\"MineMeasuredResource.cdm.json/MineMeasuredResource\",\"name\":\"ProductId\"},\"PeriodStartDate\":{\"entity\":\"MineMeasuredResource.cdm.json/MineMeasuredResource\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"MineMeasuredResource.cdm.json/MineMeasuredResource\",\"name\":\"PeriodEndDate\"},\"MeasuredResourceUnits\":{\"entity\":\"MineMeasuredResource.cdm.json/MineMeasuredResource\",\"name\":\"MeasuredResourceUnits\"},\"UnitOfMeasureId\":{\"entity\":\"MineMeasuredResource.cdm.json/MineMeasuredResource\",\"name\":\"UnitOfMeasureId\"},\"MineMeasuredResourceNote\":{\"entity\":\"MineMeasuredResource.cdm.json/MineMeasuredResource\",\"name\":\"MineMeasuredResourceNote\"}}}"
 			},
 			"Compressed": false,
@@ -174,8 +174,7 @@
 			"Description": "Mine Measured resources are the indicated mine resources that have undergone enough additional sampling that a geologist or team of geologists have declared them to be an acceptable estimate with a high degree of confidence regarding the product grade, tonnage, shape, densities, physical characteristics and mineral content of the mineral occurrence.",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "MineId,ProductId,PeriodStartDate",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -112,7 +112,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PoNumber\":{\"entity\":\"PurchaseOrderStatus.cdm.json/PurchaseOrderStatus\",\"name\":\"PoNumber\"},\"PurchaseOrderStatusStartTimestamp\":{\"entity\":\"PurchaseOrderStatus.cdm.json/PurchaseOrderStatus\",\"name\":\"PurchaseOrderStatusStartTimestamp\"},\"PurchaseOrderStatusEndTimestamp\":{\"entity\":\"PurchaseOrderStatus.cdm.json/PurchaseOrderStatus\",\"name\":\"PurchaseOrderStatusEndTimestamp\"},\"PurchaseOrderStatusTypeId\":{\"entity\":\"PurchaseOrderStatus.cdm.json/PurchaseOrderStatus\",\"name\":\"PurchaseOrderStatusTypeId\"}}}"
 			},
 			"Compressed": false,
@@ -123,8 +123,7 @@
 			"Description": "The status of the associated Purchase Order.",
 			"DisplayFolderInfo": "{\"name\":\"Purchasing\",\"colorCode\":\"#5F538F\"}",
 			"PrimaryKeys": "PoNumber,PurchaseOrderStatusStartTimestamp",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

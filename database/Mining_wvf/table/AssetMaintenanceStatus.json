@@ -111,7 +111,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetMaintenanceId\":{\"entity\":\"AssetMaintenanceStatus.cdm.json/AssetMaintenanceStatus\",\"name\":\"AssetMaintenanceId\"},\"AssetMaintenanceTimestamp\":{\"entity\":\"AssetMaintenanceStatus.cdm.json/AssetMaintenanceStatus\",\"name\":\"AssetMaintenanceTimestamp\"},\"MaintenanceStatusId\":{\"entity\":\"AssetMaintenanceStatus.cdm.json/AssetMaintenanceStatus\",\"name\":\"MaintenanceStatusId\"},\"AssetMaintenanceStatusNote\":{\"entity\":\"AssetMaintenanceStatus.cdm.json/AssetMaintenanceStatus\",\"name\":\"AssetMaintenanceStatusNote\"}}}"
 			},
 			"Compressed": false,
@@ -122,8 +122,7 @@
 			"Description": "The status of the associated asset maintenance.",
 			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
 			"PrimaryKeys": "AssetMaintenanceId,AssetMaintenanceTimestamp",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

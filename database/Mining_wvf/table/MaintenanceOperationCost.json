@@ -148,7 +148,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetMaintenanceId\":{\"entity\":\"MaintenanceOperationCost.cdm.json/MaintenanceOperationCost\",\"name\":\"AssetMaintenanceId\"},\"CostTypeId\":{\"entity\":\"MaintenanceOperationCost.cdm.json/MaintenanceOperationCost\",\"name\":\"CostTypeId\"},\"CostTimestamp\":{\"entity\":\"MaintenanceOperationCost.cdm.json/MaintenanceOperationCost\",\"name\":\"CostTimestamp\"},\"MaintenanceOperationCostAmount\":{\"entity\":\"MaintenanceOperationCost.cdm.json/MaintenanceOperationCost\",\"name\":\"MaintenanceOperationCostAmount\"},\"IsoCurrencyCode\":{\"entity\":\"MaintenanceOperationCost.cdm.json/MaintenanceOperationCost\",\"name\":\"IsoCurrencyCode\"},\"MaintenanceOperationCostNote\":{\"entity\":\"MaintenanceOperationCost.cdm.json/MaintenanceOperationCost\",\"name\":\"MaintenanceOperationCostNote\"}}}"
 			},
 			"Compressed": false,
@@ -159,8 +159,7 @@
 			"Description": "The costs associated with a maintenance operation.",
 			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
 			"PrimaryKeys": "AssetMaintenanceId,CostTypeId,CostTimestamp",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

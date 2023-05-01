@@ -163,7 +163,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineId\":{\"entity\":\"MineProduction.cdm.json/MineProduction\",\"name\":\"MineId\"},\"ProductId\":{\"entity\":\"MineProduction.cdm.json/MineProduction\",\"name\":\"ProductId\"},\"PeriodStartTimestamp\":{\"entity\":\"MineProduction.cdm.json/MineProduction\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"MineProduction.cdm.json/MineProduction\",\"name\":\"PeriodEndTimestamp\"},\"ProductionUnits\":{\"entity\":\"MineProduction.cdm.json/MineProduction\",\"name\":\"ProductionUnits\"},\"UnitOfMeasureId\":{\"entity\":\"MineProduction.cdm.json/MineProduction\",\"name\":\"UnitOfMeasureId\"},\"MineProductionNote\":{\"entity\":\"MineProduction.cdm.json/MineProduction\",\"name\":\"MineProductionNote\"}}}"
 			},
 			"Compressed": false,
@@ -174,8 +174,7 @@
 			"Description": "The resource production achieved by the mine during the associated period.",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "MineId,ProductId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

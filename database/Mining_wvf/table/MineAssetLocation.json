@@ -184,7 +184,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineId\":{\"entity\":\"MineAssetLocation.cdm.json/MineAssetLocation\",\"name\":\"MineId\"},\"AssetId\":{\"entity\":\"MineAssetLocation.cdm.json/MineAssetLocation\",\"name\":\"AssetId\"},\"LocationId\":{\"entity\":\"MineAssetLocation.cdm.json/MineAssetLocation\",\"name\":\"LocationId\"},\"PeriodStartTimestamp\":{\"entity\":\"MineAssetLocation.cdm.json/MineAssetLocation\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"MineAssetLocation.cdm.json/MineAssetLocation\",\"name\":\"PeriodEndTimestamp\"},\"LocationLatitude\":{\"entity\":\"MineAssetLocation.cdm.json/MineAssetLocation\",\"name\":\"LocationLatitude\"},\"LocationLongitude\":{\"entity\":\"MineAssetLocation.cdm.json/MineAssetLocation\",\"name\":\"LocationLongitude\"},\"MineAssetLocationNote\":{\"entity\":\"MineAssetLocation.cdm.json/MineAssetLocation\",\"name\":\"MineAssetLocationNote\"}}}"
 			},
 			"Compressed": false,
@@ -195,8 +195,7 @@
 			"Description": "The location of the asset for the associated period.",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "MineId,AssetId,LocationId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

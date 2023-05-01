@@ -233,7 +233,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WarehouseId\":{\"entity\":\"Aisle.cdm.json/Aisle\",\"name\":\"WarehouseId\"},\"AisleId\":{\"entity\":\"Aisle.cdm.json/Aisle\",\"name\":\"AisleId\"},\"AreaId\":{\"entity\":\"Aisle.cdm.json/Aisle\",\"name\":\"AreaId\"},\"AisleName\":{\"entity\":\"Aisle.cdm.json/Aisle\",\"name\":\"AisleName\"},\"AisleLocationXCoordinate\":{\"entity\":\"Aisle.cdm.json/Aisle\",\"name\":\"AisleLocationXCoordinate\"},\"AisleLocationYCoordinate\":{\"entity\":\"Aisle.cdm.json/Aisle\",\"name\":\"AisleLocationYCoordinate\"},\"AisleLocationZCoordinate\":{\"entity\":\"Aisle.cdm.json/Aisle\",\"name\":\"AisleLocationZCoordinate\"},\"LocationGpsLongitudePosition\":{\"entity\":\"Aisle.cdm.json/Aisle\",\"name\":\"LocationGpsLongitudePosition\"},\"LocationGpsLatitudePosition\":{\"entity\":\"Aisle.cdm.json/Aisle\",\"name\":\"LocationGpsLatitudePosition\"},\"StorageLocationStatusId\":{\"entity\":\"Aisle.cdm.json/Aisle\",\"name\":\"StorageLocationStatusId\"},\"SecurityLevelId\":{\"entity\":\"Aisle.cdm.json/Aisle\",\"name\":\"SecurityLevelId\"}}}"
 			},
 			"Compressed": false,
@@ -244,8 +244,7 @@
 			"Description": "An Aisle is the space between storage devices that is used by material handlers for access.",
 			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#692B0C\"}",
 			"PrimaryKeys": "WarehouseId,AisleId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

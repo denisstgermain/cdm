@@ -146,7 +146,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineProcessingActivityId\":{\"entity\":\"MineProcessingActivityAssetEvent.cdm.json/MineProcessingActivityAssetEvent\",\"name\":\"MineProcessingActivityId\"},\"AssetId\":{\"entity\":\"MineProcessingActivityAssetEvent.cdm.json/MineProcessingActivityAssetEvent\",\"name\":\"AssetId\"},\"MineProcessingActivityAssetEventTypeId\":{\"entity\":\"MineProcessingActivityAssetEvent.cdm.json/MineProcessingActivityAssetEvent\",\"name\":\"MineProcessingActivityAssetEventTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"MineProcessingActivityAssetEvent.cdm.json/MineProcessingActivityAssetEvent\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"MineProcessingActivityAssetEvent.cdm.json/MineProcessingActivityAssetEvent\",\"name\":\"PeriodEndTimestamp\"},\"MineProcessingActivityAssetEventNote\":{\"entity\":\"MineProcessingActivityAssetEvent.cdm.json/MineProcessingActivityAssetEvent\",\"name\":\"MineProcessingActivityAssetEventNote\"}}}"
 			},
 			"Compressed": false,
@@ -157,8 +157,7 @@
 			"Description": "An mine processing asset event related to an activity.",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "MineProcessingActivityId,AssetId,MineProcessingActivityAssetEventTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

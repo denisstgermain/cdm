@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WorkOrderPriorityId\":{\"entity\":\"WorkOrderPriority.cdm.json/WorkOrderPriority\",\"name\":\"WorkOrderPriorityId\"},\"WorkOrderPriorityName\":{\"entity\":\"WorkOrderPriority.cdm.json/WorkOrderPriority\",\"name\":\"WorkOrderPriorityName\"},\"WorkOrderPriorityDescription\":{\"entity\":\"WorkOrderPriority.cdm.json/WorkOrderPriority\",\"name\":\"WorkOrderPriorityDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "The priority assigned Work Order.\n\nEx:\n- Critical\n- High\n- Medium\n- Low\n- Unknown\n- N/A",
 			"DisplayFolderInfo": "{\"name\":\"Work Order Management\",\"colorCode\":\"#00188F\"}",
 			"PrimaryKeys": "WorkOrderPriorityId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"JournalTypeId\":{\"entity\":\"JournalType.cdm.json/JournalType\",\"name\":\"JournalTypeId\"},\"JournalTypeName\":{\"entity\":\"JournalType.cdm.json/JournalType\",\"name\":\"JournalTypeName\"},\"JournalTypeDescription\":{\"entity\":\"JournalType.cdm.json/JournalType\",\"name\":\"JournalTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "A classification of journal types based on their usage.\n\nEx:\n- General Journal\n- A/P Journal\n- A/R Journal\n- Sales Journal\n- Cash Receipts Journal\n- Cash Payments Journal\n- Purchases Journal\n\nwhere:\n\nGENERAL JOURNAL records all business transaction not recorded in the special journals below. \n\nSALES JOURNAL records sales of goods and/or services to customers\n\nPURCHASES JOURNAL records purchases of goods and/or services on credit\n\nCASH RECEIPTS JOURNAL records the receipt of cash\n\nSALES RETURNS AND ALLOWANCES JOURNAL records issue of credit memos giving the buyer credit for the return of merchandise to the seller and a credit for the return.\n\nPURCHASES RETURNS AND ALLOWANCES JOURNAL acknowledges the receipt of a credit memo from the seller authorizing the return of goods and the reduction or elimination of the buyers obligation to the seller.",
 			"DisplayFolderInfo": "{\"name\":\"Accounting & Financial Reporting\",\"colorCode\":\"#0078D4\"}",
 			"PrimaryKeys": "JournalTypeId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

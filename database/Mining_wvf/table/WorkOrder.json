@@ -304,7 +304,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WorkOrderId\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderId\"},\"WorkOrderDescription\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderDescription\"},\"WorkOrderSubmittedTimestamp\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderSubmittedTimestamp\"},\"WorkOrderReceivedTimestamp\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderReceivedTimestamp\"},\"WorkOrderScheduledTimestamp\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderScheduledTimestamp\"},\"WorkOrderDispatchedTimestamp\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderDispatchedTimestamp\"},\"WorkOrderCompletedTimestamp\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderCompletedTimestamp\"},\"WorkOrderClosedTimestamp\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderClosedTimestamp\"},\"LocationId\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"LocationId\"},\"ServiceRequestId\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"ServiceRequestId\"},\"IssueId\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"IssueId\"},\"WorkOrderTypeId\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderTypeId\"},\"WorkOrderPriorityId\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderPriorityId\"},\"ResponsibilityCenterId\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"ResponsibilityCenterId\"},\"WorkOrderGlAccountNumber\":{\"entity\":\"WorkOrder.cdm.json/WorkOrder\",\"name\":\"WorkOrderGlAccountNumber\"}}}"
 			},
 			"Compressed": false,
@@ -315,8 +315,7 @@
 			"Description": "An order to perform one or Work Activity(s) in conjunction with a Service Request.\n\nWork Order Activities are activities that require additional personnel, planning, supporting material and effort.\n\nA Service Request differs from a Work Order in that: a Work Order has the following characteristics that a Service Request does not:\n\n- May require additional personnel with specific skills\n- May require supporting consumables or inventory items\n- May require one or more manual or technical work order activities\n- May require one or more assets or property & equipment\n- May involve work order activity costs that are charged to various related parties, organizations etc.",
 			"DisplayFolderInfo": "{\"name\":\"Work Order Management\",\"colorCode\":\"#00188F\"}",
 			"PrimaryKeys": "WorkOrderId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

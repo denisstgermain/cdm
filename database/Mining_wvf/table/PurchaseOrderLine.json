@@ -296,7 +296,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PoNumber\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"PoNumber\"},\"PoLineItemNumber\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"PoLineItemNumber\"},\"Quantity\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"Quantity\"},\"DateRequired\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"DateRequired\"},\"UnitPrice\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"UnitPrice\"},\"NegotiatedPrice\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"NegotiatedPrice\"},\"FreightAmount\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"FreightAmount\"},\"TaxAmount\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"TaxAmount\"},\"TotalLineItemAmount\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"TotalLineItemAmount\"},\"QualityStandardMeasure\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"QualityStandardMeasure\"},\"QualityStandardId\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"QualityStandardId\"},\"ItemSku\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"ItemSku\"},\"OrderId\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"OrderId\"},\"OrderLineNumber\":{\"entity\":\"PurchaseOrderLine.cdm.json/PurchaseOrderLine\",\"name\":\"OrderLineNumber\"}}}"
 			},
 			"Compressed": false,
@@ -307,8 +307,7 @@
 			"Description": "The specific products, goods or services that are identified on the Purchase Order.",
 			"DisplayFolderInfo": "{\"name\":\"Purchasing\",\"colorCode\":\"#5F538F\"}",
 			"PrimaryKeys": "PoNumber,PoLineItemNumber",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

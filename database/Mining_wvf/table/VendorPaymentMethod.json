@@ -167,7 +167,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VendorId\":{\"entity\":\"VendorPaymentMethod.cdm.json/VendorPaymentMethod\",\"name\":\"VendorId\"},\"PaymentMethodId\":{\"entity\":\"VendorPaymentMethod.cdm.json/VendorPaymentMethod\",\"name\":\"PaymentMethodId\"},\"MinimumTransactionAmount\":{\"entity\":\"VendorPaymentMethod.cdm.json/VendorPaymentMethod\",\"name\":\"MinimumTransactionAmount\"},\"MaximumTransactionAmount\":{\"entity\":\"VendorPaymentMethod.cdm.json/VendorPaymentMethod\",\"name\":\"MaximumTransactionAmount\"},\"PeriodStartDate\":{\"entity\":\"VendorPaymentMethod.cdm.json/VendorPaymentMethod\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"VendorPaymentMethod.cdm.json/VendorPaymentMethod\",\"name\":\"PeriodEndDate\"},\"VendorPaymentMethodNote\":{\"entity\":\"VendorPaymentMethod.cdm.json/VendorPaymentMethod\",\"name\":\"VendorPaymentMethodNote\"}}}"
 			},
 			"Compressed": false,
@@ -178,8 +178,7 @@
 			"Description": "The Payment Method(s) that are acceptable or suitable from the Vendor for purchases/transactions of the associated amount and period.",
 			"DisplayFolderInfo": "{\"name\":\"Vendor\",\"colorCode\":\"#0078D4\"}",
 			"PrimaryKeys": "VendorId,PaymentMethodId,MinimumTransactionAmount,MaximumTransactionAmount,PeriodStartDate",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

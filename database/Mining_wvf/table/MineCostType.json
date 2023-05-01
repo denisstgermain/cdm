@@ -111,7 +111,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CostTypeId\":{\"entity\":\"MineCostType.cdm.json/MineCostType\",\"name\":\"CostTypeId\"},\"CostTypeName\":{\"entity\":\"MineCostType.cdm.json/MineCostType\",\"name\":\"CostTypeName\"},\"CostTypeDescription\":{\"entity\":\"MineCostType.cdm.json/MineCostType\",\"name\":\"CostTypeDescription\"},\"CostCategoryId\":{\"entity\":\"MineCostType.cdm.json/MineCostType\",\"name\":\"CostCategoryId\"}}}"
 			},
 			"Compressed": false,
@@ -122,8 +122,7 @@
 			"Description": "A cost associated with a mine, activity, procedure, asset etc.\n\nEx:\n- Lease operating costs\n- Production\n- Production tax\n- Oil and gas depreciation\n- Depletion\n- Amortization\n- Trucking\n- Handling\n- Railway Transport\n- Labor\n- Contracted Labor\n- Equipment\n- Material\n- Port Handling\n- Concentrate transport and handling\n- General and administration\n- Transportation\n- Lease Operating \n- Operating \n- Finding\n- Operating\n- Maintenance\n\nwhere:\n\nOperating Costs - The sum of lease operating costs, production taxes, G&A expenses, and oil and gas depreciation, depletion, and amortization.\n\nFinding Costs - The capital costs associated with finding and developing oil and gas reserves.",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "CostTypeId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

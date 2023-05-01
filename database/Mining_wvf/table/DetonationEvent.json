@@ -129,7 +129,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DetonationId\":{\"entity\":\"DetonationEvent.cdm.json/DetonationEvent\",\"name\":\"DetonationId\"},\"DetonationEventTypeId\":{\"entity\":\"DetonationEvent.cdm.json/DetonationEvent\",\"name\":\"DetonationEventTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"DetonationEvent.cdm.json/DetonationEvent\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"DetonationEvent.cdm.json/DetonationEvent\",\"name\":\"PeriodEndTimestamp\"},\"DetonationEventNote\":{\"entity\":\"DetonationEvent.cdm.json/DetonationEvent\",\"name\":\"DetonationEventNote\"}}}"
 			},
 			"Compressed": false,
@@ -140,8 +140,7 @@
 			"Description": "A detonation event.",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "DetonationId,DetonationEventTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

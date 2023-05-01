@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceDocumentTypeId\":{\"entity\":\"MaintenanceDocumentType.cdm.json/MaintenanceDocumentType\",\"name\":\"MaintenanceDocumentTypeId\"},\"MaintenanceDocumentTypeName\":{\"entity\":\"MaintenanceDocumentType.cdm.json/MaintenanceDocumentType\",\"name\":\"MaintenanceDocumentTypeName\"},\"MaintenanceDocumentTypeDescription\":{\"entity\":\"MaintenanceDocumentType.cdm.json/MaintenanceDocumentType\",\"name\":\"MaintenanceDocumentTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "The nature of the a document to a maintenance operation/task.\n\nEx:\n- Required-By Operation\n- Produced-By Operation",
 			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
 			"PrimaryKeys": "MaintenanceDocumentTypeId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

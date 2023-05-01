@@ -163,7 +163,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetMaintenanceId\":{\"entity\":\"MaintenanceTaskRelatedParty.cdm.json/MaintenanceTaskRelatedParty\",\"name\":\"AssetMaintenanceId\"},\"MaintenanceTaskId\":{\"entity\":\"MaintenanceTaskRelatedParty.cdm.json/MaintenanceTaskRelatedParty\",\"name\":\"MaintenanceTaskId\"},\"PartyId\":{\"entity\":\"MaintenanceTaskRelatedParty.cdm.json/MaintenanceTaskRelatedParty\",\"name\":\"PartyId\"},\"RoleId\":{\"entity\":\"MaintenanceTaskRelatedParty.cdm.json/MaintenanceTaskRelatedParty\",\"name\":\"RoleId\"},\"PeriodStartTimestamp\":{\"entity\":\"MaintenanceTaskRelatedParty.cdm.json/MaintenanceTaskRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"MaintenanceTaskRelatedParty.cdm.json/MaintenanceTaskRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"MaintenanceTaskRelationshipNote\":{\"entity\":\"MaintenanceTaskRelatedParty.cdm.json/MaintenanceTaskRelatedParty\",\"name\":\"MaintenanceTaskRelationshipNote\"}}}"
 			},
 			"Compressed": false,
@@ -174,8 +174,7 @@
 			"Description": "The parties related to the maintenance task.\n\nEx:\n- Maintenance task performed by\n- Maintenance task approved by\n- Maintenance task inspected by\n- Maintenance task scheduled by",
 			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
 			"PrimaryKeys": "AssetMaintenanceId,MaintenanceTaskId,PartyId,RoleId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -215,7 +215,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WarehouseId\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"WarehouseId\"},\"BinId\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"BinId\"},\"ShelfId\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"ShelfId\"},\"BinLocationXCoordinate\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"BinLocationXCoordinate\"},\"BinLocationYCoordinate\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"BinLocationYCoordinate\"},\"BinLocationZCoordinate\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"BinLocationZCoordinate\"},\"LocationGpsLongitudePosition\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"LocationGpsLongitudePosition\"},\"LocationGpsLatitudePosition\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"LocationGpsLatitudePosition\"},\"StorageLocationStatusId\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"StorageLocationStatusId\"},\"SecurityLevelId\":{\"entity\":\"Bin.cdm.json/Bin\",\"name\":\"SecurityLevelId\"}}}"
 			},
 			"Compressed": false,
@@ -226,8 +226,7 @@
 			"Description": "A storage device designed to hold small, discrete parts.",
 			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#692B0C\"}",
 			"PrimaryKeys": "WarehouseId,BinId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

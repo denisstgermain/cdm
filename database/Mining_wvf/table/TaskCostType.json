@@ -111,7 +111,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TaskCostTypeId\":{\"entity\":\"TaskCostType.cdm.json/TaskCostType\",\"name\":\"TaskCostTypeId\"},\"TaskCostTypeName\":{\"entity\":\"TaskCostType.cdm.json/TaskCostType\",\"name\":\"TaskCostTypeName\"},\"TaskCostTypeDescription\":{\"entity\":\"TaskCostType.cdm.json/TaskCostType\",\"name\":\"TaskCostTypeDescription\"},\"BudgetId\":{\"entity\":\"TaskCostType.cdm.json/TaskCostType\",\"name\":\"BudgetId\"}}}"
 			},
 			"Compressed": false,
@@ -122,8 +122,7 @@
 			"Description": "A cost that may be allocated to a Task.\n\nOne or more costs may be aggregated to provide a single charge.\n\nEx:\n- Administrative cost\n- Materials cost\n- Labor cost",
 			"DisplayFolderInfo": "{\"name\":\"Work Order Management\",\"colorCode\":\"#00188F\"}",
 			"PrimaryKeys": "TaskCostTypeId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

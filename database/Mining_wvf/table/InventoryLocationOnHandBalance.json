@@ -183,7 +183,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WarehouseId\":{\"entity\":\"InventoryLocationOnHandBalance.cdm.json/InventoryLocationOnHandBalance\",\"name\":\"WarehouseId\"},\"WarehouseLocationId\":{\"entity\":\"InventoryLocationOnHandBalance.cdm.json/InventoryLocationOnHandBalance\",\"name\":\"WarehouseLocationId\"},\"ItemSku\":{\"entity\":\"InventoryLocationOnHandBalance.cdm.json/InventoryLocationOnHandBalance\",\"name\":\"ItemSku\"},\"InventoryLocationOnHandBalanceTimestamp\":{\"entity\":\"InventoryLocationOnHandBalance.cdm.json/InventoryLocationOnHandBalance\",\"name\":\"InventoryLocationOnHandBalanceTimestamp\"},\"PlannedItemQuantity\":{\"entity\":\"InventoryLocationOnHandBalance.cdm.json/InventoryLocationOnHandBalance\",\"name\":\"PlannedItemQuantity\"},\"ActualItemQuantity\":{\"entity\":\"InventoryLocationOnHandBalance.cdm.json/InventoryLocationOnHandBalance\",\"name\":\"ActualItemQuantity\"},\"ItemQuantityVariance\":{\"entity\":\"InventoryLocationOnHandBalance.cdm.json/InventoryLocationOnHandBalance\",\"name\":\"ItemQuantityVariance\"},\"OnHandVarianceReasonId\":{\"entity\":\"InventoryLocationOnHandBalance.cdm.json/InventoryLocationOnHandBalance\",\"name\":\"OnHandVarianceReasonId\"}}}"
 			},
 			"Compressed": false,
@@ -194,8 +194,7 @@
 			"Description": "The amount of Item present at the Inventory Location as of a specific timestamp.",
 			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#692B0C\"}",
 			"PrimaryKeys": "WarehouseId,WarehouseLocationId,ItemSku,InventoryLocationOnHandBalanceTimestamp",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

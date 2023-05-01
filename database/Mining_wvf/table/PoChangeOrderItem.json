@@ -166,7 +166,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PoChangeOrderId\":{\"entity\":\"PoChangeOrderItem.cdm.json/PoChangeOrderItem\",\"name\":\"PoChangeOrderId\"},\"PoChangeOrderLineItemNumber\":{\"entity\":\"PoChangeOrderItem.cdm.json/PoChangeOrderItem\",\"name\":\"PoChangeOrderLineItemNumber\"},\"Quantity\":{\"entity\":\"PoChangeOrderItem.cdm.json/PoChangeOrderItem\",\"name\":\"Quantity\"},\"QualityStandardMeasure\":{\"entity\":\"PoChangeOrderItem.cdm.json/PoChangeOrderItem\",\"name\":\"QualityStandardMeasure\"},\"ChangeOrderReason\":{\"entity\":\"PoChangeOrderItem.cdm.json/PoChangeOrderItem\",\"name\":\"ChangeOrderReason\"},\"QualityStandardId\":{\"entity\":\"PoChangeOrderItem.cdm.json/PoChangeOrderItem\",\"name\":\"QualityStandardId\"},\"ItemSku\":{\"entity\":\"PoChangeOrderItem.cdm.json/PoChangeOrderItem\",\"name\":\"ItemSku\"}}}"
 			},
 			"Compressed": false,
@@ -177,8 +177,7 @@
 			"Description": "The specific Item(s) that are affected by the PO Change Order.\n\nThese should be compared to the Items specified by the original PO.",
 			"DisplayFolderInfo": "{\"name\":\"Purchasing\",\"colorCode\":\"#5F538F\"}",
 			"PrimaryKeys": "PoChangeOrderId,PoChangeOrderLineItemNumber",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

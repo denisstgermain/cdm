@@ -181,7 +181,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineActivityId\":{\"entity\":\"MineActivityItem.cdm.json/MineActivityItem\",\"name\":\"MineActivityId\"},\"ItemSku\":{\"entity\":\"MineActivityItem.cdm.json/MineActivityItem\",\"name\":\"ItemSku\"},\"MineActivityItemRelationshipTypeId\":{\"entity\":\"MineActivityItem.cdm.json/MineActivityItem\",\"name\":\"MineActivityItemRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"MineActivityItem.cdm.json/MineActivityItem\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"MineActivityItem.cdm.json/MineActivityItem\",\"name\":\"PeriodEndTimestamp\"},\"ItemUnits\":{\"entity\":\"MineActivityItem.cdm.json/MineActivityItem\",\"name\":\"ItemUnits\"},\"UnitOfMeasureId\":{\"entity\":\"MineActivityItem.cdm.json/MineActivityItem\",\"name\":\"UnitOfMeasureId\"},\"MineActivityItemNote\":{\"entity\":\"MineActivityItem.cdm.json/MineActivityItem\",\"name\":\"MineActivityItemNote\"}}}"
 			},
 			"Compressed": false,
@@ -192,8 +192,7 @@
 			"Description": "Item(s) such as chemicals, material or other inventoried items consumed or produced by the mine activity.\n\nEx:\n- Blasting caps\n- Dynamite",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "MineActivityId,ItemSku,MineActivityItemRelationshipTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -129,7 +129,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineActivityId\":{\"entity\":\"MineActivityAsset.cdm.json/MineActivityAsset\",\"name\":\"MineActivityId\"},\"AssetId\":{\"entity\":\"MineActivityAsset.cdm.json/MineActivityAsset\",\"name\":\"AssetId\"},\"PeriodStartTimestamp\":{\"entity\":\"MineActivityAsset.cdm.json/MineActivityAsset\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"MineActivityAsset.cdm.json/MineActivityAsset\",\"name\":\"PeriodEndTimestamp\"},\"MineActivityAssetNote\":{\"entity\":\"MineActivityAsset.cdm.json/MineActivityAsset\",\"name\":\"MineActivityAssetNote\"}}}"
 			},
 			"Compressed": false,
@@ -140,8 +140,7 @@
 			"Description": "The asset(s) required by or used by the associated mine procedure.",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "MineActivityId,AssetId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

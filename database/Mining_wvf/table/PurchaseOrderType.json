@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PurchaseOrderTypeId\":{\"entity\":\"PurchaseOrderType.cdm.json/PurchaseOrderType\",\"name\":\"PurchaseOrderTypeId\"},\"PurchaseOrderTypeName\":{\"entity\":\"PurchaseOrderType.cdm.json/PurchaseOrderType\",\"name\":\"PurchaseOrderTypeName\"},\"PurchaseOrderTypeDescription\":{\"entity\":\"PurchaseOrderType.cdm.json/PurchaseOrderType\",\"name\":\"PurchaseOrderTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "A categorization of purchase order based on common function, application or usage.\n\nEx:\n- Standard Purchase Order\n- Blanket Purchase Agreement\n- Blanket Release\n- Contract Purchase Agreement\n- Planned Purchase Order\n- Scheduled Release",
 			"DisplayFolderInfo": "{\"name\":\"Purchasing\",\"colorCode\":\"#5F538F\"}",
 			"PrimaryKeys": "PurchaseOrderTypeId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

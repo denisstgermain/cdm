@@ -557,7 +557,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TaskId\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"TaskId\"},\"TaskName\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"TaskName\"},\"TaskDescription\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"TaskDescription\"},\"TaskSpecificationStatement\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"TaskSpecificationStatement\"},\"SequenceNumber\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"SequenceNumber\"},\"MilestoneIndicator\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"MilestoneIndicator\"},\"CriticalPathTaskIndicator\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"CriticalPathTaskIndicator\"},\"TaskNote\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"TaskNote\"},\"TaskPlannedStartTimestamp\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"TaskPlannedStartTimestamp\"},\"TaskScheduledStartTimestamp\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"TaskScheduledStartTimestamp\"},\"TaskActualStartTimestamp\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"TaskActualStartTimestamp\"},\"TaskPlannedCompletionTimestamp\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"TaskPlannedCompletionTimestamp\"},\"TaskScheduledCompletionTimestamp\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"TaskScheduledCompletionTimestamp\"},\"TaskActualCompletionTimestamp\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"TaskActualCompletionTimestamp\"},\"TaskEarliestStartTimestamp\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"TaskEarliestStartTimestamp\"},\"TaskLatestStartTimestamp\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"TaskLatestStartTimestamp\"},\"TaskEarliestCompletionTimestamp\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"TaskEarliestCompletionTimestamp\"},\"TaskLatestCompletionTimestamp\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"TaskLatestCompletionTimestamp\"},\"TaskFloatHours\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"TaskFloatHours\"},\"PlannedBillableLaborUnits\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"PlannedBillableLaborUnits\"},\"ActualBillableLaborUnits\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"ActualBillableLaborUnits\"},\"PlannedBillableChargesAmount\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"PlannedBillableChargesAmount\"},\"ActualBillableChargesAmount\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"ActualBillableChargesAmount\"},\"PlannedCostsAmount\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"PlannedCostsAmount\"},\"ActualCostsAmount\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"ActualCostsAmount\"},\"TaskTypeId\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"TaskTypeId\"},\"LocationId\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"LocationId\"},\"ResponsibilityCenterId\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"ResponsibilityCenterId\"},\"TaskGlAccountNumber\":{\"entity\":\"Task.cdm.json/Task\",\"name\":\"TaskGlAccountNumber\"}}}"
 			},
 			"Compressed": false,
@@ -568,8 +568,7 @@
 			"Description": "A specific task or piece of work that is performed.",
 			"DisplayFolderInfo": "{\"name\":\"Work Order Management\",\"colorCode\":\"#00188F\"}",
 			"PrimaryKeys": "TaskId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

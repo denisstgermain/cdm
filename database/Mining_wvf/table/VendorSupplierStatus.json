@@ -129,7 +129,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VendorId\":{\"entity\":\"VendorSupplierStatus.cdm.json/VendorSupplierStatus\",\"name\":\"VendorId\"},\"SupplierStatusId\":{\"entity\":\"VendorSupplierStatus.cdm.json/VendorSupplierStatus\",\"name\":\"SupplierStatusId\"},\"PeriodStartDate\":{\"entity\":\"VendorSupplierStatus.cdm.json/VendorSupplierStatus\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"VendorSupplierStatus.cdm.json/VendorSupplierStatus\",\"name\":\"PeriodEndDate\"},\"VendorSupplierStatusNote\":{\"entity\":\"VendorSupplierStatus.cdm.json/VendorSupplierStatus\",\"name\":\"VendorSupplierStatusNote\"}}}"
 			},
 			"Compressed": false,
@@ -140,8 +140,7 @@
 			"Description": "The Legal Entity Supplier Status as of the associated date.",
 			"DisplayFolderInfo": "{\"name\":\"Vendor\",\"colorCode\":\"#0078D4\"}",
 			"PrimaryKeys": "VendorId,SupplierStatusId,PeriodStartDate",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

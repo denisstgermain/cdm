@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineralTypeId\":{\"entity\":\"MineralType.cdm.json/MineralType\",\"name\":\"MineralTypeId\"},\"MineralTypeName\":{\"entity\":\"MineralType.cdm.json/MineralType\",\"name\":\"MineralTypeName\"},\"MineralTypeDescription\":{\"entity\":\"MineralType.cdm.json/MineralType\",\"name\":\"MineralTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "A mineral is a naturally occurring chemical compound.\n\nEx:\n- Antlerite \n- Atacamite\n- Azurite\n- Bornite (Peacock Ore) \n- Chalcocite \n- Chalcopyrite \n- Chrysocolla \n- Copper Carbonate\n- Covellite \n- Cuprite \n- Digenite\n- Malachite\n- Phosphate\n- Sulfate",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "MineralTypeId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

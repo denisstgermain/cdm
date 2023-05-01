@@ -283,7 +283,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TransactionId\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"TransactionId\"},\"TransactionRequestedTimestamp\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"TransactionRequestedTimestamp\"},\"TransactionPlannedTimestamp\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"TransactionPlannedTimestamp\"},\"TransactionInitiatedTimestamp\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"TransactionInitiatedTimestamp\"},\"TransactionCompletedTimestamp\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"TransactionCompletedTimestamp\"},\"TransitTime\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"TransitTime\"},\"FromWarehouseId\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"FromWarehouseId\"},\"FromInventoryLocationId\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"FromInventoryLocationId\"},\"ToWarehouseId\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"ToWarehouseId\"},\"ToInventoryLocationId\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"ToInventoryLocationId\"},\"StagingLocationRequiredIndicator\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"StagingLocationRequiredIndicator\"},\"InventoryTransactionClassId\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"InventoryTransactionClassId\"},\"InventoryTransactionTypeId\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"InventoryTransactionTypeId\"},\"InventoryTransactionStatusId\":{\"entity\":\"InventoryTransaction.cdm.json/InventoryTransaction\",\"name\":\"InventoryTransactionStatusId\"}}}"
 			},
 			"Compressed": false,
@@ -294,8 +294,7 @@
 			"Description": "A specific Inventory Transaction that is applied to or carried out at a specific Inventory Location(s) upon the Items in those locations.",
 			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#692B0C\"}",
 			"PrimaryKeys": "TransactionId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

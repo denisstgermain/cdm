@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VendorStatusTypeId\":{\"entity\":\"VendorStatusType.cdm.json/VendorStatusType\",\"name\":\"VendorStatusTypeId\"},\"VendorStatusTypeName\":{\"entity\":\"VendorStatusType.cdm.json/VendorStatusType\",\"name\":\"VendorStatusTypeName\"},\"VendorStatusTypeDescription\":{\"entity\":\"VendorStatusType.cdm.json/VendorStatusType\",\"name\":\"VendorStatusTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "The status type of a Vendor for a specific Item or overall.\n\nEx:\n- Qualified\n- Pending Qualification\n- Unqualified\n- Lot Testing Required\n- Lot Sampling Required",
 			"DisplayFolderInfo": "{\"name\":\"Vendor\",\"colorCode\":\"#0078D4\"}",
 			"PrimaryKeys": "VendorStatusTypeId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -129,7 +129,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FurnaceId\":{\"entity\":\"FurnaceStatus.cdm.json/FurnaceStatus\",\"name\":\"FurnaceId\"},\"PeriodStartTimestamp\":{\"entity\":\"FurnaceStatus.cdm.json/FurnaceStatus\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"FurnaceStatus.cdm.json/FurnaceStatus\",\"name\":\"PeriodEndTimestamp\"},\"FurnaceStatusTypeId\":{\"entity\":\"FurnaceStatus.cdm.json/FurnaceStatus\",\"name\":\"FurnaceStatusTypeId\"},\"FurnaceStatusNote\":{\"entity\":\"FurnaceStatus.cdm.json/FurnaceStatus\",\"name\":\"FurnaceStatusNote\"}}}"
 			},
 			"Compressed": false,
@@ -140,8 +140,7 @@
 			"Description": "The status of the furnace for the associated period.",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "FurnaceId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

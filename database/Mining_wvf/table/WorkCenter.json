@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WorkCenterId\":{\"entity\":\"WorkCenter.cdm.json/WorkCenter\",\"name\":\"WorkCenterId\"},\"WorkCenterName\":{\"entity\":\"WorkCenter.cdm.json/WorkCenter\",\"name\":\"WorkCenterName\"},\"WorkCenterDescription\":{\"entity\":\"WorkCenter.cdm.json/WorkCenter\",\"name\":\"WorkCenterDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "A specific production facility consisting of people and machines which can be considered one unit for the purposes of capacity requirements planning and detailed scheduling.\n\nWork Centers are defined for the purpose of controlling inventory outside the warehouse.  \n\nThis inventory is frequently referred to as 'work-in-progress'.\n\nWork-in-progress inventory is being processed or assembled and is temporarily associated with a Work Center rather than an Inventory Storage Location.\n\nWork-in-progress inventory can be inventory shipped to an outside Vendor for processing and is associated with the Vendor rather than an Inventory Storage Location.",
 			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#692B0C\"}",
 			"PrimaryKeys": "WorkCenterId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

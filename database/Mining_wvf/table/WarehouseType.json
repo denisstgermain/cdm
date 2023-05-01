@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WarehouseTypeId\":{\"entity\":\"WarehouseType.cdm.json/WarehouseType\",\"name\":\"WarehouseTypeId\"},\"WarehouseTypeName\":{\"entity\":\"WarehouseType.cdm.json/WarehouseType\",\"name\":\"WarehouseTypeName\"},\"WarehouseTypeDescription\":{\"entity\":\"WarehouseType.cdm.json/WarehouseType\",\"name\":\"WarehouseTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "The type / purpose of the Warehouse.\n\nEx: \n- Distribution Center\n- Fulfillment Center\n- Locker\n- Nano-Fulfillment Center\n- Micro-Fulfillment Center\n- Store Room\n- Mobile Warehouse",
 			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#692B0C\"}",
 			"PrimaryKeys": "WarehouseTypeId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

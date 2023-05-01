@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceTaskTypeId\":{\"entity\":\"MaintenanceTaskType.cdm.json/MaintenanceTaskType\",\"name\":\"MaintenanceTaskTypeId\"},\"MaintenanceTaskTypeName\":{\"entity\":\"MaintenanceTaskType.cdm.json/MaintenanceTaskType\",\"name\":\"MaintenanceTaskTypeName\"},\"MaintenanceTaskTypeDescription\":{\"entity\":\"MaintenanceTaskType.cdm.json/MaintenanceTaskType\",\"name\":\"MaintenanceTaskTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "A classification of maintenance tasks based on common characteristics or utilization.\n\nEx:\n- upgrade\n- retrofit\n- regularly scheduled maintenance",
 			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
 			"PrimaryKeys": "MaintenanceTaskTypeId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

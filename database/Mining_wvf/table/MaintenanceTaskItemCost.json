@@ -198,7 +198,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceTaskId\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"MaintenanceTaskId\"},\"AssetId\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"AssetId\"},\"BomLevelNumber\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"BomLevelNumber\"},\"CostTypeId\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"CostTypeId\"},\"AssetMaintenanceId\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"AssetMaintenanceId\"},\"ItemSku\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"ItemSku\"},\"CostAmount\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"CostAmount\"},\"IsoCurrencyCode\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"IsoCurrencyCode\"},\"PartyId\":{\"entity\":\"MaintenanceTaskItemCost.cdm.json/MaintenanceTaskItemCost\",\"name\":\"PartyId\"}}}"
 			},
 			"Compressed": false,
@@ -209,8 +209,7 @@
 			"Description": "The costs associated with a maintenance task item.",
 			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
 			"PrimaryKeys": "MaintenanceTaskId,AssetId,BomLevelNumber,CostTypeId,AssetMaintenanceId,ItemSku",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

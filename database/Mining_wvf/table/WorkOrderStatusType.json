@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WorkOrderStatusTypeId\":{\"entity\":\"WorkOrderStatusType.cdm.json/WorkOrderStatusType\",\"name\":\"WorkOrderStatusTypeId\"},\"WorkOrderStatusTypeName\":{\"entity\":\"WorkOrderStatusType.cdm.json/WorkOrderStatusType\",\"name\":\"WorkOrderStatusTypeName\"},\"WorkOrderStatusTypeDescription\":{\"entity\":\"WorkOrderStatusType.cdm.json/WorkOrderStatusType\",\"name\":\"WorkOrderStatusTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "A status that may be applied to a Work Order.\n\nEx:\n- Unscheduled\n- Scheduled\n- Issued for third-party bids\n- In-Progress\n- Pending Approval\n- Approved\n- Completed\n- Closed\n- Cancelled\n- Unknown\n- N/A",
 			"DisplayFolderInfo": "{\"name\":\"Work Order Management\",\"colorCode\":\"#00188F\"}",
 			"PrimaryKeys": "WorkOrderStatusTypeId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

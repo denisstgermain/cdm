@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jvwnfuzkjb",
+	"properties": {
+		"Name": "relationship-jvwnfuzkjb",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Detonation",
+		"ToTableName": "DetonationDrillHole",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DetonationId",
+				"ToColumnName": "DetonationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Detonation.cdm.json/Detonation\",\"toEntity\":\"DetonationDrillHole.cdm.json/DetonationDrillHole\",\"joinPairs\":[{\"fromAttribute\":\"DetonationId\",\"toAttribute\":\"DetonationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

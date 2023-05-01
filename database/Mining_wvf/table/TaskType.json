@@ -111,7 +111,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TaskTypeId\":{\"entity\":\"TaskType.cdm.json/TaskType\",\"name\":\"TaskTypeId\"},\"TaskTypeName\":{\"entity\":\"TaskType.cdm.json/TaskType\",\"name\":\"TaskTypeName\"},\"TaskTypeDescription\":{\"entity\":\"TaskType.cdm.json/TaskType\",\"name\":\"TaskTypeDescription\"},\"CapitalizationIndicator\":{\"entity\":\"TaskType.cdm.json/TaskType\",\"name\":\"CapitalizationIndicator\"}}}"
 			},
 			"Compressed": false,
@@ -122,8 +122,7 @@
 			"Description": "A type of task:\n\nEx:\n- Consulting\n- Document Authoring\n- Software Developing\n- Software Testing\n- Software Installation\n- System Design\n- Requirements Analysis\n- Functional Analysis\n- Environmental Impact Assessment\n- Planning Assessment / Consent\n- Audit\n- Planning\n- Testing\n- Manufacturing\n- Quality Assurance\n- Reporting\n- Contract\n- Construction\n- Budget\n- Operation\n- Operation End\n- Site Planning\n- Shading Assessment\n- Financial Modeling\n- Preparation and submission of the permit\n- Prepare new lot of product\n- Recall product lot\n- Template",
 			"DisplayFolderInfo": "{\"name\":\"Work Order Management\",\"colorCode\":\"#00188F\"}",
 			"PrimaryKeys": "TaskTypeId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

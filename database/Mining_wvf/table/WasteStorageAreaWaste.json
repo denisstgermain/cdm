@@ -163,7 +163,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WasteStorageAreaId\":{\"entity\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\",\"name\":\"WasteStorageAreaId\"},\"WasteSubstanceTypeId\":{\"entity\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\",\"name\":\"WasteSubstanceTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\",\"name\":\"PeriodEndTimestamp\"},\"WasteQuantityUnits\":{\"entity\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\",\"name\":\"WasteQuantityUnits\"},\"UnitOfMeasureId\":{\"entity\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\",\"name\":\"UnitOfMeasureId\"},\"WasteStorageAreaWasteNote\":{\"entity\":\"WasteStorageAreaWaste.cdm.json/WasteStorageAreaWaste\",\"name\":\"WasteStorageAreaWasteNote\"}}}"
 			},
 			"Compressed": false,
@@ -174,8 +174,7 @@
 			"Description": "Waste stored at the waste storage area during the associated period.",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "WasteStorageAreaId,WasteSubstanceTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

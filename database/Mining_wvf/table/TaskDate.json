@@ -129,7 +129,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TaskId\":{\"entity\":\"TaskDate.cdm.json/TaskDate\",\"name\":\"TaskId\"},\"TaskDateTypeId\":{\"entity\":\"TaskDate.cdm.json/TaskDate\",\"name\":\"TaskDateTypeId\"},\"TaskDateProvidedTimestamp\":{\"entity\":\"TaskDate.cdm.json/TaskDate\",\"name\":\"TaskDateProvidedTimestamp\"},\"TaskDateTimestamp\":{\"entity\":\"TaskDate.cdm.json/TaskDate\",\"name\":\"TaskDateTimestamp\"},\"TaskDateNote\":{\"entity\":\"TaskDate.cdm.json/TaskDate\",\"name\":\"TaskDateNote\"}}}"
 			},
 			"Compressed": false,
@@ -140,8 +140,7 @@
 			"Description": "A date associated with the Task.",
 			"DisplayFolderInfo": "{\"name\":\"Work Order Management\",\"colorCode\":\"#00188F\"}",
 			"PrimaryKeys": "TaskId,TaskDateTypeId,TaskDateProvidedTimestamp",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

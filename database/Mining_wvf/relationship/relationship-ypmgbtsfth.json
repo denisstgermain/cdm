@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ypmgbtsfth",
+	"properties": {
+		"Name": "relationship-ypmgbtsfth",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DrillHole",
+		"ToTableName": "DetonationDrillHole",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DrillHoleId",
+				"ToColumnName": "DrillHoleId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DrillHole.cdm.json/DrillHole\",\"toEntity\":\"DetonationDrillHole.cdm.json/DetonationDrillHole\",\"joinPairs\":[{\"fromAttribute\":\"DrillHoleId\",\"toAttribute\":\"DrillHoleId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

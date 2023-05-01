@@ -111,7 +111,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PoChangeOrderId\":{\"entity\":\"PoChangeOrderStatus.cdm.json/PoChangeOrderStatus\",\"name\":\"PoChangeOrderId\"},\"PoChangeOrderStatusStartTimestamp\":{\"entity\":\"PoChangeOrderStatus.cdm.json/PoChangeOrderStatus\",\"name\":\"PoChangeOrderStatusStartTimestamp\"},\"PoChangeOrderStatusEndTimestamp\":{\"entity\":\"PoChangeOrderStatus.cdm.json/PoChangeOrderStatus\",\"name\":\"PoChangeOrderStatusEndTimestamp\"},\"PoChangeOrderStatusTypeId\":{\"entity\":\"PoChangeOrderStatus.cdm.json/PoChangeOrderStatus\",\"name\":\"PoChangeOrderStatusTypeId\"}}}"
 			},
 			"Compressed": false,
@@ -122,8 +122,7 @@
 			"Description": "The status of the associated PO Change Order.",
 			"DisplayFolderInfo": "{\"name\":\"Purchasing\",\"colorCode\":\"#5F538F\"}",
 			"PrimaryKeys": "PoChangeOrderId,PoChangeOrderStatusStartTimestamp",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

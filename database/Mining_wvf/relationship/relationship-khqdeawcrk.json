@@ -1,0 +1,26 @@
+{
+	"name": "relationship-khqdeawcrk",
+	"properties": {
+		"Name": "relationship-khqdeawcrk",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Detonation",
+		"ToTableName": "DetonationAsset",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DetonationId",
+				"ToColumnName": "DetonationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Detonation.cdm.json/Detonation\",\"toEntity\":\"DetonationAsset.cdm.json/DetonationAsset\",\"joinPairs\":[{\"fromAttribute\":\"DetonationId\",\"toAttribute\":\"DetonationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

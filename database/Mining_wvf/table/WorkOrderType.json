@@ -111,7 +111,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WorkOrderTypeId\":{\"entity\":\"WorkOrderType.cdm.json/WorkOrderType\",\"name\":\"WorkOrderTypeId\"},\"WorkOrderTypeName\":{\"entity\":\"WorkOrderType.cdm.json/WorkOrderType\",\"name\":\"WorkOrderTypeName\"},\"WorkOrderTypeDescription\":{\"entity\":\"WorkOrderType.cdm.json/WorkOrderType\",\"name\":\"WorkOrderTypeDescription\"},\"CapitalizationIndicator\":{\"entity\":\"WorkOrderType.cdm.json/WorkOrderType\",\"name\":\"CapitalizationIndicator\"}}}"
 			},
 			"Compressed": false,
@@ -122,8 +122,7 @@
 			"Description": "A type of work order based on function, similar objectives etc.\n\nEx:\n- Repair\n- Installation\n- Upgrade\n- Manufacturing\n- Recall\n- Shipping\n- Job Plan\n- Template",
 			"DisplayFolderInfo": "{\"name\":\"Work Order Management\",\"colorCode\":\"#00188F\"}",
 			"PrimaryKeys": "WorkOrderTypeId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

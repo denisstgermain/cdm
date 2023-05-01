@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineStatusTypeId\":{\"entity\":\"MineStatusType.cdm.json/MineStatusType\",\"name\":\"MineStatusTypeId\"},\"MineStatusTypeName\":{\"entity\":\"MineStatusType.cdm.json/MineStatusType\",\"name\":\"MineStatusTypeName\"},\"MineStatusTypeDescription\":{\"entity\":\"MineStatusType.cdm.json/MineStatusType\",\"name\":\"MineStatusTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "The status type of a mine.\n\nEx:\n- Abandoned \n- Appraisal\n- Closed\n- Completed\n- Development\n- Discovery\n- Operational\n- Planned\n- Producing\n- Surveyed\n- Non-Producing\n- N/A\n\nWhere:\n\nABANDONED - A mine no longer in use; a dry hole that, in most states, must be properly plugged.    abandon v: to temporarily or permanently cease production from a well or to cease further drilling operations.\n\nAPPRAISAL DRILLING - Mines drilled in the vicinity of a discovery or wildcat well in order to evaluate the extent and the importance of the find.\n\nCOMPLETED - To finish a well so that it is ready to produce oil or gas. After reaching total depth (T.D.), casing is run and cemented; casing is perforated opposite the producing zone, tubing is run, and control and flow valves are installed at the wellhead. Mine completions vary according to the kind of well, depth, and the formation from which the well is to produce.\n\nDEVELOPMENT MINES - Mines drilled in an area already proved to be productive.\n\nDISCOVERY MINE - An exploratory mine that encounters a new and previously untapped resource deposit; a successful wildcat well. A discovery mine may also open a new horizon in an established field.\n\nPRODUCING MINE - A mine that is producing a resource or that is capable of production.\n\nDRY -  A well that does not produce oil or gas in commercial quantities. A dry hole may flow water, gas, or even oil, but not in amounts large enough to justify production.",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "MineStatusTypeId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

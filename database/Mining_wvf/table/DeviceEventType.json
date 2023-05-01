@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DeviceEventTypeId\":{\"entity\":\"DeviceEventType.cdm.json/DeviceEventType\",\"name\":\"DeviceEventTypeId\"},\"DeviceEventTypeName\":{\"entity\":\"DeviceEventType.cdm.json/DeviceEventType\",\"name\":\"DeviceEventTypeName\"},\"DeviceEventTypeDescription\":{\"entity\":\"DeviceEventType.cdm.json/DeviceEventType\",\"name\":\"DeviceEventTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "A type of event that can be recorded for a Device.\n\nEx:\n- Trade-in\n- Installation\n- Repair\n- Replacement\n- Loss\n- Theft\n- Casualty Loss\n- Cannibalization\n- Salvage\n- Production\n- Injected\n- Plugged\n- Abandoned\n- Sale\n- Transfer",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#F04EB2\"}",
 			"PrimaryKeys": "DeviceEventTypeId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

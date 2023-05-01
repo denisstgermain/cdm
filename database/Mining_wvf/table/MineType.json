@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineTypeId\":{\"entity\":\"MineType.cdm.json/MineType\",\"name\":\"MineTypeId\"},\"MineTypeName\":{\"entity\":\"MineType.cdm.json/MineType\",\"name\":\"MineTypeName\"},\"MineTypeDescription\":{\"entity\":\"MineType.cdm.json/MineType\",\"name\":\"MineTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "The type of mine.\n\nEx:\n- Surface/open-pit mine\n- Surface/strip mine\n- Surface/Landfill mine\n- Underground/Drift Mine\n- Underground/slope mine\n- Underground/shaft mine\n- Underground/long wall mine\n- Underground/room pillar mine",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "MineTypeId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

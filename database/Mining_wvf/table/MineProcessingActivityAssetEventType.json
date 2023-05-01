@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineProcessingActivityAssetEventTypeId\":{\"entity\":\"MineProcessingActivityAssetEventType.cdm.json/MineProcessingActivityAssetEventType\",\"name\":\"MineProcessingActivityAssetEventTypeId\"},\"MineProcessingActivityAssetEventTypeName\":{\"entity\":\"MineProcessingActivityAssetEventType.cdm.json/MineProcessingActivityAssetEventType\",\"name\":\"MineProcessingActivityAssetEventTypeName\"},\"MineProcessingActivityAssetEventTypeDescription\":{\"entity\":\"MineProcessingActivityAssetEventType.cdm.json/MineProcessingActivityAssetEventType\",\"name\":\"MineProcessingActivityAssetEventTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "A type of mine processing asset event related to the ore processing activity asset.\n\nEx:\n- Output from process via asset (conveyor, pipe, pipeline etc.)\n- Input to process via asset\n- Asset Installation\n- Asset Repair\n- Asset Operation\n- Asset Failure",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "MineProcessingActivityAssetEventTypeId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

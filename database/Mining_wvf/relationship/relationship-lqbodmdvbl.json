@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lqbodmdvbl",
+	"properties": {
+		"Name": "relationship-lqbodmdvbl",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MaintenanceTask",
+		"ToTableName": "RelatedMaintenanceTask",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MaintenanceTaskId",
+				"ToColumnName": "RelatedMaintenanceTaskId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MaintenanceTask.cdm.json/MaintenanceTask\",\"toEntity\":\"RelatedMaintenanceTask.cdm.json/RelatedMaintenanceTask\",\"joinPairs\":[{\"fromAttribute\":\"MaintenanceTaskId\",\"toAttribute\":\"RelatedMaintenanceTaskId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

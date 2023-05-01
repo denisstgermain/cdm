@@ -163,7 +163,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StockpileId\":{\"entity\":\"StockpileCapacity.cdm.json/StockpileCapacity\",\"name\":\"StockpileId\"},\"PeriodStartTimestamp\":{\"entity\":\"StockpileCapacity.cdm.json/StockpileCapacity\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"StockpileCapacity.cdm.json/StockpileCapacity\",\"name\":\"PeriodEndTimestamp\"},\"PotentialCapacityUnits\":{\"entity\":\"StockpileCapacity.cdm.json/StockpileCapacity\",\"name\":\"PotentialCapacityUnits\"},\"CurrentCapacityUnits\":{\"entity\":\"StockpileCapacity.cdm.json/StockpileCapacity\",\"name\":\"CurrentCapacityUnits\"},\"UnitOfMeasureId\":{\"entity\":\"StockpileCapacity.cdm.json/StockpileCapacity\",\"name\":\"UnitOfMeasureId\"},\"StockpileCapacityNote\":{\"entity\":\"StockpileCapacity.cdm.json/StockpileCapacity\",\"name\":\"StockpileCapacityNote\"}}}"
 			},
 			"Compressed": false,
@@ -174,8 +174,7 @@
 			"Description": "The potential and current capacity of the stockpile.",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "StockpileId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

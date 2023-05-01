@@ -358,7 +358,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineActivityId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityId\"},\"MiningActivityName\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MiningActivityName\"},\"MiningActivityDescription\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MiningActivityDescription\"},\"MineActivityTypeId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityTypeId\"},\"MineActivityScheduledStartTimestamp\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityScheduledStartTimestamp\"},\"MineActivityScheduledEndTimestamp\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityScheduledEndTimestamp\"},\"MineActivityActualStartTimestamp\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityActualStartTimestamp\"},\"MineActivityActualEndTimestamp\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityActualEndTimestamp\"},\"LocationId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"LocationId\"},\"LocationLatitude\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"LocationLatitude\"},\"LocationLongitude\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"LocationLongitude\"},\"FromLocationId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"FromLocationId\"},\"ToLocationId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"ToLocationId\"},\"MineId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineId\"},\"MineDepositId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineDepositId\"},\"OpenPitBlockId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"OpenPitBlockId\"},\"FacilityId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"FacilityId\"},\"MineActivityNote\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityNote\"}}}"
 			},
 			"Compressed": false,
@@ -369,8 +369,7 @@
 			"Description": "A mine activity performed at a location during a period involving employees/parties and optionally involving assets and equipment.\n\nOutput from a mine activity is either:\n\n- Stored at a location (MINE ACTIVITY OUTPUT STORAGE)\n- Loaded and sent for processing (LOAD)\n- Loaded and sent for processing with output from a storage area.\n  (the stored units are reduced and added to the LOAD sent to processing)\n- Waste",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "MineActivityId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

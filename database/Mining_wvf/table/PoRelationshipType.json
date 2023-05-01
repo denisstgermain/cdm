@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PoRelationshipTypeId\":{\"entity\":\"PoRelationshipType.cdm.json/PoRelationshipType\",\"name\":\"PoRelationshipTypeId\"},\"PoRelationshipTypeName\":{\"entity\":\"PoRelationshipType.cdm.json/PoRelationshipType\",\"name\":\"PoRelationshipTypeName\"},\"PoRelationshipTypeDescription\":{\"entity\":\"PoRelationshipType.cdm.json/PoRelationshipType\",\"name\":\"PoRelationshipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "The nature of the relationship between two or more PO's.\n\nEx:\n- Amended PO",
 			"DisplayFolderInfo": "{\"name\":\"Purchasing\",\"colorCode\":\"#5F538F\"}",
 			"PrimaryKeys": "PoRelationshipTypeId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

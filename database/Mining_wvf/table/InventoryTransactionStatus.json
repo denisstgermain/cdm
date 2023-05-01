@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InventoryTransactionStatusId\":{\"entity\":\"InventoryTransactionStatus.cdm.json/InventoryTransactionStatus\",\"name\":\"InventoryTransactionStatusId\"},\"InventoryTransactionStatusName\":{\"entity\":\"InventoryTransactionStatus.cdm.json/InventoryTransactionStatus\",\"name\":\"InventoryTransactionStatusName\"},\"InventoryTransactionStatusDescription\":{\"entity\":\"InventoryTransactionStatus.cdm.json/InventoryTransactionStatus\",\"name\":\"InventoryTransactionStatusDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "The current status of the associated Inventory Transaction.\n\nEx:\n- Planned\n- Scheduled\n- Executed / In-progress\n- Cancelled\n- Unknown\n- N/A",
 			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#692B0C\"}",
 			"PrimaryKeys": "InventoryTransactionStatusId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

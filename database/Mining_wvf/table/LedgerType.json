@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"LedgerTypeId\":{\"entity\":\"LedgerType.cdm.json/LedgerType\",\"name\":\"LedgerTypeId\"},\"LedgerTypeName\":{\"entity\":\"LedgerType.cdm.json/LedgerType\",\"name\":\"LedgerTypeName\"},\"LedgerTypeDescription\":{\"entity\":\"LedgerType.cdm.json/LedgerType\",\"name\":\"LedgerTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "Identifies the type of ledger - primarily whether it is a subsidiary ledger or not, which would have a relationship with another ledger.\n\nAll general ledger accounts must be reconciled or compared with subsidiary ledgers at the end of each accounting period.\n\nThe two most common are A/P Ledgers and A/R Ledgers.\n\nEx:\nThe general ledger, sometimes known as the nominal ledger, is the main accounting record of a business which uses double-entry bookkeeping. It will usually include accounts for such items as current assets, fixed assets, liabilities, revenue and expense items, gains and losses.\n\nThe general ledger is a summary of all of the transactions that occur in the company. It is built up by posting transactions recorded in the general journal.\nThere are seven basic categories in which all accounts are grouped:\n\n1. Assets\n2. Liability\n3. Owner's equity\n4. Revenue\n5. Expense\n6. Gains\n7. Losses\n\nThe balance sheet and the income statement are both derived from the general ledger. Each account in the general ledger consists of one or more pages. The general ledger is where posting to the accounts occurs. Posting is the process of recording amounts as credits, (right side), and amounts as debits, (left side), in the pages of the general ledger. \n\nThe listing of the account names and the sum of the account balances is called a trial balance. The purpose of the trial balance is, at a preliminary stage of the financial statement preparation process, to ensure the equality of the total debits and credits.\n\nThe general ledger should include the date, description and balance or total amount for each account. It is usually divided into at least seven main categories. These categories generally include assets, liabilities, owner's equity, revenue, expenses, gains and losses. The main categories of the general ledger may be further subdivided into sub-ledgers to include additional details of such accounts as cash, accounts receivable, accounts payable, etc.\n\nBecause each bookkeeping entry debits one account and credits another account in an equal amount, the double-entry bookkeeping system will ensure that the general ledger will always be in balance; thus maintaining the accounting equation:",
 			"DisplayFolderInfo": "{\"name\":\"Accounting & Financial Reporting\",\"colorCode\":\"#0078D4\"}",
 			"PrimaryKeys": "LedgerTypeId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

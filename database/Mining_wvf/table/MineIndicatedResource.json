@@ -163,7 +163,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineId\":{\"entity\":\"MineIndicatedResource.cdm.json/MineIndicatedResource\",\"name\":\"MineId\"},\"ProductId\":{\"entity\":\"MineIndicatedResource.cdm.json/MineIndicatedResource\",\"name\":\"ProductId\"},\"PeriodStartDate\":{\"entity\":\"MineIndicatedResource.cdm.json/MineIndicatedResource\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"MineIndicatedResource.cdm.json/MineIndicatedResource\",\"name\":\"PeriodEndDate\"},\"IndicatedResourceTypeUnits\":{\"entity\":\"MineIndicatedResource.cdm.json/MineIndicatedResource\",\"name\":\"IndicatedResourceTypeUnits\"},\"UnitOfMeasureId\":{\"entity\":\"MineIndicatedResource.cdm.json/MineIndicatedResource\",\"name\":\"UnitOfMeasureId\"},\"MineIndicatedResourceNote\":{\"entity\":\"MineIndicatedResource.cdm.json/MineIndicatedResource\",\"name\":\"MineIndicatedResourceNote\"}}}"
 			},
 			"Compressed": false,
@@ -174,8 +174,7 @@
 			"Description": "Mine Indicated resources are the mine iron ore occurrences that have been sampled to a degree that an estimate has been made with reasonable confidence of their contained iron ore grade, tonnage, shape, densities and similar physical characteristics.",
 			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
 			"PrimaryKeys": "MineId,ProductId,PeriodStartDate",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

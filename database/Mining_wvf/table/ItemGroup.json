@@ -111,7 +111,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ItemGroupId\":{\"entity\":\"ItemGroup.cdm.json/ItemGroup\",\"name\":\"ItemGroupId\"},\"ItemGroupName\":{\"entity\":\"ItemGroup.cdm.json/ItemGroup\",\"name\":\"ItemGroupName\"},\"ItemGroupDescription\":{\"entity\":\"ItemGroup.cdm.json/ItemGroup\",\"name\":\"ItemGroupDescription\"},\"ClassificationAgencyPartyId\":{\"entity\":\"ItemGroup.cdm.json/ItemGroup\",\"name\":\"ClassificationAgencyPartyId\"}}}"
 			},
 			"Compressed": false,
@@ -122,8 +122,7 @@
 			"Description": "An arbitrary grouping of Items.\n\nEx:\n- Inventory Items\n- Items For Resale\n- Items To Be Deployed",
 			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#692B0C\"}",
 			"PrimaryKeys": "ItemGroupId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

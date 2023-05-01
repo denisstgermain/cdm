@@ -145,7 +145,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"LedgerId\":{\"entity\":\"Ledger.cdm.json/Ledger\",\"name\":\"LedgerId\"},\"LedgerName\":{\"entity\":\"Ledger.cdm.json/Ledger\",\"name\":\"LedgerName\"},\"LedgerDescription\":{\"entity\":\"Ledger.cdm.json/Ledger\",\"name\":\"LedgerDescription\"},\"LegalEntityId\":{\"entity\":\"Ledger.cdm.json/Ledger\",\"name\":\"LegalEntityId\"},\"LedgerTypeId\":{\"entity\":\"Ledger.cdm.json/Ledger\",\"name\":\"LedgerTypeId\"},\"AccountingFrameworkId\":{\"entity\":\"Ledger.cdm.json/Ledger\",\"name\":\"AccountingFrameworkId\"}}}"
 			},
 			"Compressed": false,
@@ -156,8 +156,7 @@
 			"Description": "A ledger is a group of accounts.\n\nIt is the complete set of accounts for a business entity.\n\nThere is no standard form for a ledger as long as it records debts and credits to each account.\n\nTransactions may be recorded either to a single ledger ('General Ledger') or to subsidiary ledgers and then subsequently recorded to the General Ledger.\n\nIt is the book of secondary or final entry after the initial or first entry into a journal, which are then posted to the ledger.",
 			"DisplayFolderInfo": "{\"name\":\"Accounting & Financial Reporting\",\"colorCode\":\"#0078D4\"}",
 			"PrimaryKeys": "LedgerId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

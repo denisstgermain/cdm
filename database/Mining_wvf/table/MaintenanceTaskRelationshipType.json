@@ -94,7 +94,7 @@
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceTaskRelationshipTypeId\":{\"entity\":\"MaintenanceTaskRelationshipType.cdm.json/MaintenanceTaskRelationshipType\",\"name\":\"MaintenanceTaskRelationshipTypeId\"},\"MaintenanceTaskRelationshipTypeName\":{\"entity\":\"MaintenanceTaskRelationshipType.cdm.json/MaintenanceTaskRelationshipType\",\"name\":\"MaintenanceTaskRelationshipTypeName\"},\"MaintenanceTaskRelationshipTypeDescription\":{\"entity\":\"MaintenanceTaskRelationshipType.cdm.json/MaintenanceTaskRelationshipType\",\"name\":\"MaintenanceTaskRelationshipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -105,8 +105,7 @@
 			"Description": "The type of relationship that exists between two maintenance tasks.\n\nEx:\n- is performed before\n- is performed after\n- is performed at the same time\n- must be complete before task begins",
 			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#00727A\"}",
 			"PrimaryKeys": "MaintenanceTaskRelationshipTypeId",
-			"spark.sql.sources.provider": "csv",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "csv"
 		},
 		"Retention": 0,
 		"Temporary": false,

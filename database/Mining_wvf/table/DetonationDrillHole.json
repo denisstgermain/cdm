@@ -1,0 +1,149 @@
+{
+	"name": "DetonationDrillHole",
+	"properties": {
+		"Name": "DetonationDrillHole",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Mining_wvf"
+		},
+		"Description": "The detonation(s) associated with the drill hole.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DrillHoleId",
+					"Description": "The unique identifier of a drill hole.",
+					"BaseAttributeReference": {
+						"Entity": "DetonationDrillHole.cdm.json/DetonationDrillHole",
+						"Name": "DrillHoleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DetonationId",
+					"Description": "The unique identifier of a detonation.",
+					"BaseAttributeReference": {
+						"Entity": "DetonationDrillHole.cdm.json/DetonationDrillHole",
+						"Name": "DetonationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ColumnFromDepthMeters",
+					"Description": "The detonation from depth.",
+					"BaseAttributeReference": {
+						"Entity": "DetonationDrillHole.cdm.json/DetonationDrillHole",
+						"Name": "ColumnFromDepthMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ColumnToDepthMeters",
+					"Description": "The detonation to depth.",
+					"BaseAttributeReference": {
+						"Entity": "DetonationDrillHole.cdm.json/DetonationDrillHole",
+						"Name": "ColumnToDepthMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DrillHoleDetonationNote",
+					"Description": "A note, comment or additional information regarding the drill hole detonation.",
+					"BaseAttributeReference": {
+						"Entity": "DetonationDrillHole.cdm.json/DetonationDrillHole",
+						"Name": "DrillHoleDetonationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/DetonationDrillHole",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf/DetonationDrillHole",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DrillHoleId\":{\"entity\":\"DetonationDrillHole.cdm.json/DetonationDrillHole\",\"name\":\"DrillHoleId\"},\"DetonationId\":{\"entity\":\"DetonationDrillHole.cdm.json/DetonationDrillHole\",\"name\":\"DetonationId\"},\"ColumnFromDepthMeters\":{\"entity\":\"DetonationDrillHole.cdm.json/DetonationDrillHole\",\"name\":\"ColumnFromDepthMeters\"},\"ColumnToDepthMeters\":{\"entity\":\"DetonationDrillHole.cdm.json/DetonationDrillHole\",\"name\":\"ColumnToDepthMeters\"},\"DrillHoleDetonationNote\":{\"entity\":\"DetonationDrillHole.cdm.json/DetonationDrillHole\",\"name\":\"DrillHoleDetonationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DetonationDrillHole\",\"path\":\"DetonationDrillHole.cdm.json/DetonationDrillHole\"},\"description\":\"The detonation(s) associated with the drill hole.\",\"primaryKey\":[\"DrillHoleId\",\"DetonationId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DetonationDrillHole.cdm.json/DetonationDrillHole\",\"name\":\"DrillHoleId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a drill hole.\",\"isNullable\":false,\"name\":\"DrillHoleId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DetonationDrillHole.cdm.json/DetonationDrillHole\",\"name\":\"DetonationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a detonation.\",\"isNullable\":false,\"name\":\"DetonationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DetonationDrillHole.cdm.json/DetonationDrillHole\",\"name\":\"ColumnFromDepthMeters\"},\"dataType\":\"integer\",\"description\":\"The detonation from depth.\",\"isNullable\":true,\"name\":\"ColumnFromDepthMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DetonationDrillHole.cdm.json/DetonationDrillHole\",\"name\":\"ColumnToDepthMeters\"},\"dataType\":\"integer\",\"description\":\"The detonation to depth.\",\"isNullable\":true,\"name\":\"ColumnToDepthMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DetonationDrillHole.cdm.json/DetonationDrillHole\",\"name\":\"DrillHoleDetonationNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the drill hole detonation.\",\"isNullable\":true,\"name\":\"DrillHoleDetonationNote\"}]}}}",
+			"Description": "The detonation(s) associated with the drill hole.",
+			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7D0F6C\"}",
+			"PrimaryKeys": "DrillHoleId,DetonationId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}
