@@ -84,7 +84,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('workspaceName'), '/Mining_wvf')]",
+			"name": "[concat(parameters('workspaceName'), '/Database1')]",
 			"type": "Microsoft.Synapse/workspaces/databases",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
@@ -93,23 +93,2032 @@
 						"ActionType": "CREATE",
 						"OldEntity": null,
 						"NewEntity": {
-							"Name": "Mining_wvf",
+							"Name": "Database1",
 							"EntityType": "DATABASE",
-							"Description": "",
 							"Origin": {
 								"Type": "SPARK"
 							},
 							"Properties": {
-								"DerivedModelDBInfo": "{\"ModelDirectives\":{\"BaseModel\":{\"Name\":\"Mining\",\"Version\":\"1.1.0\"}}}",
-								"IsSyMSCDMDatabase": true
+								"IsSyMSCDMDatabase": true,
+								"DerivedModelDBInfo": "{\"ModelDirectives\":{\"BaseModel\":{\"Name\":\"Mining\",\"Version\":\"1.1.0\"}}}"
 							},
 							"Source": {
 								"Provider": "ADLS",
-								"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Mining_wvf",
+								"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Database1",
 								"Properties": {
 									"FormatType": "csv",
 									"LinkedServiceName": "testcdm-WorkspaceDefaultStorage"
 								}
+							}
+						},
+						"Source": {
+							"Type": "SPARK"
+						}
+					},
+					{
+						"ActionType": "CREATE",
+						"OldEntity": null,
+						"NewEntity": {
+							"Name": "Mine",
+							"EntityType": "TABLE",
+							"Namespace": {
+								"DatabaseName": "Database1"
+							},
+							"Description": "A mine from which resources are extracted.",
+							"TableType": "EXTERNAL",
+							"Origin": {
+								"Type": "SPARK"
+							},
+							"StorageDescriptor": {
+								"Columns": [
+									{
+										"Name": "MineId",
+										"Description": "The unique identifier of a mine.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": false,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineName",
+										"Description": "The name of the mine.",
+										"OriginDataTypeName": {
+											"TypeName": "string",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Length": 256,
+											"Properties": {
+												"HIVE_TYPE_STRING": "string"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineName"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineDescription",
+										"Description": "The description of a mine.",
+										"OriginDataTypeName": {
+											"TypeName": "string",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Length": 2048,
+											"Properties": {
+												"HIVE_TYPE_STRING": "string"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineDescription"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineFirstOperationalDate",
+										"Description": "The first operational date of the mine.",
+										"OriginDataTypeName": {
+											"TypeName": "date",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"DateFormat": "YYYY-MM-DD",
+												"HIVE_TYPE_STRING": "date"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineFirstOperationalDate"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineLastOperationalDate",
+										"Description": "The last operational date of the mine.",
+										"OriginDataTypeName": {
+											"TypeName": "date",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"DateFormat": "YYYY-MM-DD",
+												"HIVE_TYPE_STRING": "date"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineLastOperationalDate"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineGeologyStatement",
+										"Description": "A statement describing the geology of the mine.",
+										"OriginDataTypeName": {
+											"TypeName": "string",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Length": 2048,
+											"Properties": {
+												"HIVE_TYPE_STRING": "string"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineGeologyStatement"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineMetallurgyStatement",
+										"Description": "A statement describing the metallurgy of the mine.",
+										"OriginDataTypeName": {
+											"TypeName": "string",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Length": 2048,
+											"Properties": {
+												"HIVE_TYPE_STRING": "string"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineMetallurgyStatement"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineProcessingStatement",
+										"Description": "A statement describing the mine processing of the mine.",
+										"OriginDataTypeName": {
+											"TypeName": "string",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Length": 2048,
+											"Properties": {
+												"HIVE_TYPE_STRING": "string"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineProcessingStatement"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineTransportStatement",
+										"Description": "A statement describing the mine transportation of the mine.",
+										"OriginDataTypeName": {
+											"TypeName": "string",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Length": 2048,
+											"Properties": {
+												"HIVE_TYPE_STRING": "string"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineTransportStatement"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineResourceStorageStatement",
+										"Description": "A statement describing the mine resource storage of the mine.",
+										"OriginDataTypeName": {
+											"TypeName": "string",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Length": 2048,
+											"Properties": {
+												"HIVE_TYPE_STRING": "string"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineResourceStorageStatement"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "WasteStorageStatement",
+										"Description": "A statement describing the mine waste storage of the mine.",
+										"OriginDataTypeName": {
+											"TypeName": "string",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Length": 2048,
+											"Properties": {
+												"HIVE_TYPE_STRING": "string"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "WasteStorageStatement"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineLatitude",
+										"Description": "The latitude of the mine.",
+										"OriginDataTypeName": {
+											"TypeName": "decimal",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Precision": 10,
+											"Scale": 7,
+											"Properties": {
+												"HIVE_TYPE_STRING": "decimal"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineLatitude"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineLongitude",
+										"Description": "The longitude of the mine.",
+										"OriginDataTypeName": {
+											"TypeName": "decimal",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Precision": 10,
+											"Scale": 7,
+											"Properties": {
+												"HIVE_TYPE_STRING": "decimal"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineLongitude"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineEstimatedProvenTons",
+										"Description": "The estimated proven tons of resource at the mine.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineEstimatedProvenTons"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineEstimatedReserveTons",
+										"Description": "The estimated reserve tons of resource at the mine.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineEstimatedReserveTons"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "EstimatedMineLifeYears",
+										"Description": "The estimated mine life in years.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "EstimatedMineLifeYears"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineNote",
+										"Description": "A note, comment or additional information regarding the mine.",
+										"OriginDataTypeName": {
+											"TypeName": "string",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Length": 2048,
+											"Properties": {
+												"HIVE_TYPE_STRING": "string"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineNote"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineFirstExplorationDate",
+										"Description": "The date of the first mine exploration.",
+										"OriginDataTypeName": {
+											"TypeName": "date",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"DateFormat": "YYYY-MM-DD",
+												"HIVE_TYPE_STRING": "date"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineFirstExplorationDate"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineFirstFeasibilityStudyDate",
+										"Description": "The date of the first mine feasibility study.",
+										"OriginDataTypeName": {
+											"TypeName": "date",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"DateFormat": "YYYY-MM-DD",
+												"HIVE_TYPE_STRING": "date"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineFirstFeasibilityStudyDate"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineDevelopmentDate",
+										"Description": "The date of mine development.",
+										"OriginDataTypeName": {
+											"TypeName": "date",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"DateFormat": "YYYY-MM-DD",
+												"HIVE_TYPE_STRING": "date"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineDevelopmentDate"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MinePermitsAppliedDate",
+										"Description": "The date mine permits were applied for.",
+										"OriginDataTypeName": {
+											"TypeName": "date",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"DateFormat": "YYYY-MM-DD",
+												"HIVE_TYPE_STRING": "date"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MinePermitsAppliedDate"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MinePermitsReceivedDate",
+										"Description": "The date mine permits were received.",
+										"OriginDataTypeName": {
+											"TypeName": "date",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"DateFormat": "YYYY-MM-DD",
+												"HIVE_TYPE_STRING": "date"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MinePermitsReceivedDate"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineFirstProductionDate",
+										"Description": "The date of mine first production.",
+										"OriginDataTypeName": {
+											"TypeName": "date",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"DateFormat": "YYYY-MM-DD",
+												"HIVE_TYPE_STRING": "date"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineFirstProductionDate"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineLastProductDate",
+										"Description": "The date of mine last production.",
+										"OriginDataTypeName": {
+											"TypeName": "date",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"DateFormat": "YYYY-MM-DD",
+												"HIVE_TYPE_STRING": "date"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineLastProductDate"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineReclamationStartDate",
+										"Description": "The date that mine reclamation started.",
+										"OriginDataTypeName": {
+											"TypeName": "date",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"DateFormat": "YYYY-MM-DD",
+												"HIVE_TYPE_STRING": "date"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineReclamationStartDate"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineReclamationEndDate",
+										"Description": "The date that mine reclamation ended.",
+										"OriginDataTypeName": {
+											"TypeName": "date",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"DateFormat": "YYYY-MM-DD",
+												"HIVE_TYPE_STRING": "date"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineReclamationEndDate"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineClosureDate",
+										"Description": "The date that the mine closed.",
+										"OriginDataTypeName": {
+											"TypeName": "date",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"DateFormat": "YYYY-MM-DD",
+												"HIVE_TYPE_STRING": "date"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineClosureDate"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "GeographicAreaId",
+										"Description": "The unique identifier of a Geographic Area.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "GeographicAreaId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "PropertyId",
+										"Description": "The unique identifier of a property.",
+										"OriginDataTypeName": {
+											"TypeName": "long",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"HIVE_TYPE_STRING": "long"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "PropertyId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineTypeId",
+										"Description": "The unique identifier of a mine type.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "MineTypeId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "FacilityId",
+										"Description": "The unique identifier of a Facility.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "FacilityId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "LocationId",
+										"Description": "The unique identifier of a Location.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "Mine.cdm.json/Mine",
+											"Name": "LocationId"
+										},
+										"DeltaFormatInvalidMessages": []
+									}
+								],
+								"Format": {
+									"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+									"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+									"FormatType": "csv",
+									"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+									"Properties": {
+										"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Database1/Mine",
+										"delimiter": ",",
+										"multiLine": "false",
+										"firstRowAsHeader": "false",
+										"serialization.format": "1",
+										"escape": "\\",
+										"quote": "\"",
+										"FormatTypeSetToDatabaseDefault": true,
+										"header": "false"
+									}
+								},
+								"Source": {
+									"Provider": "ADLS",
+									"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Database1/Mine",
+									"Properties": {
+										"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+										"LocationSetToDatabaseDefault": true
+									}
+								},
+								"Properties": {
+									"textinputformat.record.delimiter": ",",
+									"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+									"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineId\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineId\"},\"MineName\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineName\"},\"MineDescription\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineDescription\"},\"MineFirstOperationalDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineFirstOperationalDate\"},\"MineLastOperationalDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineLastOperationalDate\"},\"MineGeologyStatement\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineGeologyStatement\"},\"MineMetallurgyStatement\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineMetallurgyStatement\"},\"MineProcessingStatement\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineProcessingStatement\"},\"MineTransportStatement\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineTransportStatement\"},\"MineResourceStorageStatement\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineResourceStorageStatement\"},\"WasteStorageStatement\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"WasteStorageStatement\"},\"MineLatitude\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineLatitude\"},\"MineLongitude\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineLongitude\"},\"MineEstimatedProvenTons\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineEstimatedProvenTons\"},\"MineEstimatedReserveTons\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineEstimatedReserveTons\"},\"EstimatedMineLifeYears\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"EstimatedMineLifeYears\"},\"MineNote\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineNote\"},\"MineFirstExplorationDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineFirstExplorationDate\"},\"MineFirstFeasibilityStudyDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineFirstFeasibilityStudyDate\"},\"MineDevelopmentDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineDevelopmentDate\"},\"MinePermitsAppliedDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MinePermitsAppliedDate\"},\"MinePermitsReceivedDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MinePermitsReceivedDate\"},\"MineFirstProductionDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineFirstProductionDate\"},\"MineLastProductDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineLastProductDate\"},\"MineReclamationStartDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineReclamationStartDate\"},\"MineReclamationEndDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineReclamationEndDate\"},\"MineClosureDate\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineClosureDate\"},\"GeographicAreaId\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"GeographicAreaId\"},\"PropertyId\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"PropertyId\"},\"MineTypeId\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineTypeId\"},\"FacilityId\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"FacilityId\"},\"LocationId\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"LocationId\"}}}"
+								},
+								"Compressed": false,
+								"IsStoredAsSubdirectories": false
+							},
+							"Properties": {
+								"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Mine\",\"path\":\"Mine.cdm.json/Mine\"},\"description\":\"A mine from which resources are extracted.\",\"primaryKey\":[\"MineId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine.\",\"isNullable\":false,\"name\":\"MineId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of the mine.\",\"isNullable\":true,\"name\":\"MineName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of a mine.\",\"isNullable\":true,\"name\":\"MineDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineFirstOperationalDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The first operational date of the mine.\",\"isNullable\":true,\"name\":\"MineFirstOperationalDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineLastOperationalDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The last operational date of the mine.\",\"isNullable\":true,\"name\":\"MineLastOperationalDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineGeologyStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement describing the geology of the mine.\",\"isNullable\":true,\"name\":\"MineGeologyStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineMetallurgyStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement describing the metallurgy of the mine.\",\"isNullable\":true,\"name\":\"MineMetallurgyStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineProcessingStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement describing the mine processing of the mine.\",\"isNullable\":true,\"name\":\"MineProcessingStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineTransportStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement describing the mine transportation of the mine.\",\"isNullable\":true,\"name\":\"MineTransportStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineResourceStorageStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement describing the mine resource storage of the mine.\",\"isNullable\":true,\"name\":\"MineResourceStorageStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"WasteStorageStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement describing the mine waste storage of the mine.\",\"isNullable\":true,\"name\":\"WasteStorageStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineLatitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":10,\"description\":\"The latitude of the mine.\",\"isNullable\":true,\"scale\":7,\"name\":\"MineLatitude\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineLongitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":10,\"description\":\"The longitude of the mine.\",\"isNullable\":true,\"scale\":7,\"name\":\"MineLongitude\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineEstimatedProvenTons\"},\"dataType\":\"integer\",\"description\":\"The estimated proven tons of resource at the mine.\",\"isNullable\":true,\"name\":\"MineEstimatedProvenTons\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineEstimatedReserveTons\"},\"dataType\":\"integer\",\"description\":\"The estimated reserve tons of resource at the mine.\",\"isNullable\":true,\"name\":\"MineEstimatedReserveTons\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"EstimatedMineLifeYears\"},\"dataType\":\"integer\",\"description\":\"The estimated mine life in years.\",\"isNullable\":true,\"name\":\"EstimatedMineLifeYears\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the mine.\",\"isNullable\":true,\"name\":\"MineNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineFirstExplorationDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date of the first mine exploration.\",\"isNullable\":true,\"name\":\"MineFirstExplorationDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineFirstFeasibilityStudyDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date of the first mine feasibility study.\",\"isNullable\":true,\"name\":\"MineFirstFeasibilityStudyDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineDevelopmentDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date of mine development.\",\"isNullable\":true,\"name\":\"MineDevelopmentDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MinePermitsAppliedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date mine permits were applied for.\",\"isNullable\":true,\"name\":\"MinePermitsAppliedDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MinePermitsReceivedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date mine permits were received.\",\"isNullable\":true,\"name\":\"MinePermitsReceivedDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineFirstProductionDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date of mine first production.\",\"isNullable\":true,\"name\":\"MineFirstProductionDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineLastProductDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date of mine last production.\",\"isNullable\":true,\"name\":\"MineLastProductDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineReclamationStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that mine reclamation started.\",\"isNullable\":true,\"name\":\"MineReclamationStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineReclamationEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that mine reclamation ended.\",\"isNullable\":true,\"name\":\"MineReclamationEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineClosureDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the mine closed.\",\"isNullable\":true,\"name\":\"MineClosureDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"GeographicAreaId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Geographic Area.\",\"isNullable\":true,\"name\":\"GeographicAreaId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"PropertyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a property.\",\"isNullable\":true,\"name\":\"PropertyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"MineTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine type.\",\"isNullable\":true,\"name\":\"MineTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"FacilityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Facility.\",\"isNullable\":true,\"name\":\"FacilityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Mine.cdm.json/Mine\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"}]}}}",
+								"Description": "A mine from which resources are extracted.",
+								"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7062A8\"}",
+								"PrimaryKeys": "MineId",
+								"spark.sql.sources.provider": "csv"
+							},
+							"Retention": 0,
+							"Temporary": false,
+							"IsRewriteEnabled": false
+						},
+						"Source": {
+							"Type": "SPARK"
+						}
+					},
+					{
+						"ActionType": "CREATE",
+						"OldEntity": null,
+						"NewEntity": {
+							"Name": "MineActivity",
+							"EntityType": "TABLE",
+							"Namespace": {
+								"DatabaseName": "Database1"
+							},
+							"Description": "A mine activity performed at a location during a period involving employees/parties and optionally involving assets and equipment.\n\nOutput from a mine activity is either:\n\n- Stored at a location (MINE ACTIVITY OUTPUT STORAGE)\n- Loaded and sent for processing (LOAD)\n- Loaded and sent for processing with output from a storage area.\n  (the stored units are reduced and added to the LOAD sent to processing)\n- Waste",
+							"TableType": "EXTERNAL",
+							"Origin": {
+								"Type": "SPARK"
+							},
+							"StorageDescriptor": {
+								"Columns": [
+									{
+										"Name": "MineActivityId",
+										"Description": "The unique identifier of a mine activity.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": false,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivity.cdm.json/MineActivity",
+											"Name": "MineActivityId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MiningActivityName",
+										"Description": "The name of the mining activity.",
+										"OriginDataTypeName": {
+											"TypeName": "string",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Length": 256,
+											"Properties": {
+												"HIVE_TYPE_STRING": "string"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivity.cdm.json/MineActivity",
+											"Name": "MiningActivityName"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MiningActivityDescription",
+										"Description": "The description of the mining activity.",
+										"OriginDataTypeName": {
+											"TypeName": "string",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Length": 2048,
+											"Properties": {
+												"HIVE_TYPE_STRING": "string"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivity.cdm.json/MineActivity",
+											"Name": "MiningActivityDescription"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineActivityTypeId",
+										"Description": "The unique identifier of a mine activity type.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": false,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivity.cdm.json/MineActivity",
+											"Name": "MineActivityTypeId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineActivityScheduledStartTimestamp",
+										"Description": "The mine activity scheduled start timestamp.",
+										"OriginDataTypeName": {
+											"TypeName": "timestamp",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+												"HIVE_TYPE_STRING": "timestamp"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivity.cdm.json/MineActivity",
+											"Name": "MineActivityScheduledStartTimestamp"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineActivityScheduledEndTimestamp",
+										"Description": "The mine activity scheduled end timestamp.",
+										"OriginDataTypeName": {
+											"TypeName": "timestamp",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+												"HIVE_TYPE_STRING": "timestamp"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivity.cdm.json/MineActivity",
+											"Name": "MineActivityScheduledEndTimestamp"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineActivityActualStartTimestamp",
+										"Description": "The mine activity actual start timestamp.",
+										"OriginDataTypeName": {
+											"TypeName": "timestamp",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+												"HIVE_TYPE_STRING": "timestamp"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivity.cdm.json/MineActivity",
+											"Name": "MineActivityActualStartTimestamp"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineActivityActualEndTimestamp",
+										"Description": "The mine activity actual end timestamp.",
+										"OriginDataTypeName": {
+											"TypeName": "timestamp",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+												"HIVE_TYPE_STRING": "timestamp"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivity.cdm.json/MineActivity",
+											"Name": "MineActivityActualEndTimestamp"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "LocationId",
+										"Description": "The unique identifier of a Location.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivity.cdm.json/MineActivity",
+											"Name": "LocationId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "LocationLatitude",
+										"Description": "The latitude of the mine activity.",
+										"OriginDataTypeName": {
+											"TypeName": "decimal",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Precision": 10,
+											"Scale": 7,
+											"Properties": {
+												"HIVE_TYPE_STRING": "decimal"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivity.cdm.json/MineActivity",
+											"Name": "LocationLatitude"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "LocationLongitude",
+										"Description": "The longitude of the mine activity.",
+										"OriginDataTypeName": {
+											"TypeName": "decimal",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Precision": 10,
+											"Scale": 7,
+											"Properties": {
+												"HIVE_TYPE_STRING": "decimal"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivity.cdm.json/MineActivity",
+											"Name": "LocationLongitude"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "FromLocationId",
+										"Description": "The from location of the mine activity.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivity.cdm.json/MineActivity",
+											"Name": "FromLocationId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "ToLocationId",
+										"Description": "The to location of the mine activity.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivity.cdm.json/MineActivity",
+											"Name": "ToLocationId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineId",
+										"Description": "The unique identifier of a mine.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": false,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivity.cdm.json/MineActivity",
+											"Name": "MineId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineDepositId",
+										"Description": "The unique identifier of a mine deposit.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivity.cdm.json/MineActivity",
+											"Name": "MineDepositId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "OpenPitBlockId",
+										"Description": "The unique identifier of an open pit block.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivity.cdm.json/MineActivity",
+											"Name": "OpenPitBlockId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "FacilityId",
+										"Description": "The unique identifier of a Facility.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivity.cdm.json/MineActivity",
+											"Name": "FacilityId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineActivityNote",
+										"Description": "A note, comment or additional information regarding the mine activity.",
+										"OriginDataTypeName": {
+											"TypeName": "string",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Length": 2048,
+											"Properties": {
+												"HIVE_TYPE_STRING": "string"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivity.cdm.json/MineActivity",
+											"Name": "MineActivityNote"
+										},
+										"DeltaFormatInvalidMessages": []
+									}
+								],
+								"Format": {
+									"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+									"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+									"FormatType": "csv",
+									"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+									"Properties": {
+										"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Database1/MineActivity",
+										"delimiter": ",",
+										"multiLine": "false",
+										"firstRowAsHeader": "false",
+										"serialization.format": "1",
+										"escape": "\\",
+										"quote": "\"",
+										"FormatTypeSetToDatabaseDefault": true,
+										"header": "false"
+									}
+								},
+								"Source": {
+									"Provider": "ADLS",
+									"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Database1/MineActivity",
+									"Properties": {
+										"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+										"LocationSetToDatabaseDefault": true
+									}
+								},
+								"Properties": {
+									"textinputformat.record.delimiter": ",",
+									"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+									"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineActivityId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityId\"},\"MiningActivityName\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MiningActivityName\"},\"MiningActivityDescription\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MiningActivityDescription\"},\"MineActivityTypeId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityTypeId\"},\"MineActivityScheduledStartTimestamp\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityScheduledStartTimestamp\"},\"MineActivityScheduledEndTimestamp\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityScheduledEndTimestamp\"},\"MineActivityActualStartTimestamp\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityActualStartTimestamp\"},\"MineActivityActualEndTimestamp\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityActualEndTimestamp\"},\"LocationId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"LocationId\"},\"LocationLatitude\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"LocationLatitude\"},\"LocationLongitude\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"LocationLongitude\"},\"FromLocationId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"FromLocationId\"},\"ToLocationId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"ToLocationId\"},\"MineId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineId\"},\"MineDepositId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineDepositId\"},\"OpenPitBlockId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"OpenPitBlockId\"},\"FacilityId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"FacilityId\"},\"MineActivityNote\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityNote\"}}}"
+								},
+								"Compressed": false,
+								"IsStoredAsSubdirectories": false
+							},
+							"Properties": {
+								"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MineActivity\",\"path\":\"MineActivity.cdm.json/MineActivity\"},\"description\":\"A mine activity performed at a location during a period involving employees/parties and optionally involving assets and equipment.\\n\\nOutput from a mine activity is either:\\n\\n- Stored at a location (MINE ACTIVITY OUTPUT STORAGE)\\n- Loaded and sent for processing (LOAD)\\n- Loaded and sent for processing with output from a storage area.\\n  (the stored units are reduced and added to the LOAD sent to processing)\\n- Waste\",\"primaryKey\":[\"MineActivityId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine activity.\",\"isNullable\":false,\"name\":\"MineActivityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MiningActivityName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of the mining activity.\",\"isNullable\":true,\"name\":\"MiningActivityName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MiningActivityDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of the mining activity.\",\"isNullable\":true,\"name\":\"MiningActivityDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine activity type.\",\"isNullable\":false,\"name\":\"MineActivityTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityScheduledStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The mine activity scheduled start timestamp.\",\"isNullable\":true,\"name\":\"MineActivityScheduledStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityScheduledEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The mine activity scheduled end timestamp.\",\"isNullable\":true,\"name\":\"MineActivityScheduledEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityActualStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The mine activity actual start timestamp.\",\"isNullable\":true,\"name\":\"MineActivityActualStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityActualEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The mine activity actual end timestamp.\",\"isNullable\":true,\"name\":\"MineActivityActualEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"LocationLatitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":10,\"description\":\"The latitude of the mine activity.\",\"isNullable\":true,\"scale\":7,\"name\":\"LocationLatitude\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"LocationLongitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":10,\"description\":\"The longitude of the mine activity.\",\"isNullable\":true,\"scale\":7,\"name\":\"LocationLongitude\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"FromLocationId\"},\"dataType\":\"integer\",\"description\":\"The from location of the mine activity.\",\"isNullable\":true,\"name\":\"FromLocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"ToLocationId\"},\"dataType\":\"integer\",\"description\":\"The to location of the mine activity.\",\"isNullable\":true,\"name\":\"ToLocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine.\",\"isNullable\":false,\"name\":\"MineId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineDepositId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine deposit.\",\"isNullable\":true,\"name\":\"MineDepositId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"OpenPitBlockId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an open pit block.\",\"isNullable\":true,\"name\":\"OpenPitBlockId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"FacilityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Facility.\",\"isNullable\":true,\"name\":\"FacilityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the mine activity.\",\"isNullable\":true,\"name\":\"MineActivityNote\"}]}}}",
+								"Description": "A mine activity performed at a location during a period involving employees/parties and optionally involving assets and equipment.\n\nOutput from a mine activity is either:\n\n- Stored at a location (MINE ACTIVITY OUTPUT STORAGE)\n- Loaded and sent for processing (LOAD)\n- Loaded and sent for processing with output from a storage area.\n  (the stored units are reduced and added to the LOAD sent to processing)\n- Waste",
+								"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7062A8\"}",
+								"PrimaryKeys": "MineActivityId",
+								"spark.sql.sources.provider": "csv"
+							},
+							"Retention": 0,
+							"Temporary": false,
+							"IsRewriteEnabled": false
+						},
+						"Source": {
+							"Type": "SPARK"
+						}
+					},
+					{
+						"ActionType": "CREATE",
+						"OldEntity": null,
+						"NewEntity": {
+							"Name": "MineActivityCost",
+							"EntityType": "TABLE",
+							"Namespace": {
+								"DatabaseName": "Database1"
+							},
+							"Description": "A cost associated with a mine activity for the period.",
+							"TableType": "EXTERNAL",
+							"Origin": {
+								"Type": "SPARK"
+							},
+							"StorageDescriptor": {
+								"Columns": [
+									{
+										"Name": "MineActivityId",
+										"Description": "The unique identifier of a mine activity.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": false,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivityCost.cdm.json/MineActivityCost",
+											"Name": "MineActivityId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "CostTypeId",
+										"Description": "The unique identifier of a cost type.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": false,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivityCost.cdm.json/MineActivityCost",
+											"Name": "CostTypeId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "PeriodStartTimestamp",
+										"Description": "The period start timestamp.",
+										"OriginDataTypeName": {
+											"TypeName": "timestamp",
+											"IsComplexType": false,
+											"IsNullable": false,
+											"Properties": {
+												"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+												"HIVE_TYPE_STRING": "timestamp"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivityCost.cdm.json/MineActivityCost",
+											"Name": "PeriodStartTimestamp"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "PeriodEndTimestamp",
+										"Description": "The period end timestamp.",
+										"OriginDataTypeName": {
+											"TypeName": "timestamp",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+												"HIVE_TYPE_STRING": "timestamp"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivityCost.cdm.json/MineActivityCost",
+											"Name": "PeriodEndTimestamp"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineActivityCostAmount",
+										"Description": "The mine activity cost.",
+										"OriginDataTypeName": {
+											"TypeName": "decimal",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Precision": 18,
+											"Scale": 2,
+											"Properties": {
+												"HIVE_TYPE_STRING": "decimal"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivityCost.cdm.json/MineActivityCost",
+											"Name": "MineActivityCostAmount"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineActivityCostNote",
+										"Description": "A note, comment or additional information regarding the mine activity cost.",
+										"OriginDataTypeName": {
+											"TypeName": "string",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Length": 2048,
+											"Properties": {
+												"HIVE_TYPE_STRING": "string"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivityCost.cdm.json/MineActivityCost",
+											"Name": "MineActivityCostNote"
+										},
+										"DeltaFormatInvalidMessages": []
+									}
+								],
+								"Format": {
+									"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+									"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+									"FormatType": "csv",
+									"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+									"Properties": {
+										"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Database1/MineActivityCost",
+										"delimiter": ",",
+										"multiLine": "false",
+										"firstRowAsHeader": "false",
+										"serialization.format": "1",
+										"escape": "\\",
+										"quote": "\"",
+										"FormatTypeSetToDatabaseDefault": true,
+										"header": "false"
+									}
+								},
+								"Source": {
+									"Provider": "ADLS",
+									"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Database1/MineActivityCost",
+									"Properties": {
+										"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+										"LocationSetToDatabaseDefault": true
+									}
+								},
+								"Properties": {
+									"textinputformat.record.delimiter": ",",
+									"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+									"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineActivityId\":{\"entity\":\"MineActivityCost.cdm.json/MineActivityCost\",\"name\":\"MineActivityId\"},\"CostTypeId\":{\"entity\":\"MineActivityCost.cdm.json/MineActivityCost\",\"name\":\"CostTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"MineActivityCost.cdm.json/MineActivityCost\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"MineActivityCost.cdm.json/MineActivityCost\",\"name\":\"PeriodEndTimestamp\"},\"MineActivityCostAmount\":{\"entity\":\"MineActivityCost.cdm.json/MineActivityCost\",\"name\":\"MineActivityCostAmount\"},\"MineActivityCostNote\":{\"entity\":\"MineActivityCost.cdm.json/MineActivityCost\",\"name\":\"MineActivityCostNote\"}}}"
+								},
+								"Compressed": false,
+								"IsStoredAsSubdirectories": false
+							},
+							"Properties": {
+								"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MineActivityCost\",\"path\":\"MineActivityCost.cdm.json/MineActivityCost\"},\"description\":\"A cost associated with a mine activity for the period.\",\"primaryKey\":[\"MineActivityId\",\"CostTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivityCost.cdm.json/MineActivityCost\",\"name\":\"MineActivityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine activity.\",\"isNullable\":false,\"name\":\"MineActivityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivityCost.cdm.json/MineActivityCost\",\"name\":\"CostTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a cost type.\",\"isNullable\":false,\"name\":\"CostTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivityCost.cdm.json/MineActivityCost\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivityCost.cdm.json/MineActivityCost\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivityCost.cdm.json/MineActivityCost\",\"name\":\"MineActivityCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The mine activity cost.\",\"isNullable\":true,\"scale\":2,\"name\":\"MineActivityCostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivityCost.cdm.json/MineActivityCost\",\"name\":\"MineActivityCostNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the mine activity cost.\",\"isNullable\":true,\"name\":\"MineActivityCostNote\"}]}}}",
+								"Description": "A cost associated with a mine activity for the period.",
+								"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7062A8\"}",
+								"PrimaryKeys": "MineActivityId,CostTypeId,PeriodStartTimestamp",
+								"spark.sql.sources.provider": "csv"
+							},
+							"Retention": 0,
+							"Temporary": false,
+							"IsRewriteEnabled": false
+						},
+						"Source": {
+							"Type": "SPARK"
+						}
+					},
+					{
+						"ActionType": "CREATE",
+						"OldEntity": null,
+						"NewEntity": {
+							"Name": "MineActivityType",
+							"EntityType": "TABLE",
+							"Namespace": {
+								"DatabaseName": "Database1"
+							},
+							"Description": "A mine activity type.\n\nEx:\n- Blasting\n- Blasting Site Preparation\n- Drill\n- Land Backfill Stockpile \n- Load Railcar\n- Load Truck\n- Add Ore To Stockpile\n- Safety Inspection\n- Store Ore\n- Transit Rail To Processing Location\n- Transit Truck To Processing Location\n- Transit Via Conveyer To Processing Location\n- Washing\n- Screening\n- Gravity separation\n- Load product\n- Stacking\n- Dewatering product\n- Dewatering tailing\n- Sampling\n \nwhere:\n\nStacking[edit]\nMain article: Stacker\nTravelling, luffing boom stackers that straddle a feed conveyor are commonly used to create coal stockpiles.\nReclaiming[edit]\nMain article: Reclaimer\nTunnel conveyors can be fed by a continuous slot hopper or bunker beneath the stockpile to reclaim material. Front-end loaders and bulldozers can be used to push the coal into feeders. Sometimes front-end loaders are the only means of reclaiming coal from the stockpile. This has a low up-front capital cost, but much higher operating costs, measured in dollars per tonne handled.\nHigh-capacity stockpiles are commonly reclaimed using bucket-wheel reclaimers. These can achieve very high rates\nCoal sampling[edit]\n\nSampling of coal is an important part of the process control in the CPP. A grab sample is a one-off sample of the coal at a point in the process stream, and tends not to be very representative. A routine sample is taken at a set frequency, either over a period of time or per shipment. Coal sampling consists of several types of sampling devices. A \"cross cut\" sampler mimics the \"stop belt\" sampling method specified by a standard originally published by the American Society for Testing and Materials (ASTM). A cross cut sampler mounts directly on top of the conveyor belt, the falling stream sampler is placed at the head section of the belt. There are several points in the wash plant that many coal operations choose to sample. The raw coal, before it enters the plant. The refuse, to see what the plant missed. Then the clean coal, to see exactly what is being shipped. The sampler is set according to Tons per hour, Feet per minute and top size of the product on the actual belt. A sample is taken then crushed, then sub sampled and returned to the main belt. The sample is sent to an Independent lab for testing where the results will be shared with the buyer as well as the supplier. The buyer in many cases will also sample the coal again once it is received to \"double check\" the results. Continuous measurement of ash, moisture, kCal (BTU), sulfur Fe, Ca, Na, and other element constituents of the coal are reported by cross belt elemental analyzers. This information can be calibrated periodically to the lab data per ASTM methods.\nWashability[edit]\n\nThe washability characteristics of a coal reserve are provided by obtaining liberation data on the raw coal sample. Liberation refers to the amount of physical breakage required to separate material of different material densities. Low density material is clean coal whereas high density material is reject (rock). The intermediate density material is called middlings.\nLiberation data is commonly obtained by float and sink analysis. The procedures for this analysis are detailed in Australian Standard AS 4156.1 - 1994 \"Coal preparation - Higher rank coal - Float and sink testing\".\nCrushing[edit]\n\nCoal crusher plant.\nMain article: Crusher\nCrushing reduces the overall topsize of the ROM coal so that it can be more easily handled and processed within the CPP. Crushing requirements are an important part of CPP design and there are a number of different types.\nScreening[edit]\n\nScreens in screening plant are used to group process particles into ranges by size. These size ranges are also called grades. Dewatering screens are used to remove water from the product. Screens can be static, or mechanically vibrated. Screen decks can be made from different materials such as high tensile steel, stainless steel, or polyethelene.\nGravity separation[edit]\n\nGravity separation methods make use of the different relative densities of different grades of coal, and the reject material.\nJigs[edit]\nJigs are a gravity separation method for coarse coal. Different types of jig include:\nDense medium process[edit]\nDense medium gravity separation methods use a material such as magnetite to form a medium denser than water to assist in separation.\nA cyclone is a conical vessel in which coal along with finely ground magnetite (media) is pumped tangentially to a tapered inlet and short cylindrical section followed by a conical section where the separation takes place. The higher specific gravity fractions being subject to greater centrifugal forces pull away from the central core and descend downwards towards the apex along the wall of cyclone body and pass out as rejects/middlings. The lighter particles are caught in an upward stream and pass out as clean coal through the cyclone overflow outlet via the vortex finder.\nFluid on entry commences in the outer regions of the cyclone body. This combined with rotational motion to which it is constrained creates an outer spiral. The existence of a top central outlet and inability for all the fluid to leave at the cone apex outlet, assist the inward migration of some of the fluid from the external moving mass. The amount of inward migration increases as the apex is neared, i.e. the radius decreased and the fluid which flows in this migratory stream, ultimately reverses its vertical velocity direction and flows upward to the cyclone over flow outlet, i.e. vortex finder. Since it is at the same time rotating, the result is an inner spiral.\nThe Heavy Media Cyclone may be lined with very high quality ceramic tiles or manufactured from Ni-hard (a very hard alloy of cast iron containing nickel) with a specially designed helical profile. A cyclone is the heart of the washing unit in a Heavy Media Washery. It is a non moving part and hence requires very low maintenance. However, the pressure at the inlet of the cyclone is a very important factor and it is suggested to maintain a minimum pressure of around D x 9 x 9.81 x density/100 (in bars), where D = the inner diameter of the cyclone in mm. It is important to note that the pressure at which pulp (mixture of coal and magnetite) is introduced in the cyclone is the principal means of controlling the forces within the cyclone. With the decrease in pressure more coal shall report to the discard/middlings, thus impairing the efficiency of separation.\nIf due to some reason the cyclone feed pump is not being able to deliver the required pressure at the inlet of the cyclone, feed should immediately be stopped and the pipelines, tank and pump should be properly checked for any jamming and any jamming should be properly cleaned before starting the circuit or the feed.\nDense medium baths (DMBs)[edit]\nDifferent types of DMB include:\nTeska bath\nDaniels bath\nLeebar bath\nTromp shallow bath\nDrewboy bath\nBarvoys bath\nChance cone\nWemco drum\nDense medium cyclones[edit]\nA mixture of raw coal and dense medium enters the cyclone at a predetermined flowrate and pressure. A vortex is formed, and the high density reject forced to the outside to the underflow orifice discharge, also called the spigot. The cleaned coal goes longitudinally down the axis of the cylone and leaves the cyclone through the overflow orifice, also called the vortex finder. From the overflow orifice, the coal goes into the overflow chamber, and is discharged to the next stage of the process.\nFine coal methods[edit]\n\nFine coal is cleaned using froth flotation methods. Denver cells and Jameson Cells are two flotation methods used. Spirals perform a simple, low cost and reasonably efficient separation of finer sized material, based on particle density and size.\nDewatering[edit]\n\nDewatering product coal[edit]\nWater is removed from the product to reduce the mass, and runoff on the stockpile. Different methods of dewatering exist, including:\nCoarse coal centrifuges\nScreen bowl centrifuges\nSlurry screens\nDewatering cyclones\nHorizontal belt filters\nDewatering tailings (reject)[edit]\nWater is removed from tailings to recycle water. Filters, centrifuges and thickeners are used in this part of the process. The blackwater which is produced as a by-product is typically placed in a coal slurry impoundment.\nThickeners[edit]\n\nDorr thickener\nThickeners are used for dewatering slurries of either tailings or product. A thickener is a large circular tank that is used to settle out the solid material from the water in the feed slurry. The separated water is clarified and reused as process water in the CPP.\nThickeners are sized according to the volume of feed slurry to be processed. Typical size ranges are from 13 to 40m in diameter and 3-4m high.[1] The floor of the thickener is conical, sloping gently down toward the centre.\nThe feed is pumped into the feedwell, at the centre of the thickener, near the top. The feed is normally dosed with flocculant before delivery to the thickener.\nThe thickened mass is moved toward the bottom centre of the thickener by large rakes that rotate around the tank. Rotation speed is very slow, and drive torques can be high, especially for larger diameter thickeners. Drive torque is usually monitored continuously, as high densities could cause failure of the rakes and drive equipment. Rakes may have the capacity to be raised to reduce drive torque.\nThe thickened slurry, also called thickener underflow, is pumped out of the bottom of the thickener. In the case of product coal, further dewatering is usually required before shipment. Thickened tailings can be pumped to a tailings dam, combined with larger sized rejects for disposal (co-disposal), or dewatered further before disposal.",
+							"TableType": "EXTERNAL",
+							"Origin": {
+								"Type": "SPARK"
+							},
+							"StorageDescriptor": {
+								"Columns": [
+									{
+										"Name": "MineActivityTypeId",
+										"Description": "The unique identifier of a mine activity type.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": false,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivityType.cdm.json/MineActivityType",
+											"Name": "MineActivityTypeId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineActivityTypeName",
+										"Description": "The name of a mine activity type.",
+										"OriginDataTypeName": {
+											"TypeName": "string",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Length": 256,
+											"Properties": {
+												"HIVE_TYPE_STRING": "string"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivityType.cdm.json/MineActivityType",
+											"Name": "MineActivityTypeName"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineActivityTypeDescription",
+										"Description": "The description of a mine activity type.",
+										"OriginDataTypeName": {
+											"TypeName": "string",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Length": 2048,
+											"Properties": {
+												"HIVE_TYPE_STRING": "string"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineActivityType.cdm.json/MineActivityType",
+											"Name": "MineActivityTypeDescription"
+										},
+										"DeltaFormatInvalidMessages": []
+									}
+								],
+								"Format": {
+									"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+									"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+									"FormatType": "csv",
+									"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+									"Properties": {
+										"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Database1/MineActivityType",
+										"delimiter": ",",
+										"multiLine": "false",
+										"firstRowAsHeader": "false",
+										"serialization.format": "1",
+										"escape": "\\",
+										"quote": "\"",
+										"FormatTypeSetToDatabaseDefault": true,
+										"header": "false"
+									}
+								},
+								"Source": {
+									"Provider": "ADLS",
+									"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Database1/MineActivityType",
+									"Properties": {
+										"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+										"LocationSetToDatabaseDefault": true
+									}
+								},
+								"Properties": {
+									"textinputformat.record.delimiter": ",",
+									"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+									"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineActivityTypeId\":{\"entity\":\"MineActivityType.cdm.json/MineActivityType\",\"name\":\"MineActivityTypeId\"},\"MineActivityTypeName\":{\"entity\":\"MineActivityType.cdm.json/MineActivityType\",\"name\":\"MineActivityTypeName\"},\"MineActivityTypeDescription\":{\"entity\":\"MineActivityType.cdm.json/MineActivityType\",\"name\":\"MineActivityTypeDescription\"}}}"
+								},
+								"Compressed": false,
+								"IsStoredAsSubdirectories": false
+							},
+							"Properties": {
+								"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MineActivityType\",\"path\":\"MineActivityType.cdm.json/MineActivityType\"},\"description\":\"A mine activity type.\\n\\nEx:\\n- Blasting\\n- Blasting Site Preparation\\n- Drill\\n- Land Backfill Stockpile \\n- Load Railcar\\n- Load Truck\\n- Add Ore To Stockpile\\n- Safety Inspection\\n- Store Ore\\n- Transit Rail To Processing Location\\n- Transit Truck To Processing Location\\n- Transit Via Conveyer To Processing Location\\n- Washing\\n- Screening\\n- Gravity separation\\n- Load product\\n- Stacking\\n- Dewatering product\\n- Dewatering tailing\\n- Sampling\\n \\nwhere:\\n\\nStacking[edit]\\nMain article: Stacker\\nTravelling, luffing boom stackers that straddle a feed conveyor are commonly used to create coal stockpiles.\\nReclaiming[edit]\\nMain article: Reclaimer\\nTunnel conveyors can be fed by a continuous slot hopper or bunker beneath the stockpile to reclaim material. Front-end loaders and bulldozers can be used to push the coal into feeders. Sometimes front-end loaders are the only means of reclaiming coal from the stockpile. This has a low up-front capital cost, but much higher operating costs, measured in dollars per tonne handled.\\nHigh-capacity stockpiles are commonly reclaimed using bucket-wheel reclaimers. These can achieve very high rates\\nCoal sampling[edit]\\n\\nSampling of coal is an important part of the process control in the CPP. A grab sample is a one-off sample of the coal at a point in the process stream, and tends not to be very representative. A routine sample is taken at a set frequency, either over a period of time or per shipment. Coal sampling consists of several types of sampling devices. A \\\"cross cut\\\" sampler mimics the \\\"stop belt\\\" sampling method specified by a standard originally published by the American Society for Testing and Materials (ASTM). A cross cut sampler mounts directly on top of the conveyor belt, the falling stream sampler is placed at the head section of the belt. There are several points in the wash plant that many coal operations choose to sample. The raw coal, before it enters the plant. The refuse, to see what the plant missed. Then the clean coal, to see exactly what is being shipped. The sampler is set according to Tons per hour, Feet per minute and top size of the product on the actual belt. A sample is taken then crushed, then sub sampled and returned to the main belt. The sample is sent to an Independent lab for testing where the results will be shared with the buyer as well as the supplier. The buyer in many cases will also sample the coal again once it is received to \\\"double check\\\" the results. Continuous measurement of ash, moisture, kCal (BTU), sulfur Fe, Ca, Na, and other element constituents of the coal are reported by cross belt elemental analyzers. This information can be calibrated periodically to the lab data per ASTM methods.\\nWashability[edit]\\n\\nThe washability characteristics of a coal reserve are provided by obtaining liberation data on the raw coal sample. Liberation refers to the amount of physical breakage required to separate material of different material densities. Low density material is clean coal whereas high density material is reject (rock). The intermediate density material is called middlings.\\nLiberation data is commonly obtained by float and sink analysis. The procedures for this analysis are detailed in Australian Standard AS 4156.1 - 1994 \\\"Coal preparation - Higher rank coal - Float and sink testing\\\".\\nCrushing[edit]\\n\\nCoal crusher plant.\\nMain article: Crusher\\nCrushing reduces the overall topsize of the ROM coal so that it can be more easily handled and processed within the CPP. Crushing requirements are an important part of CPP design and there are a number of different types.\\nScreening[edit]\\n\\nScreens in screening plant are used to group process particles into ranges by size. These size ranges are also called grades. Dewatering screens are used to remove water from the product. Screens can be static, or mechanically vibrated. Screen decks can be made from different materials such as high tensile steel, stainless steel, or polyethelene.\\nGravity separation[edit]\\n\\nGravity separation methods make use of the different relative densities of different grades of coal, and the reject material.\\nJigs[edit]\\nJigs are a gravity separation method for coarse coal. Different types of jig include:\\nDense medium process[edit]\\nDense medium gravity separation methods use a material such as magnetite to form a medium denser than water to assist in separation.\\nA cyclone is a conical vessel in which coal along with finely ground magnetite (media) is pumped tangentially to a tapered inlet and short cylindrical section followed by a conical section where the separation takes place. The higher specific gravity fractions being subject to greater centrifugal forces pull away from the central core and descend downwards towards the apex along the wall of cyclone body and pass out as rejects/middlings. The lighter particles are caught in an upward stream and pass out as clean coal through the cyclone overflow outlet via the vortex finder.\\nFluid on entry commences in the outer regions of the cyclone body. This combined with rotational motion to which it is constrained creates an outer spiral. The existence of a top central outlet and inability for all the fluid to leave at the cone apex outlet, assist the inward migration of some of the fluid from the external moving mass. The amount of inward migration increases as the apex is neared, i.e. the radius decreased and the fluid which flows in this migratory stream, ultimately reverses its vertical velocity direction and flows upward to the cyclone over flow outlet, i.e. vortex finder. Since it is at the same time rotating, the result is an inner spiral.\\nThe Heavy Media Cyclone may be lined with very high quality ceramic tiles or manufactured from Ni-hard (a very hard alloy of cast iron containing nickel) with a specially designed helical profile. A cyclone is the heart of the washing unit in a Heavy Media Washery. It is a non moving part and hence requires very low maintenance. However, the pressure at the inlet of the cyclone is a very important factor and it is suggested to maintain a minimum pressure of around D x 9 x 9.81 x density/100 (in bars), where D = the inner diameter of the cyclone in mm. It is important to note that the pressure at which pulp (mixture of coal and magnetite) is introduced in the cyclone is the principal means of controlling the forces within the cyclone. With the decrease in pressure more coal shall report to the discard/middlings, thus impairing the efficiency of separation.\\nIf due to some reason the cyclone feed pump is not being able to deliver the required pressure at the inlet of the cyclone, feed should immediately be stopped and the pipelines, tank and pump should be properly checked for any jamming and any jamming should be properly cleaned before starting the circuit or the feed.\\nDense medium baths (DMBs)[edit]\\nDifferent types of DMB include:\\nTeska bath\\nDaniels bath\\nLeebar bath\\nTromp shallow bath\\nDrewboy bath\\nBarvoys bath\\nChance cone\\nWemco drum\\nDense medium cyclones[edit]\\nA mixture of raw coal and dense medium enters the cyclone at a predetermined flowrate and pressure. A vortex is formed, and the high density reject forced to the outside to the underflow orifice discharge, also called the spigot. The cleaned coal goes longitudinally down the axis of the cylone and leaves the cyclone through the overflow orifice, also called the vortex finder. From the overflow orifice, the coal goes into the overflow chamber, and is discharged to the next stage of the process.\\nFine coal methods[edit]\\n\\nFine coal is cleaned using froth flotation methods. Denver cells and Jameson Cells are two flotation methods used. Spirals perform a simple, low cost and reasonably efficient separation of finer sized material, based on particle density and size.\\nDewatering[edit]\\n\\nDewatering product coal[edit]\\nWater is removed from the product to reduce the mass, and runoff on the stockpile. Different methods of dewatering exist, including:\\nCoarse coal centrifuges\\nScreen bowl centrifuges\\nSlurry screens\\nDewatering cyclones\\nHorizontal belt filters\\nDewatering tailings (reject)[edit]\\nWater is removed from tailings to recycle water. Filters, centrifuges and thickeners are used in this part of the process. The blackwater which is produced as a by-product is typically placed in a coal slurry impoundment.\\nThickeners[edit]\\n\\nDorr thickener\\nThickeners are used for dewatering slurries of either tailings or product. A thickener is a large circular tank that is used to settle out the solid material from the water in the feed slurry. The separated water is clarified and reused as process water in the CPP.\\nThickeners are sized according to the volume of feed slurry to be processed. Typical size ranges are from 13 to 40m in diameter and 3-4m high.[1] The floor of the thickener is conical, sloping gently down toward the centre.\\nThe feed is pumped into the feedwell, at the centre of the thickener, near the top. The feed is normally dosed with flocculant before delivery to the thickener.\\nThe thickened mass is moved toward the bottom centre of the thickener by large rakes that rotate around the tank. Rotation speed is very slow, and drive torques can be high, especially for larger diameter thickeners. Drive torque is usually monitored continuously, as high densities could cause failure of the rakes and drive equipment. Rakes may have the capacity to be raised to reduce drive torque.\\nThe thickened slurry, also called thickener underflow, is pumped out of the bottom of the thickener. In the case of product coal, further dewatering is usually required before shipment. Thickened tailings can be pumped to a tailings dam, combined with larger sized rejects for disposal (co-disposal), or dewatered further before disposal.\",\"primaryKey\":[\"MineActivityTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivityType.cdm.json/MineActivityType\",\"name\":\"MineActivityTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine activity type.\",\"isNullable\":false,\"name\":\"MineActivityTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivityType.cdm.json/MineActivityType\",\"name\":\"MineActivityTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of a mine activity type.\",\"isNullable\":true,\"name\":\"MineActivityTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivityType.cdm.json/MineActivityType\",\"name\":\"MineActivityTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of a mine activity type.\",\"isNullable\":true,\"name\":\"MineActivityTypeDescription\"}]}}}",
+								"Description": "A mine activity type.\n\nEx:\n- Blasting\n- Blasting Site Preparation\n- Drill\n- Land Backfill Stockpile \n- Load Railcar\n- Load Truck\n- Add Ore To Stockpile\n- Safety Inspection\n- Store Ore\n- Transit Rail To Processing Location\n- Transit Truck To Processing Location\n- Transit Via Conveyer To Processing Location\n- Washing\n- Screening\n- Gravity separation\n- Load product\n- Stacking\n- Dewatering product\n- Dewatering tailing\n- Sampling\n \nwhere:\n\nStacking[edit]\nMain article: Stacker\nTravelling, luffing boom stackers that straddle a feed conveyor are commonly used to create coal stockpiles.\nReclaiming[edit]\nMain article: Reclaimer\nTunnel conveyors can be fed by a continuous slot hopper or bunker beneath the stockpile to reclaim material. Front-end loaders and bulldozers can be used to push the coal into feeders. Sometimes front-end loaders are the only means of reclaiming coal from the stockpile. This has a low up-front capital cost, but much higher operating costs, measured in dollars per tonne handled.\nHigh-capacity stockpiles are commonly reclaimed using bucket-wheel reclaimers. These can achieve very high rates\nCoal sampling[edit]\n\nSampling of coal is an important part of the process control in the CPP. A grab sample is a one-off sample of the coal at a point in the process stream, and tends not to be very representative. A routine sample is taken at a set frequency, either over a period of time or per shipment. Coal sampling consists of several types of sampling devices. A \"cross cut\" sampler mimics the \"stop belt\" sampling method specified by a standard originally published by the American Society for Testing and Materials (ASTM). A cross cut sampler mounts directly on top of the conveyor belt, the falling stream sampler is placed at the head section of the belt. There are several points in the wash plant that many coal operations choose to sample. The raw coal, before it enters the plant. The refuse, to see what the plant missed. Then the clean coal, to see exactly what is being shipped. The sampler is set according to Tons per hour, Feet per minute and top size of the product on the actual belt. A sample is taken then crushed, then sub sampled and returned to the main belt. The sample is sent to an Independent lab for testing where the results will be shared with the buyer as well as the supplier. The buyer in many cases will also sample the coal again once it is received to \"double check\" the results. Continuous measurement of ash, moisture, kCal (BTU), sulfur Fe, Ca, Na, and other element constituents of the coal are reported by cross belt elemental analyzers. This information can be calibrated periodically to the lab data per ASTM methods.\nWashability[edit]\n\nThe washability characteristics of a coal reserve are provided by obtaining liberation data on the raw coal sample. Liberation refers to the amount of physical breakage required to separate material of different material densities. Low density material is clean coal whereas high density material is reject (rock). The intermediate density material is called middlings.\nLiberation data is commonly obtained by float and sink analysis. The procedures for this analysis are detailed in Australian Standard AS 4156.1 - 1994 \"Coal preparation - Higher rank coal - Float and sink testing\".\nCrushing[edit]\n\nCoal crusher plant.\nMain article: Crusher\nCrushing reduces the overall topsize of the ROM coal so that it can be more easily handled and processed within the CPP. Crushing requirements are an important part of CPP design and there are a number of different types.\nScreening[edit]\n\nScreens in screening plant are used to group process particles into ranges by size. These size ranges are also called grades. Dewatering screens are used to remove water from the product. Screens can be static, or mechanically vibrated. Screen decks can be made from different materials such as high tensile steel, stainless steel, or polyethelene.\nGravity separation[edit]\n\nGravity separation methods make use of the different relative densities of different grades of coal, and the reject material.\nJigs[edit]\nJigs are a gravity separation method for coarse coal. Different types of jig include:\nDense medium process[edit]\nDense medium gravity separation methods use a material such as magnetite to form a medium denser than water to assist in separation.\nA cyclone is a conical vessel in which coal along with finely ground magnetite (media) is pumped tangentially to a tapered inlet and short cylindrical section followed by a conical section where the separation takes place. The higher specific gravity fractions being subject to greater centrifugal forces pull away from the central core and descend downwards towards the apex along the wall of cyclone body and pass out as rejects/middlings. The lighter particles are caught in an upward stream and pass out as clean coal through the cyclone overflow outlet via the vortex finder.\nFluid on entry commences in the outer regions of the cyclone body. This combined with rotational motion to which it is constrained creates an outer spiral. The existence of a top central outlet and inability for all the fluid to leave at the cone apex outlet, assist the inward migration of some of the fluid from the external moving mass. The amount of inward migration increases as the apex is neared, i.e. the radius decreased and the fluid which flows in this migratory stream, ultimately reverses its vertical velocity direction and flows upward to the cyclone over flow outlet, i.e. vortex finder. Since it is at the same time rotating, the result is an inner spiral.\nThe Heavy Media Cyclone may be lined with very high quality ceramic tiles or manufactured from Ni-hard (a very hard alloy of cast iron containing nickel) with a specially designed helical profile. A cyclone is the heart of the washing unit in a Heavy Media Washery. It is a non moving part and hence requires very low maintenance. However, the pressure at the inlet of the cyclone is a very important factor and it is suggested to maintain a minimum pressure of around D x 9 x 9.81 x density/100 (in bars), where D = the inner diameter of the cyclone in mm. It is important to note that the pressure at which pulp (mixture of coal and magnetite) is introduced in the cyclone is the principal means of controlling the forces within the cyclone. With the decrease in pressure more coal shall report to the discard/middlings, thus impairing the efficiency of separation.\nIf due to some reason the cyclone feed pump is not being able to deliver the required pressure at the inlet of the cyclone, feed should immediately be stopped and the pipelines, tank and pump should be properly checked for any jamming and any jamming should be properly cleaned before starting the circuit or the feed.\nDense medium baths (DMBs)[edit]\nDifferent types of DMB include:\nTeska bath\nDaniels bath\nLeebar bath\nTromp shallow bath\nDrewboy bath\nBarvoys bath\nChance cone\nWemco drum\nDense medium cyclones[edit]\nA mixture of raw coal and dense medium enters the cyclone at a predetermined flowrate and pressure. A vortex is formed, and the high density reject forced to the outside to the underflow orifice discharge, also called the spigot. The cleaned coal goes longitudinally down the axis of the cylone and leaves the cyclone through the overflow orifice, also called the vortex finder. From the overflow orifice, the coal goes into the overflow chamber, and is discharged to the next stage of the process.\nFine coal methods[edit]\n\nFine coal is cleaned using froth flotation methods. Denver cells and Jameson Cells are two flotation methods used. Spirals perform a simple, low cost and reasonably efficient separation of finer sized material, based on particle density and size.\nDewatering[edit]\n\nDewatering product coal[edit]\nWater is removed from the product to reduce the mass, and runoff on the stockpile. Different methods of dewatering exist, including:\nCoarse coal centrifuges\nScreen bowl centrifuges\nSlurry screens\nDewatering cyclones\nHorizontal belt filters\nDewatering tailings (reject)[edit]\nWater is removed from tailings to recycle water. Filters, centrifuges and thickeners are used in this part of the process. The blackwater which is produced as a by-product is typically placed in a coal slurry impoundment.\nThickeners[edit]\n\nDorr thickener\nThickeners are used for dewatering slurries of either tailings or product. A thickener is a large circular tank that is used to settle out the solid material from the water in the feed slurry. The separated water is clarified and reused as process water in the CPP.\nThickeners are sized according to the volume of feed slurry to be processed. Typical size ranges are from 13 to 40m in diameter and 3-4m high.[1] The floor of the thickener is conical, sloping gently down toward the centre.\nThe feed is pumped into the feedwell, at the centre of the thickener, near the top. The feed is normally dosed with flocculant before delivery to the thickener.\nThe thickened mass is moved toward the bottom centre of the thickener by large rakes that rotate around the tank. Rotation speed is very slow, and drive torques can be high, especially for larger diameter thickeners. Drive torque is usually monitored continuously, as high densities could cause failure of the rakes and drive equipment. Rakes may have the capacity to be raised to reduce drive torque.\nThe thickened slurry, also called thickener underflow, is pumped out of the bottom of the thickener. In the case of product coal, further dewatering is usually required before shipment. Thickened tailings can be pumped to a tailings dam, combined with larger sized rejects for disposal (co-disposal), or dewatered further before disposal.",
+								"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7062A8\"}",
+								"PrimaryKeys": "MineActivityTypeId",
+								"spark.sql.sources.provider": "csv"
+							},
+							"Retention": 0,
+							"Temporary": false,
+							"IsRewriteEnabled": false
+						},
+						"Source": {
+							"Type": "SPARK"
+						}
+					},
+					{
+						"ActionType": "CREATE",
+						"OldEntity": null,
+						"NewEntity": {
+							"Name": "MineProcessingActivity",
+							"EntityType": "TABLE",
+							"Namespace": {
+								"DatabaseName": "Database1"
+							},
+							"Description": "The type of mine processing activity.\n\nEx:\n- Extraction\n- Froth Treatment\n- Bitumen Extraction\n- Transfer Crushed Oil Sand To Stockpile\n- Crushing\n- Slurry/Aeration\n- Hydrotransport\n- Extraction\n- Filter\n- Chemical Separation\n\nwhere:\n\nExtraction\nA process, unique to the oilsands industry, which separates the bitumen from the oilsand using hot water, steam, and caustic soda.\n\nFroth treatment\nThe means to recover bitumen from the mixture of water, bitumen, and solids \"froth\" produced in hot water extraction (in mining-based recovery).\n\nHydrotransport\nA slurry process that transports water and resource (such as oilsand) through a pipeline to primary separation vessels located in an extraction plant.",
+							"TableType": "EXTERNAL",
+							"Origin": {
+								"Type": "SPARK"
+							},
+							"StorageDescriptor": {
+								"Columns": [
+									{
+										"Name": "MineProcessingActivityId",
+										"Description": "The unique identifier of a mine processing activity.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": false,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineProcessingActivity.cdm.json/MineProcessingActivity",
+											"Name": "MineProcessingActivityId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineProcessingActivityTypeId",
+										"Description": "The unique identifier of a mine processing activity type.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineProcessingActivity.cdm.json/MineProcessingActivity",
+											"Name": "MineProcessingActivityTypeId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineProcessingActivityStartTimestamp",
+										"Description": "The actual mine processing activity start timestamp.",
+										"OriginDataTypeName": {
+											"TypeName": "timestamp",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+												"HIVE_TYPE_STRING": "timestamp"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineProcessingActivity.cdm.json/MineProcessingActivity",
+											"Name": "MineProcessingActivityStartTimestamp"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineProcessingActivityEndTimestamp",
+										"Description": "The actual mine processing activity end timestamp.",
+										"OriginDataTypeName": {
+											"TypeName": "timestamp",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+												"HIVE_TYPE_STRING": "timestamp"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineProcessingActivity.cdm.json/MineProcessingActivity",
+											"Name": "MineProcessingActivityEndTimestamp"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineProcessingActivityScheduledStartTimestamp",
+										"Description": "The scheduled mine processing activity start timestamp.",
+										"OriginDataTypeName": {
+											"TypeName": "timestamp",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+												"HIVE_TYPE_STRING": "timestamp"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineProcessingActivity.cdm.json/MineProcessingActivity",
+											"Name": "MineProcessingActivityScheduledStartTimestamp"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineProcessingActivityScheduledEndTimestamp",
+										"Description": "The scheduled mine processing activity end timestamp.",
+										"OriginDataTypeName": {
+											"TypeName": "timestamp",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+												"HIVE_TYPE_STRING": "timestamp"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineProcessingActivity.cdm.json/MineProcessingActivity",
+											"Name": "MineProcessingActivityScheduledEndTimestamp"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "FacilityId",
+										"Description": "The unique identifier of a Facility.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineProcessingActivity.cdm.json/MineProcessingActivity",
+											"Name": "FacilityId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "LocationId",
+										"Description": "The unique identifier of a Location.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineProcessingActivity.cdm.json/MineProcessingActivity",
+											"Name": "LocationId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineId",
+										"Description": "The unique identifier of a mine.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineProcessingActivity.cdm.json/MineProcessingActivity",
+											"Name": "MineId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineProcessingActivityNote",
+										"Description": "A note, comment or additional information regarding the mine processing activity.",
+										"OriginDataTypeName": {
+											"TypeName": "string",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Length": 2048,
+											"Properties": {
+												"HIVE_TYPE_STRING": "string"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineProcessingActivity.cdm.json/MineProcessingActivity",
+											"Name": "MineProcessingActivityNote"
+										},
+										"DeltaFormatInvalidMessages": []
+									}
+								],
+								"Format": {
+									"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+									"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+									"FormatType": "csv",
+									"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+									"Properties": {
+										"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Database1/MineProcessingActivity",
+										"delimiter": ",",
+										"multiLine": "false",
+										"firstRowAsHeader": "false",
+										"serialization.format": "1",
+										"escape": "\\",
+										"quote": "\"",
+										"FormatTypeSetToDatabaseDefault": true,
+										"header": "false"
+									}
+								},
+								"Source": {
+									"Provider": "ADLS",
+									"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Database1/MineProcessingActivity",
+									"Properties": {
+										"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+										"LocationSetToDatabaseDefault": true
+									}
+								},
+								"Properties": {
+									"textinputformat.record.delimiter": ",",
+									"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+									"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineProcessingActivityId\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityId\"},\"MineProcessingActivityTypeId\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityTypeId\"},\"MineProcessingActivityStartTimestamp\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityStartTimestamp\"},\"MineProcessingActivityEndTimestamp\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityEndTimestamp\"},\"MineProcessingActivityScheduledStartTimestamp\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityScheduledStartTimestamp\"},\"MineProcessingActivityScheduledEndTimestamp\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityScheduledEndTimestamp\"},\"FacilityId\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"FacilityId\"},\"LocationId\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"LocationId\"},\"MineId\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineId\"},\"MineProcessingActivityNote\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityNote\"}}}"
+								},
+								"Compressed": false,
+								"IsStoredAsSubdirectories": false
+							},
+							"Properties": {
+								"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MineProcessingActivity\",\"path\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\"},\"description\":\"The type of mine processing activity.\\n\\nEx:\\n- Extraction\\n- Froth Treatment\\n- Bitumen Extraction\\n- Transfer Crushed Oil Sand To Stockpile\\n- Crushing\\n- Slurry/Aeration\\n- Hydrotransport\\n- Extraction\\n- Filter\\n- Chemical Separation\\n\\nwhere:\\n\\nExtraction\\nA process, unique to the oilsands industry, which separates the bitumen from the oilsand using hot water, steam, and caustic soda.\\n\\nFroth treatment\\nThe means to recover bitumen from the mixture of water, bitumen, and solids \\\"froth\\\" produced in hot water extraction (in mining-based recovery).\\n\\nHydrotransport\\nA slurry process that transports water and resource (such as oilsand) through a pipeline to primary separation vessels located in an extraction plant.\",\"primaryKey\":[\"MineProcessingActivityId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine processing activity.\",\"isNullable\":false,\"name\":\"MineProcessingActivityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine processing activity type.\",\"isNullable\":true,\"name\":\"MineProcessingActivityTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The actual mine processing activity start timestamp.\",\"isNullable\":true,\"name\":\"MineProcessingActivityStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The actual mine processing activity end timestamp.\",\"isNullable\":true,\"name\":\"MineProcessingActivityEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityScheduledStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The scheduled mine processing activity start timestamp.\",\"isNullable\":true,\"name\":\"MineProcessingActivityScheduledStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityScheduledEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The scheduled mine processing activity end timestamp.\",\"isNullable\":true,\"name\":\"MineProcessingActivityScheduledEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"FacilityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Facility.\",\"isNullable\":true,\"name\":\"FacilityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine.\",\"isNullable\":true,\"name\":\"MineId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the mine processing activity.\",\"isNullable\":true,\"name\":\"MineProcessingActivityNote\"}]}}}",
+								"Description": "The type of mine processing activity.\n\nEx:\n- Extraction\n- Froth Treatment\n- Bitumen Extraction\n- Transfer Crushed Oil Sand To Stockpile\n- Crushing\n- Slurry/Aeration\n- Hydrotransport\n- Extraction\n- Filter\n- Chemical Separation\n\nwhere:\n\nExtraction\nA process, unique to the oilsands industry, which separates the bitumen from the oilsand using hot water, steam, and caustic soda.\n\nFroth treatment\nThe means to recover bitumen from the mixture of water, bitumen, and solids \"froth\" produced in hot water extraction (in mining-based recovery).\n\nHydrotransport\nA slurry process that transports water and resource (such as oilsand) through a pipeline to primary separation vessels located in an extraction plant.",
+								"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7062A8\"}",
+								"PrimaryKeys": "MineProcessingActivityId",
+								"spark.sql.sources.provider": "csv"
+							},
+							"Retention": 0,
+							"Temporary": false,
+							"IsRewriteEnabled": false
+						},
+						"Source": {
+							"Type": "SPARK"
+						}
+					},
+					{
+						"ActionType": "CREATE",
+						"OldEntity": null,
+						"NewEntity": {
+							"Name": "MineProcessingActivityCost",
+							"EntityType": "TABLE",
+							"Namespace": {
+								"DatabaseName": "Database1"
+							},
+							"Description": "A cost associated with a mine processing activity during the period.",
+							"TableType": "EXTERNAL",
+							"Origin": {
+								"Type": "SPARK"
+							},
+							"StorageDescriptor": {
+								"Columns": [
+									{
+										"Name": "MineProcessingActivityId",
+										"Description": "The unique identifier of a mine processing activity.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": false,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineProcessingActivityCost.cdm.json/MineProcessingActivityCost",
+											"Name": "MineProcessingActivityId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "CostTypeId",
+										"Description": "The unique identifier of a cost type.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": false,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineProcessingActivityCost.cdm.json/MineProcessingActivityCost",
+											"Name": "CostTypeId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "PeriodStartTimestamp",
+										"Description": "The period start timestamp.",
+										"OriginDataTypeName": {
+											"TypeName": "timestamp",
+											"IsComplexType": false,
+											"IsNullable": false,
+											"Properties": {
+												"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+												"HIVE_TYPE_STRING": "timestamp"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineProcessingActivityCost.cdm.json/MineProcessingActivityCost",
+											"Name": "PeriodStartTimestamp"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "PeriodEndTimestamp",
+										"Description": "The period end timestamp.",
+										"OriginDataTypeName": {
+											"TypeName": "timestamp",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Properties": {
+												"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+												"HIVE_TYPE_STRING": "timestamp"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineProcessingActivityCost.cdm.json/MineProcessingActivityCost",
+											"Name": "PeriodEndTimestamp"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineProcessingActivityCostAmount",
+										"Description": "The mine processing activity cost.",
+										"OriginDataTypeName": {
+											"TypeName": "decimal",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Precision": 18,
+											"Scale": 2,
+											"Properties": {
+												"HIVE_TYPE_STRING": "decimal"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineProcessingActivityCost.cdm.json/MineProcessingActivityCost",
+											"Name": "MineProcessingActivityCostAmount"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineProcessingActivityCostNote",
+										"Description": "A note, comment or additional information regarding the mine processing activity cost.",
+										"OriginDataTypeName": {
+											"TypeName": "string",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Length": 2048,
+											"Properties": {
+												"HIVE_TYPE_STRING": "string"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineProcessingActivityCost.cdm.json/MineProcessingActivityCost",
+											"Name": "MineProcessingActivityCostNote"
+										},
+										"DeltaFormatInvalidMessages": []
+									}
+								],
+								"Format": {
+									"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+									"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+									"FormatType": "csv",
+									"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+									"Properties": {
+										"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Database1/MineProcessingActivityCost",
+										"delimiter": ",",
+										"multiLine": "false",
+										"firstRowAsHeader": "false",
+										"serialization.format": "1",
+										"escape": "\\",
+										"quote": "\"",
+										"FormatTypeSetToDatabaseDefault": true,
+										"header": "false"
+									}
+								},
+								"Source": {
+									"Provider": "ADLS",
+									"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Database1/MineProcessingActivityCost",
+									"Properties": {
+										"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+										"LocationSetToDatabaseDefault": true
+									}
+								},
+								"Properties": {
+									"textinputformat.record.delimiter": ",",
+									"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+									"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineProcessingActivityId\":{\"entity\":\"MineProcessingActivityCost.cdm.json/MineProcessingActivityCost\",\"name\":\"MineProcessingActivityId\"},\"CostTypeId\":{\"entity\":\"MineProcessingActivityCost.cdm.json/MineProcessingActivityCost\",\"name\":\"CostTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"MineProcessingActivityCost.cdm.json/MineProcessingActivityCost\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"MineProcessingActivityCost.cdm.json/MineProcessingActivityCost\",\"name\":\"PeriodEndTimestamp\"},\"MineProcessingActivityCostAmount\":{\"entity\":\"MineProcessingActivityCost.cdm.json/MineProcessingActivityCost\",\"name\":\"MineProcessingActivityCostAmount\"},\"MineProcessingActivityCostNote\":{\"entity\":\"MineProcessingActivityCost.cdm.json/MineProcessingActivityCost\",\"name\":\"MineProcessingActivityCostNote\"}}}"
+								},
+								"Compressed": false,
+								"IsStoredAsSubdirectories": false
+							},
+							"Properties": {
+								"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MineProcessingActivityCost\",\"path\":\"MineProcessingActivityCost.cdm.json/MineProcessingActivityCost\"},\"description\":\"A cost associated with a mine processing activity during the period.\",\"primaryKey\":[\"MineProcessingActivityId\",\"CostTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivityCost.cdm.json/MineProcessingActivityCost\",\"name\":\"MineProcessingActivityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine processing activity.\",\"isNullable\":false,\"name\":\"MineProcessingActivityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivityCost.cdm.json/MineProcessingActivityCost\",\"name\":\"CostTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a cost type.\",\"isNullable\":false,\"name\":\"CostTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivityCost.cdm.json/MineProcessingActivityCost\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivityCost.cdm.json/MineProcessingActivityCost\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivityCost.cdm.json/MineProcessingActivityCost\",\"name\":\"MineProcessingActivityCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The mine processing activity cost.\",\"isNullable\":true,\"scale\":2,\"name\":\"MineProcessingActivityCostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivityCost.cdm.json/MineProcessingActivityCost\",\"name\":\"MineProcessingActivityCostNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the mine processing activity cost.\",\"isNullable\":true,\"name\":\"MineProcessingActivityCostNote\"}]}}}",
+								"Description": "A cost associated with a mine processing activity during the period.",
+								"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7062A8\"}",
+								"PrimaryKeys": "MineProcessingActivityId,CostTypeId,PeriodStartTimestamp",
+								"spark.sql.sources.provider": "csv"
+							},
+							"Retention": 0,
+							"Temporary": false,
+							"IsRewriteEnabled": false
+						},
+						"Source": {
+							"Type": "SPARK"
+						}
+					},
+					{
+						"ActionType": "CREATE",
+						"OldEntity": null,
+						"NewEntity": {
+							"Name": "MineProcessingActivityType",
+							"EntityType": "TABLE",
+							"Namespace": {
+								"DatabaseName": "Database1"
+							},
+							"Description": "The type of mine processing activity.\n\nEx:\n- Bail\n- Chemical Separation\n- Crush\n- Electrolyte Refine\n- Filter\n- Froth Floatation\n- Gravity Separation\n- Grind\n- Hydraulic Washing\n- Load To Rail\n- Load To Train\n- Magnetic Separation\n- Mix With Flux Materials\n- Oxidation \n- Pelletize\n- Reduction\n- Separate Ore From Waste\n- Ship\n- Stockpile\n- Upgrade\n- Anhydrous Solvent Extraction Process \n- Bitumen Extraction\n- Chemical Separation\n- Cold Water Process\n- Conditioning\n- Demineralization\n- Dewatering\n- Direct Heating\n- Extraction\n- Filter\n- Froth Treatment\n- Hot Water Process\n- Hydrotransport\n- Oleophilic Sieve Process \n- Sand Reduction Process\n- Slurry/Aeration\n- Solvent Deasphalting\n- Spherical Agglomeration Process\n- Transfer Crushed Oil Sand To Stockpile",
+							"TableType": "EXTERNAL",
+							"Origin": {
+								"Type": "SPARK"
+							},
+							"StorageDescriptor": {
+								"Columns": [
+									{
+										"Name": "MineProcessingActivityTypeId",
+										"Description": "The unique identifier of a mine processing activity type.",
+										"OriginDataTypeName": {
+											"TypeName": "integer",
+											"IsComplexType": false,
+											"IsNullable": false,
+											"Properties": {
+												"HIVE_TYPE_STRING": "integer"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineProcessingActivityType.cdm.json/MineProcessingActivityType",
+											"Name": "MineProcessingActivityTypeId"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineProcessingActivityTypeName",
+										"Description": "The name of a mine processing activity type.",
+										"OriginDataTypeName": {
+											"TypeName": "string",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Length": 256,
+											"Properties": {
+												"HIVE_TYPE_STRING": "string"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineProcessingActivityType.cdm.json/MineProcessingActivityType",
+											"Name": "MineProcessingActivityTypeName"
+										},
+										"DeltaFormatInvalidMessages": []
+									},
+									{
+										"Name": "MineProcessingActivityTypeDescription",
+										"Description": "The description of a mine processing activity type.",
+										"OriginDataTypeName": {
+											"TypeName": "string",
+											"IsComplexType": false,
+											"IsNullable": true,
+											"Length": 2048,
+											"Properties": {
+												"HIVE_TYPE_STRING": "string"
+											}
+										},
+										"BaseAttributeReference": {
+											"Entity": "MineProcessingActivityType.cdm.json/MineProcessingActivityType",
+											"Name": "MineProcessingActivityTypeDescription"
+										},
+										"DeltaFormatInvalidMessages": []
+									}
+								],
+								"Format": {
+									"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+									"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+									"FormatType": "csv",
+									"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+									"Properties": {
+										"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Database1/MineProcessingActivityType",
+										"delimiter": ",",
+										"multiLine": "false",
+										"firstRowAsHeader": "false",
+										"serialization.format": "1",
+										"escape": "\\",
+										"quote": "\"",
+										"FormatTypeSetToDatabaseDefault": true,
+										"header": "false"
+									}
+								},
+								"Source": {
+									"Provider": "ADLS",
+									"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Database1/MineProcessingActivityType",
+									"Properties": {
+										"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+										"LocationSetToDatabaseDefault": true
+									}
+								},
+								"Properties": {
+									"textinputformat.record.delimiter": ",",
+									"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+									"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineProcessingActivityTypeId\":{\"entity\":\"MineProcessingActivityType.cdm.json/MineProcessingActivityType\",\"name\":\"MineProcessingActivityTypeId\"},\"MineProcessingActivityTypeName\":{\"entity\":\"MineProcessingActivityType.cdm.json/MineProcessingActivityType\",\"name\":\"MineProcessingActivityTypeName\"},\"MineProcessingActivityTypeDescription\":{\"entity\":\"MineProcessingActivityType.cdm.json/MineProcessingActivityType\",\"name\":\"MineProcessingActivityTypeDescription\"}}}"
+								},
+								"Compressed": false,
+								"IsStoredAsSubdirectories": false
+							},
+							"Properties": {
+								"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MineProcessingActivityType\",\"path\":\"MineProcessingActivityType.cdm.json/MineProcessingActivityType\"},\"description\":\"The type of mine processing activity.\\n\\nEx:\\n- Bail\\n- Chemical Separation\\n- Crush\\n- Electrolyte Refine\\n- Filter\\n- Froth Floatation\\n- Gravity Separation\\n- Grind\\n- Hydraulic Washing\\n- Load To Rail\\n- Load To Train\\n- Magnetic Separation\\n- Mix With Flux Materials\\n- Oxidation \\n- Pelletize\\n- Reduction\\n- Separate Ore From Waste\\n- Ship\\n- Stockpile\\n- Upgrade\\n- Anhydrous Solvent Extraction Process \\n- Bitumen Extraction\\n- Chemical Separation\\n- Cold Water Process\\n- Conditioning\\n- Demineralization\\n- Dewatering\\n- Direct Heating\\n- Extraction\\n- Filter\\n- Froth Treatment\\n- Hot Water Process\\n- Hydrotransport\\n- Oleophilic Sieve Process \\n- Sand Reduction Process\\n- Slurry/Aeration\\n- Solvent Deasphalting\\n- Spherical Agglomeration Process\\n- Transfer Crushed Oil Sand To Stockpile\",\"primaryKey\":[\"MineProcessingActivityTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivityType.cdm.json/MineProcessingActivityType\",\"name\":\"MineProcessingActivityTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine processing activity type.\",\"isNullable\":false,\"name\":\"MineProcessingActivityTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivityType.cdm.json/MineProcessingActivityType\",\"name\":\"MineProcessingActivityTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of a mine processing activity type.\",\"isNullable\":true,\"name\":\"MineProcessingActivityTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivityType.cdm.json/MineProcessingActivityType\",\"name\":\"MineProcessingActivityTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of a mine processing activity type.\",\"isNullable\":true,\"name\":\"MineProcessingActivityTypeDescription\"}]}}}",
+								"Description": "The type of mine processing activity.\n\nEx:\n- Bail\n- Chemical Separation\n- Crush\n- Electrolyte Refine\n- Filter\n- Froth Floatation\n- Gravity Separation\n- Grind\n- Hydraulic Washing\n- Load To Rail\n- Load To Train\n- Magnetic Separation\n- Mix With Flux Materials\n- Oxidation \n- Pelletize\n- Reduction\n- Separate Ore From Waste\n- Ship\n- Stockpile\n- Upgrade\n- Anhydrous Solvent Extraction Process \n- Bitumen Extraction\n- Chemical Separation\n- Cold Water Process\n- Conditioning\n- Demineralization\n- Dewatering\n- Direct Heating\n- Extraction\n- Filter\n- Froth Treatment\n- Hot Water Process\n- Hydrotransport\n- Oleophilic Sieve Process \n- Sand Reduction Process\n- Slurry/Aeration\n- Solvent Deasphalting\n- Spherical Agglomeration Process\n- Transfer Crushed Oil Sand To Stockpile",
+								"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7062A8\"}",
+								"PrimaryKeys": "MineProcessingActivityTypeId",
+								"spark.sql.sources.provider": "csv"
+							},
+							"Retention": 0,
+							"Temporary": false,
+							"IsRewriteEnabled": false
+						},
+						"Source": {
+							"Type": "SPARK"
+						}
+					},
+					{
+						"ActionType": "CREATE",
+						"OldEntity": null,
+						"NewEntity": {
+							"Name": "relationship-fdyvyvcwxc",
+							"EntityType": "RELATIONSHIP",
+							"Namespace": {
+								"DatabaseName": "Database1"
+							},
+							"Origin": {
+								"Type": "SPARK"
+							},
+							"FromTableName": "MineActivity",
+							"ToTableName": "MineActivityCost",
+							"ColumnRelationshipInformations": [
+								{
+									"FromColumnName": "MineActivityId",
+									"ToColumnName": "MineActivityId"
+								}
+							],
+							"RelationshipType": 0,
+							"Properties": {
+								"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MineActivity.cdm.json/MineActivity\",\"toEntity\":\"MineActivityCost.cdm.json/MineActivityCost\",\"joinPairs\":[{\"fromAttribute\":\"MineActivityId\",\"toAttribute\":\"MineActivityId\"}]}}"
+							}
+						},
+						"Source": {
+							"Type": "SPARK"
+						}
+					},
+					{
+						"ActionType": "CREATE",
+						"OldEntity": null,
+						"NewEntity": {
+							"Name": "relationship-laicsgqsax",
+							"EntityType": "RELATIONSHIP",
+							"Namespace": {
+								"DatabaseName": "Database1"
+							},
+							"Origin": {
+								"Type": "SPARK"
+							},
+							"FromTableName": "MineProcessingActivityType",
+							"ToTableName": "MineProcessingActivity",
+							"ColumnRelationshipInformations": [
+								{
+									"FromColumnName": "MineProcessingActivityTypeId",
+									"ToColumnName": "MineProcessingActivityTypeId"
+								}
+							],
+							"RelationshipType": 0,
+							"Properties": {
+								"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MineProcessingActivityType.cdm.json/MineProcessingActivityType\",\"toEntity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"joinPairs\":[{\"fromAttribute\":\"MineProcessingActivityTypeId\",\"toAttribute\":\"MineProcessingActivityTypeId\"}]}}"
+							}
+						},
+						"Source": {
+							"Type": "SPARK"
+						}
+					},
+					{
+						"ActionType": "CREATE",
+						"OldEntity": null,
+						"NewEntity": {
+							"Name": "relationship-mooyhkjxvm",
+							"EntityType": "RELATIONSHIP",
+							"Namespace": {
+								"DatabaseName": "Database1"
+							},
+							"Origin": {
+								"Type": "SPARK"
+							},
+							"FromTableName": "Mine",
+							"ToTableName": "MineActivity",
+							"ColumnRelationshipInformations": [
+								{
+									"FromColumnName": "MineId",
+									"ToColumnName": "MineId"
+								}
+							],
+							"RelationshipType": 0,
+							"Properties": {
+								"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Mine.cdm.json/Mine\",\"toEntity\":\"MineActivity.cdm.json/MineActivity\",\"joinPairs\":[{\"fromAttribute\":\"MineId\",\"toAttribute\":\"MineId\"}]}}"
+							}
+						},
+						"Source": {
+							"Type": "SPARK"
+						}
+					},
+					{
+						"ActionType": "CREATE",
+						"OldEntity": null,
+						"NewEntity": {
+							"Name": "relationship-spudyojeri",
+							"EntityType": "RELATIONSHIP",
+							"Namespace": {
+								"DatabaseName": "Database1"
+							},
+							"Origin": {
+								"Type": "SPARK"
+							},
+							"FromTableName": "MineActivityType",
+							"ToTableName": "MineActivity",
+							"ColumnRelationshipInformations": [
+								{
+									"FromColumnName": "MineActivityTypeId",
+									"ToColumnName": "MineActivityTypeId"
+								}
+							],
+							"RelationshipType": 0,
+							"Properties": {
+								"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MineActivityType.cdm.json/MineActivityType\",\"toEntity\":\"MineActivity.cdm.json/MineActivity\",\"joinPairs\":[{\"fromAttribute\":\"MineActivityTypeId\",\"toAttribute\":\"MineActivityTypeId\"}]}}"
+							}
+						},
+						"Source": {
+							"Type": "SPARK"
+						}
+					},
+					{
+						"ActionType": "CREATE",
+						"OldEntity": null,
+						"NewEntity": {
+							"Name": "relationship-uwgahjoaox",
+							"EntityType": "RELATIONSHIP",
+							"Namespace": {
+								"DatabaseName": "Database1"
+							},
+							"Origin": {
+								"Type": "SPARK"
+							},
+							"FromTableName": "Mine",
+							"ToTableName": "MineProcessingActivity",
+							"ColumnRelationshipInformations": [
+								{
+									"FromColumnName": "MineId",
+									"ToColumnName": "MineId"
+								}
+							],
+							"RelationshipType": 0,
+							"Properties": {
+								"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Mine.cdm.json/Mine\",\"toEntity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"joinPairs\":[{\"fromAttribute\":\"MineId\",\"toAttribute\":\"MineId\"}]}}"
+							}
+						},
+						"Source": {
+							"Type": "SPARK"
+						}
+					},
+					{
+						"ActionType": "CREATE",
+						"OldEntity": null,
+						"NewEntity": {
+							"Name": "relationship-xjeliphijy",
+							"EntityType": "RELATIONSHIP",
+							"Namespace": {
+								"DatabaseName": "Database1"
+							},
+							"Origin": {
+								"Type": "SPARK"
+							},
+							"FromTableName": "MineProcessingActivity",
+							"ToTableName": "MineProcessingActivityCost",
+							"ColumnRelationshipInformations": [
+								{
+									"FromColumnName": "MineProcessingActivityId",
+									"ToColumnName": "MineProcessingActivityId"
+								}
+							],
+							"RelationshipType": 0,
+							"Properties": {
+								"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"toEntity\":\"MineProcessingActivityCost.cdm.json/MineProcessingActivityCost\",\"joinPairs\":[{\"fromAttribute\":\"MineProcessingActivityId\",\"toAttribute\":\"MineProcessingActivityId\"}]}}"
 							}
 						},
 						"Source": {
