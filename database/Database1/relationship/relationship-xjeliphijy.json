@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xjeliphijy",
+	"properties": {
+		"Name": "relationship-xjeliphijy",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Database1"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MineProcessingActivity",
+		"ToTableName": "MineProcessingActivityCost",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MineProcessingActivityId",
+				"ToColumnName": "MineProcessingActivityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"toEntity\":\"MineProcessingActivityCost.cdm.json/MineProcessingActivityCost\",\"joinPairs\":[{\"fromAttribute\":\"MineProcessingActivityId\",\"toAttribute\":\"MineProcessingActivityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

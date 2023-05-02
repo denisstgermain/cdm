@@ -1,0 +1,23 @@
+{
+	"name": "Database1",
+	"properties": {
+		"Name": "Database1",
+		"EntityType": "DATABASE",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true,
+			"DerivedModelDBInfo": "{\"ModelDirectives\":{\"BaseModel\":{\"Name\":\"Mining\",\"Version\":\"1.1.0\"}}}"
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Database1",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "testcdm-WorkspaceDefaultStorage"
+			}
+		}
+	},
+	"type": "DATABASE"
+}

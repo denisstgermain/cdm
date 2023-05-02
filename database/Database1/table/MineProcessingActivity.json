@@ -1,0 +1,238 @@
+{
+	"name": "MineProcessingActivity",
+	"properties": {
+		"Name": "MineProcessingActivity",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Database1"
+		},
+		"Description": "The type of mine processing activity.\n\nEx:\n- Extraction\n- Froth Treatment\n- Bitumen Extraction\n- Transfer Crushed Oil Sand To Stockpile\n- Crushing\n- Slurry/Aeration\n- Hydrotransport\n- Extraction\n- Filter\n- Chemical Separation\n\nwhere:\n\nExtraction\nA process, unique to the oilsands industry, which separates the bitumen from the oilsand using hot water, steam, and caustic soda.\n\nFroth treatment\nThe means to recover bitumen from the mixture of water, bitumen, and solids \"froth\" produced in hot water extraction (in mining-based recovery).\n\nHydrotransport\nA slurry process that transports water and resource (such as oilsand) through a pipeline to primary separation vessels located in an extraction plant.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MineProcessingActivityId",
+					"Description": "The unique identifier of a mine processing activity.",
+					"BaseAttributeReference": {
+						"Entity": "MineProcessingActivity.cdm.json/MineProcessingActivity",
+						"Name": "MineProcessingActivityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineProcessingActivityTypeId",
+					"Description": "The unique identifier of a mine processing activity type.",
+					"BaseAttributeReference": {
+						"Entity": "MineProcessingActivity.cdm.json/MineProcessingActivity",
+						"Name": "MineProcessingActivityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineProcessingActivityStartTimestamp",
+					"Description": "The actual mine processing activity start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "MineProcessingActivity.cdm.json/MineProcessingActivity",
+						"Name": "MineProcessingActivityStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineProcessingActivityEndTimestamp",
+					"Description": "The actual mine processing activity end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "MineProcessingActivity.cdm.json/MineProcessingActivity",
+						"Name": "MineProcessingActivityEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineProcessingActivityScheduledStartTimestamp",
+					"Description": "The scheduled mine processing activity start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "MineProcessingActivity.cdm.json/MineProcessingActivity",
+						"Name": "MineProcessingActivityScheduledStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineProcessingActivityScheduledEndTimestamp",
+					"Description": "The scheduled mine processing activity end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "MineProcessingActivity.cdm.json/MineProcessingActivity",
+						"Name": "MineProcessingActivityScheduledEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FacilityId",
+					"Description": "The unique identifier of a Facility.",
+					"BaseAttributeReference": {
+						"Entity": "MineProcessingActivity.cdm.json/MineProcessingActivity",
+						"Name": "FacilityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "MineProcessingActivity.cdm.json/MineProcessingActivity",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineId",
+					"Description": "The unique identifier of a mine.",
+					"BaseAttributeReference": {
+						"Entity": "MineProcessingActivity.cdm.json/MineProcessingActivity",
+						"Name": "MineId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineProcessingActivityNote",
+					"Description": "A note, comment or additional information regarding the mine processing activity.",
+					"BaseAttributeReference": {
+						"Entity": "MineProcessingActivity.cdm.json/MineProcessingActivity",
+						"Name": "MineProcessingActivityNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Database1/MineProcessingActivity",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Database1/MineProcessingActivity",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineProcessingActivityId\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityId\"},\"MineProcessingActivityTypeId\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityTypeId\"},\"MineProcessingActivityStartTimestamp\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityStartTimestamp\"},\"MineProcessingActivityEndTimestamp\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityEndTimestamp\"},\"MineProcessingActivityScheduledStartTimestamp\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityScheduledStartTimestamp\"},\"MineProcessingActivityScheduledEndTimestamp\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityScheduledEndTimestamp\"},\"FacilityId\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"FacilityId\"},\"LocationId\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"LocationId\"},\"MineId\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineId\"},\"MineProcessingActivityNote\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MineProcessingActivity\",\"path\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\"},\"description\":\"The type of mine processing activity.\\n\\nEx:\\n- Extraction\\n- Froth Treatment\\n- Bitumen Extraction\\n- Transfer Crushed Oil Sand To Stockpile\\n- Crushing\\n- Slurry/Aeration\\n- Hydrotransport\\n- Extraction\\n- Filter\\n- Chemical Separation\\n\\nwhere:\\n\\nExtraction\\nA process, unique to the oilsands industry, which separates the bitumen from the oilsand using hot water, steam, and caustic soda.\\n\\nFroth treatment\\nThe means to recover bitumen from the mixture of water, bitumen, and solids \\\"froth\\\" produced in hot water extraction (in mining-based recovery).\\n\\nHydrotransport\\nA slurry process that transports water and resource (such as oilsand) through a pipeline to primary separation vessels located in an extraction plant.\",\"primaryKey\":[\"MineProcessingActivityId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine processing activity.\",\"isNullable\":false,\"name\":\"MineProcessingActivityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine processing activity type.\",\"isNullable\":true,\"name\":\"MineProcessingActivityTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The actual mine processing activity start timestamp.\",\"isNullable\":true,\"name\":\"MineProcessingActivityStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The actual mine processing activity end timestamp.\",\"isNullable\":true,\"name\":\"MineProcessingActivityEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityScheduledStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The scheduled mine processing activity start timestamp.\",\"isNullable\":true,\"name\":\"MineProcessingActivityScheduledStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityScheduledEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The scheduled mine processing activity end timestamp.\",\"isNullable\":true,\"name\":\"MineProcessingActivityScheduledEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"FacilityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Facility.\",\"isNullable\":true,\"name\":\"FacilityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine.\",\"isNullable\":true,\"name\":\"MineId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"name\":\"MineProcessingActivityNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the mine processing activity.\",\"isNullable\":true,\"name\":\"MineProcessingActivityNote\"}]}}}",
+			"Description": "The type of mine processing activity.\n\nEx:\n- Extraction\n- Froth Treatment\n- Bitumen Extraction\n- Transfer Crushed Oil Sand To Stockpile\n- Crushing\n- Slurry/Aeration\n- Hydrotransport\n- Extraction\n- Filter\n- Chemical Separation\n\nwhere:\n\nExtraction\nA process, unique to the oilsands industry, which separates the bitumen from the oilsand using hot water, steam, and caustic soda.\n\nFroth treatment\nThe means to recover bitumen from the mixture of water, bitumen, and solids \"froth\" produced in hot water extraction (in mining-based recovery).\n\nHydrotransport\nA slurry process that transports water and resource (such as oilsand) through a pipeline to primary separation vessels located in an extraction plant.",
+			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "MineProcessingActivityId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

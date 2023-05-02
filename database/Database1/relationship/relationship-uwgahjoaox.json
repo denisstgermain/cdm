@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uwgahjoaox",
+	"properties": {
+		"Name": "relationship-uwgahjoaox",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Database1"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Mine",
+		"ToTableName": "MineProcessingActivity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MineId",
+				"ToColumnName": "MineId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Mine.cdm.json/Mine\",\"toEntity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"joinPairs\":[{\"fromAttribute\":\"MineId\",\"toAttribute\":\"MineId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

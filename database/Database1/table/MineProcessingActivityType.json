@@ -1,0 +1,116 @@
+{
+	"name": "MineProcessingActivityType",
+	"properties": {
+		"Name": "MineProcessingActivityType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Database1"
+		},
+		"Description": "The type of mine processing activity.\n\nEx:\n- Bail\n- Chemical Separation\n- Crush\n- Electrolyte Refine\n- Filter\n- Froth Floatation\n- Gravity Separation\n- Grind\n- Hydraulic Washing\n- Load To Rail\n- Load To Train\n- Magnetic Separation\n- Mix With Flux Materials\n- Oxidation \n- Pelletize\n- Reduction\n- Separate Ore From Waste\n- Ship\n- Stockpile\n- Upgrade\n- Anhydrous Solvent Extraction Process \n- Bitumen Extraction\n- Chemical Separation\n- Cold Water Process\n- Conditioning\n- Demineralization\n- Dewatering\n- Direct Heating\n- Extraction\n- Filter\n- Froth Treatment\n- Hot Water Process\n- Hydrotransport\n- Oleophilic Sieve Process \n- Sand Reduction Process\n- Slurry/Aeration\n- Solvent Deasphalting\n- Spherical Agglomeration Process\n- Transfer Crushed Oil Sand To Stockpile",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MineProcessingActivityTypeId",
+					"Description": "The unique identifier of a mine processing activity type.",
+					"BaseAttributeReference": {
+						"Entity": "MineProcessingActivityType.cdm.json/MineProcessingActivityType",
+						"Name": "MineProcessingActivityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineProcessingActivityTypeName",
+					"Description": "The name of a mine processing activity type.",
+					"BaseAttributeReference": {
+						"Entity": "MineProcessingActivityType.cdm.json/MineProcessingActivityType",
+						"Name": "MineProcessingActivityTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineProcessingActivityTypeDescription",
+					"Description": "The description of a mine processing activity type.",
+					"BaseAttributeReference": {
+						"Entity": "MineProcessingActivityType.cdm.json/MineProcessingActivityType",
+						"Name": "MineProcessingActivityTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Database1/MineProcessingActivityType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Database1/MineProcessingActivityType",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineProcessingActivityTypeId\":{\"entity\":\"MineProcessingActivityType.cdm.json/MineProcessingActivityType\",\"name\":\"MineProcessingActivityTypeId\"},\"MineProcessingActivityTypeName\":{\"entity\":\"MineProcessingActivityType.cdm.json/MineProcessingActivityType\",\"name\":\"MineProcessingActivityTypeName\"},\"MineProcessingActivityTypeDescription\":{\"entity\":\"MineProcessingActivityType.cdm.json/MineProcessingActivityType\",\"name\":\"MineProcessingActivityTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MineProcessingActivityType\",\"path\":\"MineProcessingActivityType.cdm.json/MineProcessingActivityType\"},\"description\":\"The type of mine processing activity.\\n\\nEx:\\n- Bail\\n- Chemical Separation\\n- Crush\\n- Electrolyte Refine\\n- Filter\\n- Froth Floatation\\n- Gravity Separation\\n- Grind\\n- Hydraulic Washing\\n- Load To Rail\\n- Load To Train\\n- Magnetic Separation\\n- Mix With Flux Materials\\n- Oxidation \\n- Pelletize\\n- Reduction\\n- Separate Ore From Waste\\n- Ship\\n- Stockpile\\n- Upgrade\\n- Anhydrous Solvent Extraction Process \\n- Bitumen Extraction\\n- Chemical Separation\\n- Cold Water Process\\n- Conditioning\\n- Demineralization\\n- Dewatering\\n- Direct Heating\\n- Extraction\\n- Filter\\n- Froth Treatment\\n- Hot Water Process\\n- Hydrotransport\\n- Oleophilic Sieve Process \\n- Sand Reduction Process\\n- Slurry/Aeration\\n- Solvent Deasphalting\\n- Spherical Agglomeration Process\\n- Transfer Crushed Oil Sand To Stockpile\",\"primaryKey\":[\"MineProcessingActivityTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivityType.cdm.json/MineProcessingActivityType\",\"name\":\"MineProcessingActivityTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine processing activity type.\",\"isNullable\":false,\"name\":\"MineProcessingActivityTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivityType.cdm.json/MineProcessingActivityType\",\"name\":\"MineProcessingActivityTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of a mine processing activity type.\",\"isNullable\":true,\"name\":\"MineProcessingActivityTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineProcessingActivityType.cdm.json/MineProcessingActivityType\",\"name\":\"MineProcessingActivityTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of a mine processing activity type.\",\"isNullable\":true,\"name\":\"MineProcessingActivityTypeDescription\"}]}}}",
+			"Description": "The type of mine processing activity.\n\nEx:\n- Bail\n- Chemical Separation\n- Crush\n- Electrolyte Refine\n- Filter\n- Froth Floatation\n- Gravity Separation\n- Grind\n- Hydraulic Washing\n- Load To Rail\n- Load To Train\n- Magnetic Separation\n- Mix With Flux Materials\n- Oxidation \n- Pelletize\n- Reduction\n- Separate Ore From Waste\n- Ship\n- Stockpile\n- Upgrade\n- Anhydrous Solvent Extraction Process \n- Bitumen Extraction\n- Chemical Separation\n- Cold Water Process\n- Conditioning\n- Demineralization\n- Dewatering\n- Direct Heating\n- Extraction\n- Filter\n- Froth Treatment\n- Hot Water Process\n- Hydrotransport\n- Oleophilic Sieve Process \n- Sand Reduction Process\n- Slurry/Aeration\n- Solvent Deasphalting\n- Spherical Agglomeration Process\n- Transfer Crushed Oil Sand To Stockpile",
+			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "MineProcessingActivityTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

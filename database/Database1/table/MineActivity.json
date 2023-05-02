@@ -1,0 +1,380 @@
+{
+	"name": "MineActivity",
+	"properties": {
+		"Name": "MineActivity",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Database1"
+		},
+		"Description": "A mine activity performed at a location during a period involving employees/parties and optionally involving assets and equipment.\n\nOutput from a mine activity is either:\n\n- Stored at a location (MINE ACTIVITY OUTPUT STORAGE)\n- Loaded and sent for processing (LOAD)\n- Loaded and sent for processing with output from a storage area.\n  (the stored units are reduced and added to the LOAD sent to processing)\n- Waste",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MineActivityId",
+					"Description": "The unique identifier of a mine activity.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivity.cdm.json/MineActivity",
+						"Name": "MineActivityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MiningActivityName",
+					"Description": "The name of the mining activity.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivity.cdm.json/MineActivity",
+						"Name": "MiningActivityName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MiningActivityDescription",
+					"Description": "The description of the mining activity.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivity.cdm.json/MineActivity",
+						"Name": "MiningActivityDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineActivityTypeId",
+					"Description": "The unique identifier of a mine activity type.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivity.cdm.json/MineActivity",
+						"Name": "MineActivityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineActivityScheduledStartTimestamp",
+					"Description": "The mine activity scheduled start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivity.cdm.json/MineActivity",
+						"Name": "MineActivityScheduledStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineActivityScheduledEndTimestamp",
+					"Description": "The mine activity scheduled end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivity.cdm.json/MineActivity",
+						"Name": "MineActivityScheduledEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineActivityActualStartTimestamp",
+					"Description": "The mine activity actual start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivity.cdm.json/MineActivity",
+						"Name": "MineActivityActualStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineActivityActualEndTimestamp",
+					"Description": "The mine activity actual end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivity.cdm.json/MineActivity",
+						"Name": "MineActivityActualEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivity.cdm.json/MineActivity",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LocationLatitude",
+					"Description": "The latitude of the mine activity.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivity.cdm.json/MineActivity",
+						"Name": "LocationLatitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 10,
+						"Scale": 7,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LocationLongitude",
+					"Description": "The longitude of the mine activity.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivity.cdm.json/MineActivity",
+						"Name": "LocationLongitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 10,
+						"Scale": 7,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FromLocationId",
+					"Description": "The from location of the mine activity.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivity.cdm.json/MineActivity",
+						"Name": "FromLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ToLocationId",
+					"Description": "The to location of the mine activity.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivity.cdm.json/MineActivity",
+						"Name": "ToLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineId",
+					"Description": "The unique identifier of a mine.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivity.cdm.json/MineActivity",
+						"Name": "MineId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineDepositId",
+					"Description": "The unique identifier of a mine deposit.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivity.cdm.json/MineActivity",
+						"Name": "MineDepositId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OpenPitBlockId",
+					"Description": "The unique identifier of an open pit block.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivity.cdm.json/MineActivity",
+						"Name": "OpenPitBlockId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FacilityId",
+					"Description": "The unique identifier of a Facility.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivity.cdm.json/MineActivity",
+						"Name": "FacilityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MineActivityNote",
+					"Description": "A note, comment or additional information regarding the mine activity.",
+					"BaseAttributeReference": {
+						"Entity": "MineActivity.cdm.json/MineActivity",
+						"Name": "MineActivityNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Database1/MineActivity",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://asdasdas@asasasasasasas.dfs.core.windows.net/Database1/MineActivity",
+				"Properties": {
+					"LinkedServiceName": "testcdm-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MineActivityId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityId\"},\"MiningActivityName\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MiningActivityName\"},\"MiningActivityDescription\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MiningActivityDescription\"},\"MineActivityTypeId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityTypeId\"},\"MineActivityScheduledStartTimestamp\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityScheduledStartTimestamp\"},\"MineActivityScheduledEndTimestamp\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityScheduledEndTimestamp\"},\"MineActivityActualStartTimestamp\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityActualStartTimestamp\"},\"MineActivityActualEndTimestamp\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityActualEndTimestamp\"},\"LocationId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"LocationId\"},\"LocationLatitude\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"LocationLatitude\"},\"LocationLongitude\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"LocationLongitude\"},\"FromLocationId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"FromLocationId\"},\"ToLocationId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"ToLocationId\"},\"MineId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineId\"},\"MineDepositId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineDepositId\"},\"OpenPitBlockId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"OpenPitBlockId\"},\"FacilityId\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"FacilityId\"},\"MineActivityNote\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MineActivity\",\"path\":\"MineActivity.cdm.json/MineActivity\"},\"description\":\"A mine activity performed at a location during a period involving employees/parties and optionally involving assets and equipment.\\n\\nOutput from a mine activity is either:\\n\\n- Stored at a location (MINE ACTIVITY OUTPUT STORAGE)\\n- Loaded and sent for processing (LOAD)\\n- Loaded and sent for processing with output from a storage area.\\n  (the stored units are reduced and added to the LOAD sent to processing)\\n- Waste\",\"primaryKey\":[\"MineActivityId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine activity.\",\"isNullable\":false,\"name\":\"MineActivityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MiningActivityName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of the mining activity.\",\"isNullable\":true,\"name\":\"MiningActivityName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MiningActivityDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of the mining activity.\",\"isNullable\":true,\"name\":\"MiningActivityDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine activity type.\",\"isNullable\":false,\"name\":\"MineActivityTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityScheduledStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The mine activity scheduled start timestamp.\",\"isNullable\":true,\"name\":\"MineActivityScheduledStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityScheduledEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The mine activity scheduled end timestamp.\",\"isNullable\":true,\"name\":\"MineActivityScheduledEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityActualStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The mine activity actual start timestamp.\",\"isNullable\":true,\"name\":\"MineActivityActualStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityActualEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The mine activity actual end timestamp.\",\"isNullable\":true,\"name\":\"MineActivityActualEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"LocationLatitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":10,\"description\":\"The latitude of the mine activity.\",\"isNullable\":true,\"scale\":7,\"name\":\"LocationLatitude\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"LocationLongitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":10,\"description\":\"The longitude of the mine activity.\",\"isNullable\":true,\"scale\":7,\"name\":\"LocationLongitude\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"FromLocationId\"},\"dataType\":\"integer\",\"description\":\"The from location of the mine activity.\",\"isNullable\":true,\"name\":\"FromLocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"ToLocationId\"},\"dataType\":\"integer\",\"description\":\"The to location of the mine activity.\",\"isNullable\":true,\"name\":\"ToLocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine.\",\"isNullable\":false,\"name\":\"MineId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineDepositId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mine deposit.\",\"isNullable\":true,\"name\":\"MineDepositId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"OpenPitBlockId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an open pit block.\",\"isNullable\":true,\"name\":\"OpenPitBlockId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"FacilityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Facility.\",\"isNullable\":true,\"name\":\"FacilityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MineActivity.cdm.json/MineActivity\",\"name\":\"MineActivityNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the mine activity.\",\"isNullable\":true,\"name\":\"MineActivityNote\"}]}}}",
+			"Description": "A mine activity performed at a location during a period involving employees/parties and optionally involving assets and equipment.\n\nOutput from a mine activity is either:\n\n- Stored at a location (MINE ACTIVITY OUTPUT STORAGE)\n- Loaded and sent for processing (LOAD)\n- Loaded and sent for processing with output from a storage area.\n  (the stored units are reduced and added to the LOAD sent to processing)\n- Waste",
+			"DisplayFolderInfo": "{\"name\":\"Mining\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "MineActivityId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

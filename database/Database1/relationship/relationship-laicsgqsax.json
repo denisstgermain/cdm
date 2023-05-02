@@ -1,0 +1,26 @@
+{
+	"name": "relationship-laicsgqsax",
+	"properties": {
+		"Name": "relationship-laicsgqsax",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Database1"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MineProcessingActivityType",
+		"ToTableName": "MineProcessingActivity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MineProcessingActivityTypeId",
+				"ToColumnName": "MineProcessingActivityTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MineProcessingActivityType.cdm.json/MineProcessingActivityType\",\"toEntity\":\"MineProcessingActivity.cdm.json/MineProcessingActivity\",\"joinPairs\":[{\"fromAttribute\":\"MineProcessingActivityTypeId\",\"toAttribute\":\"MineProcessingActivityTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}
